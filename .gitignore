@@ -13,7 +13,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-
+DBManager.java
 *.class
 /target
 src/main/webapp/META-INF/MANIFEST.MF

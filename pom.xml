@@ -16,7 +16,24 @@
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>
+        <configuration>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        </configuration>
       </plugin>
+
     </plugins>
+
+
   </build>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+  </dependencies>
 </project>

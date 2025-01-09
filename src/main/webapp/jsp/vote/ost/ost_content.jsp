@@ -10,15 +10,16 @@
 <head>
 <title>Title</title>
 <link rel="stylesheet" href="css/vote/ost/ost_content.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div class="bracket">
+<div class="contents">
 	<!-- First Round -->
 	<div class="round">
-		<div class="match">q1</div>
-		<div class="match">q2</div>
-		<div class="match">q3</div>
-		<div class="match">q4</div>
+		<div class="match q1"><span>빛이 될거야</span></div>
+		<div class="match q2">PUZZLE</div>
+		<div class="match q3">꿈을 향해</div>
+		<div class="match q4">Love is thrill, shock, suspense</div>
 	</div>
 
 	<!-- Second Round -->
@@ -43,11 +44,12 @@
 
 	<!-- First Round -->
 	<div class="round">
-		<div class="match">q5</div>
-		<div class="match">q6</div>
-		<div class="match">q7</div>
-		<div class="match">q8</div>
+		<div class="match q5"><span>바람의 라라라</span></div>
+		<div class="match q6"><span>Growing of my heart</span></div>
+		<div class="match q7"><span>Love for you</span></div>
+		<div class="match q8">Hello Mr.my yesterday</div>
 	</div>
 </div>
+<script src="js/vote/ost/test.js"></script>
 </body>
 </html>

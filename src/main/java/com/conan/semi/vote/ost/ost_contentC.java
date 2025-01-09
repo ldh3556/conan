@@ -12,7 +12,6 @@ public class ost_contentC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     request.getRequestDispatcher("jsp/vote/ost/ost_content.jsp").forward(request, response);
-        System.out.println("111");
 
     }
 

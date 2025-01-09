@@ -36,8 +36,8 @@ $(document).ready(function () {
 
     // 두 번째 선택지 그룹 (s1 or s2, s3 or s4) -> f1, f2로 복사
     const semiFinal = [
-        { sourceClass: '.s1, .s2', targetClass: '.f1' },
-        { sourceClass: '.s3, .s4', targetClass: '.f2' }
+        { sourceClass: '.s1, .s2', targetClass: '.f1', isSelected: false },
+        { sourceClass: '.s3, .s4', targetClass: '.f2', isSelected: false }
     ];
 
     semiFinal.forEach(function (s) {
@@ -57,6 +57,12 @@ $(document).ready(function () {
                 $(this).find('.match').addClass('defeated');
             });
             toFinal.find('.match').removeClass('defeated');
+
+            s.isSelected = true;
+            console.log(s.isSelected);
+            if(semiFinal.every(s => s.isSelected)){
+                $('.f1, .f2').removeClass('disabled');
+            }
         });
     });
 

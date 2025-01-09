@@ -14,14 +14,14 @@
 <div class="board-container">
   <div class="board-title">Notice Page</div>
   <div class="board-menu">
-    <div> <a href="">공지</a></div>
-    <div> <a href="">자유 개시판</a></div>
-    <div> <a href="">만화 후기 게시판</a></div>
+    <div> <a href="BoardNoticeC">공지</a></div>
+    <div> <a href="BoardFreeC">자유 게시판</a></div>
+    <div> <a href="BoardMangaC">만화 후기 게시판</a></div>
     <div> <a href="">애니 후기 게시판</a></div>
     <div> <a href="">영화 후기 게시판</a></div>
 </div>
 <div class="content">
-  <jsp:include page=""></jsp:include>
+  <jsp:include page="${content }" />
 </div>
 
 

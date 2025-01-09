@@ -1,5 +1,4 @@
-package com.conan.semi.main;
-
+package com.conan.semi.vote.ost;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,10 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+@WebServlet("/ost_contentC")
+public class ost_contentC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.getRequestDispatcher("jsp/vote/ost/ost_content.jsp").forward(request, response);
+        System.out.println("111");
 
     }
 

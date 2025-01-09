@@ -1,0 +1,68 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f7f7f7;
+}
+
+.bracket {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid black
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px; /* 전체 높이 고정 */
+}
+
+.match {
+  width: 120px;
+  height: 50px;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.match:hover {
+  background-color: #e0e0e0;
+}
+
+/* 중앙 위치 조정 */
+.s1 {
+  margin-top: 75px;
+}
+
+.s2 {
+  margin-bottom: 75px;
+}
+
+.s3 {
+  margin-top: 75px;
+}
+
+.s4 {
+  margin-bottom: 75px;
+}
+
+.f1 {
+  margin-top: 225px;
+}
+
+.f2 {
+  margin-top: 225px;
+}

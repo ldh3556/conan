@@ -15,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  border: 1px solid black
+  /*border: 1px solid black*/
 }
 
 .round {
@@ -38,12 +38,15 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.match:hover {
+/*.match:hover {
   background-color: #e0e0e0;
+}*/
+
+.defeated {
+  background-color: #ddd; /* 패배한 div의 스타일 */
 }
 
 .disabled {
-  background-color: #ddd; /* 비활성화된 div의 스타일 */
   pointer-events: none;   /* 클릭 불가 */
 }
 

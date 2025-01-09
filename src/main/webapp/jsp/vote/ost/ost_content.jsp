@@ -17,9 +17,9 @@
 	<!-- First Round -->
 	<div class="round">
 		<div class="match q1"><a>빛이 될거야</a></div>
-		<div class="match q2">PUZZLE</div>
-		<div class="match q3">꿈을 향해</div>
-		<div class="match q4">Love is thrill, shock, suspense</div>
+		<div class="match q2"><a>PUZZLE</a></div>
+		<div class="match q3"><a>꿈을 향해</a></div>
+		<div class="match q4"><a>Love is thrill, shock, suspense</a></div>
 	</div>
 
 	<!-- Second Round -->
@@ -44,10 +44,10 @@
 
 	<!-- First Round -->
 	<div class="round">
-		<div class="match q5"><span>바람의 라라라</span></div>
-		<div class="match q6"><span>Growing of my heart</span></div>
-		<div class="match q7"><span>Love for you</span></div>
-		<div class="match q8">Hello Mr.my yesterday</div>
+		<div class="match q5"><a>바람의 라라라</a></div>
+		<div class="match q6"><a>Growing of my heart</a></div>
+		<div class="match q7"><a>Love for you</a></div>
+		<div class="match q8"><a>Hello Mr.my yesterday</a></div>
 	</div>
 </div>
 <script src="js/vote/ost/ost_content.js"></script>

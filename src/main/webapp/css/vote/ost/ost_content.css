@@ -43,7 +43,7 @@ body {
 }*/
 
 .defeated {
-  background-color: #ddd; /* 패배한 div의 스타일 */
+  background-color: #ddd !important; /* 패배한 div의 스타일 */
 }
 
 .disabled {

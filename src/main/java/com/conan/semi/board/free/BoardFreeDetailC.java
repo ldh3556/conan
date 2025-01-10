@@ -1,6 +1,5 @@
 package com.conan.semi.board.free;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/BoardFreeC")
-public class BoardFreeC extends HttpServlet {
+@WebServlet("/BoardFreeDetailC")
+public class BoardFreeDetailC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("진입");
-        BoardFreeDAO.showAllBoardFree(request);
-
-request.setAttribute("content", "board_free/board_free.jsp");
-request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
+ BoardFreeDAO.detailBoardFree(request);
+ request.setAttribute("content", "board/board_free_detail.jsp");
+ request.getRequestDispatcher("board.jsp").forward(request, response);
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

@@ -10,33 +10,43 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class BoardFreeDAO {
-   private static Connection con = null;
-    public static void showAllBoardFree(HttpServletRequest request){
-               PreparedStatement pstmt = null;
-               ResultSet rs = null;
-               String sql = "select * from board_free";
-               try {
-    con = DBManager.getConnect();
-    pstmt = con.prepareStatement(sql);
-    rs = pstmt.executeQuery();
-    boards = new ArrayList<BoardFreeDTO>();
-    BoardFreeDTO board = null;
-    while (rs.next()) {
-        board = new BoardFreeDTO();
-        board.setId(rs.getString("id"));
-        board.setName(rs.getString("name"));
-        board.setDescription(rs.getString("description"));
+    private static Connection con = null;
 
-        boards.add(board);
+    public static void showAllBoardFree(HttpServletRequest request) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "select * from board_table_test";
+        try {
+            System.out.println("connect --");
+            con = DBManager.connect();
+            System.out.printf("con done");
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            ArrayList<BoardFreeDTO> boards = new ArrayList<BoardFreeDTO>();
+            BoardFreeDTO board = null;
+            while (rs.next()) {
+                board = new BoardFreeDTO();
+               board.setB_no(rs.getString(1));
+               board.setB_id(rs.getString(2));
+               board.setB_name(rs.getString(3));
+               board.setB_title(rs.getString(4));
+               board.setB_text(rs.getString(5));
+               board.setB_date(rs.getDate(6));
+
+                boards.add(board);
+            }
+            request.setAttribute("boards", boards);
+            System.out.println(boards);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+        DBManager.close(con, pstmt, rs);
+
+
     }
-    request.setAttribute("boards", boards);
-    system.out.printIn(boards);
-               } catch (Exception e){
-                   e.printStackTrace();
-               } finally {
 
-               }DBManager.close(con, pstmt, rs);
-
-
+    public static void detailBoardFree(HttpServletRequest request) {
     }
 }

@@ -19,7 +19,7 @@
   <div> 비밀번호 <input name="pw" type="password"> </div> <br>
   <div> <button> 로그인 </button> </div> <br>
 </form>
-<div> <a href="jsp/account/account.jsp"> 회원가입 </a> </div>
+<div> <a href="/jsp/account/account.jsp"> 회원가입 </a> </div>
 
 
 </body>

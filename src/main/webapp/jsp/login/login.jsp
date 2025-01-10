@@ -8,18 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title> 로그인 </title>
 </head>
 <body>
 
 <h1> 로그인 페이지 </h1>
 
-<form action="LoginC" method="post">
+<form action="LoginC_tetst" method="post">
   <div> 아이디 <input name="id" type="text"> </div> <br>
   <div> 비밀번호 <input name="pw" type="password"> </div> <br>
   <div> <button> 로그인 </button> </div> <br>
+
 </form>
-<div> <a href="jsp/account/account.jsp"> 회원가입 </a> </div>
+<form action="AccountC_test" method="post">
+    <div> <button type="submit"> 회원가입 </button> </div> <br>
+</form>
+
+<div> <button onclick="location.href='AccountC_test'"> 회원가입 </button> </div> <br>
 
 </body>
 </html>

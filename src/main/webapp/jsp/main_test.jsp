@@ -8,14 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title> MAIN_TEST </title>
 </head>
 <body>
 
 <h1> 메인 페이지 </h1>
 
-<a href="jsp/login/login.jsp"> 로그인 </a> <br><br>
-<a href="jsp/account/account.jsp"> 회원가입 </a>
+<a href="/LoginC_test"> 로그인 </a> / <a href="/AccountC_test"> 회원가입 </a>
 
 </body>
 </html>

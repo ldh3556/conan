@@ -11,7 +11,7 @@ public class AccountDAO {
 
     // 아이디 중복 체크
     public static boolean checkIdExists(String id) {
-        String sql = "SELECT COUNT(*) FROM account_table_test WHERE id = ?";
+        String sql = "SELECT * FROM account_table_hdh WHERE id = ?";
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;

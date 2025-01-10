@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Conan:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="Conan:war exploded">
     <output-path>$PROJECT_DIR$/classes/artifacts/Conan_war_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="Conan/web/Web" />
@@ -16,6 +16,7 @@
           <element id="library" level="project" name="Maven: com.oracle.database.security:osdt_core:21.5.0.0" />
           <element id="library" level="project" name="Maven: com.oracle.database.jdbc:ojdbc10:19.21.0.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.36" />
         </element>
       </element>
     </root>

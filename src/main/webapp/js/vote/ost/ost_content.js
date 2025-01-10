@@ -67,23 +67,25 @@ $(document).ready(function () {
     });
 
     // f1 또는 f2 선택 후 winner에 복사하고 DB에 저장
-    /* $('.f1, .f2').click(function () {
-        var content = $(this).clone();
-        $('.winner').empty().append(content);
+     $('.f1, .f2').click(function () {
+         var selectedSong = $(this).find('a').text();
+         var finalWinner = $(this).clone();
+         $('.winner').empty().append(finalWinner);
+     });
 
         // 선택된 데이터를 서버로 전송하여 DB에 저장
         var selectedOption = $(this).hasClass('f1') ? 'f1' : 'f2'; // 선택된 div(f1 or f2)
+        console.log(selectedOption);
 
-        $.ajax({
-            url: '/saveToDatabase',  // 서버에 데이터를 저장할 URL
-            method: 'POST',
-            data: { selectedOption: selectedOption },
-            success: function(response) {
-                console.log("DB 업데이트 성공:", response);
-            },
-            error: function(error) {
-                console.error("DB 업데이트 실패:", error);
-            }
-        });
-    }); */
-});
+            $.ajax({
+                 url: '/winCountC',  // 서버에 데이터를 저장할 URL
+                 method: 'POST',
+                 data: { songTitle: 'selectedSong'},
+                 success: function(response) {
+                     console.log("DB 업데이트 성공:", response);
+                 },
+                 error: function(error) {
+                     console.error("DB 업데이트 실패:", error);
+                 }
+             });
+         });

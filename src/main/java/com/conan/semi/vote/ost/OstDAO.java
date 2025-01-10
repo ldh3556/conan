@@ -3,6 +3,7 @@ package com.conan.semi.vote.ost;
 import com.conan.semi.DBManager;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,8 +14,7 @@ public class OstDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select * from bracket_test order by DBMS_RANDOM.RANDOM\n" +
-                "FETCH FIRST 8 ROWS ONLY";
+        String sql = "select * from bracket_test order by DBMS_RANDOM.RANDOM FETCH FIRST 8 ROWS ONLY";
         try {
             con = DBManager.connect();
             ps = con.prepareStatement(sql);
@@ -34,4 +34,34 @@ public class OstDAO {
             DBManager.close(con, ps, rs);
         }
     }
+
+    public static void winCount(HttpServletRequest request) {
+
+        String songTitle = request.getParameter("songTitle");
+        Connection con = null;
+        PreparedStatement ps = null;
+        String sql = "update bracket_test set win_count=win_count+1 where song_title=?";
+
+        try {
+            con = DBManager.connect();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, songTitle);
+
+            if (ps.executeUpdate() == 1) {
+                System.out.println("업데이트 성공~");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(con, ps, null);
+        }
+
+
+    }
+
+
+
+
+
 }

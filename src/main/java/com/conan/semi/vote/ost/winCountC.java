@@ -14,8 +14,10 @@ public class winCountC extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("왔다");
         String songTitle = request.getParameter("songTitle");
         OstDAO.winCount(request);
+        System.out.println("일했다");
 
     }
 }

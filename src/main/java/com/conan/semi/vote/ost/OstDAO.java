@@ -41,7 +41,7 @@ public class OstDAO {
         Connection con = null;
         PreparedStatement ps = null;
         String sql = "update bracket_test set win_count=win_count+1 where song_title=?";
-
+        System.out.println(songTitle);
         try {
             con = DBManager.connect();
             ps = con.prepareStatement(sql);

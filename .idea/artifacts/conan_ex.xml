@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="conan_ex">
-    <output-path>$PROJECT_DIR$/classes/artifacts/conan_ex</output-path>
-    <root id="root">
-      <element id="artifact" artifact-name="Conan:war exploded" />
-    </root>
-  </artifact>
-</component>

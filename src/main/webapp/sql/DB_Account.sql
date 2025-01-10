@@ -3,7 +3,8 @@ create table account_table_test (
     pw varchar2(20 char) not null,
     pw_check varchar2(20 char) not null,
     name varchar2(20 char) not null,
-    nickname varchar2(20 char) not null
+    nickname varchar2(20 char) not null,
+    CONSTRAINT unique_nickname UNIQUE (nickname)
 );
 
 // create sequence account_table_test_seq;

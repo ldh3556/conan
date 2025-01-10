@@ -7,19 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/LoginC")
-public class LoginC extends HttpServlet {
-
+@WebServlet("/Find_PWC")
+public class Find_PWC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("jsp/login/login.jsp").forward(request, response);
-
+    request.getRequestDispatcher("jsp/login/login_find_pw.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // 로그인
-    LoginDAO_test.login(request);
-
-    // 어디로?
 
     }
 

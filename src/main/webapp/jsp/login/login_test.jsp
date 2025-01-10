@@ -20,7 +20,7 @@
     <div> ID <input name="id" type="text" placeholder="ID를 입력하세요"></div> <br>
     <div> PW <input name="pw" type="password" placeholder="PW를 입력하세요"> </div> <br>
     <div> <button> LOGIN </button>
-    <button type="button" class="back-btn" onclick="location.href=document.referrer;">뒤로가기</button>
+    <button type="button" class="back-btn" onclick="location.href='jsp/main_test.jsp'">메인으로</button>
     </div>
 </form>
 

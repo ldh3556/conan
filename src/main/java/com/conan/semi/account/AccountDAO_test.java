@@ -27,7 +27,7 @@ public class AccountDAO_test {
         // 계정 생성 SQL 실행
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into account_table_test values (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into account_table_hdh values (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);

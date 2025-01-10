@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ldh35
-  Date: 25. 1. 9.
-  Time: 오후 2:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
 <title>Title</title>
@@ -13,13 +8,18 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
 <div class="contents">
 	<!-- First Round -->
 	<div class="round">
-		<div class="match q1"><a>빛이 될거야</a></div>
-		<div class="match q2"><a>PUZZLE</a></div>
-		<div class="match q3"><a>꿈을 향해</a></div>
-		<div class="match q4"><a>Love is thrill, shock, suspense</a></div>
+		<!-- 그룹 1 (q1, q2, q3, q4) -->
+		<c:forEach var="s" items="${songs}" varStatus="status">
+			<c:if test="${status.index < 4}">
+				<div class="match q${status.index + 1}">
+					<a>${s.song_title}</a>
+				</div>
+			</c:if>
+		</c:forEach>
 	</div>
 
 	<!-- Second Round -->
@@ -44,10 +44,14 @@
 
 	<!-- First Round -->
 	<div class="round">
-		<div class="match q5"><a>바람의 라라라</a></div>
-		<div class="match q6"><a>Growing of my heart</a></div>
-		<div class="match q7"><a>Love for you</a></div>
-		<div class="match q8"><a>Hello Mr.my yesterday</a></div>
+		<!-- 그룹 2 (q5, q6, q7, q8) -->
+		<c:forEach var="s" items="${songs}" varStatus="status">
+			<c:if test="${status.index >= 4 && status.index <= 8}">
+				<div class="match q${status.index + 1}">
+					<a>${s.song_title}</a>
+				</div>
+			</c:if>
+		</c:forEach>
 	</div>
 </div>
 <script src="js/vote/ost/ost_content.js"></script>

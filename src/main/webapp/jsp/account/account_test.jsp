@@ -97,16 +97,10 @@
 
   <div> E-mail
     <input name="e_mail" type="text" placeholder="example@gmail.com">
-    <% if(request.getAttribute("emailExists") != null && (Boolean)request.getAttribute("emailExists")) { %>
-    <span class="error">이미 존재하는 이메일입니다.</span>
-    <% } %>
   </div> <br>
 
   <div> 아이디
-    <input name="id" type="text" placeholder="영문 대,소문자 6자리 이상">
-    <% if(request.getAttribute("idExists") != null && (Boolean)request.getAttribute("idExists")) { %>
-    <span class="error">이미 존재하는 ID입니다.</span>
-    <% } %>
+    <input name="id" type="text" placeholder="영문 대,소문자 6자리 이상"> <button>중복확인</button>
   </div>  <br>
 
   <div> 비밀번호
@@ -118,10 +112,7 @@
   </div>  <br>
 
   <div> 닉네임
-    <input name="nickname" type="text" placeholder="영문 대,소문자 6자, 한글 5자">
-    <% if(request.getAttribute("nicknameExists") != null && (Boolean)request.getAttribute("nicknameExists")) { %>
-    <span class="error">이미 존재하는 닉네임입니다.</span>
-    <% } %>
+    <input name="nickname" type="text" placeholder="영문 대,소문자 6자, 한글 5자"> <button>중복확인</button>
   </div>  <br>
 
   <div>

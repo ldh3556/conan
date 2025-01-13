@@ -11,7 +11,7 @@ import java.io.IOException;
 public class AccountC_test extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 어디로?
-        request.getRequestDispatcher("jsp/account/account_test2.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/account/account_test3.jsp").forward(request, response);
         System.out.println("AccountC_test(GET)에서 등록 완료!");
     }
 

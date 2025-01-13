@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hwangdonghyuk
-  Date: 2025. 1. 9.
-  Time: 오후 4:38
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -73,17 +66,16 @@
             return idRegex.test(id);
         }
 
-        // 비밀번호 유효성 검사 (영문 대소문자, 숫자 포함 8자 이상)
+        // 비밀번호 유효성 검사 (영문 대소문자, 숫자 포함 6자 이상)
         function validatePassword(password) {
-            const pwRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;  // 영문 대소문자, 숫자 포함 8자 이상
+            const pwRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;  // 영문 대소문자, 숫자 포함 6자 이상
             return pwRegex.test(password);
         }
 
-        // 닉네임 유효성 검사
+        // 닉네임 유효성 검사 (영문 대소문자 또는 한글, 3자 이상)
         function validateNickname(nickname) {
-            const nicknameEngRegex = /^[a-zA-Z]{7,}$/;  // 영문 대소문자 7자 이상
-            const nicknameKorRegex = /^[가-힣0-9]{5,}$/;  // 한글 또는 숫자 5자 이상
-            return nicknameEngRegex.test(nickname) || nicknameKorRegex.test(nickname);
+            const nicknameRegex = /^[a-zA-Z가-힣0-9]{3,}$/;  // 영문 대소문자, 한글, 숫자 3자 이상
+            return nicknameRegex.test(nickname);
         }
 
         // 아이디 중복 확인
@@ -103,7 +95,6 @@
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var result = xhr.responseText;
                     if (result === "exists") {
-                        // 아이디가 중복일 경우 오류 메시지 표시
                         document.getElementById("id-error").innerText = "이미 사용 중인 아이디입니다.";
                         document.getElementById("id-error").style.color = "red"; // 오류 메시지 빨간색
                         isIdValid = false;
@@ -262,8 +253,8 @@
                 passwordMatchMessage.style.fontSize = "12px";
                 registerButton.disabled = true; // 가입 버튼 비활성화
             } else if (!validatePassword(password)) {
-                // 비밀번호가 유효한 형식(영문 대소문자, 숫자 포함 8자 이상)이 아니면
-                passwordMatchMessage.innerText = "비밀번호는 영문 대소문자와 숫자를 포함한 8자 이상이어야 합니다.";
+                // 비밀번호가 유효한 형식(영문 대소문자, 숫자 포함 6자 이상)이 아니면
+                passwordMatchMessage.innerText = "비밀번호는 영문 대소문자와 숫자를 포함한 6자 이상이어야 합니다.";
                 passwordMatchMessage.style.color = "red";
                 passwordMatchMessage.style.fontSize = "12px";
                 registerButton.disabled = true; // 가입 버튼 비활성화
@@ -346,14 +337,14 @@
     <br>
 
     <div> 아이디
-        <input name="id" type="text" placeholder="영문 대,소문자,숫자 조합 6자리 이상" id="id-input">
+        <input name="id" type="text" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="id-input">
         <button type="button" onclick="checkId()">중복확인</button>
         <span id="id-error" class="error"></span> <!-- 중복 확인 결과 표시 -->
     </div>
     <br>
 
     <div> 비밀번호
-        <input name="pw" type="password" placeholder="영문 대,소문자, 숫자 조합 8자리 이상" id="pw">
+        <input name="pw" type="password" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="pw">
     </div>
     <br>
 
@@ -364,7 +355,7 @@
     <br>
 
     <div> 닉네임
-        <input name="nickname" type="text" placeholder="영문 대,소문자 6자, 한글 5자" id="nickname-input">
+        <input name="nickname" type="text" placeholder="영문 대,소문자, 한글, 숫자 포함 가능, 3자 이상" id="nickname-input">
         <button type="button" onclick="checkNickname()">중복확인</button>
         <span id="nickname-error" class="error"></span> <!-- 중복 확인 결과 표시 -->
     </div>
@@ -380,6 +371,3 @@
 
 </body>
 </html>
-
-
-

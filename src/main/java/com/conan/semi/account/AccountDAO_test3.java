@@ -73,7 +73,7 @@ public class AccountDAO_test3 {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM account_table_hdh WHERE id = ?";
+        String sql = "select * from account_table_hdh where id = ?";
 
         try {
             con = DBManager.connect();
@@ -109,7 +109,7 @@ public class AccountDAO_test3 {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM account_table_hdh WHERE nickname = ?";
+        String sql = "select * from account_table_hdh where nickname = ?";
 
         try {
             con = DBManager.connect();

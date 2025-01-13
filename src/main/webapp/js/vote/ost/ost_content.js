@@ -13,7 +13,7 @@ $(document).ready(function () {
     // 첫 번째 선택지 처리 (q1, q2, q3, q4, q5, q6, q7, q8)
     quarterFinal.forEach(function (q) {
         $(q.quarterMatch).click(function () {
-            var toSemi = $(this).clone();
+            const toSemi = $(this).clone();
             toSemi.css('border', 'none');
             $(q.quarterWin).empty().append(toSemi);
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
         $(s.sourceClass).click(function () {
             if ($(this).hasClass('disabled')) return; // 클릭을 무시 (비활성화 상태)
 
-            var toFinal = $(this).clone();
+            const toFinal = $(this).clone();
             toFinal.css('margin-bottom','0px');
             toFinal.css('margin-top','0px');
             $(s.targetClass).empty().append(toFinal);
@@ -68,24 +68,22 @@ $(document).ready(function () {
 
     // f1 또는 f2 선택 후 winner에 복사하고 DB에 저장
      $('.f1, .f2').click(function () {
-         var selectedSong = $(this).find('a').text();
-         var finalWinner = $(this).clone();
+         const selectedSong = $(this).find('a').text();
+         const finalWinner = $(this).clone();
          $('.winner').empty().append(finalWinner);
         // 선택된 데이터를 서버로 전송하여 DB에 저장
-        var selectedOption = $(this).hasClass('f1') ? 'f1' : 'f2'; // 선택된 div(f1 or f2)
+        const selectedOption = $(this).hasClass('f1') ? 'f1' : 'f2'; // 선택된 div(f1 or f2)
         console.log(selectedOption);
 
             $.ajax({
                  url: '/winCountC',  // 서버에 데이터를 저장할 URL
                  method: 'POST',
-                 data: { songTitle: selectedSong},
-                 success: function(response) {
-                     console.log("DB 업데이트 성공:", response);
-                 },
-                 error: function(error) {
-                     console.error("DB 업데이트 실패:", error);
-                 }
-              });
+                 data: { songTitle: selectedSong}
+            }).done(function(response) {
+                console.log("DB 업데이트 성공:", response);
+            }).fail(function(error) {
+                console.error("DB 업데이트 실패:", error);
+            });
 
 
             });

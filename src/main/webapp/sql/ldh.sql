@@ -20,3 +20,5 @@ drop table bracket_test;
 drop sequence bracket_test_seq;
 
 delete bracket_test where song_id = 12;
+
+update bracket_test set song_title='Love is Thrill, Shock, Suspense' where song_id=4;

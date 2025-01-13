@@ -9,13 +9,25 @@
 </head>
 <body>
 
+<div id="itemModal" class="modal">
+	<div class="modal-content">
+		<span class="close-button">&times;</span>
+		<h2 class="modal-title"></h2>
+		<div class="modal-description"></div>
+		<div class="modal-buttons">
+			<button id="voteButton">투표하기</button>
+			<button id="exitButton">나가기</button>
+		</div>
+	</div>
+</div>
+
 <div class="contents">
 	<!-- First Round -->
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
 			<c:if test="${status.index < 4}">
-				<div class="match q${status.index + 1}">
+				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-id="${s.song_id}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>
@@ -47,7 +59,7 @@
 		<!-- 그룹 2 (q5, q6, q7, q8) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
 			<c:if test="${status.index >= 4 && status.index <= 8}">
-				<div class="match q${status.index + 1}">
+				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-id="${s.song_id}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>
@@ -55,6 +67,6 @@
 	</div>
 	<div class="winner" style="border: 1px solid black">asd</div>
 </div>
-<script src="js/vote/ost/ost_content.js"></script>
+<script src="js/vote/ost/test.js"></script>
 </body>
 </html>

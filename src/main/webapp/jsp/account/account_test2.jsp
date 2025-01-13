@@ -63,19 +63,24 @@
 
             // AJAX로 서버에 중복 확인 요청
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "checkIDC?id=" + encodeURIComponent(id), true);
+            xhr.open("GET", "CheckIDC?id=" + encodeURIComponent(id), true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var result = xhr.responseText;
                     if (result === "exists") {
+                        // 중복된 아이디일 경우 오류 메시지 표시하고, 입력 필드에 커서를 이동
                         document.getElementById("id-error").innerText = "이미 사용 중인 아이디입니다.";
-                    } else {
+                        document.getElementById("id-input").focus(); // 커서를 아이디 입력 필드로 이동
+                    } else if (result === "available") {
                         document.getElementById("id-error").innerText = "사용 가능한 아이디입니다.";
+                    } else {
+                        document.getElementById("id-error").innerText = "서버 오류, 다시 시도해주세요.";
                     }
                 }
             };
             xhr.send();
         }
+
 
         function checkNickname() {
             var nickname = document.getElementById("nickname-input").value;
@@ -92,9 +97,13 @@
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var result = xhr.responseText;
                     if (result === "exists") {
+                        // 중복된 닉네임일 경우 오류 메시지 표시하고, 입력 필드에 커서를 이동
                         document.getElementById("nickname-error").innerText = "이미 사용 중인 닉네임입니다.";
-                    } else {
+                        document.getElementById("nickname-input").focus(); // 커서를 닉네임 입력 필드로 이동
+                    } else if (result === "available") {
                         document.getElementById("nickname-error").innerText = "사용 가능한 닉네임입니다.";
+                    } else {
+                        document.getElementById("nickname-error").innerText = "서버 오류, 다시 시도해주세요.";
                     }
                 }
             };

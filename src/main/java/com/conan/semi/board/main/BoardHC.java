@@ -1,6 +1,8 @@
 package com.conan.semi.board.main;
 
 
+import com.conan.semi.board.free.BoardFreeDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,9 @@ import java.io.IOException;
 public class BoardHC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- request.setAttribute("content", "board_free/board_free.jsp");
+        BoardFreeDAO.showAllBoardFree(request);
+
+        request.setAttribute("content", "board_free/board_free.jsp");
  request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
     }

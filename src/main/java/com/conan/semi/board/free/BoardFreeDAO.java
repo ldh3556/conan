@@ -26,12 +26,12 @@ public class BoardFreeDAO {
             BoardFreeDTO board = null;
             while (rs.next()) {
                 board = new BoardFreeDTO();
-               board.setB_no(rs.getString(1));
-               board.setB_id(rs.getString(2));
-               board.setB_name(rs.getString(3));
-               board.setB_title(rs.getString(4));
-               board.setB_text(rs.getString(5));
-               board.setB_date(rs.getDate(6));
+                board.setB_no(rs.getString(1));
+                board.setB_id(rs.getString(2));
+                board.setB_name(rs.getString(3));
+                board.setB_title(rs.getString(4));
+                board.setB_text(rs.getString(5));
+                board.setB_date(rs.getDate(6));
 
                 boards.add(board);
             }
@@ -48,5 +48,69 @@ public class BoardFreeDAO {
     }
 
     public static void detailBoardFree(HttpServletRequest request) {
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            String no = request.getParameter("no");
+            String sql = "select * from board_table_test where b_no=?";
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, no);
+            rs = pstmt.executeQuery();
+            BoardFreeDTO board = null;
+            if (rs.next()) {
+                board = new BoardFreeDTO();
+                board.setB_no(rs.getString(1));
+                board.setB_id(rs.getString(2));
+                board.setB_name(rs.getString(3));
+                board.setB_title(rs.getString(4));
+                board.setB_text(rs.getString(5));
+                board.setB_date(rs.getDate(6));
+
+                request.setAttribute("board", board);
+            }
+            System.out.println(board);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(con, pstmt, rs);
+        }
+    }
+
+
+    public static void addBoardFree(HttpServletRequest request) {
+        con = null;
+        PreparedStatement pstmt = null;
+        String sql = "insert into board_table_test values(board_table_test_seq.nextval, ?,?,?,?, sysdate)";
+try {
+    request.setCharacterEncoding("utf-8");
+    String id = request.getParameter("id");
+    String name = request.getParameter("name");
+    String title = request.getParameter("title");
+    String text = request.getParameter("text");
+    con = DBManager.connect();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, id);
+    pstmt.setString(2, name);
+    pstmt.setString(3, title);
+    pstmt.setString(4, text);
+
+    System.out.println(id);
+    System.out.println(name);
+    System.out.println(title);
+    System.out.println(text);
+
+    if (pstmt.executeUpdate() > 0) {
+        System.out.println("업뎃성공");
+    }
+
+}catch (Exception e) {
+    e.printStackTrace();
+}finally {
+    DBManager.close(con, pstmt, null);
+}
+
+
     }
 }

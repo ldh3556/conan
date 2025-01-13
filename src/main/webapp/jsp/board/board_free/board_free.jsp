@@ -12,13 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/BoardFreeDetailC" >
+
 <c:forEach var="b" items="${boards }">
     <div>${b.b_no }</div>
+    <a href="BoardFreeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
     <div>${b.b_title }</div>
-    <div>${b.b_date }</div>
-</c:forEach></a>
+    <div>${b.b_date }</div></a>
+</c:forEach>
 </body>
 </html>

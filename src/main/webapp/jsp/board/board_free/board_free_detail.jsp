@@ -27,8 +27,7 @@
         <div>
             <div class="board-reg-col">Text</div>
             <div class="board-reg-col2">
-                <textarea name="txt" maxlength="4000" disabled="disabled">${board.b_text }</textarea>
-                <%-- 					${review.r_txt } --%>
+                <textarea name="text" maxlength="4000" disabled="disabled">${board.b_text }</textarea>
                 <br> <span id="cntSpan">0</span> / 4000
             </div>
         </div>

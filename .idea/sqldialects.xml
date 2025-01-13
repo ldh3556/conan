@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/src/DB_Account.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/src/DB_Board.sql" dialect="Oracle" />
+=======
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sql/DB_Account.sql" dialect="Oracle" />
+>>>>>>> ac01c00ad35dbf96b31bb56cf61afaad362dd1c5
   </component>
 </project>

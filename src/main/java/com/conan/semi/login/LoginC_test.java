@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/LoginC")
-public class LoginC extends HttpServlet {
+@WebServlet("/LoginC_test")
+public class LoginC_test extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("jsp/login/login.jsp").forward(request, response);
+        request.getRequestDispatcher("jsp/login/login_test.jsp").forward(request, response);
 
     }
 
@@ -20,7 +20,7 @@ public class LoginC extends HttpServlet {
     LoginDAO_test.login(request);
 
     // 어디로?
-
+    request.getRequestDispatcher("jsp/main_test.jsp").forward(request, response);
     }
 
 }

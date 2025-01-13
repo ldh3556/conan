@@ -14,7 +14,7 @@
 <body>
 
 <c:forEach var="b" items="${boards }">
-    <div>${b.b_no }</div>
+    <div>[게시번호 : ${b.b_no }]</div>
     <a href="BoardFreeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
@@ -22,5 +22,7 @@
     <div>${b.b_title }</div>
     <div>${b.b_date }</div></a>
 </c:forEach>
+
+
 </body>
 </html>

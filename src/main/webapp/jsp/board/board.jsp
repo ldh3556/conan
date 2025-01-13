@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="board-container">
-  <div class="board-title"><h1>게시판</h1></div>
+  <div class="board-title"><a href="BoardHC"><h1>게시판</h1></a></div>
   <div><a href="BoardFreeRegC">글쓰기</a></div>
   <div class="board-menu">
     <div> <a href="BoardNoticeC">공지</a></div>

@@ -17,7 +17,7 @@ DBManager.java
 *.class
 /target
 src/main/webapp/META-INF/MANIFEST.MF
-classes/
+Classes/
 # External tool builders
 .externalToolBuilders/
 

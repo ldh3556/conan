@@ -47,7 +47,26 @@
             validateForm();  // 폼 유효성 검사
         }
 
-        // 중복확인 후, 아이디와 닉네임에 대해 유효성 검사를 수행
+        // 아이디 유효성 검사
+        function validateId(id) {
+            const idRegex = /^[a-zA-Z0-9]{6,}$/;  // 영문 대소문자와 숫자 6자 이상
+            return idRegex.test(id);
+        }
+
+        // 비밀번호 유효성 검사
+        function validatePassword(password) {
+            const pwRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;  // 영문 대소문자, 숫자 포함 8자 이상
+            return pwRegex.test(password);
+        }
+
+        // 닉네임 유효성 검사
+        function validateNickname(nickname) {
+            const nicknameEngRegex = /^[a-zA-Z]{7,}$/;  // 영문 대소문자 7자 이상
+            const nicknameKorRegex = /^[가-힣0-9]{5,}$/;  // 한글 또는 숫자 5자 이상
+            return nicknameEngRegex.test(nickname) || nicknameKorRegex.test(nickname);
+        }
+
+        // 아이디 중복 확인
         function checkId() {
             var id = document.getElementById("id-input").value;
 
@@ -57,14 +76,18 @@
                 return;
             }
 
-            // AJAX로 서버에 중복 확인 요청
+            if (!validateId(id)) {
+                document.getElementById("id-error").innerText = "아이디는 영문 대소문자와 숫자 6자 이상이어야 합니다.";
+                isIdValid = false;
+                return;
+            }
+
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "CheckIDC?id=" + encodeURIComponent(id), true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var result = xhr.responseText;
                     if (result === "exists") {
-                        // 아이디가 중복일 경우 오류 메시지 표시
                         document.getElementById("id-error").innerText = "이미 사용 중인 아이디입니다.";
                         isIdValid = false;
                     } else if (result === "available") {
@@ -81,11 +104,18 @@
             xhr.send();
         }
 
+        // 닉네임 중복 확인
         function checkNickname() {
             var nickname = document.getElementById("nickname-input").value;
 
             if (!nickname) {
                 document.getElementById("nickname-error").innerText = "닉네임을 입력해주세요.";
+                isNicknameValid = false;
+                return;
+            }
+
+            if (!validateNickname(nickname)) {
+                document.getElementById("nickname-error").innerText = "닉네임은 영문 대소문자 7자 이상 또는 한글 5자 이상이어야 합니다.";
                 isNicknameValid = false;
                 return;
             }
@@ -144,20 +174,20 @@
 
             // 아이디 확인 (중복확인 완료)
             var id = document.querySelector('[name="id"]').value;
-            if (!id || !isIdValid) {
+            if (!id || !isIdValid || !validateId(id)) {
                 isValid = false;
             }
 
             // 비밀번호 확인
             var pw = document.querySelector('[name="pw"]').value;
             var pwCheck = document.querySelector('[name="pw_check"]').value;
-            if (!pw || pw !== pwCheck) {
+            if (!pw || !validatePassword(pw) || pw !== pwCheck) {
                 isValid = false;
             }
 
             // 닉네임 확인 (중복확인 완료)
             var nickname = document.querySelector('[name="nickname"]').value;
-            if (!nickname || !isNicknameValid) {
+            if (!nickname || !isNicknameValid || !validateNickname(nickname)) {
                 isValid = false;
             }
 
@@ -200,7 +230,28 @@
                 }
             }
         }
+
+        // 비밀번호 확인을 실시간으로 비교하는 함수
+        function validatePasswordMatch() {
+            var password = document.querySelector('[name="pw"]').value;
+            var passwordCheck = document.querySelector('[name="pw_check"]').value;
+            var passwordMatchMessage = document.getElementById("password-match-message");
+            var registerButton = document.querySelector('button[type="submit"]');
+
+            if (password !== passwordCheck) {
+                passwordMatchMessage.innerText = "비밀번호가 일치하지 않습니다.";
+                passwordMatchMessage.style.color = "red";
+                passwordMatchMessage.style.fontSize = "12px";
+                registerButton.disabled = true; // 가입 버튼 비활성화
+            } else {
+                passwordMatchMessage.innerText = "비밀번호가 일치합니다.";
+                passwordMatchMessage.style.color = "green";
+                passwordMatchMessage.style.fontSize = "12px";
+                registerButton.disabled = false; // 가입 버튼 활성화
+            }
+        }
     </script>
+
 
     <style>
         .error {
@@ -256,19 +307,20 @@
     <br>
 
     <div> 아이디
-        <input name="id" type="text" placeholder="영문 대,소문자 6자리 이상" id="id-input">
+        <input name="id" type="text" placeholder="영문 대,소문자,숫자 조합 6자리 이상" id="id-input">
         <button type="button" onclick="checkId()">중복확인</button>
         <span id="id-error" class="error"></span> <!-- 중복 확인 결과 표시 -->
     </div>
     <br>
 
     <div> 비밀번호
-        <input name="pw" type="password" placeholder="영문 대,소문자 8자리 이상" id="pw">
+        <input name="pw" type="password" placeholder="영문 대,소문자, 숫자 조합 8자리 이상" id="pw">
     </div>
     <br>
 
     <div> 비밀번호 확인
-        <input name="pw_check" type="password" placeholder="비밀번호를 확인해주세요">
+        <input name="pw_check" type="password" placeholder="비밀번호를 확인해주세요" oninput="validatePasswordMatch()">
+        <span id="password-match-message"></span><br>
     </div>
     <br>
 

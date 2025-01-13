@@ -18,6 +18,7 @@
     <a href="BoardFreeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
+    <div>${b.b_begin }</div>
     <div>${b.b_title }</div>
     <div>${b.b_date }</div></a>
 </c:forEach>

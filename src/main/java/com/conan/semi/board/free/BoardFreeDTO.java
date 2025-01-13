@@ -6,6 +6,7 @@ public class BoardFreeDTO {
     private String b_no;
     private String b_id;
     private String b_name;
+    private String b_begin;
     private String b_title;
     private String b_text;
     private Date b_date;
@@ -17,6 +18,7 @@ public class BoardFreeDTO {
         this.b_no = b_no;
         this.b_id = b_id;
         this.b_name = b_name;
+        this.b_begin = b_begin;
         this.b_title = b_title;
         this.b_text = b_text;
         this.b_date = b_date;
@@ -45,7 +47,12 @@ public class BoardFreeDTO {
     public void setB_name(String b_name) {
         this.b_name = b_name;
     }
-
+public String getB_begin() {
+        return b_begin;
+}
+public void setB_begin(String b_begin) {
+        this.b_begin = b_begin;
+}
     public String getB_title() {
         return b_title;
     }
@@ -76,6 +83,7 @@ public class BoardFreeDTO {
                 "b_no='" + b_no + '\'' +
                 ", b_id='" + b_id + '\'' +
                 ", b_name='" + b_name + '\'' +
+                ", b_begin='" + b_begin + '\'' +
                 ", b_title='" + b_title + '\'' +
                 ", b_text='" + b_text + '\'' +
                 ", b_date=" + b_date +

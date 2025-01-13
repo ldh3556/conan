@@ -12,24 +12,31 @@
     <title>Title</title>
 </head>
 <body>
-
+<form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
 <div class="board-wrap">
     <div>
         <div>
             <div>작성인 : ${board.b_name }</div>
-            <div>${board.b_begin }</div>
+            <div>
+                말머리 선택 : <select name="begin">
+                <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
+                <option value="[이벤트 후기]">[이벤트 후기]</option>
+                <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
+                <option value="[건의하기]">[건의하기]</option>
+            </select>
+            </div>
             <div class="board-reg-col">Title</div>
             <div class="board-reg-col2">
-                <input name="title" value="${board.b_title }" disabled="disabled">
+                <input name="title" value="${board.b_title }">
                 <%-- 					${review.r_title } --%>
             </div>
         </div>
         <div>
             <div class="board-reg-col">Text</div>
             <div class="board-reg-col2">
-                <textarea name="txt" maxlength="4000" disabled="disabled">${board.b_text }</textarea>
+                <textarea name="txt" maxlength="1000">${board.b_text }</textarea>
                 <%-- 					${review.r_txt } --%>
-                <br> <span id="cntSpan">0</span> / 4000
+                <br> <span id="cntSpan">0</span> / 1000
             </div>
         </div>
         <div>
@@ -39,18 +46,17 @@
             </div>
         </div>
         <div style="position: relative; bottom: -50px;">
-            <button class="board-reg-btn" onclick="location.href='BoardFreeUpdateC?no=${board.b_no}'">update</button>
-            <button class="board-reg-btn" onclick="deleteBoard('${board.b_no}')">delete</button>
-            <button class="board-reg-btn">list</button>
+            <button class="board-reg-btn">수정완료</button>
+            <button type="button" class="board-reg-btn" onclick="cancelUpdatBoard('${board.b_no}')">취소</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC">list</button>
         </div>
     </div>
 </div>
-
+</form>
 <script type="text/javascript">
-    function deleteBoard(no) {
-        if (confirm('정말로 삭제하시겠습니까?')) {
-            alert('삭제 되었습니다.')
-            location.href = 'BoardFreeDelC?no=' + no;
+    function cancelUpdatBoard(no) {
+        if (confirm('수정을 취소하시겠습니까?')) {
+            location.href = "jsp/board/board_free/board_free_detail.jsp"
         }
     }
 

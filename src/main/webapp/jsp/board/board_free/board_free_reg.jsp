@@ -20,12 +20,11 @@
         name <input name="name">
     </div>
     <div>
-        말머리 선택 : <select>
-            <option value="fanpic">[나만의 팬픽 만들기]</option>
-            <option value="event">[이벤트 후기]</option>
-            <option value="goods">[굿즈 리뷰]</option>
-            <option value="suggest">[건의하기]</option>
-
+        말머리 선택 : <select name="begin">
+            <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
+            <option value="[이벤트 후기]">[이벤트 후기]</option>
+            <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
+            <option value="[건의하기]">[건의하기]</option>
         </select>
     </div>
     <div>
@@ -33,32 +32,30 @@
     </div>
     <div>
         text
-        <textarea name="text" maxlength="1000"></textarea>
-        <br> <span id="cntSpan">0</span> / 1000
+        <textarea name="text" maxlength="4000"></textarea>
+        <br> <span id="cntSpan">0</span> / 4000
     </div>
     <div>
         <button onclick="regBoard()">등록</button>
     </div><div>
-        <button onclick="cancelregBoard()">취소</button>
+        <button type="button" onclick="cancelregBoard()">취소</button>
     </div>
 </form>
 <script type="text/javascript">
-
+    function regBoard(){
+        if (confirm("이대로 등록 하시겠습니까?")){
+            alert("등록되었습니다")}
+    }
+    function cancelregBoard(){
+        if (confirm("등록을 취소 하시겠습니까?")){
+            alert("취소되었습니다")}
+    }
     const textarea = document.querySelector("textarea[name='text']");
     const cntSpan = document.querySelector("#cntSpan");
     textarea.addEventListener('input', ()=>{
         const len = textarea.value.length;
         cntSpan.innerText = len;
     });
-
-    function regBoard(){
-        confirm("이대로 등록 하시겠습니까?")
-        alert("등록되었습니다")
-    }
-    function cancelregBoard(){
-        confirm("등록을 취소 하시겠습니까?")
-        alert("최소되었습니다")
-    }
 </script>
 </body>
 </html>

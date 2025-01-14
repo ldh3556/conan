@@ -13,11 +13,8 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
-<<<<<<< HEAD
-=======
           <root url="file://$MODULE_DIR$/target/generated-sources/annotations" />
           <root url="file://$MODULE_DIR$/src" />
->>>>>>> ac01c00ad35dbf96b31bb56cf61afaad362dd1c5
         </sourceRoots>
       </configuration>
     </facet>

@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Conan Character</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Detail</title>
+    <style>
+        .character-detail {
+            text-align: center;
+            padding: 16px;
+        }
+        .character-detail img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
+<div class="character-detail" id="characterDetail"></div>
+<script src="data.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const charId = params.get("id");
 
+    const character = characters.find(char => char.id == charId);
+
+    const characterDetail = document.getElementById("characterDetail");
+    if (character) {
+        characterDetail.innerHTML = `
+        <img src="${character.image}" alt="${character.name}">
+        <h2>${character.name}</h2>
+        <p>${character.description}</p>
+      `;
+    } else {
+        characterDetail.innerHTML = "<p>Character not found.</p>";
+    }
+</script>
 </body>
 </html>

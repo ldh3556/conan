@@ -1,0 +1,381 @@
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.noto-sans-kr-<uniquifier> {
+                   font-family: "Noto Sans KR", serif;
+                   font-optical-sizing: auto;
+                   font-weight: <weight>;
+                   font-style: normal;
+               }
+
+.wrapper {
+/*가장 큰 div*/
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background: #FFFFFF;
+}
+
+.Sec01_L {
+    /*wrapper 내의 첫번째 sec의 좌측*/
+    position: absolute;
+    width: 40%;
+    height: 646px;
+    left: 0px;
+    top: 0px;
+}
+
+
+.conan_bg {
+    /*Sec01_L 내의 배경 이미지 사이즈*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    background: url(/img/login/conan_login_bg.png), #FFFFFF;
+}
+
+.conan_logo {
+/*로고를 감싸는 div*/
+    position: absolute;
+    left: 3.12%;
+    right: 87.73%;
+    top: 5.29%;
+    bottom: 88.89%;
+}
+
+
+.conan_logo_img {
+/*명탐정 로고 - index.jsp연결*/
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: url(/img/login/logoimg.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.Sec01_R {
+/*background size 조정시 문의*/
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 512px;
+    top: 0px;
+
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25);
+    background:url(/img/login/Sec01_R_bg.png);
+}
+
+/* bg */
+
+position: absolute;
+width: 768px;
+height: 646px;
+left: 512px;
+top: 0px;
+
+.login_text {
+/*sec01_R 최상단의 login 텍스트*/
+    position: absolute;
+    width: 131px;
+    height: 54px;
+    left: 574px;
+    top: 89px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+
+    color: #FFFFFF;
+}
+
+
+    .login_box{
+        /*로그인 input과 button을 감싸는 div*/
+    position: absolute;
+    width: 635px;
+    height: 368px;
+    left: 579px;
+    top: 232px;
+
+        background: #001A6D;
+        box-shadow: 0px 0px 20px #000000;
+        border-radius: 20px;
+}
+
+    .login_id_input_wrap {
+
+        position: absolute;
+        width: 467px;
+        height: 46px;
+        left: 666px;
+        top: 300px;
+
+    }
+
+    .login_input {
+        /*input placeholeder = "ID를 입력하세요"*/
+        position: absolute;
+        width: 419px;
+        height: 46px;
+        left: 714px;
+        top: 300px;
+
+        background: #FFFFFF;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 20px;
+
+        color: #393939;
+
+    }
+    .id_text {
+
+        position: absolute;
+        width: 24px;
+        height: 27px;
+        left: 666px;
+        top: 311px;
+
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 27px;
+
+        color: #FFFFFF;
+    }
+
+
+.login_pw_input_wrap{
+    /* pw input을 감싸는 div */
+
+    position: absolute;
+    width: 474px;
+    height: 46px;
+    left: 659px;
+    top: 368px;
+}
+
+    .login_pw_input {
+
+        position: absolute;
+        width: 419px;
+        height: 46px;
+        left: 714px;
+        top: 368px;
+
+        background: #FFFFFF;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+     pw_text {
+         /*input 옆의 pw text*/
+         position: absolute;
+         width: 34px;
+         height: 27px;
+         left: 659px;
+         top: 379px;
+
+         font-family: 'Noto Sans';
+         font-style: normal;
+         font-weight: 900;
+         font-size: 20px;
+         line-height: 27px;
+
+         color: #FFFFFF;
+     }
+
+
+    .Loginpage_Login_btn {
+
+        position: absolute;
+        width: 474px;
+        height: 62px;
+        left: 659px;
+        top: 436px;
+        text-align: center;
+        font-size: 40pt;
+        color: #393939;
+        filter: drop-shadow(0px 0px 10px #000000);
+        border-raidus: 20px;
+    }
+
+
+
+    /* text */
+/*회원가입(상단) / id - pw(하단) 정렬칸 묶음*/
+    position: absolute;
+    width: 243px;
+    height: 42px;
+    left: 584px;
+    top: 176px;
+
+
+
+    for_find_id_pw{
+/*id pw 찾기 묶음 div*/
+    position: absolute;
+    left: 45.62%;
+    right: 40.39%;
+    top: 26.46%;
+    bottom: 71.16%;
+
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+
+        color: #FFFFFF;
+}
+
+    /* For_Reg */
+    /*아이디가 아직 없냐는 문구/ 회원가입 문구*/
+    position: absolute;
+    left: 45.62%;
+    right: 35.39%;
+    top: 23.28%;
+    bottom: 74.07%;
+
+
+
+    /* loginpage_reg_a_href */
+    position: absolute;
+    left: 60.23%;
+    right: 35.39%;
+    top: 23.28%;
+    bottom: 74.34%;
+
+
+
+    /* 회원가입 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+
+
+    /* 회원가입 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: -11.11%;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+
+
+    /* 아직 아이디가 없으신가요? */
+
+    position: absolute;
+    left: 45.62%;
+    right: 41.33%;
+    top: 23.28%;
+    bottom: 74.07%;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+
+
+
+
+
+    /*div footer*/
+    position: absolute;
+    width: 1280px;
+    height: 110px;
+    left: 0px;
+    top: 646px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.25);
+
+
+    /* 이용약관 */
+
+    position: absolute;
+    width: 74px;
+    height: 24px;
+    left: 472px;
+    top: 689px;
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #393939;
+
+
+
+    /* 개인정보처리방침 */
+
+    position: absolute;
+    width: 148px;
+    height: 24px;
+    left: 566px;
+    top: 689px;
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #393939;
+
+
+
+    /* 고객센터 */
+
+    position: absolute;
+    width: 74px;
+    height: 24px;
+    left: 734px;
+    top: 689px;
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #393939;
+
+
+

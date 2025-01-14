@@ -9,10 +9,8 @@ import java.io.IOException;
 
 @WebServlet("/LoginC_test")
 public class LoginC_test extends HttpServlet {
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("jsp/login/login_test.jsp").forward(request, response);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,5 +20,4 @@ public class LoginC_test extends HttpServlet {
     // 어디로?
     request.getRequestDispatcher("jsp/main_test.jsp").forward(request, response);
     }
-
 }

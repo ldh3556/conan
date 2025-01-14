@@ -210,7 +210,11 @@ $(document).ready(function () {
 
     let selectedSemi2;
     let selectedSemiDiv;
+    let aaa;
+    // 쌤이 해주신거는 selectedSemi2인데 내가 aaa로 바꿔봄
     $('.s1, .s2, .s3, .s4').click(function (e) {
+        aaa = $(this).attr('class').match(/s\d/)[0];
+        console.log('aaa : ' + aaa);
         $('#voteButton').addClass('sVoteButton');
         // 클릭된 부모 요소 (s1, s2, s3, s4)
         const index = $(this).attr('class').charAt($(this).attr('class').length - 1);  // 클래스에서 마지막 숫자 추출
@@ -218,7 +222,8 @@ $(document).ready(function () {
         selectedSemiDiv = $(this).clone();
         selectedSemi2 = "." + selectedSemi2;
         console.log('--------')
-        console.log(selectedSemi2)
+        aaa = '.' + aaa;
+        console.log(aaa)
         // quarterFinal 배열을 사용해 클릭된 요소에 맞는 q 요소 찾아 처리
         const selectedMatch = quarterFinal[index - 1];  // 배열의 인덱스는 0부터 시작하므로 1을 빼줍니다.
 
@@ -260,8 +265,8 @@ $(document).ready(function () {
 
                 console.log(matches);
 
-                if(matches.includes(selectedSemi2)){
-                    console.log(`매치가 일치: ${matches} -> 선택된 항목: ${selectedSemi2}`);
+                if(matches.includes(aaa)){
+                    console.log(`매치가 일치: ${matches} -> 선택된 항목: ${aaa}`);
                     toFinal.css('border','none');
                     toFinal.removeClass(function (index, className) {
                         const match = className.match(/\bs\d+/); // "s"로 시작하는 클래스 하나를 찾음
@@ -274,7 +279,7 @@ $(document).ready(function () {
                     }
                     matches.forEach((match) => {
                         $(match).addClass('disabled');
-                        if (match !== `${selectedSemi2}`){
+                        if (match !== `${aaa}`){
                             $(match).addClass('defeated');
                         }
                     });

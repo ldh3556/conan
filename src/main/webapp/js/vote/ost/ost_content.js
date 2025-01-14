@@ -260,8 +260,8 @@ $(document).ready(function () {
 
             console.log(matches);
 
-            if(matches.includes(id)){
-                console.log(`매치가 일치: ${matches} -> 선택된 항목: ${id}`);
+            if(matches.includes()){
+                console.log(`매치가 일치: ${matches} -> 선택된 항목: ${}`);
                 toFinal.css('border','none');
                 const winContainer = $(s.semiWin);
                 if (winContainer.length > 0){
@@ -270,7 +270,7 @@ $(document).ready(function () {
                 }
                 matches.forEach((match) => {
                     $(match).addClass('disabled');
-                    if (match !== `${id}`){
+                    if (match !== `${}`){
                         $(match).addClass('defeated');
                     }
                 });

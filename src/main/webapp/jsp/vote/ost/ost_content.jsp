@@ -99,6 +99,6 @@
 	</div>
 	<div class="winner" style="border: 1px solid black">asd</div>
 </div>
-<script src="js/vote/ost/ost_content.js"></script>
+<script src="js/vote/ost/sensei.js"></script>
 </body>
 </html>

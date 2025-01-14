@@ -165,26 +165,21 @@ $(document).ready(function () {
         let id = selectedElement.attr('class').match(/q\d/)[0];
         const title = selectedElement.data('title');
         toSemi = selectedElement.clone();
-        console.log('toSemi : ',toSemi);
-        console.log(id);
         id = "." + id;
 
 
         // 배열 순회
         quarterFinal.forEach((q ) => {
             const matches = q.quarterMatch;  // 이미 ['.q1', '.q2'] 형태로 되어 있다고 가정
-            // console.log(matches);
 
             // 선택된 항목이 해당 그룹에 속하는지 체크
             if (matches.includes(id)) {
-                console.log(`매치가 일치: ${matches} -> 선택된 항목: ${id}`);
                 // 복제된 요소 스타일 설정
                 toSemi.css('border', 'none');
                 // 승자 컨테이너를 동적으로 결정
                 const winContainer = $(q.quarterWin);
                 if (winContainer.length > 0) {
                     winContainer.empty().append(toSemi);
-                    console.log(`복제된 요소가 ${q.quarterWin}에 추가되었습니다.`);
                 }
                 // 해당 그룹의 모든 항목에 disabled 추가, 선택되지 않은 항목은 defeated 추가
                 matches.forEach((match) => {
@@ -213,27 +208,32 @@ $(document).ready(function () {
         $("#exitButton").click();
     });
 
-
-    $('.s1, .s2, .s3, .s4').click(function () {
+    let selectedSemi2;
+    let selectedSemiDiv;
+    $('.s1, .s2, .s3, .s4').click(function (e) {
         $('#voteButton').addClass('sVoteButton');
         // 클릭된 부모 요소 (s1, s2, s3, s4)
         const index = $(this).attr('class').charAt($(this).attr('class').length - 1);  // 클래스에서 마지막 숫자 추출
-
+        selectedSemi2 =  e.target.getAttribute("class").match(/s\d/)[0];
+        selectedSemiDiv = $(this).clone();
+        selectedSemi2 = "." + selectedSemi2;
+        console.log('--------')
+        console.log(selectedSemi2)
         // quarterFinal 배열을 사용해 클릭된 요소에 맞는 q 요소 찾아 처리
         const selectedMatch = quarterFinal[index - 1];  // 배열의 인덱스는 0부터 시작하므로 1을 빼줍니다.
 
         // 해당하는 q1~q8 클래스 요소 동적으로 선택
-        const selectedElement = $(this).find(selectedMatch.quarterMatch.join(', '));  // q1~q8을 한 번에 선택
+        const selectedSemi = $(this).find(selectedMatch.quarterMatch.join(', '));  // q1~q8을 한 번에 선택
 
-        console.log(selectedElement);  // 선택된 요소 확인
+        // console.log(selectedElement);  // 선택된 요소 확인
 
         const songTitle = selectedElement.data('title');  // data-title 속성으로 곡 제목 가져오기
         const songId = selectedElement.data('id');  // data-id 속성으로 곡 ID 가져오기
 
         const songDetail = songDetails[`q${songId}`];  // songDetails에서 해당 곡의 내용을 찾기
-        console.log(songTitle);
-        console.log(songId);
-        console.log(songDetail);
+        // console.log(songTitle);
+        // console.log(songId);
+        // console.log(songDetail);
         if (songDetail) {
             modalTitle.text(songDetail.title); // 제목 설정
             modalDescription.html(songDetail.description); // 상세 HTML 설정
@@ -244,48 +244,52 @@ $(document).ready(function () {
 
 
 
-    $(document).on('click', '#voteButton.sVoteButton',function () {
-        let id = selectedElement.attr('class').match(/q\d/)[0];
-        console.log(id);
-        let title = selectedElement.data('title');
-        console.log(title);
-        toFinal = selectedElement.clone();
-        console.log(toFinal);
-        console.log(songId);
-        id = '.' + id;
-        console.log(id);
+        $(document).on('click', '#voteButton.sVoteButton',function () {
+            // let id = selectedElement.attr('class').match(/q\d/)[0];
+            // console.log(id);
+            let title = selectedElement.data('title');
+            console.log(title);
+            toFinal = selectedSemiDiv.clone();
+            console.log(toFinal);
+            console.log(songId);
+            // id = '.' + id;
+            // console.log(id);
 
-        semiFinal.forEach((s)=>{
-            const matches = s.semiMatch;
+            semiFinal.forEach((s)=>{
+                const matches = s.semiMatch;
 
-            console.log(matches);
+                console.log(matches);
 
-            if(matches.includes(id)){
-                console.log(`매치가 일치: ${matches} -> 선택된 항목: ${id}`);
-                toFinal.css('border','none');
-                const winContainer = $(s.semiWin);
-                if (winContainer.length > 0){
-                    winContainer.empty().append(toFinal);
-                    console.log(`복제된 요소가 ${s.semiWin}에 추가되었습니다`);
-                }
-                matches.forEach((match) => {
-                    $(match).addClass('disabled');
-                    if (match !== `${id}`){
-                        $(match).addClass('defeated');
+                if(matches.includes(selectedSemi2)){
+                    console.log(`매치가 일치: ${matches} -> 선택된 항목: ${selectedSemi2}`);
+                    toFinal.css('border','none');
+                    toFinal.removeClass(function (index, className) {
+                        const match = className.match(/\bs\d+/); // "s"로 시작하는 클래스 하나를 찾음
+                        return match ? match[0] : '';           // 찾은 클래스 이름을 반환하여 제거
+                    });
+                    const winContainer = $(s.semiWin);
+                    if (winContainer.length > 0){
+                        winContainer.empty().append(toFinal);
+                        console.log(`복제된 요소가 ${s.semiWin}에 추가되었습니다`);
                     }
-                });
-                toFinal.removeClass('defeated');
-                s.isSelected = true;
-            }
-            if (semiFinal.every(s => s.isSelected)){
-                $('.f1, .f2').removeClass('disabled');
-                $('#voteButton').removeClass('sVoteButton');
-            }
-            $(selectedElement).css('background-color','E8F9FF');
-            $('#exitButton').click();
-        });
+                    matches.forEach((match) => {
+                        $(match).addClass('disabled');
+                        if (match !== `${selectedSemi2}`){
+                            $(match).addClass('defeated');
+                        }
+                    });
+                    toFinal.removeClass('defeated');
+                    s.isSelected = true;
+                }
+                if (semiFinal.every(s => s.isSelected)){
+                    $('.f1, .f2').removeClass('disabled');
+                    $('#voteButton').removeClass('sVoteButton');
+                }
+                $(selectedElement).css('background-color','E8F9FF');
+                $('#exitButton').click();
+            });
 
-    });
+        });
 
 
 

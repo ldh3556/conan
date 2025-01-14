@@ -16,30 +16,36 @@ public class LoginDAO_test {
     System.out.println(pw);
 
         Connection con = null;
-        PreparedStatement ps = null;
+        PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        String sql = "select * from account_table_hdh where id = ? and pw = ?";
+        String sql = "select * from account_table_hdh where id = ?";
 
         try {
             con = DBManager.connect();
-            ps.setString(1, id);
-            ps.setString(2, pw);
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            if(rs.next()) {
-                request.getSession().setAttribute("id", id);
-                request.getSession().setAttribute("pw", pw);
-            }
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
 
+            // db tbl 과 비교
+            rs = pstmt.executeQuery();
+
+            String msg = null;
+            if (rs.next()) {
+                String dbPw = rs.getString(8);
+                if (pw.equals(dbPw)) {
+                    msg = "로그인 성공";
+                } else {
+                    msg = "비밀번호 오류";
+                }
+            } else {
+                msg = "존재하지 않는 id";
+            }
+            request.setAttribute("result", msg);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            DBManager.close(con, ps, rs);
+            DBManager.close(con, pstmt, rs);
         }
-
-
-
-
     }
+
 }

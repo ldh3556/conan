@@ -19,7 +19,7 @@
     <div> 이름 <input name="name" type="text" placeholder="이름을 입력하세요"></div> <br>
     <div> E-mail <input name="e_mail" type="text" placeholder="example@gmail.com"> </div> <br>
     <div> <button> FIND ID </button>
-    <button type="button" class="back-btn" onclick="location.href='jsp/main_test.jsp'">메인으로</button>
+    <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
     </div>
 </form>
 

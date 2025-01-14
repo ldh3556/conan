@@ -117,7 +117,7 @@
 
   <div>
     <button> REGISTER </button>
-    <button type="button" class="back-btn" onclick="location.href='jsp/main_test.jsp'">메인으로</button>
+    <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
   </div>
 </form>
 

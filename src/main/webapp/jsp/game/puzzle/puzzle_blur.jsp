@@ -19,57 +19,19 @@
             box-sizing: border-box;
         }
 
-        /* 1번째 줄 (눈과 코) */
-        .top-row {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
         /* 2번째 줄 (입) */
-        .bottom-row {
+        .row {
             width: 100%;
+            display: flex;
+            justify-content: center; /* 사진을 가로로 중앙 정렬 */
         }
 
-        /* 공통 스타일: 눈, 코, 입 */
-        .eye, .nose, .mouth {
-            background-image: url('/img/game/puzzle/test.webp'); /* 이미지 경로 */
+        .pic {
+            width: 800px;
+            height: 400px;
+            background-image: url('/img/game/puzzle/conan_blur.png'); /* 이미지 경로 */
             background-size: cover; /* 이미지가 div 크기에 맞게 커지도록 설정 */
             background-position: center; /* 이미지가 div 중심에 맞춰지도록 설정 */
-        }
-
-        /* 왼쪽 눈 */
-        .left-eye {
-            width: 331px; /* 크기 명시적으로 설정 */
-            height: 150px; /* 크기 명시적으로 설정 */
-            background-size: 300%;  /* 이미지를 150% 크기로 확대 */
-            background-repeat: no-repeat;
-            background-position: -150px -350px; /* 왼쪽 눈 위치 */
-        }
-
-        /* 코 */
-        .nose {
-            width: 331px; /* 크기 명시적으로 설정 */
-            height: 150px; /* 크기 명시적으로 설정 */
-            background-size: 400%;  /* 이미지를 150% 크기로 확대 */
-            background-repeat: no-repeat;
-            background-position: -500px -650px; /* 코 위치 */
-        }
-
-        /* 오른쪽 눈 */
-        .right-eye {
-            width: 331px; /* 크기 명시적으로 설정 */
-            height: 150px; /* 크기 명시적으로 설정 */
-            background-size: 300%;  /* 이미지를 150% 크기로 확대 */
-            background-repeat: no-repeat;
-            background-position: -500px -350px; /* 오른쪽 눈 위치 */
-        }
-
-        /* 입 */
-        .mouth {
-            width: 100%; /* 부모 div의 너비에 맞춰 */
-            height: 150px; /* 입 크기 고정 */
-            background-position: 0 -605px; /* 입 위치 */
         }
 
         /* 결과 표시 */
@@ -99,16 +61,10 @@
 </head>
 <body>
 <div class="quiz-container">
-    <!-- 1번째 줄 (눈과 코) -->
-    <div class="top-row">
-        <div class="eye left-eye" id="left-eye"></div>
-        <div class="nose" id="nose"></div>
-        <div class="eye right-eye" id="right-eye"></div>
-    </div>
 
     <!-- 2번째 줄 (입) -->
-    <div class="bottom-row">
-        <div class="mouth" id="mouth"></div>
+    <div class="row">
+        <div class="pic"></div>
     </div>
 
     <!-- 4지선다 버튼 -->

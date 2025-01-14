@@ -24,6 +24,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 500px; /* 전체 높이 고정 */
+  margin: 40px;
 }
 
 .match {

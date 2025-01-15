@@ -10,18 +10,17 @@ import java.io.IOException;
 @WebServlet("/AccountC")
 public class AccountC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 어디로?
+        request.getRequestDispatcher("jsp/account/account.jsp").forward(request, response);
+        System.out.println("AccountC_test(GET)에서 등록 완료!");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 무슨 일? -> 계정 생성
+        request.setCharacterEncoding("utf-8");
+        // 계정 생성
         AccountDAO.regUser(request);
-
-        // 아이디나 닉네임이 중복된 경우, JSP로 포워딩하여 오류 메시지 표시
-        if (request.getAttribute("idExists") != null || request.getAttribute("nicknameExists") != null) {
-            request.getRequestDispatcher("jsp/account/account.jsp").forward(request, response);
-        } else {
-            // 계정이 성공적으로 생성되었을 때
-            response.sendRedirect("jsp/login/login.jsp");  // 예: 로그인 페이지로 리디렉션
-        }
+        System.out.println("AccountC(POST)에서 등록 완료!");
+        // 어디로?
+        request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
     }
 }

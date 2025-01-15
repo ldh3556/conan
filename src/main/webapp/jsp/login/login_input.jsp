@@ -13,14 +13,14 @@
 <body>
 
 <h1> LOGIN </h1>
-아직 아이디가 없으신가요?  | <a href="/AccountC_test"> 회원가입 </a> <br>
+아직 아이디가 없으신가요?  | <a href="/AccountC"> 회원가입 </a> <br>
 <a href="/Find_IDC"> 아이디 찾기 </a> | <a href="/Find_PWC"> 비밀번호 찾기 </a> <hr>
 
-<form action="LoginC_test" method="post">
+<form action="LoginC" method="post">
     <div> ID <input name="id" type="text" placeholder="ID를 입력하세요"></div> <br>
     <div> PW <input name="pw" type="password" placeholder="PW를 입력하세요"> </div> <br>
     <div> <button> LOGIN </button>
-    <button type="button" class="back-btn" onclick="location.href='jsp/main_test.jsp'">메인으로</button>
+    <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
     </div>
 </form>
 

@@ -87,7 +87,7 @@
     <div> 성별 <label><input name="gender" type="radio" value="남" checked="checked"> 남 </label> <label><input name="gender" type="radio" value="여"> 여 </label> </div> <br>
     <div> E-mail <input name="e_mail" type="text" placeholder="example@gmail.com"> </div> <br>
     <div> <button> FIND PW </button>
-    <button type="button" class="back-btn" onclick="location.href='jsp/main_test.jsp'">메인으로</button>
+    <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
     </div>
 </form>
 

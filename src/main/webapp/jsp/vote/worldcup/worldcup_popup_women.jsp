@@ -33,6 +33,7 @@
         var currentMatch = 0; // 현재 진행 중인 경기
         var sImages = []; // 선택한 이미지 저장 배열
         var winnerImage = "우승자"; // 우승자 이미지
+        var clickCount = 0; // 클릭 횟수를 세는 변수
 
         // 이미지를 랜덤으로 섞기
         names.sort(function(a, b) {
@@ -53,6 +54,12 @@
         function change(n) {
             sImages[currentMatch] = names[currentMatch * 2 + n]; // 선택한 이미지 저장
             currentMatch++; // 경기 진행
+            clickCount++; // 클릭 횟수 증가
+
+            // 15번 클릭 후 "당신의 이상형" 표시
+            if (clickCount >= 15) {
+                document.getElementById('round').innerHTML = "당신의 이상형";
+            }
 
             // 경기가 종료되면 라운드 전환
             if (currentMatch >= matches) {
@@ -79,9 +86,6 @@
                         });
                         showImg(currentMatch);  // 새 이미지를 표시
                     }
-                } else {
-                    // 모든 라운드가 끝나면 "당신의 이상형" 표시
-                    document.getElementById('cal').innerHTML = "당신의 이상형";
                 }
             } else {
                 showImg(currentMatch);  // 아직 경기 진행 중
@@ -104,50 +108,53 @@
     </div>
     <br>
 
-    <!-- 이미지 클릭 시 효과음 재생 + 이미지 표시 -->
+    <!-- 이미지 클릭 시 이미지 표시 -->
     <figure class="hover01" id="hover01">
         <div class="image-container">
-            <img id="image1" onclick="change(0); play();" />
+            <img id="image1" onclick="change(0);" />
             <p id="name1"></p> <!-- 이미지 밑에 이름 표시 -->
         </div>
         <div class="image-container">
-            <img id="image2" onclick="change(1); play();" />
+            <img id="image2" onclick="change(1);" />
             <p id="name2"></p> <!-- 이미지 밑에 이름 표시 -->
         </div>
     </figure>
 
     <!-- 우승자 표시 -->
     <div class="winner-container" id="winnerContainer" style="display: none;">
-        <p class="winner-text">당신의 이상형</p>
         <img id="winnerImage" />
         <p id="winnerName"></p> <!-- 우승자의 이름 표시 -->
     </div>
 </div>
-</body>
+
+<!-- 버튼들을 항상 고정된 위치에 배치 -->
+<div class="button-container">
+    <button id="restartBtn" onclick="restartGame()">다시하기</button>
+    <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
+</div>
 
 <style>
     .title-container {
-        position: relative;  /* 절대 위치를 사용하지 않도록 수정 */
+        position: relative;
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
         width: 1000px;
-        height: 120px;
-        /*background: skyblue;*/
+        height: auto;
         border-radius: 50px;
         box-shadow: 5px 10px 5px #ccc;
         margin-bottom: 50px;
-        padding-top: 20px; /* 제목과 글자를 조금 더 아래로 내리기 */
+        padding-top: 20px;
     }
 
     .image-container {
-        display: inline-block;  /* 이미지들이 가로로 배치되도록 함 */
-        margin-right: 20px;  /* 이미지들 사이에 간격 추가 */
+        display: inline-block;
+        margin-right: 20px;
     }
 
     img {
-        width: 490px;  /* 500px에서 10px을 뺀 크기 */
-        height: 490px;  /* 비율 맞추기 위해 동일하게 크기 설정 */
+        width: 490px;
+        height: 490px;
         cursor: pointer;
         margin-top: 10px;
     }
@@ -157,21 +164,14 @@
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        width: 490px; /* 이미지 크기와 맞춤 */
-        height: 490px; /* 이미지 크기와 맞춤 */
-        top: 10px; /* 이미지 위치를 맞추기 위한 간격 */
+        width: 490px;
+        height: 490px;
+        top: 10px;
         display: none;
     }
 
-    .winner-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: black;
-        margin-top: 25px;
-    }
-
     #winnerImage {
-        margin-top: 10px; /* 이미지를 좀 더 아래로 */
+        margin-top: 10px;
     }
 
     #winnerName {
@@ -185,5 +185,51 @@
         font-weight: bold;
         margin-top: 5px;
     }
+
+    /* 고정된 버튼 위치 */
+    .button-container {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .button-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #restartBtn {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
 </style>
+
+<script>
+    // 게임 다시 시작하는 함수
+    function restartGame() {
+        location.reload(); // 페이지를 새로고침하여 게임을 처음부터 다시 시작
+    }
+</script>
+
+</body>
 </html>

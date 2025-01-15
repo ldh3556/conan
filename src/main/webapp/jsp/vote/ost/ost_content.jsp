@@ -59,7 +59,7 @@
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
 			<c:if test="${status.index < 4}">
-				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-id="${s.song_id}" data-num="${status.index + 1}">
+				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-pk="${s.song_id}" data-divNum="${status.index + 1}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>
@@ -91,7 +91,7 @@
 		<!-- 그룹 2 (q5, q6, q7, q8) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
 			<c:if test="${status.index >= 4 && status.index <= 8}">
-				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-id="${s.song_id}">
+				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-pk="${s.song_id}" data-divNum="${status.index + 1}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>
@@ -99,6 +99,6 @@
 	</div>
 	<div class="winner" style="border: 1px solid black">asd</div>
 </div>
-<script src="js/vote/ost/sensei.js"></script>
+<script src="js/vote/ost/bracket.js"></script>
 </body>
 </html>

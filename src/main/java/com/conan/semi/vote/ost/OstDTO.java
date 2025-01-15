@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OstDTO {
-    int song_id;
-    String song_title;
-    int win_count;
-
+    private int song_id;
+    private String song_title;
+    private int win_count;
 
 }

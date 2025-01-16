@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/winCountC")
-public class winCountC extends HttpServlet {
+public class WinCountC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("왔다");
-        String songTitle = request.getParameter("songTitle");
+        System.out.println("도착했음");
+
+        // DAO로 우승곡 정보 전달하여 우승 횟수 업데이트
         OstDAO.winCount(request);
-        System.out.println("일했다");
+
+        System.out.println("일 끝냈음");
 
     }
 }

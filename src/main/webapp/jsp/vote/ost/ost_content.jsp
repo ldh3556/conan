@@ -97,8 +97,6 @@
 			</c:if>
 		</c:forEach>
 	</div>
-	<div class="winner" style="border: 1px solid black">asd</div>
-</div>
 <script src="js/vote/ost/bracket.js"></script>
 </body>
 </html>

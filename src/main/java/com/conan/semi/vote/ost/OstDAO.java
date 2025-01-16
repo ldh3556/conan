@@ -36,8 +36,14 @@ public class OstDAO {
     }
 
     public static void winCount(HttpServletRequest request) {
-
         String songTitle = request.getParameter("songTitle");
+
+        // songTitle이 null인 경우 처리
+        if (songTitle == null || songTitle.isEmpty()) {
+            System.out.println("곡 제목이 전달되지 않았습니다.");
+            return;
+        }
+
         Connection con = null;
         PreparedStatement ps = null;
         String sql = "update bracket_test set win_count=win_count+1 where song_title=?";

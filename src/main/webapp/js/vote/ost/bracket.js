@@ -200,18 +200,15 @@ $(document).ready(function () {
     $('.s1, .s2, .s3, .s4').click(function (){
         let selectedSDiv = $(this);         // 선택한 s 요소 그 자체
         let QDivInSelectedSDiv = selectedSDiv.find('[class*="q"]');    // 선택한 s div 안의 q div
-        let QDivInUnselectedSDiv = $('.s1, .s2, .s3, .s4')
-            .not(selectedSDiv)      // 선택된 s div 제외
-            .find('[class*="q"]');
         let sClassName = selectedSDiv.attr('class');    // s div에 붙은 모든 class
         let selectedSDivNum = sClassName.split(' ').filter(function (cls){
             return cls !== 'match';
         })[0].charAt(1);                // 선택한 s div의 모든 클래스에서 div 번호만 추출 (1~4)
         let selectedSSongTitle = QDivInSelectedSDiv.data('title');
         let selectedSSongPK = QDivInSelectedSDiv.data('pk');
-        console.log('선택한 곡의 제목 : ' + selectedSSongTitle);
-        console.log('선택한 곡의 pk값 : ' + selectedSSongPK);
-        console.log('선택한 s div의 ui상 번호 : ' + selectedSDivNum)
+        //console.log('선택한 곡의 제목 : ' + selectedSSongTitle);
+        //console.log('선택한 곡의 pk값 : ' + selectedSSongPK);
+        //console.log('선택한 s div의 ui상 번호 : ' + selectedSDivNum)
 
         let songDetail = songDetails[`q${selectedSSongPK}`]; // 예: "q1", "q2" 등으로 songDetails에서 찾기
         if (songDetail) {
@@ -226,7 +223,7 @@ $(document).ready(function () {
             .on('click','#voteButton.semiVoteButton',function (){
                let semiDivClone = selectedSDiv.clone();     // 4강에서 복제한 s1~s4 div
                let sNum = '.s' + selectedSDivNum;
-                console.log('sNum : ' + sNum);
+               //console.log('sNum : ' + sNum);
 
             // 배열 순회
             semiFinalArray.forEach((s) => {
@@ -262,7 +259,49 @@ $(document).ready(function () {
         });     // 4강 투표 버튼 범위
 
     });     // s1~s4 클릭 범위
-    
+
+    $('.f1, .f2').click(function (){
+        let selectedFDiv = $(this);
+        let QDivInSelectedFDiv = selectedFDiv.find('[class*="q"]');
+        let fClassName = selectedFDiv.attr('class');    // f div에 붙은 모든 class
+        let selectedFDivNum = fClassName.split(' ').filter(function (cls){
+            return cls !== 'match';
+        })[0].charAt(1);                // 선택한 s div의 모든 클래스에서 div 번호만 추출 (1~4)
+        let selectedFSongTitle = QDivInSelectedFDiv.data('title');  // q에 담긴 노래 제목
+        let selectedFSongPK = QDivInSelectedFDiv.data('pk');        // q에 담긴 노래 pk값
+
+        let songDetail = songDetails[`q${selectedFSongPK}`];
+        if (songDetail) {
+            modalTitle.text(songDetail.title); // 제목 설정
+            modalDescription.html(songDetail.description); // 상세 HTML 설정
+            modal.show();
+        }else {
+            console.error(`Details not found for: ${selectedFSongTitle}`);
+        }   // 여기까지가 모달 띄우는 기능
+
+        $(document).off('click','#voteButton.finalVoteButton')
+            .on('click','#voteButton.finalVoteButton',function () {
+                let finalVictorySong = selectedFDiv.find('a').text();
+                console.log(finalVictorySong);
+
+                // form을 이용해 데이터를 서버로 동기식으로 전송
+                const form = $('<form>', {
+                    action: '/winCountC',  // 우승 횟수를 처리할 서버 URL
+                    method: 'POST'
+                });
+
+                form.append($('<input>', {
+                    type: 'hidden',
+                    name: 'songTitle',
+                    value: finalVictorySong
+                }));
+
+                // form을 body에 추가하고 submit 호출
+                $('body').append(form);
+                form[0].submit();  // 데이터를 서버로 전송
+            });
+    });     // f1~f2 클릭 범위
+
 // 모달 닫기 버튼 클릭 시 모달 닫기
     exitButton.click(function() {
         pauseAudio();

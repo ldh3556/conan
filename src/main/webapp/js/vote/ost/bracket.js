@@ -23,7 +23,7 @@ $(document).ready(function () {
     const modalDescription = $('.modal-description');
     const exitButton = $('#exitButton');
     const voteButton = $('#voteButton');
-    let isVoteButtonClassAdded;         // 대회 시작 시 투표하기 버튼에 클래스 추가하는 것을 제어하기 위해
+//  let isVoteButtonClassAdded;         // 대회 시작 시 투표하기 버튼에 클래스 추가하는 것을 제어하기 위해
 
     const songDetails = {
         q1: {
@@ -138,12 +138,8 @@ $(document).ready(function () {
     };
 
 //  ------------------   기본세팅 --------------------
-    isVoteButtonClassAdded = false; // 플래그 변수 초기화
+    voteButton.addClass('quarterVoteButton');
     $('.q1, .q2, .q3, .q4, .q5, .q6, .q7, .q8').click(function (){
-        if (!isVoteButtonClassAdded){
-            voteButton.addClass('quarterVoteButton');
-            isVoteButtonClassAdded = true;              // voteButton에 최초 1회 클래스 추가
-        }
         let selectedQDiv = $(this);
         let selectedQSongTitle = $(this).data('title'); // DB에 저장된 노래의 song_title로 노래 제목 찾기
         let selectedQSongPK = $(this).data('pk');       // DB에 저장된 노래의 song_id로 노래 정보 찾기(시퀀스)
@@ -153,7 +149,7 @@ $(document).ready(function () {
         //console.log(selectedQDivNum);
         //console.log($(this).data());
         // songDetails에서 해당 곡의 내용을 찾기
-        const songDetail = songDetails[`q${selectedQSongPK}`]; // 예: "q1", "q2" 등으로 songDetails에서 찾기
+        let songDetail = songDetails[`q${selectedQSongPK}`]; // 예: "q1", "q2" 등으로 songDetails에서 찾기
         if (songDetail) {
             modalTitle.text(songDetail.title); // 제목 설정
             modalDescription.html(songDetail.description); // 상세 HTML 설정
@@ -194,27 +190,77 @@ $(document).ready(function () {
             modal.hide();
             if (quarterFinalArray.every(q => q.isSelected)){
                 $('.s1, .s2, .s3, .s4').removeClass('noneclick');
-                $('#voteButton').removeClass('quarterVoteButton');
+                voteButton.removeClass('quarterVoteButton');
+                voteButton.addClass('semiVoteButton');
             }
     });         // 8강 투표 버튼 범위
 
     });     // q1~q8 클릭 범위
-    isVoteButtonClassAdded = false;
+
     $('.s1, .s2, .s3, .s4').click(function (){
-        if(!isVoteButtonClassAdded){
-            $('#voteButton').addClass('semiVoteButton');
-            isVoteButtonClassAdded = true;
-        }
         let selectedSDiv = $(this);         // 선택한 s 요소 그 자체
         let QDivInSelectedSDiv = selectedSDiv.find('[class*="q"]');    // 선택한 s div 안의 q div
+        let QDivInUnselectedSDiv = $('.s1, .s2, .s3, .s4')
+            .not(selectedSDiv)      // 선택된 s div 제외
+            .find('[class*="q"]');
         let sClassName = selectedSDiv.attr('class');    // s div에 붙은 모든 class
         let selectedSDivNum = sClassName.split(' ').filter(function (cls){
             return cls !== 'match';
         })[0].charAt(1);                // 선택한 s div의 모든 클래스에서 div 번호만 추출 (1~4)
         let selectedSSongTitle = QDivInSelectedSDiv.data('title');
         let selectedSSongPK = QDivInSelectedSDiv.data('pk');
-        console.log(selectedSSongTitle);
-        console.log(selectedSSongPK);
+        console.log('선택한 곡의 제목 : ' + selectedSSongTitle);
+        console.log('선택한 곡의 pk값 : ' + selectedSSongPK);
+        console.log('선택한 s div의 ui상 번호 : ' + selectedSDivNum)
+
+        let songDetail = songDetails[`q${selectedSSongPK}`]; // 예: "q1", "q2" 등으로 songDetails에서 찾기
+        if (songDetail) {
+            modalTitle.text(songDetail.title); // 제목 설정
+            modalDescription.html(songDetail.description); // 상세 HTML 설정
+            modal.show();
+        }else {
+            console.error(`Details not found for: ${selectedSSongTitle}`);
+        }
+        // 여기까지가 4강 모달 띄우는 기능
+        $(document).off('click','#voteButton.semiVoteButton')
+            .on('click','#voteButton.semiVoteButton',function (){
+               let semiDivClone = selectedSDiv.clone();     // 4강에서 복제한 s1~s4 div
+               let sNum = '.s' + selectedSDivNum;
+                console.log('sNum : ' + sNum);
+
+            // 배열 순회
+            semiFinalArray.forEach((s) => {
+               let semiMatches = s.semiMatch;
+                //console.log('s.semiMatch의 정체? = ' + s.semiMatch);   // .s1 .s2     .s3 .s4
+                if (semiMatches.includes(sNum)){
+                    // 복제된 요소 스타일 설정
+                    semiDivClone.css('border','none');
+                    semiDivClone.css('margin-top','0px');
+                    semiDivClone.css('margin-bottom','0px');
+                    let semiWinCounter = $(s.semiWin);
+                    if (semiWinCounter.length > 0){
+                        semiWinCounter.empty().append(semiDivClone);
+                    }
+
+                semiMatches.forEach((semiMatch) => {
+                   $(semiMatch).addClass('noneclick');      // 선택한 4강 분기의 노래들 둘 다 비활성화
+                   if (semiMatch === sNum){
+                       QDivInSelectedSDiv.addClass('win');        // 승리한 4강 요소는 색상 처리
+                   }else if (semiMatch !== sNum){
+                       $(semiMatch).find('[class*="q"]').addClass('defeated');   // 패배한 4강 요소는 패배 처리
+                   }
+                });     // 투표 이후 사후 처리
+                s.isSelected = true;
+                }
+            });     // 4강 배열 순회 범위(forEach)
+                modal.hide();
+                if (semiFinalArray.every(s => s.isSelected)){
+                    $('.f1, .f2').removeClass('noneclick');
+                    voteButton.removeClass('semiVoteButton');
+                    voteButton.addClass('finalVoteButton');
+                }
+        });     // 4강 투표 버튼 범위
+
     });     // s1~s4 클릭 범위
     
 // 모달 닫기 버튼 클릭 시 모달 닫기

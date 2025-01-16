@@ -284,21 +284,48 @@ $(document).ready(function () {
                 let finalVictorySong = selectedFDiv.find('a').text();
                 console.log(finalVictorySong);
 
-                // form을 이용해 데이터를 서버로 동기식으로 전송
-                const form = $('<form>', {
-                    action: '/winCountC',  // 우승 횟수를 처리할 서버 URL
-                    method: 'POST'
-                });
+                // 우승곡에 해당하는 정보를 songDetails에서 찾기
+                let selectedSongInfo = null;
+                for (let key in songDetails) {
+                    if (songDetails[key].title === finalVictorySong) {
+                        selectedSongInfo = songDetails[key];
+                        break;
+                    }
+                }
 
-                form.append($('<input>', {
-                    type: 'hidden',
-                    name: 'songTitle',
-                    value: finalVictorySong
-                }));
+                if (selectedSongInfo) {
+                    // form을 이용해 데이터를 서버로 동기식으로 전송
+                    const form = $('<form>', {
+                        action: '/winCountC',  // 우승 횟수를 처리할 서버 URL
+                        method: 'POST'
+                    });
 
-                // form을 body에 추가하고 submit 호출
-                $('body').append(form);
-                form[0].submit();  // 데이터를 서버로 전송
+                    // 노래 제목을 추가
+                    form.append($('<input>', {
+                        type: 'hidden',
+                        name: 'songTitle',
+                        value: selectedSongInfo.title
+                    }));
+
+                    // 노래 설명을 추가
+                    form.append($('<input>', {
+                        type: 'hidden',
+                        name: 'songDescription',
+                        value: selectedSongInfo.description
+                    }));
+
+                    // 추가적으로 필요한 다른 정보를 추가할 수 있습니다.
+                    // 예: form.append($('<input>', { type: 'hidden', name: 'songImage', value: selectedSongInfo.image }));
+
+                    // form을 body에 추가하고 submit 호출
+                    $('body').append(form);
+                    form[0].submit();  // 데이터를 서버로 전송
+
+                    // 페이지 리로드 방지 (필요한 경우)
+                    return false;  // form의 기본 제출 동작을 막음
+                } else {
+                    console.error("선택한 곡을 찾을 수 없습니다.");
+                }
             });
     });     // f1~f2 클릭 범위
 

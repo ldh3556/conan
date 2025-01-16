@@ -7,12 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/vote/board/board.js"></script>
 <head>
     <title>Title</title>
 </head>
 <body>
 <div class="board-container">
   <div class="board-title"><a href="BoardHC"><h1>게시판</h1></a></div>
+  <hr>
   <div><a href="BoardFreeRegC">글쓰기</a></div>
   <div class="board-menu">
     <div> <a href="BoardNoticeC">공지</a></div>
@@ -21,15 +24,10 @@
     <div> <a href="">애니 후기 게시판</a></div>
     <div> <a href="">영화 후기 게시판</a></div>
 </div>
+  <hr>
 <div class="content">
   <jsp:include page="${content }" />
 </div>
-
-
-
-
-
-
 </div>
 </body>
 </html>

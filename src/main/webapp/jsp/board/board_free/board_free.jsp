@@ -12,7 +12,8 @@
     <title>Title</title>
 </head>
 <body>
-
+<div>
+<div>
 <c:forEach var="b" items="${boards }">
     <div>[게시번호 : ${b.b_no }]</div>
     <a href="BoardFreeDetailC?no=${b.b_no }" >
@@ -20,9 +21,23 @@
     <div>${b.b_name }</div>
     <div>${b.b_begin }</div>
     <div>${b.b_title }</div>
-    <div>${b.b_date }</div></a>
+    <div>${b.b_date }</div><hr></a>
 </c:forEach>
-
-
+    <div>
+        <a href="BoardFreePageC?p=1">[begin]</a>
+        <c:forEach begin="1" end="${pageCount }" var="i">
+            <a href="BoardFreePageC?p=${i }">[${i }]</a>
+        </c:forEach>
+        <a href="BoardFreePageC?p=${pageCount }">[end]</a>
+    </div>
+</div>
+    <div>
+        <input id="search-input" placeholder="이 게시판 내 검색">
+        <button id="search-btn">
+            search
+        </button>
+        <span id="result"></span>
+    </div>
+</div>
 </body>
 </html>

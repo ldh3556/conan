@@ -10,19 +10,20 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class BoardFreeDAO {
+    static ArrayList<BoardFreeDTO> boards = null;
     private static Connection con = null;
 
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_table_test";
+        String sql = "select * from board_table_test ORDER BY b_date desc";
         try {
             System.out.println("connect --");
             con = DBManager.connect();
             System.out.printf("con done");
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            ArrayList<BoardFreeDTO> boards = new ArrayList<BoardFreeDTO>();
+            boards = new ArrayList<BoardFreeDTO>();
             BoardFreeDTO board = null;
             while (rs.next()) {
                 board = new BoardFreeDTO();
@@ -163,5 +164,76 @@ try {
         }finally {
             DBManager.close(con, pstmt, null);
         }
+    }
+
+    public static void pagingFreeBoard(int pageNum, HttpServletRequest request) {
+        request.setAttribute("curPageNum", pageNum);
+
+        if (boards.isEmpty()) {
+            request.setAttribute("boards", new ArrayList<>()); // 빈 리스트 전달
+            request.setAttribute("pageCount", 1); // 페이지 수를 최소 1로 설정
+            request.setAttribute("curPageNum", 1); // 현재 페이지를 1로 설정
+            return;
+        }
+    System.out.println(pageNum);
+        int total = boards.size();
+        System.out.println(total);
+    int count = 5;
+        System.out.println(count);
+    int pageCount = (int) Math.ceil((double)total / count);
+    try {
+        System.out.println(pageCount);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+//    request.setAttribute("pageCount", pageCount);
+    request.setAttribute("pageCount", pageCount);
+    int start = total - (count * (pageNum - 1));
+    int end = (pageNum == pageCount) ? -1 : start - (count + 1);
+
+    ArrayList<BoardFreeDTO> items = new ArrayList<BoardFreeDTO>();
+
+    for (int i = start-1 ; i > end; i--) {
+    items.add(boards.get(i));
+    }
+
+    request.setAttribute("boards", items);
+    }
+
+    public static void searchBoardFree(HttpServletRequest request, HttpServletResponse response) {
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    String sql = "select * from board_table_test where b_title like '%'||?||'%'";
+
+    try {
+        con = DBManager.connect();
+        pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, request.getParameter("boardTitle"));
+        rs = pstmt.executeQuery();
+        ArrayList<String> boards = new ArrayList<String>();
+
+        BoardFreeDTO b = null;
+        while (rs.next()) {
+            b = new BoardFreeDTO();
+            b.setB_no(rs.getString(1));
+            b.setB_id(rs.getString(2));
+            b.setB_name(rs.getString(3));
+            b.setB_begin(rs.getString(4));
+            b.setB_title(rs.getString(5));
+            b.setB_text(rs.getString(6));
+            b.setB_date(rs.getDate(7));
+            boards.add(b.toJSONByMe());
+        }
+        System.out.println(boards);
+        System.out.println(boards.size());
+
+        response.setContentType("application/json;charset=utf-8");
+        response.getWriter().print(boards);
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }finally {
+        DBManager.close(con, pstmt, rs);
+    }
     }
 }

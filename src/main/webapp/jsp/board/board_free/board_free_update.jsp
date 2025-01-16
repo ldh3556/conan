@@ -5,7 +5,7 @@
   Time: 오후 12:39
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
@@ -47,7 +47,7 @@
         <div style="position: relative; bottom: -50px;">
             <button class="board-reg-btn">수정완료</button>
             <button type="button" class="board-reg-btn" onclick="cancelUpdatBoard()">취소</button>
-            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC">list</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
         </div>
     </div>
 </div>
@@ -64,6 +64,7 @@
 
     const textarea = document.querySelector("textarea[name='text']");
     const cntSpan = document.querySelector("#cntSpan");
+    cntSpan.innerText = textarea.value.length;
     textarea.addEventListener('input', () => {
         const len = textarea.value.length;
         cntSpan.innerText = len;

@@ -5,7 +5,7 @@
   Time: 오후 12:39
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
@@ -40,9 +40,25 @@
         <div style="position: relative; bottom: -50px;">
             <button class="board-reg-btn" onclick="location.href='BoardFreeUpdateC?no=${board.b_no}'">update</button>
             <button class="board-reg-btn" onclick="deleteBoard('${board.b_no}')">delete</button>
-            <button class="board-reg-btn">list</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
         </div>
     </div>
+    <hr>
+    <br>
+    <h4>Add a Comment</h4>
+    <form method="post" action="AddFreeCommentC">
+        <input type="hidden" name="b_no" value="${board.b_no}">
+        <div>
+            <label for="c_writer">Name:</label>
+            <input type="text" id="c_writer" name="c_writer" required>
+        </div>
+        <div>
+            <label for="c_content">Comment:</label>
+            <textarea id="c_content" name="c_content" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div>${free_comments}</div>
 </div>
 
 <script type="text/javascript">
@@ -55,6 +71,7 @@
 
     const textarea = document.querySelector("textarea[name='text']");
     const cntSpan = document.querySelector("#cntSpan");
+    cntSpan.innerText = textarea.value.length;
     textarea.addEventListener('input', () => {
         const len = textarea.value.length;
         cntSpan.innerText = len;

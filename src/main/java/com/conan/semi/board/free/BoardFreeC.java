@@ -12,9 +12,9 @@ import java.io.IOException;
 public class BoardFreeC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("진입");
+      request.setCharacterEncoding("utf-8");
         BoardFreeDAO.showAllBoardFree(request);
-
+        BoardFreeDAO.pagingFreeBoard(1, request);
 request.setAttribute("content", "board_free/board_free.jsp");
 request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     }

@@ -144,7 +144,7 @@ $(document).ready(function () {
             voteButton.addClass('quarterVoteButton');
             isVoteButtonClassAdded = true;              // voteButton에 최초 1회 클래스 추가
         }
-        let selectedQElment = $(this);
+        let selectedQDiv = $(this);
         let selectedQSongTitle = $(this).data('title'); // DB에 저장된 노래의 song_title로 노래 제목 찾기
         let selectedQSongPK = $(this).data('pk');       // DB에 저장된 노래의 song_id로 노래 정보 찾기(시퀀스)
         let selectedQDivNum = $(this).data('divnum');   // html에 그려지는 q1~q8의 div 숫자 (1~8)
@@ -165,7 +165,7 @@ $(document).ready(function () {
     $(document).off('click','#voteButton.quarterVoteButton')
         .on('click','#voteButton.quarterVoteButton', function (){
         // 클릭된 q 요소 복제
-        let quarterDivClone = selectedQElment.clone();    // 처음 8강에서 선택하여 복제된 q1~q8 div
+        let quarterDivClone = selectedQDiv.clone();    // 처음 8강에서 선택하여 복제된 q1~q8 div
         let qNum = ".q" + selectedQDivNum;              //  클릭한 div의 ui상의 번호의 앞에 .q를 붙인것
         //console.log(qNum);
         // 배열 순회
@@ -183,7 +183,7 @@ $(document).ready(function () {
                 quarterMatches.forEach((quarterMatch) => {
                     $(quarterMatch).addClass('noneclick');  // 선택한 8강 분기의 노래들 둘 다 비활성화
                     if (quarterMatch === qNum){
-                        selectedQElment.addClass('win');    // 승리한 8강 요소는 색상 처리
+                        selectedQDiv.addClass('win');    // 승리한 8강 요소는 색상 처리
                     }else if (quarterMatch !== qNum){
                         $(quarterMatch).addClass('defeated');   // 패배한 8강 요소는 패배 처리
                     }
@@ -205,7 +205,16 @@ $(document).ready(function () {
             $('#voteButton').addClass('semiVoteButton');
             isVoteButtonClassAdded = true;
         }
-
+        let selectedSDiv = $(this);         // 선택한 s 요소 그 자체
+        let QDivInSelectedSDiv = selectedSDiv.find('[class*="q"]');    // 선택한 s div 안의 q div
+        let sClassName = selectedSDiv.attr('class');    // s div에 붙은 모든 class
+        let selectedSDivNum = sClassName.split(' ').filter(function (cls){
+            return cls !== 'match';
+        })[0].charAt(1);                // 선택한 s div의 모든 클래스에서 div 번호만 추출 (1~4)
+        let selectedSSongTitle = QDivInSelectedSDiv.data('title');
+        let selectedSSongPK = QDivInSelectedSDiv.data('pk');
+        console.log(selectedSSongTitle);
+        console.log(selectedSSongPK);
     });     // s1~s4 클릭 범위
     
 // 모달 닫기 버튼 클릭 시 모달 닫기

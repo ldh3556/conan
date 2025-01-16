@@ -5,13 +5,16 @@
 </head>
 <body>
 
+<!-- 전체 콘텐츠를 감싸는 container div 추가 -->
 <div class="outer-container">
+    <!-- title-container -->
     <div class="title-container">
         <h2><span> 캐릭터 이상형 월드컵 16강 </span></h2>
     </div>
 
     <br>
 
+    <!-- card-container -->
     <div class="card-container">
         <!-- 여성 캐릭터 카드 -->
         <div class="card">
@@ -58,13 +61,14 @@
 </body>
 
 <style>
+    /* 외부 컨테이너 스타일 */
     .outer-container {
         height: 100vw;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto; /* 화면 중앙 정렬 */
         padding: 20px;
-        border: solid 3pt red;
+        border: solid 3pt red; /* 빨간색 3pt 테두리 */
         position: relative; /* 자식 요소들에 상대적인 위치 지정 */
     }
 

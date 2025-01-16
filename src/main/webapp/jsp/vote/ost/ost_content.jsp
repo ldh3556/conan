@@ -91,7 +91,7 @@
 		<!-- 그룹 2 (q5, q6, q7, q8) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
 			<c:if test="${status.index >= 4 && status.index <= 8}">
-				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-pk="${s.song_id}" data-divNum="${status.index + 1}">
+				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-pk="${s.song_id}" data-divnum="${status.index + 1}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>

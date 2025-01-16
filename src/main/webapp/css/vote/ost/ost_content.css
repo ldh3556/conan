@@ -48,8 +48,12 @@ body {
   background-color: #ddd !important; /* 패배한 div의 스타일 */
 }
 
-.disabled {
+.noneclick {
   pointer-events: none;   /* 클릭 불가 */
+}
+
+.win{
+  background-color: aquamarine;
 }
 
 /* 중앙 위치 조정 */

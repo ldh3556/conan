@@ -16,7 +16,7 @@ $(document).ready(function () {
         { finalMatch: ['.f1, .f2'], finalWin: 'winner'}
     ]
     // 모든 s,f 선택지를 비활성화 (초기 상태)
-    $('.s1, .s2, .s3, .s4, .f1, .f2').addClass('disabled');
+    $('.s1, .s2, .s3, .s4, .f1, .f2').addClass('noneclick');
 
     // 첫 번째 선택지 그룹 (q1, q2, q3, q4, q5, q6, q7, q8)
     const modal = $('#itemModal');
@@ -162,7 +162,7 @@ $(document).ready(function () {
         }
     });
     $(document).on('click', '#voteButton.qVoteButton',function () {
-        let id = selectedElement.attr('class').match(/q\d/)[0];
+        let id = selectedElement.attr('class').match(/q\d/)[0];     // q1 ~ q8 이 나옴
         const title = selectedElement.data('title');
         toSemi = selectedElement.clone();
         id = "." + id;
@@ -180,10 +180,10 @@ $(document).ready(function () {
                 if (winContainer.length > 0) {
                     winContainer.empty().append(toSemi);
                 }
-                // 해당 그룹의 모든 항목에 disabled 추가, 선택되지 않은 항목은 defeated 추가
+                // 해당 그룹의 모든 항목에 noneclick 추가, 선택되지 않은 항목은 defeated 추가
                 matches.forEach((match) => {
                     // console.log(`매치 순회: ${match}`);
-                    $(match).addClass('disabled'); // 모든 항목에 disabled 추가
+                    $(match).addClass('noneclick'); // 모든 항목에 noneclick 추가
                     if (match !== `${id}`) {
                         $(match).addClass('defeated'); // 선택되지 않은 항목에 defeated 추가
                     }
@@ -198,7 +198,7 @@ $(document).ready(function () {
 
         // 모든 객체가 선택되었을 때 s1, s2, s3, s4를 활성화
         if (quarterFinal.every(q => q.isSelected)) {
-            $('.s1, .s2, .s3, .s4').removeClass('disabled');
+            $('.s1, .s2, .s3, .s4').removeClass('noneclick');
             $('#voteButton').removeClass('qVoteButton');
         }
 
@@ -266,7 +266,7 @@ $(document).ready(function () {
                         console.log(`복제된 요소가 ${s.semiWin}에 추가되었습니다`);
                     }
                     matches.forEach((match) => {
-                        $(match).addClass('disabled');
+                        $(match).addClass('noneclick');
                         if (match !== `${aaa}`){
                             $(match).addClass('defeated');
                         }
@@ -275,7 +275,7 @@ $(document).ready(function () {
                     s.isSelected = true;
                 }
                 if (semiFinal.every(s => s.isSelected)){
-                    $('.f1, .f2').removeClass('disabled');
+                    $('.f1, .f2').removeClass('noneclick');
                     $('#voteButton').removeClass('sVoteButton');
                 }
                 $(selectedElement).css('background-color','E8F9FF');

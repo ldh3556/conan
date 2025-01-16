@@ -1,25 +1,38 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </head>
 <body>
 
-<!-- 타이틀 -->
+<!--타이틀-->
 <div class="title-container">
-    <h2><span><%= request.getParameter("gender") %> 캐릭터 랭킹</span></h2>
+    <h2><span>여성 캐릭터 랭킹</span></h2>
 </div>
 
 <br>
-
-<!-- 카드 컨테이너 -->
+<!--카드 컨테이너 -->
 <div class="card-container">
+
+    <!-- 여성 캐릭터 카드-->
     <div class="card">
-        <div class="card text-center">
+        <div class="card text-center" >
             <div class="card-body">
                 <h5 class="card-title" style="font-weight: bold;">1등</h5><hr>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    <img src="img/ww01.jpg" style="width: 180px; height: 180px;">
+                    <img src = "img/ww01.jpg"  style="width: 180px; height: 180px;">
+                </h6>
+                <h5 >여기에 이름</h5>
+                <h5>여기에 픽</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card text-center" >
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">2등</h5><hr>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <img src = "img/ww01.jpg"  style="width: 180px; height: 180px;">
                 </h6>
                 <h5>여기에 이름</h5>
                 <h5>여기에 픽</h5>
@@ -27,10 +40,47 @@
         </div>
     </div>
 
-    <!-- 다른 순위들 -->
+    <div class="card">
+        <div class="card text-center" >
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">3등</h5><hr>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <img src = "img/ww01.jpg"  style="width: 180px; height: 180px;">
+                </h6>
+                <h5>여기에 이름</h5>
+                <h5>여기에 픽</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card text-center" >
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">4등</h5><hr>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <img src = "img/ww01.jpg"  style="width: 180px; height: 180px;">
+                </h6>
+                <h5>여기에 이름</h5>
+                <h5>여기에 픽</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card text-center" >
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;">5등</h5><hr>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <img src = "img/ww01.jpg"  style="width: 180px; height: 180px;">
+                </h6>
+                <h5>여기에 이름</h5>
+                <h5>여기에 픽</h5>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
-
 <style>
     .title-container{
         position: absolute;
@@ -45,7 +95,7 @@
     }
 
     h2 {
-        color: black;
+        color:#ffff;
         opacity: 0;
         animation: fadeInLetters 2s forwards;
         display: inline-block;transform: translateX(-50%);

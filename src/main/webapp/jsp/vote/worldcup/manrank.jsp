@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </head>
 <body>
 
@@ -19,10 +18,10 @@
             <div class="card-body">
                 <h5 class="card-title" style="font-weight: bold;">1등</h5><hr>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    <img src="img/ww01.jpg" style="width: 180px; height: 180px;">
+                    <img src="우승자 사진.jpg" style="width: 180px; height: 180px;">
                 </h6>
-                <h5>여기에 이름</h5>
-                <h5>여기에 픽</h5>
+                <h5>우승자 이름</h5>
+                <h5>우승 비율</h5>
             </div>
         </div>
     </div>

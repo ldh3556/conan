@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <title>여성 캐릭터 16강</title>
     <script>
-        // 게임 진행을 위한 변수 설정
         var text = "";
-        var images = []; // 이미지 데이터들을 담을 곳
+        var images = [];
         var names = [
             {name: "한아름", file: "ayumi.png"},
             {name: "키안티", file: "chianti.png"},
@@ -25,21 +24,20 @@
             {name: "정보라", file: "sonoko.png"},
             {name: "베르무트", file: "vermouth.png"},
             {name: "이하연", file: "yukiko.png"}
-        ]; // 각 이미지에 해당하는 이름들
+        ];
 
-        var rounds = ["16강", "8강", "4강", "결승", "우승자"]; // 라운드별 이미지 수
-        var roundIndex = 0; // 현재 라운드 인덱스
-        var matches = rounds[roundIndex] === "16강" ? 8 : (rounds[roundIndex] === "8강" ? 4 : (rounds[roundIndex] === "4강" ? 2 : 1)); // 현재 라운드의 경기 수
-        var currentMatch = 0; // 현재 진행 중인 경기
-        var sImages = []; // 선택한 이미지 저장 배열
-        var winnerImage = "우승자"; // 우승자 이미지
+        var rounds = ["16강", "8강", "4강", "결승", "우승자"];
+        var roundIndex = 0;
+        var matches = rounds[roundIndex] === "16강" ? 8 : (rounds[roundIndex] === "8강" ? 4 : (rounds[roundIndex] === "4강" ? 2 : 1));
+        var currentMatch = 0;
+        var sImages = [];
+        var winnerImage = "우승자";
+        var clickCount = 0;
 
-        // 이미지를 랜덤으로 섞기
         names.sort(function(a, b) {
             return 0.5 - Math.random();
         });
 
-        // 이미지와 라운드 표시
         function showImg(matchIndex) {
             var matchStartIndex = matchIndex * 2;
             document.getElementById('image1').src = "/img/vote/worldcup/women/" + names[matchStartIndex].file;
@@ -49,105 +47,113 @@
             document.getElementById('round').innerHTML = rounds[roundIndex];
         }
 
-        // 선택된 이미지를 저장하고, 다음 라운드로 넘어가는 함수
         function change(n) {
-            sImages[currentMatch] = names[currentMatch * 2 + n]; // 선택한 이미지 저장
-            currentMatch++; // 경기 진행
+            sImages[currentMatch] = names[currentMatch * 2 + n];
+            currentMatch++;
+            clickCount++;
 
-            // 경기가 종료되면 라운드 전환
+            if (clickCount >= 15) {
+                document.getElementById('round').innerHTML = "당신의 이상형";
+            }
+
             if (currentMatch >= matches) {
                 if (roundIndex < rounds.length - 1) {
-                    roundIndex++;  // 다음 라운드로 진행
-                    matches = rounds[roundIndex] === "16강" ? 8 : (rounds[roundIndex] === "8강" ? 4 : (rounds[roundIndex] === "4강" ? 2 : 1));  // 라운드별 경기 수
-                    currentMatch = 0;  // 경기 번호 초기화
+                    roundIndex++;
+                    matches = rounds[roundIndex] === "16강" ? 8 : (rounds[roundIndex] === "8강" ? 4 : (rounds[roundIndex] === "4강" ? 2 : 1));
+                    currentMatch = 0;
 
-                    // 우승자가 결정되면
                     if (roundIndex === rounds.length - 1) {
-                        winnerImage = sImages[0]; // 첫 번째 선택된 이미지를 우승자로 설정
+                        winnerImage = sImages[0];
                         document.getElementById('cal').innerHTML = "";
                         document.getElementById('winnerImage').src = "/img/vote/worldcup/women/" + winnerImage.file;
-                        document.getElementById('winnerName').innerText = winnerImage.name; // 우승자 이름 표시
+                        document.getElementById('winnerName').innerText = winnerImage.name;
                         document.getElementById('winnerContainer').style.display = 'block';
-                        document.getElementById('image1').style.display = 'none'; // 결승에서 첫 번째 이미지만 보이도록 처리
-                        document.getElementById('image2').style.display = 'none'; // 두 번째 이미지는 숨김
-                        document.getElementById('hover01').style.display = 'none'; // 'hover01' 숨김
+                        document.getElementById('image1').style.display = 'none';
+                        document.getElementById('image2').style.display = 'none';
+                        document.getElementById('hover01').style.display = 'none';
                     } else {
-                        // 다음 라운드의 이미지를 선택된 이미지로 업데이트하고 섞기
                         names = sImages.slice(0, matches * 2);
                         names.sort(function(a, b) {
-                            return 0.5 - Math.random();  // 이미지 랜덤 정렬
+                            return 0.5 - Math.random();
                         });
-                        showImg(currentMatch);  // 새 이미지를 표시
+                        showImg(currentMatch);
                     }
-                } else {
-                    // 모든 라운드가 끝나면 "당신의 이상형" 표시
-                    document.getElementById('cal').innerHTML = "당신의 이상형";
                 }
             } else {
-                showImg(currentMatch);  // 아직 경기 진행 중
+                showImg(currentMatch);
             }
         }
 
-        // 페이지 로드 시 첫 번째 이미지를 자동으로 표시
         window.onload = function() {
-            showImg(currentMatch); // 첫 번째 경기 이미지 로드
+            showImg(currentMatch);
         };
     </script>
 </head>
 <body>
-<div style="text-align: center;">
-    <!-- 타이틀 -->
-    <div class="title-container">
-        <h1><span>여성 캐릭터 16강</span></h1>
-        <p id="round"></p>
-        <p id="cal"></p>
-    </div>
-    <br>
 
-    <!-- 이미지 클릭 시 효과음 재생 + 이미지 표시 -->
-    <figure class="hover01" id="hover01">
-        <div class="image-container">
-            <img id="image1" onclick="change(0); play();" />
-            <p id="name1"></p> <!-- 이미지 밑에 이름 표시 -->
+<div class="outer-container">
+    <div style="text-align: center;">
+        <div class="title-container" style="border: 3pt solid green">
+            <h1><span>여성 캐릭터 16강</span></h1>
+            <p id="round"></p>
+            <p id="cal"></p>
         </div>
-        <div class="image-container">
-            <img id="image2" onclick="change(1); play();" />
-            <p id="name2"></p> <!-- 이미지 밑에 이름 표시 -->
-        </div>
-    </figure>
 
-    <!-- 우승자 표시 -->
-    <div class="winner-container" id="winnerContainer" style="display: none;">
-        <p class="winner-text">당신의 이상형</p>
-        <img id="winnerImage" />
-        <p id="winnerName"></p> <!-- 우승자의 이름 표시 -->
+        <figure class="hover01" id="hover01" style="border: 3pt solid blue">
+            <div class="image-container">
+                <img id="image1" onclick="change(0);" />
+                <p id="name1"></p>
+            </div>
+            <div class="image-container">
+                <img id="image2" onclick="change(1);" />
+                <p id="name2"></p>
+            </div>
+        </figure>
+
+        <!-- 버튼들을 위치시키기 위한 div -->
+        <div class="button-container" style="border: 3pt solid black">
+            <button id="restartBtn" onclick="restartGame()">다시하기</button>
+            <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
+        </div>
+
+        <div class="winner-container" id="winnerContainer" style="display: none;">
+            <img id="winnerImage" />
+            <p id="winnerName"></p>
+        </div>
     </div>
 </div>
-</body>
 
 <style>
+    .outer-container {
+        height: 100vh;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        border: solid 3pt red;
+        position: relative;
+    }
+
     .title-container {
-        position: relative;  /* 절대 위치를 사용하지 않도록 수정 */
+        position: relative;
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
         width: 1000px;
-        height: 120px;
-        /*background: skyblue;*/
-        border-radius: 50px;
-        box-shadow: 5px 10px 5px #ccc;
         margin-bottom: 50px;
-        padding-top: 20px; /* 제목과 글자를 조금 더 아래로 내리기 */
+        padding-top: 20px;
+        box-shadow: 5px 10px 5px #ccc;
+        border-radius: 50px;
     }
 
     .image-container {
-        display: inline-block;  /* 이미지들이 가로로 배치되도록 함 */
-        margin-right: 20px;  /* 이미지들 사이에 간격 추가 */
+        display: inline-block;
+        margin-right: 20px;
     }
 
     img {
-        width: 490px;  /* 500px에서 10px을 뺀 크기 */
-        height: 490px;  /* 비율 맞추기 위해 동일하게 크기 설정 */
+        width: 490px;
+        height: 490px;
         cursor: pointer;
         margin-top: 10px;
     }
@@ -157,21 +163,13 @@
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        width: 490px; /* 이미지 크기와 맞춤 */
-        height: 490px; /* 이미지 크기와 맞춤 */
-        top: 10px; /* 이미지 위치를 맞추기 위한 간격 */
+        width: 490px;
+        height: 490px;
         display: none;
     }
 
-    .winner-text {
-        font-size: 24px;
-        font-weight: bold;
-        color: black;
-        margin-top: 25px;
-    }
-
     #winnerImage {
-        margin-top: 10px; /* 이미지를 좀 더 아래로 */
+        margin-top: 10px;
     }
 
     #winnerName {
@@ -185,5 +183,43 @@
         font-weight: bold;
         margin-top: 5px;
     }
+
+    .button-container {
+        position: absolute;
+        bottom: 100px; /* 화면 하단에서 100px 떨어지도록 수정 */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .button-container button {
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #restartBtn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .back-btn {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
 </style>
+
+<script>
+    function restartGame() {
+        location.reload();
+    }
+</script>
+
+</body>
 </html>

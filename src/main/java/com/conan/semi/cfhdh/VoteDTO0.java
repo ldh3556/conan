@@ -1,4 +1,4 @@
-package com.conan.semi.vote;
+package com.conan.semi.cfhdh;
 
 public class VoteDTO0 {
     private String name;

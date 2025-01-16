@@ -10,6 +10,7 @@ import java.io.IOException;
 
 @WebServlet("/HC")
 public class HC extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     request.getRequestDispatcher("jsp/index_lmj.jsp").forward(request, response);
     } // used by HDH

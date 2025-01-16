@@ -1,0 +1,277 @@
+*{
+    font-family: "Noto Sans KR";
+}
+
+/*button 클릭시 나오는 링크 메뉴바*/
+.menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #eda127;
+}
+
+.menu_tab_wrapper{
+    /*메뉴 카테고리 div*/
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu_tab_wrapper>a{
+    color: #393939;
+    font-size: 30pt;
+    font-family: "Noto Sans KR Black";
+    transition: all 0.5s;
+}
+
+.menu_tab_wrapper>a:hover{
+    font-size: 40pt;
+    transition: all 0.5s;
+    color: black;
+}
+/*상단 헤더 로고, 프로필, 메뉴열기 버튼 등등*/
+.header{
+    /*상단 header 메뉴바*/
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+}
+
+.menu_button {
+    /* menu button 이미지 첨부 클릭시 메뉴 오픈*/
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 3.2%;
+    right: 92.11%;
+    top: 33.33%;
+    bottom: 16.67%;
+    color: #eda127;
+}
+.conan_logo {
+    width: 120px;
+    position: absolute;
+    left: 45.47%;
+    right: 45.39%;
+    top: 31.67%;
+    bottom: 31.67%;
+}
+.profile_icon{
+    /*상단 로그인시 표시되는 캐릭터 프사*/
+    position: absolute;
+    left: 92.19%;
+    right: 1.56%;
+    top: 16.67%;
+    bottom: 16.67%;
+}
+.header_login_wrapper {
+    /*아이콘 옆 로그인 해주세요 text, 로그인, 회원가입 a의 행*/
+    position: absolute;
+    left: 76.56%;
+    right: 10.31%;
+    top: 25.83%;
+    bottom: 46.67%;
+
+    display: flex;
+
+    flex-direction: column;
+    gap: 7px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+
+    color: #000000;
+}
+.header_login_inner{
+    /*아이콘 옆 로그인, 회원가입 열 / 로그인 상태 열*/
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+/*div conandex*/
+.conandex_wrapper{
+    /*상단의 코난 덱스 로고*/
+    display: flex;
+}
+
+.conandex_inner{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+}
+
+.conandex_logo{
+    /*안에 img width 100%로*/
+    width: 100px;
+}
+
+/*div - category*/
+.category{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #001A6D;
+}
+
+.category_text{
+    /* 캐릭터, 발명품, 영화 text class */
+
+    font-family: 'Noto Sans KR';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 44px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.category_text:hover{
+    color: #eda127;
+}
+/* sec01 > sec01_head */
+
+.sec01_chara {
+    /*character wrapper*/
+    width: 100%;
+    margin: 0 40px;
+}
+.sec01_head{
+    /*input과 상단 카테고리 text 표시*/
+    display: flex;
+    width: 100%;
+}
+
+.sec01_head_text{
+    font-family: 'Noto Sans KR Black';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 16px;
+    /* or 40% */
+    display: flex;
+    align-items: center;
+
+    color: #001A6D;
+}
+
+/* sec01 ->chara_union_label */
+.item_union_label{
+    /*select 밑에 있는 세력을 표시하는 라벨바*/
+    width: 100%;
+    height: 44px;
+    background: url("/img/encyclop/labelbar.png") no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: "Noto Sans KR Medium";
+    color: #FFFFFF;
+    font-size: 20pt;
+}
+
+/* sec01 -> chara_list    */
+
+.item_list_wrapper{
+    /*캐릭터 도감 wrapper*/
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item_list_01{
+    /*캐릭터 box_set을 감싸는 열 *여러번 반복 가능**/
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_list_box_set{
+    width: 300px;
+    height: 246px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item_list_box_icon{
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.item_list_box_icon_img{
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: 10;
+}
+
+.item_list_box_icon:hover{
+    background: #EDA127;
+    box-shadow: 0px 4px 10px #7A500E;
+
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/*여기서 부터는 캐릭터 상세 팝업창*/
+.item_detail_wrapper{
+    visibility: hidden;
+    opacity: 0;
+    width:100%;    max-width:400px;
+    border-radius:10px;
+    overflow:hidden;
+    display: flex;
+}
+
+
+/*detail_wrapper -> close_button*/
+.close_button {
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

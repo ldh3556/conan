@@ -1,0 +1,361 @@
+body{
+    margin: 0;
+    padding:0;
+}
+
+/*All Contents wrapper*/
+.wrapper{
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/*header_(login/account/logo/menubaricon)*/
+.header{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+button.menu_button {
+    left: 20px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: none;
+    background: url("../img/index/menu.svg") no-repeat;
+    background-size: cover;
+    border: none;
+
+    color: #eda127;
+}
+
+img.conan_logo{
+    height: 44px;
+}
+
+/*login, register, status to login, icon*/
+.account_wrapper{
+    font-size: 15pt;
+    gap: 20px;
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+
+}
+
+.account_wrapper > span{
+    font-weight: bold;
+}
+
+/*login, register text wrapper*/
+.login_text{
+    display: flex;
+    gap: 32px;
+    color: #393939;
+}
+
+.login_text > a{
+    text-decoration: none;
+    color: black;
+}
+
+.login_text > a:hover{
+    color: #eda127;
+    font-weight: bold;
+}
+
+#account_icon{
+    width: 80px;
+    height: 80px;
+    background-color: #a1a1a1;
+    border-radius: 100%;
+}
+
+/*INDEX_SEC02_R,L WRAPPER*/
+.index_Sec01{
+    display: flex;
+    width: 100%;
+    height: 695px;
+}
+
+/*INDEX_SEC_02_R with Contents*/
+
+.index_Sec01_R{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(../img/index/index_Sec01_R_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*INDEX_SEC02_L with Contents*/
+.index_Sec01_L{
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(../img/index/index_Sec01_L_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*SEC02_R,L WRAPPER*/
+.index_Sec02{
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+/*INDEX_SEC02_L with Contents(Link animation to Conan'dex(encyclop))*/
+.index_Sec02_L{
+    width: 30%;
+    height: 100%;
+    background: url("../img/index/sec_bg_1.jpg");
+    position: relative;
+}
+
+.Sec02_conandex{
+    position: absolute;
+    height: 200px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 40;
+}
+
+#conandexicon{
+    height: 100%;
+}
+
+#conandex_go{
+    width: 200px;
+    position: absolute;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #eda127;
+    bottom: 30px;
+    right: 20px;
+}
+.arrow_left{
+    background:url("../img/index/arrow-left.svg") no-repeat;
+    color: #eda127;
+    width: 12px;
+    height: 12px;
+}
+
+/*INDEX_SEC02_R with Contents(Most important Character's simple instruction)*/
+.index_Sec02_R{
+    display: flex;
+    justify-content: center;
+
+    width: 70%;
+    background: url("../img/index/sec_bg_2.jpg");
+    padding: 25px;
+    position: relative;
+}
+
+.index_Sec02_introbox{
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 0 10px 4px rgba( 0,0,0,0.5);
+}
+.charabox_wrapper{
+    width: 80%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+/*INDEX_SEC03_L,R wrapper*/
+.index_Sec03 {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+/*INDEX_SEC_03_L with Contents(Movie Post Information)*/
+.index_Sec03_L{
+    width: 60%;
+    background: url("../img/index/sec_bg_2.jpg");
+    height: 100%;
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie_box_wrapper{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.moviebox_01{
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.moviebox_01 > img{
+    width: 100%;
+    height: 100%;
+    background: #eda127;
+}
+.moviebox_text{
+    padding: 10px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.moviebox_text > span{
+    font-size: 15px;
+    font-weight: bold;
+}
+.togo_movie_event{
+    font-size: 12px !important;
+    font-weight: lighter;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+/*INDEX_SEC_03_R with Contents(Community and Event posts)*/
+.index_Sec03_R{
+    width: 40%;
+    background: url("../img/index/sec_bg_1.jpg");
+    padding: 25px;
+}
+.commu_box_wrapper{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+
+}
+/*FOOTER*/
+.footer{
+    width: 100%;
+    height: 200px;
+    background: #393939;
+}
+
+/*font-animation sec02*/
+
+.Sec02_Text_Animation{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+}
+.textStyle{
+    font-weight: 900;
+    color: #001a6d;
+    margin: 0;
+    margin-bottom: 45px;
+}
+
+.textAniBox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+
+.textAniBox > .textStyle{
+    color: #eda127;
+    width:400px ;
+}
+
+.textAni1{
+    position: absolute;
+    opacity: 0;
+    animation: updown 15s;
+    animation-delay:  0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.textAni2{
+    position: absolute;
+    opacity: 0;
+    animation: updown 15s;
+    animation-delay:  3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.textAni3{
+    position: absolute;
+    opacity: 0;
+    animation: updown 15s;
+    animation-delay:  6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.textAni4{
+    position: absolute;
+    opacity: 0;
+    animation: updown 15s;
+    animation-delay:  9s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.textAni5{
+    position: absolute;
+    opacity: 0;
+    animation: updown 15s;
+    animation-delay:  12s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes updown{
+    0%{
+        opacity: 0;
+        transform: translate3d(0, 30%, 0);
+    }
+    5%{
+        opacity: 1;
+        transform: translateZ(0);
+    }
+    10%{
+        opacity: 1;
+        transform: translateZ(0);
+    }
+    20%{
+        opacity: 0;
+        transform: translate3d(0, 30%, 0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate3d(0, 30%, 0);
+    }
+}

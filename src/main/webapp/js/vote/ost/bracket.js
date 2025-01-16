@@ -205,7 +205,7 @@ $(document).ready(function () {
             $('#voteButton').addClass('semiVoteButton');
             isVoteButtonClassAdded = true;
         }
-        
+
     });     // s1~s4 클릭 범위
     
 // 모달 닫기 버튼 클릭 시 모달 닫기

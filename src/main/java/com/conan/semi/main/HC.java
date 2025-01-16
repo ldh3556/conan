@@ -12,11 +12,9 @@ import java.io.IOException;
 public class HC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+    request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
+    } // used by HDH
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
-
 }

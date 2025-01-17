@@ -1,4 +1,4 @@
-package com.conan.semi.vote.ost;
+package com.conan.semi.vote.worldcup;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,18 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/ost_contentC")
-public class Ost_contentC extends HttpServlet {
+@WebServlet("/Vote_worldcupC")
+public class Vote_worldcupC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        System.out.println("일해라");
-        OstDAO.getBracket(request);
-//        System.out.println("다 했다");
-        request.getRequestDispatcher("jsp/vote/ost/ost_content.jsp").forward(request, response);
-
+    request.getRequestDispatcher("jsp/vote/worldcup/worldcup_main.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
-
 }

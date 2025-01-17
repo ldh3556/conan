@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class OstDAO {
-    public static void getName(HttpServletRequest request) {
+    public static void getBracket(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -22,7 +22,13 @@ public class OstDAO {
             OstDTO song = null;
             ArrayList<OstDTO> songs = new ArrayList<OstDTO>();
             while (rs.next()) {
-                song = new OstDTO(rs.getInt(1),rs.getString(2),rs.getInt(3));
+                int a = rs.getInt(1);
+                String b = rs.getString(2);
+                int c = rs.getInt(3);
+                System.out.println(a);
+                System.out.println(b);
+                System.out.println(c);
+                song = new OstDTO(a,b,c);
                 songs.add(song);
             }
 
@@ -62,10 +68,39 @@ public class OstDAO {
         }finally {
             DBManager.close(con, ps, null);
         }
-
-
     }
 
+    public static void getAllResult(HttpServletRequest request) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "select * from bracket_test order by win_count desc";
+        try {
+            request.setCharacterEncoding("utf-8");
+            con = DBManager.connect();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            OstDTO song = null;
+            ArrayList<OstDTO> result = new ArrayList<OstDTO>();
+            while (rs.next()) {
+                int a = rs.getInt(1);
+                String b = rs.getString(2);
+                int c = rs.getInt(3);
+                System.out.println(a);
+                System.out.println(b);
+                System.out.println(c);
+                song = new OstDTO(a,b,c);
+                result.add(song);
+            }
+            System.out.println(result);
+            request.setAttribute("result", result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(con, ps, rs);
+        }
+    }
 
 
 

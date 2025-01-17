@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-.loadani_wrapper {
+.load_ani_wrapper {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -18,14 +18,14 @@
     border: none;
     -webkit-user-select: none;
 }
-.loadani_wrapper .box-wrap {
+.load_ani_wrapper .box-wrap {
     width: 70%;
     height: 70%;
     margin: calc((100% - 70%)/2) calc((100% - 70%)/2);
     position: relative;
     transform: rotate(-45deg);
 }
-.loadani_wrapper .box-wrap .box {
+.load_ani_wrapper .box-wrap .box {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -37,27 +37,27 @@
     background-size: 1000% 1000%;
     visibility: hidden;
 }
-.loadani_wrapper .box-wrap .box.one {
+.load_ani_wrapper .box-wrap .box.one {
     -webkit-animation: moveGradient 15s infinite, oneMove 3.5s infinite;
     animation: moveGradient 15s infinite, oneMove 3.5s infinite;
 }
-.loadani_wrapper .box-wrap .box.two {
+.load_ani_wrapper .box-wrap .box.two {
     -webkit-animation: moveGradient 15s infinite, twoMove 3.5s 0.15s infinite;
     animation: moveGradient 15s infinite, twoMove 3.5s 0.15s infinite;
 }
-.loadani_wrapper .box-wrap .box.three {
+.load_ani_wrapper .box-wrap .box.three {
     -webkit-animation: moveGradient 15s infinite, threeMove 3.5s 0.3s infinite;
     animation: moveGradient 15s infinite, threeMove 3.5s 0.3s infinite;
 }
-.loadani_wrapper .box-wrap .box.four {
+.load_ani_wrapper .box-wrap .box.four {
     -webkit-animation: moveGradient 15s infinite, fourMove 3.5s 0.575s infinite;
     animation: moveGradient 15s infinite, fourMove 3.5s 0.575s infinite;
 }
-.loadani_wrapper .box-wrap .box.five {
+.load_ani_wrapper .box-wrap .box.five {
     -webkit-animation: moveGradient 15s infinite, fiveMove 3.5s 0.725s infinite;
     animation: moveGradient 15s infinite, fiveMove 3.5s 0.725s infinite;
 }
-.loadani_wrapper .box-wrap .box.six {
+.load_ani_wrapper .box-wrap .box.six {
     -webkit-animation: moveGradient 15s infinite, sixMove 3.5s 0.875s infinite;
     animation: moveGradient 15s infinite, sixMove 3.5s 0.875s infinite;
 }

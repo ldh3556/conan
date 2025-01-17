@@ -34,8 +34,8 @@
         </div>
     </div>
     <div class="index_Sec01">
-        <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="./game/loading/game_loading.jsp">
+        <div class="index_Sec01_L">ame/loading/game_lo
+            <a class="playlogo_wrapper" href="game/loading/loading.jsp">
                 <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>

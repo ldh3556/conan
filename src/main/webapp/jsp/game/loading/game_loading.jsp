@@ -15,17 +15,17 @@
 <div class="wrapper">
     <span>GAME LOADING...</span>
 
-<div class="loadani_wrapper">
-    <div class="box-wrap">
-        <div class="box one"></div>
-        <div class="box two"></div>
-        <div class="box three"></div>
-        <div class="box four"></div>
-        <div class="box five"></div>
-        <div class="box six"></div>
+    <div class="loadani_wrapper">
+        <div class="box-wrap">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+            <div class="box five"></div>
+            <div class="box six"></div>
+        </div>
     </div>
-</div>
-<a class="blinking-text">START HERE</a>
+    <a class="blinking-text">START HERE</a>
 </div>
 </body>
 </html>

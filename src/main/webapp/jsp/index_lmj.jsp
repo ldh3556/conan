@@ -50,7 +50,7 @@
         </div>
             <div class="Sec02_conandex">
                 <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
-                <a id="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
+                <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
             </div>
         </div>
         <div class="index_Sec02_R">
@@ -95,15 +95,14 @@
                     </div>
                 </a>
                 <a class="moviebox_01">
-                    <img>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
                         <span>절찬 발매중</span>
                         <span>굿즈 출시</span>
-                        <span class="togo_movie_event">
+                        <a class="togo_movie_event">
                             자세히 보기
                             <span class="arrow"></span>
-                        </span>
+                        </a>
                     </div>
                 </a>
             </div>

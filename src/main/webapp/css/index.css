@@ -31,7 +31,6 @@ button.menu_button {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: none;
     background: url("../img/index/menu.svg") no-repeat;
     background-size: cover;
     border: none;
@@ -139,7 +138,7 @@ img.conan_logo{
     height: 100%;
 }
 
-#conandex_go{
+.conandex_go{
     width: 200px;
     position: absolute;
     font-size: 12pt;
@@ -147,7 +146,12 @@ img.conan_logo{
     color: #eda127;
     bottom: 30px;
     right: 20px;
+    transition: all 0.2s;
 }
+.conandex_go:hover{
+    font-size: 20pt;
+}
+
 .arrow_left{
     background:url("../img/index/arrow-left.svg") no-repeat;
     color: #eda127;
@@ -233,12 +237,14 @@ img.conan_logo{
     font-weight: bold;
 }
 .togo_movie_event{
-    font-size: 12px !important;
+    font-size: 12pt !important;
     font-weight: lighter;
     position: absolute;
     right: 10px;
     bottom: 10px;
+
 }
+
 
 /*INDEX_SEC_03_R with Contents(Community and Event posts)*/
 .index_Sec03_R{

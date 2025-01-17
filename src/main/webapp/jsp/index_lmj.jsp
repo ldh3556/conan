@@ -74,7 +74,7 @@
                 <div slot="container-start" class="parallax-bg"
                      style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" data-swiper-parallax="-23%"></div>
 
-                <swiper-slide class="charabox">
+                <swiper-slide class="charabox c01">
                     <div class="title" data-swiper-parallax="-300">Slide 1</div>
                     <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
                     <div class="text" data-swiper-parallax="-100">
@@ -83,7 +83,7 @@
                         </p>
                     </div>
                 </swiper-slide>
-                <swiper-slide class="charabox">
+                <swiper-slide class="charabox c02">
                     <div class="title" data-swiper-parallax="-300">Slide 2</div>
                     <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
                     <div class="text" data-swiper-parallax="-100">
@@ -92,7 +92,34 @@
                         </p>
                     </div>
                 </swiper-slide>
-                <swiper-slide class="charabox">
+                <swiper-slide class="charabox c03">
+                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-100">
+                        <p>
+                            내용1
+                        </p>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="charabox c04">
+                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-100">
+                        <p>
+                            내용1
+                        </p>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="charabox c05">
+                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-100">
+                        <p>
+                            내용1
+                        </p>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="charabox c06">
                     <div class="title" data-swiper-parallax="-300">Slide 3</div>
                     <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
                     <div class="text" data-swiper-parallax="-100">
@@ -112,7 +139,7 @@
         <div class="index_Sec03_L">
             <div class="movie_box_wrapper">
                 <a class="moviebox_01">
-                    <img>
+                    <img src="">
                     <div class="moviebox_text">
                         <span>명탐정코난 X 소년선데이</span>
                         <span>콜라보 확정!</span>
@@ -136,7 +163,7 @@
                     </div>
                 </a>
                 <a class="moviebox_01">
-                    <img>
+                    <img src="../img/index/sec03_img.jpg">
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
                         <span>절찬 발매 중</span>
@@ -155,6 +182,7 @@
 
             </div>
         </div>
+
     </div>
     <div class="footer"></div>
 </div>

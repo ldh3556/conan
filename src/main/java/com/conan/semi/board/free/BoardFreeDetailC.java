@@ -12,8 +12,8 @@ public class BoardFreeDetailC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  BoardFreeDAO.detailBoardFree(request);
- 
- request.setAttribute("content", "board_free/board_free_detail.jsp");
+ FreeCommentDAO.showAllComment(request);
+
  request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     }
 

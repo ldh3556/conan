@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
@@ -45,20 +46,32 @@
     </div>
     <hr>
     <br>
-    <h4>Add a Comment</h4>
-    <form method="post" action="AddFreeCommentC">
-        <input type="hidden" name="b_no" value="${board.b_no}">
+    <br>
+    <!-- 댓글 리스트 출력 -->
+    <div id="comments-section">
+        <hr>
+        <h4>댓글 목록</h4>
+        <hr>
+      <div>
+          <jsp:include page="${comments}"/>
+      </div>
+    </div>
+    </div>
+
+    <!-- 댓글 작성 폼 -->
+<div>
+    <form method="get" action="FreeCommentRegC">
+        <input type="hidden" name="no" value="${board.b_no}">
         <div>
-            <label for="c_writer">Name:</label>
+            <label for="c_writer">이름:</label>
             <input type="text" id="c_writer" name="c_writer" required>
         </div>
         <div>
-            <label for="c_content">Comment:</label>
+            <label for="c_content">댓글:</label>
             <textarea id="c_content" name="c_content" rows="4" required></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">댓글 작성</button>
     </form>
-    <div>${free_comments}</div>
 </div>
 
 <script type="text/javascript">

@@ -80,8 +80,8 @@ function searchBoardFree() {
     xhr.send(`c_no=${commentId}&c_content=${encodeURIComponent(updatedContent)}`);
 }
 
-    function deleteComment(commentId) {
+    function deleteComment(commentId, b_no) {
     if (confirm('정말로 댓글을 삭제하시겠습니까?')) {
-    location.href = `FreeCommentDeleteC?c_no=${commentId}`;
+    location.href = `FreeCommentDelC?c_no=${commentId}&b_no=${b_no}`;
 }
 }

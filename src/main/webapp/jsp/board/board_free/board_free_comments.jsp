@@ -25,7 +25,7 @@
                 <!-- 수정 및 삭제 버튼 -->
                 <button id="edit-btn-${comment.c_no}" onclick="editComment(${comment.c_no})">수정</button>
                 <button id="save-btn-${comment.c_no}" onclick="saveComment(${comment.c_no})" style="display: none;">저장</button>
-                <button onclick="deleteComment(${comment.c_no})">삭제</button>
+                <button onclick="deleteComment(${comment.c_no}, ${comment.b_no})">삭제</button>
             </div>
             <hr>
         </c:forEach>

@@ -82,13 +82,14 @@ pstmt.executeUpdate();
 
     }
 
-    public static void updateComment(String cNo, String cContent) {
+    public static void updateComment(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-
+        String c_no = request.getParameter("c_no");
+        String c_content = request.getParameter("c_content");
         try {
             con = DBManager.connect();
-            String sql = "UPDATE free_comments SET c_content = ? WHERE c_no = ?";
+            String sql = "UPDATE board_free_comment SET c_content = ? WHERE c_no = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, c_content);
             pstmt.setString(2, c_no);
@@ -99,5 +100,28 @@ pstmt.executeUpdate();
         } finally {
             DBManager.close(con, pstmt, null);
         }
+    }
+
+    public static void deletecomment(HttpServletRequest request) {
+        con = null;
+        PreparedStatement pstmt = null;
+        String sql = "DELETE FROM board_free_comment WHERE c_no = ?";
+        String c_no = request.getParameter("c_no");
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, c_no);
+
+            if (pstmt.executeUpdate() == 1) {
+                System.out.println("삭제성공");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(con, pstmt, null);
+        }
+
+
     }
 }

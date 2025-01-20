@@ -12,10 +12,9 @@ import java.io.IOException;
 public class FreeCommentUpdateC extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String c_no = request.getParameter("c_no");
-        String c_content = request.getParameter("c_content");
+request.setCharacterEncoding("utf-8");
 
-        FreeCommentDAO.updateComment(c_no, c_content);
+        FreeCommentDAO.updateComment(request);
 
         // 성공 상태 전송
         response.setStatus(HttpServletResponse.SC_OK);

@@ -138,7 +138,7 @@
         <button id="retry-btn" onclick="restartGame()">다시하기</button>
     </div>
     <div id="game-over-message" class="game-over" style="display: none;">
-        게임이 끝났습니다! 다시 시작하려면 "다시하기" 버튼을 클릭하세요.
+        게임이 끝났습니다!
     </div>
 </div>
 

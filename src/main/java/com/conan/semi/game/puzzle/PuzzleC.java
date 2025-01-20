@@ -10,7 +10,7 @@ import java.io.IOException;
 @WebServlet("/PuzzleC")
 public class PuzzleC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.getRequestDispatcher("jsp/game/puzzle/puzzle_REDO3_trying.jsp").forward(request, response);
+    request.getRequestDispatcher("jsp/game/puzzle/puzzle.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

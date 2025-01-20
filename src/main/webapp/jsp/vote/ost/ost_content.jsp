@@ -32,29 +32,16 @@
 	</div>
 </div>
 
-<%--<div class="contents">--%>
-<%--	<div class="bracket-lines"><svg width="100%" height="100%" style="position:absolute; top:0; left:0;">--%>
-<%--		<line x1="29.999996185302734" y1="62.80000114440918" x2="29.999996185302734" y2="62.80000114440918" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="62.80000114440918" x2="173.00000038146973" y2="62.80000114440918" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="62.80000114440918" x2="173.00000038146973" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="161.20000839233398" x2="290.00000381469727" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
 
-<%--		<line x1="29.999996185302734" y1="259.600004196167" x2="29.999996185302734" y2="259.600004196167" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="259.600004196167" x2="173.00000038146973" y2="259.600004196167" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="259.600004196167" x2="173.00000038146973" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="161.20000839233398" x2="290.00000381469727" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-
-<%--		<line x1="29.999996185302734" y1="345.2000102996826" x2="29.999996185302734" y2="345.2000102996826" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="345.2000102996826" x2="173.00000038146973" y2="345.2000102996826" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="345.2000102996826" x2="173.00000038146973" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="443.6000175476074" x2="290.00000381469727" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-
-<%--		<line x1="29.999996185302734" y1="541.9999980926514" x2="29.999996185302734" y2="541.9999980926514" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="541.9999980926514" x2="173.00000038146973" y2="541.9999980926514" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="541.9999980926514" x2="173.00000038146973" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="443.6000175476074" x2="290.00000381469727" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--	</svg></div>--%>
-	<!-- First Round -->
+<div>
+	id : ${param.id}
+	<hr>
+	pw: ${param.pw}
+	<br>
+	${result}
+	<br>
+	nickname: ${nickname}
+</div>
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">

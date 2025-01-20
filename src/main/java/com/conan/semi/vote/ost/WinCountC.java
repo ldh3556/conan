@@ -23,12 +23,15 @@ public class WinCountC extends HttpServlet {
 
         // 1. 우승곡 정보 처리 (POST 요청에서 받은 데이터)
         String songTitle = request.getParameter("songTitle");
+        String selectedFSongPK = request.getParameter("selectedFSongPK");
+
         String songDescription = request.getParameter("songDescription");
 
         // 2. DAO 호출하여 우승 횟수 업데이트
         OstDAO.winCount(request); // 우승 횟수 업데이트
 
         // 3. 우승곡 정보 세션에 저장 (결과 페이지에서 사용할 수 있도록)
+        request.getSession().setAttribute("selectedFSongPK", selectedFSongPK);
         request.getSession().setAttribute("songTitle", songTitle);
         request.getSession().setAttribute("songDescription", songDescription);
 
@@ -36,6 +39,6 @@ public class WinCountC extends HttpServlet {
         //OstDAO.getAllResult(request);
 
         // 5. 결과 페이지로 리다이렉트 (별도 컨트롤러로)
-        response.sendRedirect("jsp/vote/ost/ost_result.jsp"); // 'resultController'로 리다이렉트
+        response.sendRedirect("/regCommentC"); // 'resultController'로 리다이렉트
     }
 }

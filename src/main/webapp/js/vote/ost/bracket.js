@@ -691,9 +691,9 @@ $(document).ready(function () {
         $(document).off('click','#voteButton.finalVoteButton')
             .on('click','#voteButton.finalVoteButton',function () {
                 let finalVictorySong = selectedFDiv.find('a').text();
-
+                let pk =    $(finalVictorySong).parent().data("pk");
                 pauseAudio();
-
+                console.log(selectedFSongPK)
                 console.log(finalVictorySong);
 
                 // 우승곡에 해당하는 정보를 songDetails에서 찾기
@@ -718,7 +718,11 @@ $(document).ready(function () {
                         name: 'songTitle',
                         value: selectedSongInfo.title
                     }));
-
+                    form.append($('<input>', {
+                        type: 'hidden',
+                        name: 'selectedFSongPK',
+                        value: selectedFSongPK
+                    }));
                     // 노래 설명을 추가
                     form.append($('<input>', {
                         type: 'hidden',
@@ -731,7 +735,7 @@ $(document).ready(function () {
 
                     // form을 body에 추가하고 submit 호출
                     $('body').append(form);
-                    form[0].submit();  // 데이터를 서버로 전송
+                   form[0].submit();  // 데이터를 서버로 전송
 
                     // 페이지 리로드 방지 (필요한 경우)
                     return false;  // form의 기본 제출 동작을 막음

@@ -27,8 +27,13 @@
     </style>
 </head>
 <body>
-
-<h2></h2>
+<div class="song-list">
+    <div class="song-item">
+        <div class="song-id">번호</div>
+        <div class="song-title">노래 제목</div>
+        <div class="win-count">우승 횟수</div>
+    </div>
+</div>
 <!-- result가 null이 아니고 비어있지 않으면 결과 출력 -->
 <c:if test="${not empty result}">
     <div class="song-list">

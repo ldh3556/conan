@@ -1,0 +1,38 @@
+/* 화면을 반반으로 나누기 위한 스타일 */
+.container {
+    display: flex; /* 부모 요소에 flexbox 사용 */
+    width: 90%; /* 전체 너비 */
+    height: 90vh; /* 전체 화면 높이 */
+}
+
+.song-details, .comment-section {
+    flex: 1; /* 두 섹션을 동일한 비율로 나누기 */
+    padding: 20px;
+    box-sizing: border-box; /* padding 포함된 크기 계산 */
+}
+
+.song-details {
+    background-color: #f9f9f9; /* 배경 색상 */
+    border-right: 1px solid #ccc; /* 구분선 */
+}
+
+.comment-section {
+    background-color: #fff;
+}
+
+/* 반응형: 화면이 작을 때 세로로 배치 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 세로로 배치 */
+    }
+
+    .song-details, .comment-section {
+        width: 100%; /* 너비 100%로 설정 */
+        border-right: none;
+        border-bottom: 1px solid #ccc; /* 구분선 */
+    }
+
+    .song-details {
+        border-bottom: none; /* 마지막 요소에서만 구분선 처리 */
+    }
+}

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-<<<<<<< HEAD
   <component name="FacetManager">
     <facet type="web" name="Web">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/web" relative="/" />
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
@@ -15,11 +13,5 @@
         </sourceRoots>
       </configuration>
     </facet>
-=======
-  <component name="AdditionalModuleElements">
-    <content url="file://$MODULE_DIR$" dumb="true">
-      <sourceFolder url="file://$MODULE_DIR$/src" type="java-resource" />
-    </content>
->>>>>>> edfd73c21f284c45c9cc1a355a4bd695eb41439e
   </component>
 </module>

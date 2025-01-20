@@ -694,17 +694,18 @@ $(document).ready(function () {
                 let pk =    $(finalVictorySong).parent().data("pk");
                 pauseAudio();
                 console.log(selectedFSongPK)
-                console.log(finalVictorySong);
 
                 // 우승곡에 해당하는 정보를 songDetails에서 찾기
                 let selectedSongInfo = null;
                 for (let key in songDetails) {
+                    console.log(`Checking song: ${songDetails[key].title}, Final victory song: ${finalVictorySong}`);
+                    console.log(`Type of songDetails[key].title: ${typeof songDetails[key].title}`);
+                    console.log(`Type of finalVictorySong: ${typeof finalVictorySong}`);
                     if (songDetails[key].title === finalVictorySong) {
                         selectedSongInfo = songDetails[key];
                         break;
                     }
                 }
-
                 if (selectedSongInfo) {
                     // form을 이용해 데이터를 서버로 동기식으로 전송
                     const form = $('<form>', {

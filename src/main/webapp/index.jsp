@@ -24,7 +24,9 @@
         </div>
         <div class="account_wrapper">
             <div class="login_text_wrapper">
+                <jsp:include page="${loginPage}">
                 <span>로그인</span> 해주세요.
+                </jsp:include>
                 <div class="login_text">
                     <a href="/LoginC" id="login_text_id"> 로그인 </a>
                     <a href="/AccountC" id="login_text_reg"> 회원가입 </a>

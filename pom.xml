@@ -68,12 +68,13 @@
       <version>21.5.0.0</version>
     </dependency>
 
-    <!-- Oracle JDBC Driver -->
+    <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
     <dependency>
       <groupId>com.oracle.database.jdbc</groupId>
-      <artifactId>ojdbc10</artifactId>
-      <version>19.21.0.0</version>
+      <artifactId>ojdbc11</artifactId>
+      <version>21.10.0.0</version>
     </dependency>
+
 
     <!-- JSTL -->
     <dependency>

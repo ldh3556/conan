@@ -11,7 +11,7 @@
     <title> FIND_PW_TEST </title>
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
             updateDays();  // 페이지 로딩 시 일 수 업데이트
         };
 
@@ -50,46 +50,78 @@
             return 31;
         }
     </script>
-
+    <link rel="stylesheet" href="../../css/login/login.css">
 </head>
 <body>
 
-<h1> 비밀번호 찾기 </h1>
-<a href="/Find_IDC"> 아이디 찾기 </a> <hr>
-
-<form action="/Find_PWC" method="post">
-    <div> ID <input name="id" type="text" placeholder="ID를 입력하세요"></div> <br>
-    <div> 생년월일
-        <select name="birth_year" onchange="updateDays()">
-            <option value="">년</option>
-            <!-- 1960년부터 현재 연도까지 선택 -->
-            <%
-                int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
-                for (int year = 1960; year <= currentYear; year++) {
-            %>
-            <option value="<%= year %>" <%= (year == 1960) ? "selected" : "" %>><%= year %></option>
-            <% } %>
-        </select>
-
-        <select name="birth_month" onchange="updateDays()">
-            <option value="">월</option>
-            <!-- 1월부터 12월까지 선택 -->
-            <% for (int month = 1; month <= 12; month++) { %>
-            <option value="<%= month %>" <%= (month == 1) ? "selected" : "" %>><%= month %></option>
-            <% } %>
-        </select>
-
-        <select name="birth_day">
-            <option value="">일</option>
-            <!-- 일은 자바스크립트로 동적으로 채워짐 -->
-        </select>
-    </div> <br>
-    <div> 성별 <label><input name="gender" type="radio" value="남" checked="checked"> 남 </label> <label><input name="gender" type="radio" value="여"> 여 </label> </div> <br>
-    <div> E-mail <input name="e_mail" type="text" placeholder="example@gmail.com"> </div> <br>
-    <div> <button> FIND PW </button>
-    <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
+<div class="wrapper">
+    <div class="sec01_L">
+        <a href="/jsp/index_lmj.jsp"><img src="../../img/login/logoimg.png"></a>
     </div>
-</form>
+    <div class="sec01_R">
+        <div class="deco_line"></div>
+        <h1> 비밀번호 찾기 </h1>
+        <div class="reg_text_wrapper">
+
+            <div class="to_find">
+                <a href="/Find_IDC"> 아이디 찾기 </a>
+            </div>
+        </div>
+
+        <div class="find_pw_input_box">
+            <form action="/Find_PWC" method="post">
+                <div id="input_id"> ID <input name="id" type="text" placeholder="ID를 입력하세요"></div>
+                <div id="input_birth"> 생년월일
+                    <div id="birth_select">
+                        <select name="birth_year" onchange="updateDays()">
+                            <option value="">년</option>
+                            <!-- 1960년부터 현재 연도까지 선택 -->
+                            <%
+                                int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
+                                for (int year = 1960; year <= currentYear; year++) {
+                            %>
+                            <option value="<%= year %>" <%= (year == 1960) ? "selected" : "" %>><%= year %>
+                            </option>
+                            <% } %>
+                        </select>
+
+                        <select name="birth_month" onchange="updateDays()">
+                            <option value="">월</option>
+                            <!-- 1월부터 12월까지 선택 -->
+                            <% for (int month = 1; month <= 12; month++) { %>
+                            <option value="<%= month %>" <%= (month == 1) ? "selected" : "" %>><%= month %>
+                            </option>
+                            <% } %>
+                        </select>
+
+                        <select name="birth_day">
+                            <option value="">일</option>
+                            <!-- 일은 자바스크립트로 동적으로 채워짐 -->
+                        </select>
+                    </div>
+                </div>
+                <div id="input_gender"> 성별
+                    <div id="gender_select">
+                        <label>
+                            <input name="gender" type="radio" value="남" checked="checked"> 남
+                        </label>
+                        <label>
+                            <input name="gender" type="radio" value="여"> 여
+                        </label>
+                    </div>
+                </div>
+                <div id="input_email"> E-mail <input name="e_mail" type="text" placeholder="example@gmail.com"></div>
+                <div class="input_button">
+                    <button> FIND PW</button>
+                    <button type="button" class="back-btn" onclick="location.href='index.jsp'">메인으로</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="footer"></div>
+
 
 </body>
 </html>

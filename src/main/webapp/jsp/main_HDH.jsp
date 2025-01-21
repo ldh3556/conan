@@ -17,7 +17,8 @@
 <a href="/LoginC"> 로그인 </a> / <a href="/AccountC"> 회원가입 </a>
 <hr>
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>
-
+<hr>
+<a href="/PuzzleC"> 부분 보고 캐릭터 맞추기 </a>
 
 </body>
 </html>

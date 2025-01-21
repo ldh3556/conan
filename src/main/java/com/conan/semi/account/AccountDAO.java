@@ -36,7 +36,7 @@ public class AccountDAO {
         // 계정 생성 SQL 실행
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "INSERT INTO account_table_hdh (name, birth_year, birth_month, birth_day, gender, e_mail, id, pw, pw_check, nickname) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into account_table_hdh (name, birth_year, birth_month, birth_day, gender, e_mail, id, pw, pw_check, nickname) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             con = DBManager.connect();

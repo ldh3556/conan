@@ -5,49 +5,50 @@
 </head>
 <body>
 
-<div class="title-container">
-    <h2><span> 캐릭터 이상형 월드컵 16강 </span></h2>
-</div>
+<div class="outer-container">
+    <div class="title-container">
+        <h2><span> 캐릭터 이상형 월드컵 16강 </span></h2>
+    </div>
 
-<br>
+    <br>
 
-<!-- 카드 컨테이너 -->
-<div class="card-container">
-    <!-- 여성 캐릭터 카드 -->
-    <div class="card">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">여성 캐릭터</h5><hr>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <img src="/img/vote/worldcup/woman.jpg" style="width: 180px; height: 180px;">
-                </h6>
-                <div class="btn-group">
-                    <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
-                        시작
-                    </button>
-                    <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
-                        랭킹
-                    </button>
+    <div class="card-container">
+        <!-- 여성 캐릭터 카드 -->
+        <div class="card">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">여성 캐릭터</h5><hr>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <img src="/img/vote/worldcup/woman.jpg" style="width: 180px; height: 180px;">
+                    </h6>
+                    <div class="btn-group">
+                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
+                            시작
+                        </button>
+                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
+                            랭킹
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 남성 캐릭터 카드 -->
-    <div class="card">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title" style="font-weight: bold;">남성 캐릭터</h5><hr>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <img src="/img/vote/worldcup/man.jpg" style="width: 180px; height: 180px;">
-                </h6>
-                <div class="btn-group">
-                    <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
-                        시작
-                    </button>
-                    <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">
-                        랭킹
-                    </button>
+        <!-- 남성 캐릭터 카드 -->
+        <div class="card">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">남성 캐릭터</h5><hr>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <img src="/img/vote/worldcup/man.jpg" style="width: 180px; height: 180px;">
+                    </h6>
+                    <div class="btn-group">
+                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
+                            시작
+                        </button>
+                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">
+                            랭킹
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +58,18 @@
 </body>
 
 <style>
-    .title-container{
+    .outer-container {
+        height: 100vw;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto; /* 화면 중앙 정렬 */
+        padding: 20px;
+        border: solid 3pt red;
+        position: relative; /* 자식 요소들에 상대적인 위치 지정 */
+    }
+
+    /* title-container 스타일 */
+    .title-container {
         position: absolute;
         text-align: center;
         left: 50%;
@@ -69,7 +81,7 @@
     }
 
     h2 {
-        color:black;
+        color: black;
         opacity: 0;
         animation: fadeInLetters 2s forwards;
         display: inline-block;
@@ -89,6 +101,7 @@
         }
     }
 
+    /* card-container 스타일 */
     .card-container {
         display: flex;
         justify-content: center;
@@ -101,6 +114,7 @@
         gap: 20px;
     }
 
+    /* card 스타일 */
     .card {
         width: 470px;
         height: 380px;
@@ -108,12 +122,14 @@
         text-align: center;
     }
 
-    .btn{
+    /* 버튼 스타일 */
+    .btn {
         width: 200px;
         height: 30px;
         transition: all 0.3s ease-in-out;
         background-color: rgba(125, 58, 210, 0.15);
     }
+
     .btn:hover {
         transform: scale(1.1);
     }

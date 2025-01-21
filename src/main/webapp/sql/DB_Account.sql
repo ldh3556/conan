@@ -42,11 +42,8 @@ create table account_table_hdh (
 );
 
 create sequence account_table_hdh_seq;
-
-insert into account_table_hdh values(account_table_hdh_seq.nextval, '성기훈', '1970', '10', '15','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번');
-insert into account_table_hdh values(account_table_hdh_seq.nextval, '오일남', '1950', '01', '01','남', 'oin001@gmail.com', 'oin001', 'oin001', 'oin001', '001번');
-insert into account_table_hdh values(account_table_hdh_seq.nextval, '조상우', '1975', '05', '05','남', 'jsw218@gmail.com', 'jsw218', 'jsw218', 'jsw218', '218번');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,
+'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면');
 
 select * from account_table_hdh;
-
--- DROP TABLE account_table_hdh CASCADE CONSTRAINTS;
+-- DROP TABLE account_table_hdh;

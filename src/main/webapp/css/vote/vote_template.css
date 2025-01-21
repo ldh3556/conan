@@ -9,13 +9,13 @@
     background: url("../../img/index/sec_bg_2.jpg");
 }
 
-.game_wrapper {
+.vote_wrapper {
     width: 100%;
     position: absolute;
     top: 120px;
     left: 0;
 }
-.game_inner{
+.vote_inner{
     width: 60%;
     margin: 0 auto;
     border-radius: 10px;

@@ -10,7 +10,11 @@ import java.io.IOException;
 @WebServlet("/LogoutC")
 public class LogoutC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
+        // 로그아웃
+        LoginDAO.logout(request);
+        // 어디로?
+        LoginDAO.loginCheck(request);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

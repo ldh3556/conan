@@ -2,52 +2,73 @@
 <html>
 <head>
     <title>VOTE(MAIN)</title>
+    <link href="../../../css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/vote/vote_template.css">
 </head>
 <body>
-
-<div class="outer-container">
-    <div class="title-container">
-        <h2><span> 캐릭터 이상형 월드컵 16강 </span></h2>
-    </div>
-
-    <br>
-
-    <div class="card-container">
-        <!-- 여성 캐릭터 카드 -->
-        <div class="card">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold;">여성 캐릭터</h5><hr>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        <img src="/img/vote/worldcup/woman.jpg" style="width: 180px; height: 180px;">
-                    </h6>
-                    <div class="btn-group">
-                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
-                            시작
-                        </button>
-                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
-                            랭킹
-                        </button>
-                    </div>
+<div class="wrapper">
+    <div class="header">
+        <button class="menu_button">
+        </button>
+        <a class="conan_logo" href="../../../index.jsp">
+            <img src="../../../img/index/logoimg.png">
+        </a>
+        <div class="account_wrapper">
+            <div class="login_text_wrapper">
+                <span>로그인</span> 해주세요.
+                <div class="login_text">
+                    <a href="/LoginC" id="login_text_id"> 로그인 </a>
+                    <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
                 </div>
             </div>
+            <a href="/LoginC" id="account_icon"></a>
         </div>
+    </div>
+    <div class="vote_wrapper">
+        <div class="vote_inner">
+            <div class="title-container">
+                <h2><span> 캐릭터 이상형 월드컵 16강 </span></h2>
+            </div>
+            <div class="card-container">
+                <!-- 여성 캐릭터 카드 -->
+                <div class="card">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-weight: bold;">여성 캐릭터</h5>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <img src="/img/vote/worldcup/woman.jpg" style="width: 180px; height: 180px;">
+                            </h6>
+                            <div class="btn-group">
+                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
+                                    시작
+                                </button>
+                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
+                                    랭킹
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- 남성 캐릭터 카드 -->
-        <div class="card">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold;">남성 캐릭터</h5><hr>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        <img src="/img/vote/worldcup/man.jpg" style="width: 180px; height: 180px;">
-                    </h6>
-                    <div class="btn-group">
-                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
-                            시작
-                        </button>
-                        <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">
-                            랭킹
-                        </button>
+                <!-- 남성 캐릭터 카드 -->
+                <div class="card">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-weight: bold;">남성 캐릭터</h5>
+                            <hr>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <img src="/img/vote/worldcup/man.jpg" style="width: 180px; height: 180px;">
+                            </h6>
+                            <div class="btn-group">
+                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
+                                    시작
+                                </button>
+                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">
+                                    랭킹
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,10 +91,9 @@
 
     /* title-container 스타일 */
     .title-container {
-        position: absolute;
         text-align: center;
         left: 50%;
-        transform: translateX(-50%);
+
         width: 1000px;
         height: 150px;
         border-radius: 50px;
@@ -106,11 +126,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        margin-top: 150px;
+        margin-top: 30px;
         width: 1000px;
         left: 50%;
-        transform: translateX(-50%);
+
         gap: 20px;
     }
 

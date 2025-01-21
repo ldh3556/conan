@@ -108,7 +108,7 @@ public class OstDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "select * from ost_login where ost_login_id = ?";
+        String sql = "select * from account_table_hdh where id = ?";
         String judge = "";
 
         try {
@@ -118,14 +118,14 @@ public class OstDAO {
             rs = ps.executeQuery();
             if (rs.next()) {
                 //System.out.println("결과 존재: " + rs.getString("ost_login_id"));
-                String dbPw = rs.getString("ost_login_pw");
-                String nickName = rs.getString("ost_login_nickname");  // 닉네임 가져오기
+                String dbPw = rs.getString("pw");
+                String nickName = rs.getString("nickname");  // 닉네임 가져오기
                 //System.out.println("닉네임: " + nickName);  // 닉네임이 정상적으로 출력되는지 확인
-                int ost_login_pk = rs.getInt("ost_login_pk");
+                //int ost_login_pk = rs.getInt("ost_login_pk");
                 if (insertedPw.equals(dbPw)) {
                     judge = "로그인 성공";
                     request.getSession().setAttribute("nickname", nickName);  // 세션에 닉네임 저장
-                    request.getSession().setAttribute("ost_login_pk", ost_login_pk);
+                    //request.getSession().setAttribute("ost_login_pk", ost_login_pk);
                 } else {
                     judge = "비밀번호 오류";
                 }

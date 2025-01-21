@@ -20,6 +20,9 @@ public class LoginC extends HttpServlet {
     LoginDAO.login(request);
 
     // 어디로?
-    request.getRequestDispatcher("jsp/login/login_output.jsp").forward(request, response);
+    LoginDAO.loginCheck(request);
+
+    request.setAttribute("loginPage","index_loginOK.jsp");
+    request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

@@ -3,20 +3,31 @@ package com.conan.semi.login;
 import com.conan.semi.DBManager;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class LoginDAO {
+    public static void loginCheck(HttpServletRequest req) {
+        UserDTO u = (UserDTO) req.getSession().getAttribute("user");
+        System.out.println(u);
+        if (u == null) {
+            req.setAttribute("loginPage","index_loginPlease.jsp");
+        } else {
+            req.setAttribute("loginPage","index_loginOK.jsp");
+        }
+    }
+
     public static void login(HttpServletRequest request) {
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-    String nickname = request.getParameter("nickname");
+    // String nickname = request.getParameter("nickname");
 
     System.out.println(id);
     System.out.println(pw);
-    System.out.println(nickname);
+    // System.out.println(nickname);
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -47,8 +58,8 @@ public class LoginDAO {
                 String dbNickname = rs.getString(11);
                 if (pw.equals(dbPw)) {
                     msg = "로그인 성공";
-                    // 세션 생성(1명의 회원 정보 요소 11개 전부 담기)
-                    HttpSession session = request.getSession();
+
+                    // bean 생성(객체를 만들어 한꺼번에)
                     UserDTO user = new UserDTO();
                     user.setNo(rs.getString(1));
                     user.setName(rs.getString(2));
@@ -62,8 +73,11 @@ public class LoginDAO {
                     user.setPw_check(rs.getString(10));
                     user.setNickname(rs.getString(11));
                     // user.setPw(dbPw);
-                    session.setAttribute("user", user);
-                    session.setMaxInactiveInterval(1000);
+
+                    // 세션 생성(1명의 회원 정보 요소 11개 전부 담기)
+                    HttpSession hs = request.getSession();
+                    hs.setAttribute("user", user);
+                    hs.setMaxInactiveInterval(1000); // 1000초
                 } else {
                     msg = "비밀번호 오류";
                 }
@@ -78,4 +92,21 @@ public class LoginDAO {
         }
     }
 
+    public static void logout(HttpServletRequest request) {
+    // 로그아웃
+        // 세션 없애기
+        HttpSession hs = request.getSession();
+//      hs.setAttribute("user", null); 특정 어트리뷰트 없애기
+        hs.removeAttribute("user");
+//      hs.invalidate(); 모든 어트리뷰트 없애기
+
+        loginCheck(request);
+
+
+
+
+
+
+
+    }
 }

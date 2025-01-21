@@ -34,5 +34,12 @@
         <p>댓글이 없습니다. 첫 댓글을 작성해보세요!</p>
     </c:otherwise>
 </c:choose>
+<div>
+    <a href="FreeCommentPageC?p=1">[begin]</a>
+    <c:forEach begin="1" end="${pageCount }" var="i">
+        <a href="FreeCommentPageC?p=${i }">[${i }]</a>
+    </c:forEach>
+    <a href="FreeCommentPageC?p=${pageCount }">[end]</a>
+</div>
 </body>
 </html>

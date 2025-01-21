@@ -102,7 +102,7 @@ pstmt.executeUpdate();
         }
     }
 
-    public static void deletecomment(HttpServletRequest request) {
+    public static void deleteComment(HttpServletRequest request) {
         con = null;
         PreparedStatement pstmt = null;
         String sql = "DELETE FROM board_free_comment WHERE c_no = ?";
@@ -124,4 +124,41 @@ pstmt.executeUpdate();
 
 
     }
+
+//    public static void pagingComment(int cPageNum, HttpServletRequest request) {
+//        request.setAttribute("curCPageNum", cPageNum);
+//
+//        if (boards.isEmpty()) {
+//            request.setAttribute("boards", new ArrayList<>()); // 빈 리스트 전달
+//            request.setAttribute("pageCount", 1); // 페이지 수를 최소 1로 설정
+//            request.setAttribute("curPageNum", 1); // 현재 페이지를 1로 설정
+//            return;
+//        }
+//        System.out.println(pageNum);
+//        int total = boards.size();
+//        System.out.println(total);
+//        int count = 5;
+//        System.out.println(count);
+//        int pageCount = (int) Math.ceil((double)total / count);
+//        try {
+//            System.out.println(pageCount);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+////    request.setAttribute("pageCount", pageCount);
+//        request.setAttribute("pageCount", pageCount);
+//        int start = total - (count * (pageNum - 1));
+//        int end = (pageNum == pageCount) ? -1 : start - (count + 1);
+//
+//        ArrayList<BoardFreeDTO> items = new ArrayList<BoardFreeDTO>();
+//
+//        for (int i = start-1 ; i > end; i--) {
+//            items.add(boards.get(i));
+//        }
+//
+//        request.setAttribute("boards", items);
+//    }
+
+
 }
+

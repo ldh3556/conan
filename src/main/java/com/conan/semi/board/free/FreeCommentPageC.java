@@ -7,15 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/FreeCommentDelC")
-public class FreeCommentDelC extends HttpServlet {
+@WebServlet("/FreeCommentPageC")
+public class FreeCommentPageC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("utf-8");
-String b_no = request.getParameter("b_no");
-System.out.println(b_no);
-        FreeCommentDAO.deleteComment(request);
-response.sendRedirect("/BoardFreeDetailC?no="+b_no);
+int p = Integer.parseInt(request.getParameter("p"));
+      //  FreeCommentDAO.pagingComment(p, request);
 
+        //request.setAttribute();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

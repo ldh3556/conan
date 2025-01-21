@@ -184,7 +184,7 @@ a:link,a:visited {
     transition: all 0.2s;
     border: none;
     color: #ffffff;
-    font-size: 15pts;
+    font-size: 15pt;
 }
 .input_box > button:hover{
     border: #eda127 2px solid;

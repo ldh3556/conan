@@ -16,6 +16,13 @@
         <version>3.8.1</version>
         <configuration>
           <release>17</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.30</version> <!-- Lombok 버전 -->
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>

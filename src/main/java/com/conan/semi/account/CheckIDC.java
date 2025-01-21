@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CheckIDC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 무슨 일? -> 아이디 중복확인
-        String result = AccountDAO_test3.checkIdExists(request);
+        String result = AccountDAO.checkIdExists(request);
 
         // 응답을 텍스트 형식으로 클라이언트에게 반환
         response.setContentType("text/plain");

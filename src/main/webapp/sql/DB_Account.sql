@@ -1,21 +1,21 @@
-create table account_table_test (
-    id varchar2(20 char) primary key,
-    pw varchar2(20 char) not null,
-    pw_check varchar2(20 char) not null,
-    name varchar2(20 char) not null,
-    nickname varchar2(20 char) not null,
-    CONSTRAINT unique_nickname UNIQUE (nickname)
-);
+-- create table account_table_test (
+--     id varchar2(20 char) primary key,
+--     pw varchar2(20 char) not null,
+--     pw_check varchar2(20 char) not null,
+--     name varchar2(20 char) not null,
+--     nickname varchar2(20 char) not null,
+--     CONSTRAINT unique_nickname UNIQUE (nickname)
+-- );
+--
+-- -- cf. create sequence account_table_test_seq;
+--
+-- insert into account_table_test values('gh456', 'gh456', 'gh456', '성기훈', '456번');
+--
+-- select * from account_table_test;
+--
+-- DROP TABLE account_table_test;
 
--- cf. create sequence account_table_test_seq;
-
-insert into account_table_test values('gh456', 'gh456', 'gh456', '성기훈', '456번');
-
-select * from account_table_test;
-
-DROP TABLE account_table_test;
-
-
+------------------------------------------------------------------
 
 -- [요소 더 넣어서 재구성ing]
 create table account_table_hdh (
@@ -30,7 +30,7 @@ create table account_table_hdh (
     pw_check varchar2(20 char) not null,
     nickname varchar2(20 char) not null,
 
-    -- 각 컬럼에 대해 유니크 제약 조건 추가
+    -- id(pk) 외에 유니크 제약 조건 추가
     constraint unique_nickname unique (nickname),
     constraint unique_e_mail unique (e_mail)
 );

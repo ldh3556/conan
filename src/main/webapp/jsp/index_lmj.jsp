@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title> MAIN_HDH </title>
+    <title> CONAN'DEX </title>
 </head>
 <link rel="stylesheet" href="../css/index.css">
 
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="index_Sec01">
-        <div class="index_Sec01_L">ame/loading/game_lo
+        <div class="index_Sec01_L">
             <a class="playlogo_wrapper" href="game/loading/loading.jsp">
                 <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
@@ -179,7 +179,10 @@
         </div>
         <div class="index_Sec03_R">
             <div class="commu_box_wrapper">
-
+                <div class="notice_togo">
+                    <span>Community</span>
+                    <a href=""> 커뮤니티 바로가기</a>
+                </div>
             </div>
         </div>
 
@@ -190,8 +193,39 @@
 
 
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>
-
+<%--swiper 라이브러리 가급적 건드리지 말 것--%>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<%--메뉴슬라이드 가급적 건드리지 말것--%>
+<script>
+    var menuButton = document.querySelector('.menu-button');
+    var openMenu = function () {
+        swiper.slidePrev();
+    };
+    var swiper = new Swiper('.swiper', {
+        slidesPerView: 'auto',
+        initialSlide: 1,
+        resistanceRatio: 0,
+        slideToClickedSlide: true,
+        on: {
+            slideChangeTransitionStart: function () {
+                var slider = this;
+                if (slider.activeIndex === 0) {
+                    menuButton.classList.add('cross');
+                    // required because of slideToClickedSlide
+                    menuButton.removeEventListener('click', openMenu, true);
+                } else {
+                    menuButton.classList.remove('cross');
+                }
+            },
+            slideChangeTransitionEnd: function () {
+                var slider = this;
+                if (slider.activeIndex === 1) {
+                    menuButton.addEventListener('click', openMenu, true);
+                }
+            },
+        },
+    });
+</script>
 
 </body>
 </html>

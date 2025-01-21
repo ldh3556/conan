@@ -1,4 +1,4 @@
-package com.conan.semi.vote;
+package com.conan.semi.vote.ost;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/Vote_worldcupC")
-public class Vote_worldcupC extends HttpServlet {
+@WebServlet("/ost_rankingC")
+public class Ost_rankingC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.getRequestDispatcher("jsp/vote/worldcup/worldcup_main.jsp").forward(request, response);
+        OstDAO.getAllResult(request);
+        request.getRequestDispatcher("jsp/vote/ost/ost_ranking.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }

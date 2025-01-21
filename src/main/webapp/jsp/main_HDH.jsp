@@ -14,6 +14,7 @@
 
 <h1> MAIN </h1>
 
+<hr>
 <a href="/LoginC"> 로그인 </a> / <a href="/AccountC"> 회원가입 </a>
 <hr>
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>

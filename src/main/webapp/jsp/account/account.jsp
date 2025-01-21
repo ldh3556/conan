@@ -290,87 +290,107 @@
     </style>
 
 </head>
+<link rel="stylesheet" href="../../css/account/account.css">
 <body>
 
-<h1> REGISTER </h1> 회원이 되어 함께 소통해요!
-<hr>
-
-<form action="AccountC" method="post" id="signup-form">
-    <div> 이름
-        <input name="name" type="text" placeholder="이름을 입력하세요">
-        <span id="name-error" class="error"></span> <!-- 이름 오류 메시지 -->
+<div class="wrapper">
+    <div class="sec01_L">
+        <a href="/jsp/index_lmj.jsp"><img src="../../img/login/logoimg.png"></a>
     </div>
-    <br>
+    <div class="sec01_R">
+        <div class="deco_line"></div>
+        <h1> REGISTER </h1>
+        <div class="reg_text_wrapper">
+            <span>회원이 되어 함께 소통해요!</span>
+        </div>
 
-    <div> 생년월일
-        <select name="birth_year" onchange="updateDays()">
-            <option value="">년</option>
-            <% int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR); %>
-            <% for (int year = 1960; year <= currentYear; year++) { %>
-            <option value="<%= year %>" <%= (year == 1960) ? "selected" : "" %>><%= year %>
-            </option>
-            <% } %>
-        </select>
+        <div class="reg_input_box">
+            <form action="AccountC" method="post" id="signup-form">
+                <div id="input_name"> 이름
+                    <div class="input_box">
+                        <input name="name" type="text" placeholder="이름을 입력하세요">
+                        <span id="name-error" class="error"></span> <!-- 이름 오류 메시지 -->
+                    </div>
 
-        <select name="birth_month" onchange="updateDays()">
-            <option value="">월</option>
-            <% for (int month = 1; month <= 12; month++) { %>
-            <option value="<%= month %>" <%= (month == 1) ? "selected" : "" %>><%= month %>
-            </option>
-            <% } %>
-        </select>
+                </div>
 
-        <select name="birth_day">
-            <option value="">일</option>
-        </select>
+                <div id="input_birth"> 생년월일
+                    <div id="birth_select">
+                        <select name="birth_year" onchange="updateDays()">
+                            <option value="">년</option>
+                            <% int currentYear = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR); %>
+                            <% for (int year = 1960; year <= currentYear; year++) { %>
+                            <option value="<%= year %>" <%= (year == 1960) ? "selected" : "" %>><%= year %>
+                            </option>
+                            <% } %>
+                        </select>
+                        <select name="birth_month" onchange="updateDays()">
+                            <option value="">월</option>
+                            <% for (int month = 1; month <= 12; month++) { %>
+                            <option value="<%= month %>" <%= (month == 1) ? "selected" : "" %>><%= month %>
+                            </option>
+                            <% } %>
+                        </select>
+                        <select name="birth_day">
+                            <option value="">일</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="input_gender"> 성별
+                    <div id="gender_select">
+                        <label><input name="gender" type="radio" value="남" checked="checked"> 남 </label>
+                        <label><input name="gender" type="radio" value="여"> 여 </label>
+                    </div>
+                </div>
+                <div id="input_email"> E-mail
+                    <div class="input_box">
+                        <input name="e_mail" type="text" placeholder="example@gmail.com">
+                    </div>
+                </div>
+                <div id="input_id"> 아이디
+                    <div class="input_box">
+                        <input name="id" type="text" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="id-input">
+                        <button type="button" onclick="checkId()">중복확인</button>
+                        <span id="id-error" class="error" style="color: red"></span> <!-- 중복 확인 결과 표시 -->
+                    </div>
+                </div>
+
+                <div id="input_pw"> 비밀번호
+                    <div class="input_box">
+                        <input name="pw" type="password" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="pw">
+                    </div>
+                </div>
+
+
+                <div id="input_pw_re"> 비밀번호 확인
+                    <div class="input_box">
+                        <input name="pw_check" type="password" placeholder="비밀번호를 확인해주세요" oninput="validatePasswordMatch()">
+                        <span id="password-match-message"></span><br>
+                    </div>
+                </div>
+
+                <div id="input_nick"> 닉네임
+                    <div class="input_box">
+                        <input name="nickname" type="text" placeholder="영문 대,소문자, 한글, 숫자 포함 가능, 3자 이상" id="nickname-input">
+                        <button type="button" onclick="checkNickname()">중복확인</button>
+                        <span id="nickname-error" class="error" style="color: red"></span> <!-- 중복 확인 결과 표시 -->
+                    </div>
+                </div>
+
+                <div id="register-error" class="error"></div> <!-- 아이디 또는 닉네임 중복 시 나타날 오류 메시지 -->
+
+                <div class="input_button">
+                    <button type="submit" disabled> REGISTER</button> <!-- 초기 상태에서는 비활성화 -->
+                    <button type="button" class="back-btn" onclick="location.href='index.jsp'">메인으로</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <br>
 
-    <div> 성별
-        <label><input name="gender" type="radio" value="남" checked="checked"> 남 </label>
-        <label><input name="gender" type="radio" value="여"> 여 </label>
-    </div>
-    <br>
 
-    <div> E-mail
-        <input name="e_mail" type="text" placeholder="example@gmail.com">
-    </div>
-    <br>
 
-    <div> 아이디
-        <input name="id" type="text" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="id-input">
-        <button type="button" onclick="checkId()">중복확인</button>
-        <span id="id-error" class="error" style="color: red"></span> <!-- 중복 확인 결과 표시 -->
-    </div>
-    <br>
-
-    <div> 비밀번호
-        <input name="pw" type="password" placeholder="영문 대,소문자, 숫자 조합 6자리 이상" id="pw">
-    </div>
-    <br>
-
-    <div> 비밀번호 확인
-        <input name="pw_check" type="password" placeholder="비밀번호를 확인해주세요" oninput="validatePasswordMatch()">
-        <span id="password-match-message"></span><br>
-    </div>
-    <br>
-
-    <div> 닉네임
-        <input name="nickname" type="text" placeholder="영문 대,소문자, 한글, 숫자 포함 가능, 3자 이상" id="nickname-input">
-        <button type="button" onclick="checkNickname()">중복확인</button>
-        <span id="nickname-error" class="error" style="color: red"></span> <!-- 중복 확인 결과 표시 -->
-    </div>
-    <br>
-
-    <div id="register-error" class="error"></div> <!-- 아이디 또는 닉네임 중복 시 나타날 오류 메시지 -->
-
-    <div>
-        <button type="submit" disabled> REGISTER</button> <!-- 초기 상태에서는 비활성화 -->
-        <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
-    </div>
-
-</form>
-
+</div>
+<div class="footer"></div>
 </body>
 </html>
 

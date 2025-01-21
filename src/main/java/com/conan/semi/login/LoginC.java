@@ -17,7 +17,7 @@ public class LoginC extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // 로그인
-    LoginDAO_test.login(request);
+    LoginDAO.login(request);
 
     // 어디로?
     request.getRequestDispatcher("jsp/login/login_output.jsp").forward(request, response);

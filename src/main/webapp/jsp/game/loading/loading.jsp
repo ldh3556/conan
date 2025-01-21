@@ -7,6 +7,7 @@
 
 </head>
 <body>
+
 <div class="wrapper">
     <span>GAME LOADING...</span>
 
@@ -20,7 +21,7 @@
             <div class="box six"></div>
         </div>
     </div>
-    <a class="blinking-text">START HERE</a>
+    <a class="blinking-text" href="../select/game_select.jsp">START HERE</a>
 </div>
 </body>
 </html>

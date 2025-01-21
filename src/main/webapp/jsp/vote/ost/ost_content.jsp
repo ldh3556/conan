@@ -16,6 +16,18 @@
 			pointer-events: none;
 			z-index: 1;
 		}
+		#lyrics-container {
+			max-height: 100px; /* 처음에는 내용이 접혀있도록 */
+			overflow: hidden;
+			transition: max-height 0.3s ease-in-out;
+		}
+		#toggle-description {
+			display: block;
+			margin-top: 10px;
+			text-decoration: none;
+			color: blue;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -23,8 +35,8 @@
 <div id="itemModal" class="modal">
 	<div class="modal-content">
 		<span class="close-button">&times;</span>
-		<h2 class="modal-title"></h2>
-		<div class="modal-description"></div>
+		<h2 id="modal-title" class="modal-title"></h2>
+		<div id="modal-description" class="modal-description"></div>
 		<div class="modal-buttons">
 			<button id="voteButton">투표하기</button>
 			<button id="exitButton">나가기</button>
@@ -32,29 +44,17 @@
 	</div>
 </div>
 
-<%--<div class="contents">--%>
-<%--	<div class="bracket-lines"><svg width="100%" height="100%" style="position:absolute; top:0; left:0;">--%>
-<%--		<line x1="29.999996185302734" y1="62.80000114440918" x2="29.999996185302734" y2="62.80000114440918" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="62.80000114440918" x2="173.00000038146973" y2="62.80000114440918" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="62.80000114440918" x2="173.00000038146973" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="161.20000839233398" x2="290.00000381469727" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-
-<%--		<line x1="29.999996185302734" y1="259.600004196167" x2="29.999996185302734" y2="259.600004196167" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="259.600004196167" x2="173.00000038146973" y2="259.600004196167" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="259.600004196167" x2="173.00000038146973" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="161.20000839233398" x2="290.00000381469727" y2="161.20000839233398" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-
-<%--		<line x1="29.999996185302734" y1="345.2000102996826" x2="29.999996185302734" y2="345.2000102996826" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="345.2000102996826" x2="173.00000038146973" y2="345.2000102996826" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="345.2000102996826" x2="173.00000038146973" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="443.6000175476074" x2="290.00000381469727" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-
-<%--		<line x1="29.999996185302734" y1="541.9999980926514" x2="29.999996185302734" y2="541.9999980926514" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="29.999996185302734" y1="541.9999980926514" x2="173.00000038146973" y2="541.9999980926514" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="541.9999980926514" x2="173.00000038146973" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--		<line x1="173.00000038146973" y1="443.6000175476074" x2="290.00000381469727" y2="443.6000175476074" style="stroke:#4CAF50;stroke-width:3;stroke-linecap:round"></line>--%>
-<%--	</svg></div>--%>
-	<!-- First Round -->
+<%--이하 디버깅용 코드입니다. --%>
+<%--<div>--%>
+<%--	id : ${param.id}--%>
+<%--	<hr>--%>
+<%--	pw: ${param.pw}--%>
+<%--	<br>--%>
+<%--	${result}--%>
+<%--	<br>--%>
+<%--	nickname: ${nickname}--%>
+<%--</div>--%>
+<div class="wrapper">
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
@@ -90,13 +90,14 @@
 	<div class="round">
 		<!-- 그룹 2 (q5, q6, q7, q8) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
-			<c:if test="${status.index >= 4 && status.index <= 8}">
+			<c:if test="${status.index >= 4 && status.index < 8}">
 				<div class="match q${status.index + 1}" data-title="${s.song_title}" data-pk="${s.song_id}" data-divnum="${status.index + 1}">
 					<a>${s.song_title}</a>
 				</div>
 			</c:if>
 		</c:forEach>
 	</div>
+</div>
 <script src="js/vote/ost/bracket.js"></script>
 </body>
 </html>

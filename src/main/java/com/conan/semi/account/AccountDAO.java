@@ -1,5 +1,4 @@
 package com.conan.semi.account;
-
 import com.conan.semi.DBManager;
 
 import javax.servlet.http.HttpServletRequest;

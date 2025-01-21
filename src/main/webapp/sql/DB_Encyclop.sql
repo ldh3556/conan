@@ -8,6 +8,8 @@ CREATE TABLE characters_test_nr (
     main_image    VARCHAR2(255 CHAR)
 );
 
+DROP TABLE characters_test_nr;
+
 select *
 from characters_test_nr;
 
@@ -562,3 +564,76 @@ VALUES ('미즈나시 레나 / 혼도 히데미 / 키르 (손예나 / 문재인 
         'img/Characters/mizunashi/mizunashi.png',
         'img/Characters/mizunashi/main_img.png');
 
+CREATE TABLE categories (
+category_id   NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+category_name VARCHAR2(100 CHAR) NOT NULL
+);
+
+INSERT INTO categories (category_name) VALUES ('모리 탐정사무소');
+INSERT INTO categories (category_name) VALUES ('소년 탐정단');
+INSERT INTO categories (category_name) VALUES ('경시청');
+INSERT INTO categories (category_name) VALUES ('CIA');
+INSERT INTO categories (category_name) VALUES ('FBI');
+INSERT INTO categories (category_name) VALUES ('검은조직');
+INSERT INTO categories (category_name) VALUES ('지방청');
+
+select *
+from categories;
+
+CREATE TABLE character_category_map (
+    char_id     NUMBER NOT NULL,
+    category_id NUMBER NOT NULL,
+    PRIMARY KEY (char_id, category_id),          -- 복합키(같은 캐릭터-카테고리 쌍은 중복 불가)
+    CONSTRAINT fk_char_id
+    FOREIGN KEY (char_id)
+    REFERENCES characters_test_nr (id),          -- 캐릭터 테이블의 id 참조
+    CONSTRAINT fk_category_id
+    FOREIGN KEY (category_id)
+    REFERENCES categories (category_id)          -- 카테고리 테이블의 PK 참조
+);
+
+INSERT INTO character_category_map (char_id, category_id) VALUES (1, 1);  -- 코난(1) - 모리 탐정 사무소(1)
+INSERT INTO character_category_map (char_id, category_id) VALUES (1, 2);  -- 코난(1) - 소년 탐정단(2)
+INSERT INTO character_category_map (char_id, category_id) VALUES (3, 1);
+INSERT INTO character_category_map (char_id, category_id) VALUES (4, 1);
+INSERT INTO character_category_map (char_id, category_id) VALUES (6, 2);
+INSERT INTO character_category_map (char_id, category_id) VALUES (7, 2);
+INSERT INTO character_category_map (char_id, category_id) VALUES (8, 2);
+INSERT INTO character_category_map (char_id, category_id) VALUES (9, 2);
+INSERT INTO character_category_map (char_id, category_id) VALUES (19, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (20, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (21, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (22, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (23, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (24, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (25, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (26, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (27, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (28, 3);
+INSERT INTO character_category_map (char_id, category_id) VALUES (29, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (30, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (31, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (32, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (33, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (34, 7);
+INSERT INTO character_category_map (char_id, category_id) VALUES (38, 5);
+INSERT INTO character_category_map (char_id, category_id) VALUES (38, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (39, 5);
+INSERT INTO character_category_map (char_id, category_id) VALUES (40, 5);
+INSERT INTO character_category_map (char_id, category_id) VALUES (41, 5);
+INSERT INTO character_category_map (char_id, category_id) VALUES (42, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (43, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (44, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (45, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (46, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (49, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (50, 6);
+INSERT INTO character_category_map (char_id, category_id) VALUES (50, 4);
+
+SELECT c.id, c.name
+FROM characters_test_nr c
+         JOIN character_category_map m
+              ON c.id = m.char_id
+         JOIN categories cat
+              ON m.category_id = cat.category_id
+WHERE cat.category_name = '모리 탐정사무소';

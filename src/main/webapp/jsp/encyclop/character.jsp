@@ -42,12 +42,17 @@
 <div class="sec01_chara">
     <!-- 헤더 영역 (타이틀 + select 등) -->
     <div class="sec01_head">
-        <div class="sec01_head_text">캐릭터 도감</div>
+        <div class="sec01_head_text">CHARACTER</div>
         <div class="sec01_select_wrapper">
             <select name="sortOption">
-                <option value="">정렬 선택</option>
-                <option value="nameAsc">이름 오름차순</option>
-                <option value="nameDesc">이름 내림차순</option>
+                <option value="">전체</option>
+                <option value="mori">모리 탐정사무소</option>
+                <option value="detec">소년 탐정단</option>
+                <option value="ksc">경시청</option>
+                <option value="chc">지방청</option>
+                <option value="kuro">검은 조직</option>
+                <option value="fbi">FBI</option>
+                <option value="cia">CIA</option>
             </select>
             <div class="sec01_select_wrapper_R">정렬</div>
         </div>

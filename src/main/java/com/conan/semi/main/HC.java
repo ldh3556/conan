@@ -13,6 +13,7 @@ import java.io.IOException;
 @WebServlet("/HC")
 public class HC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         LoginDAO.loginCheck(request);
       //  request.setAttribute("loginPage","index_loginOK.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);

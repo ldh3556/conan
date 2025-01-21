@@ -10,6 +10,7 @@ import java.io.IOException;
 @WebServlet("/Find_IDC")
 public class Find_IDC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     request.getRequestDispatcher("jsp/login/login_find_id_input.jsp").forward(request, response);
     }
 
@@ -21,4 +22,5 @@ public class Find_IDC extends HttpServlet {
     // 어디로?
     request.getRequestDispatcher("jsp/login/login_find_id_output.jsp").forward(request, response);
     }
+
 }

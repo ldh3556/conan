@@ -1,3 +1,4 @@
+
 -- create table account_table_test (
 --     id varchar2(20 char) primary key,
 --     pw varchar2(20 char) not null,
@@ -17,6 +18,7 @@
 
 ------------------------------------------------------------------
 
+
 -- [요소 더 넣어서 재구성ing]
 create table account_table_hdh (
     no varchar2(20 char) primary key,
@@ -31,7 +33,9 @@ create table account_table_hdh (
     pw_check varchar2(20 char) not null,
     nickname varchar2(20 char) not null,
 
+
     -- no(pk) 외에 유니크 제약 조건 추가
+
     constraint unique_nickname unique (nickname),
     constraint unique_e_mail unique (e_mail),
     constraint unique_id unique (id)

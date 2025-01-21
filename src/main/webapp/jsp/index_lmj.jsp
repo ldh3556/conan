@@ -50,16 +50,16 @@
     <div class="index_Sec02">
         <div class="index_Sec02_L">
             <div class="Sec02_Text_Animation">
-            <h1 class="textStyle">나의 최애캐는</h1>
-            <div class="textAniBox">
-                <h2 class="textStyle textAni1">코난</h2>
-                <h2 class="textStyle textAni2">미란이</h2>
-                <h2 class="textStyle textAni3">괴도키드</h2>
-                <h2 class="textStyle textAni4">하인성</h2>
-                <h2 class="textStyle textAni5">유명한</h2>
+                <h1 class="textStyle">나의 최애캐는</h1>
+                <div class="textAniBox">
+                    <h2 class="textStyle textAni1">코난</h2>
+                    <h2 class="textStyle textAni2">미란이</h2>
+                    <h2 class="textStyle textAni3">괴도키드</h2>
+                    <h2 class="textStyle textAni4">하인성</h2>
+                    <h2 class="textStyle textAni5">유명한</h2>
+                </div>
+                <h1 class="textStyle">이다.</h1>
             </div>
-            <h1 class="textStyle">이다.</h1>
-        </div>
             <div class="Sec02_conandex">
                 <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
@@ -67,79 +67,83 @@
         </div>
         <div class="index_Sec02_R">
             <div class="index_Sec02_introbox">
-            <swiper-container
-                    class="Sec02_Swiper_wrapper"
-                    style="--swiper-navigation-color: #fff; width: 100%; --swiper-pagination-color: #fff" class="mySwiper"
-                speed="600" parallax="true" pagination="true" pagination-clickable="true" navigation="true">
-                <div slot="container-start" class="parallax-bg"
-                     style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" data-swiper-parallax="-23%"></div>
+                <swiper-container
+                        class="Sec02_Swiper_wrapper"
+                        style="--swiper-navigation-color: #fff; width: 100%; --swiper-pagination-color: #fff"
+                        class="mySwiper"
+                        speed="600" parallax="true" pagination="true" pagination-clickable="true" navigation="true">
+                    <div slot="container-start" class="parallax-bg"
+                         style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);"
+                         data-swiper-parallax="-23%"></div>
 
-                <swiper-slide class="charabox c01">
-                    <div class="title" data-swiper-parallax="-300">Slide 1</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="charabox c02">
-                    <div class="title" data-swiper-parallax="-300">Slide 2</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="charabox c03">
-                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="charabox c04">
-                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="charabox c05">
-                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-                <swiper-slide class="charabox c06">
-                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            내용1
-                        </p>
-                    </div>
-                </swiper-slide>
-            </swiper-container>
+                    <swiper-slide class="charabox c01">
+                        <div class="title" data-swiper-parallax="-300">Slide 1</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="charabox c02">
+                        <div class="title" data-swiper-parallax="-300">Slide 2</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="charabox c03">
+                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="charabox c04">
+                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="charabox c05">
+                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="charabox c06">
+                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
+                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="text" data-swiper-parallax="-100">
+                            <p>
+                                내용1
+                            </p>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+
         </div>
 
+
     </div>
-
-
-</div>
     <div class="index_Sec03">
         <div class="index_Sec03_L">
             <div class="movie_box_wrapper">
                 <a class="moviebox_01">
-                    <img src="">
+                    <div class="movie_img">
+                        <img src="">
+                    </div>
                     <div class="moviebox_text">
                         <span>명탐정코난 X 소년선데이</span>
                         <span>콜라보 확정!</span>
@@ -151,6 +155,7 @@
                     </div>
                 </a>
                 <a class="moviebox_01">
+
                     <img>
                     <div class="moviebox_text">
                         <span>명탐정코난 :</span>
@@ -163,7 +168,9 @@
                     </div>
                 </a>
                 <a class="moviebox_01">
-                    <img src="../img/index/sec03_img.jpg">
+                    <div class="movie_img">
+                        <img src="../img/index/sec03_img.jpg">
+                    </div>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
                         <span>절찬 발매 중</span>
@@ -193,7 +200,6 @@
     </div>
     <div class="footer"></div>
 </div>
-
 
 
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>

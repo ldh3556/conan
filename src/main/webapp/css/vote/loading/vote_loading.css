@@ -718,12 +718,31 @@
 }
 
 /*square animation top category text*/
-span{
+/*square animation top category text*/
+.char{
     position: absolute;
-    color: #001a6d;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 40pt;
     top: 50%;
+    z-index: 1;
+}
+
+.char::before{
+    position: absolute;
+    top: 0;
+    content: attr(data-text);
+    animation: textshow 3s forwards;
+    z-index: 0;
+    text-shadow: -1px 0px #001A6D, 0px 1px #001A6D, 1px 0px #001A6D, 0px -1px #001A6D; overflow: hidden;
+}
+@keyframes textshow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 /*wrapper*/

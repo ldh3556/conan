@@ -1,7 +1,7 @@
 create table bracket_test (
-song_id number(3) primary key,
-song_title varchar2(50) not null,
-win_count number(4) default 0
+song_id number(3) primary key,      -- 노래의 pk
+song_title varchar2(50) not null,   -- 노래 제목
+win_count number(4) default 0       -- 노래의 우승횟수
 );
 
 insert into bracket_test (song_id, song_title) values (bracket_test_seq.nextval,'빛이 될거야');
@@ -25,30 +25,7 @@ delete bracket_test where song_id = 12;
 update bracket_test set win_count=0 where song_id=8;
 
 
-
-
-
-
-CREATE TABLE OstVoteHistory (
-ost_id INT PRIMARY KEY, -- 유저 식별자
-ostNickname VARCHAR(50) NOT NULL,          -- 닉네임
-song1_count INT DEFAULT 0,              -- 곡 1의 우승 횟수
-song2_count INT DEFAULT 0,              -- 곡 2의 우승 횟수
-song3_count INT DEFAULT 0,
-song4_count INT DEFAULT 0,
-song5_count INT DEFAULT 0,
-song6_count INT DEFAULT 0,
-song7_count INT DEFAULT 0,
-song8_count INT DEFAULT 0               -- 곡 8의 우승 횟수
-);
-drop table OSTVOTEHISTORY;
-create sequence ost_id_seq;
-
-insert into OSTVOTEHISTORY values (ost_id_seq.nextval, 'name2', 0, 0, 0, 0, 0, 0, 0, 0);
-
-select * from OSTVOTEHISTORY;
-
-create table ost_login(
+create table ost_login(                         -- 기능 개발 때 사용한 로그인 가데이터
     ost_login_pk int primary key,
     ost_login_id varchar2(50) not null,
     ost_login_pw varchar2(30) not null,
@@ -78,8 +55,6 @@ FOREIGN KEY (ost_login_nickname_fk) REFERENCES ost_login(ost_login_nickname),  -
 FOREIGN KEY (user_pick) REFERENCES bracket_test(song_id)  -- 외래 키 설정
 );
 
-
-
 INSERT INTO ost_vote_comments (
     ost_login_nickname_fk,
     user_pick,
@@ -90,7 +65,6 @@ INSERT INTO ost_vote_comments (
              '이 곡이 정말 최고예요!' -- 댓글 내용
          );
 select * from ost_login;
-select * from bracket_test;
 
 select * from bracket_test;
 select * from ost_vote_comments;

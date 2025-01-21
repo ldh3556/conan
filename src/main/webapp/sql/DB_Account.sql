@@ -35,8 +35,8 @@ create table account_table_hdh (
     constraint unique_e_mail unique (e_mail)
 );
 
-insert into account_table_hdh values('성기훈', '1970', '10', '15','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,
+'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면');
 
 select * from account_table_hdh;
-
 -- DROP TABLE account_table_hdh;

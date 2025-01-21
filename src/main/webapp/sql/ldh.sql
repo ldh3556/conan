@@ -47,11 +47,11 @@ WHERE ost_login_id = 'dh1004';
 
 CREATE TABLE ost_vote_comments (
 ost_vote_comment_pk  INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,  -- 고유 댓글 ID (댓글 식별 번호)
-ost_login_nickname_fk varchar2(50) NOT NULL,            -- 로그인 테이블의 사용자 ID (외래 키)
+ost_login_nickname_fk varchar2(50) NOT NULL,            -- 로그인 테이블의 사용자 닉네임 (외래 키)
 user_pick number(3) NOT NULL,     -- 유저가 선택한 최종 우승 노래
 comment_text VARCHAR2(500) NOT NULL,  -- 유저의 댓글 내용
 comment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 댓글 작성 날짜 및 시간
-FOREIGN KEY (ost_login_nickname_fk) REFERENCES ost_login(ost_login_nickname),  -- 외래 키 설정
+FOREIGN KEY (ost_login_nickname_fk) REFERENCES account_table_hdh(nickname),  -- 외래 키 설정
 FOREIGN KEY (user_pick) REFERENCES bracket_test(song_id)  -- 외래 키 설정
 );
 
@@ -60,7 +60,7 @@ INSERT INTO ost_vote_comments (
     user_pick,
     comment_text
 ) VALUES (
-             'DHzzang',           -- 외래 키로 참조되는 닉네임
+             '조상우',           -- 외래 키로 참조되는 닉네임
              1,                 -- 외래 키로 참조되는 곡 ID
              '이 곡이 정말 최고예요!' -- 댓글 내용
          );

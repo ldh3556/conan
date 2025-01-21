@@ -231,7 +231,7 @@ public class OstDAO {
             resp.getWriter().println(comments);
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } finally {
             DBManager.close(con, ps, rs);
         }

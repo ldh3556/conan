@@ -16,7 +16,18 @@
 			pointer-events: none;
 			z-index: 1;
 		}
-
+		#lyrics-container {
+			max-height: 100px; /* 처음에는 내용이 접혀있도록 */
+			overflow: hidden;
+			transition: max-height 0.3s ease-in-out;
+		}
+		#toggle-description {
+			display: block;
+			margin-top: 10px;
+			text-decoration: none;
+			color: blue;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -33,16 +44,17 @@
 	</div>
 </div>
 
-
-<div>
-	id : ${param.id}
-	<hr>
-	pw: ${param.pw}
-	<br>
-	${result}
-	<br>
-	nickname: ${nickname}
-</div>
+<%--이하 디버깅용 코드입니다. --%>
+<%--<div>--%>
+<%--	id : ${param.id}--%>
+<%--	<hr>--%>
+<%--	pw: ${param.pw}--%>
+<%--	<br>--%>
+<%--	${result}--%>
+<%--	<br>--%>
+<%--	nickname: ${nickname}--%>
+<%--</div>--%>
+<div class="wrapper">
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
@@ -85,6 +97,7 @@
 			</c:if>
 		</c:forEach>
 	</div>
+</div>
 <script src="js/vote/ost/bracket.js"></script>
 </body>
 </html>

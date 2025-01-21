@@ -4,6 +4,11 @@
 <head>
 <title></title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        #commentText{
+            resize: none;
+        }
+    </style>
 </head>
 <body>
 <div style="border: 1px solid #ccc; padding: 10px;">
@@ -11,8 +16,8 @@
     <!-- 버튼 영역 -->
     <div style="margin-bottom: 10px;">
         <button onclick="location.href='/ost_rankingC'">통계~~~</button>
-        <button type="button" onclick="location.href='/action2'">버튼2</button>
-        <button type="button" onclick="location.href='/action3'">버튼3</button>
+        <button type="button" onclick="location.href='/ost_mainC'">다시하기</button>
+<%--        <button type="button" onclick="location.href='/action3'">다른게임</button>--%>
     </div>
 
     <hr>

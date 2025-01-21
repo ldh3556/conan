@@ -3,6 +3,7 @@ song_id number(3) primary key,
 song_title varchar2(50) not null,
 win_count number(4) default 0
 );
+
 insert into bracket_test (song_id, song_title) values (bracket_test_seq.nextval,'빛이 될거야');
 create sequence bracket_test_seq;
 select * from bracket_test;
@@ -105,3 +106,6 @@ select * from ost_vote_comments oc order by oc.COMMENT_DATE desc;
 select ovc.*, bt.song_title from ost_vote_comments ovc, bracket_test bt
 where ovc.USER_PICK = bt.song_id
 order by ovc.comment_date desc;
+
+
+

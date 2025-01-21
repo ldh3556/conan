@@ -29,7 +29,7 @@
 <body>
 <div class="song-list">
     <div class="song-item">
-        <div class="song-id">번호</div>
+        <div class="song-id">순위</div>
         <div class="song-title">노래 제목</div>
         <div class="win-count">우승 횟수</div>
     </div>

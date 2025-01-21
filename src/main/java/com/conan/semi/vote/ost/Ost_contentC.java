@@ -17,13 +17,14 @@ public class Ost_contentC extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 대진표 DB 불러오기
+        OstDAO.getBracket(request);
+
         // 1. 로그인 정보 가져오기
         String insertedId = request.getParameter("id");
         String insertedPw = request.getParameter("pw");
         // 2. 로그인 처리
         String result = OstDAO.loginJudge(request, insertedId, insertedPw);  // 로그인 확인
-        // 대진표 DB 불러오기
-        OstDAO.getBracket(request);
 
         // 3. 로그인 결과에 따른 처리
         if ("로그인 성공".equals(result)) {

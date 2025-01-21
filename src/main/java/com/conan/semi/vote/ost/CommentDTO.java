@@ -2,10 +2,14 @@ package com.conan.semi.vote.ost;
 
 import com.google.gson.Gson;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+//@Data
+@Getter
+@Setter
 public class CommentDTO {
     private int ost_vote_comment_pk;
     private String ost_login_nickname_fk;

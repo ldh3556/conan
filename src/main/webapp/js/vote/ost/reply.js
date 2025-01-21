@@ -55,7 +55,7 @@ function insertReply() {
       success: function (resData) {
          console.log(resData)
          if(resData){
-
+            $('#commentText').val('');
             updateReply();
          }
 

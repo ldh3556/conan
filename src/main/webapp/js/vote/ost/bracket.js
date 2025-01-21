@@ -30,38 +30,33 @@ $(document).ready(function () {
         q1: {
             title: "빛이 될거야",
             description: `
-            <div xmlns="http://www.w3.org/1999/html">
+            <div>
                 <img src="/img/vote/ost/conan_op1.jpg" alt="">
                 <p>코난 1기 오프닝</p>
                 <audio controls>
                     <source src="/audio/vote/ost/conan_op1.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
-                <p>
-                아침에 눈을 뜨면 지난밤이 궁금해</br>
-                오늘은 어떤 사건이 날 부를까</br>
-                </br>
-                모두들 어렵다고 모두들 안 된다고</br>
-                고개를 돌리는 많은 사건들</br>
-                </br>
-                세상 사람들은 왜, 왜 나만 바라볼까</br>
-                난 내가 누군지 몰라 이 세상을 헤맬 뿐야</br>
-                </br>
-                그래 이 세상에 해결 못 할 것은 없어</br>
-                끝까지 포기 않고 풀면 되잖아</br>
-                </br>
-                나 어두운 세상에 이 험한 세상에</br>
-                찬란한 빛이 될 거야~</br>
-                </br>
-                세상 사람들은 왜, 왜 나만 바라볼까</br>
-                난 내가 누군지 몰라 이 세상을 헤맬 뿐야</br>
-                </br>
-                그래 이 세상에 해결 못 할 것은 없어</br>
-                세상에 한 줄기 빛이 될 거야</br>
-                </br>
-                찬란한 빛이 될 거야~ 워~
-                </p>
-            </div>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
+                <p>아침에 눈을 뜨면 지난밤이 궁금해</p>
+    <p>오늘은 어떤 사건이 날 부를까</p>
+    <p>모두들 어렵다고 모두들 안 된다고</p>
+    <p>고개를 돌리는 많은 사건들</p>
+    <p>세상 사람들은 왜, 왜 나만 바라볼까</p>
+    <p>난 내가 누군지 몰라 이 세상을 헤맬 뿐야</p>
+    <p>그래 이 세상에 해결 못 할 것은 없어</p>
+    <p>끝까지 포기 않고 풀면 되잖아</p>
+    <p>나 어두운 세상에 이 험한 세상에</p>
+    <p>찬란한 빛이 될 거야~</p>
+    <p>세상 사람들은 왜, 왜 나만 바라볼까</p>
+    <p>난 내가 누군지 몰라 이 세상을 헤맬 뿐야</p>
+    <p>그래 이 세상에 해결 못 할 것은 없어</p>
+    <p>세상에 한 줄기 빛이 될 거야</p>
+    <p>찬란한 빛이 될 거야~ 워~</p>
+    </div>
+                </div>
         `
         },
         q2: {
@@ -74,6 +69,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op2.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 초점 없는 네 두 눈의 사랑을 느낄 수는 없지만</br>
                 너의 맘 여기 내 품에 와서 열리는 순간</br>
@@ -91,6 +89,7 @@ $(document).ready(function () {
                 이제 난 알 수가 있어
                 </p>
             </div>
+            </div>
         `
         },
         q3: {
@@ -103,6 +102,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op3.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 그대 갑자기 사라져 버리는 꿈들을</br>
                 요즘 들어 자주 본다며</br>
@@ -148,6 +150,7 @@ $(document).ready(function () {
                 Go to the special place you promised)
                 </p>
             </div>
+            </div>
         `
         },
         q4: {
@@ -160,6 +163,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op4.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 사랑은 Thrill, shock, suspense</br>
                 그 보이지 않는 힘 의지해서</br>
@@ -227,6 +233,7 @@ $(document).ready(function () {
                 널 위해서 달릴 거야</br>
                 </p>
             </div>
+            </div>
         `
         },
         q5: {
@@ -239,6 +246,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op5.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 바닷바람에 너의 향기를 느껴</br>
                 은빛 파도에 우리 둘 녹아버릴 것만 같아서 웃죠</br>
@@ -282,6 +292,7 @@ $(document).ready(function () {
                 소중한 우리들의 시간 ~
                 </p>
             </div>
+            </div>
         `
         },
         q6: {
@@ -294,6 +305,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op6.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 미래의 꿈들을 찾아 희망의 날갤 달아</br>
                 오늘의 힘들었던 일은 잊어버리고</br>
@@ -371,6 +385,7 @@ $(document).ready(function () {
                 Growing Of My Heart
                 </p>
             </div>
+            </div>
         `
         },
         q7: {
@@ -383,6 +398,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op7.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 오에오</br>
                 오에오</br>
@@ -445,6 +463,7 @@ $(document).ready(function () {
                 Let's go it's summer time blue sky
                 </p>
             </div>
+            </div>
         `
         },
         q8: {
@@ -457,6 +476,9 @@ $(document).ready(function () {
                     <source src="/audio/vote/ost/conan_op8.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
+                <a style="text-decoration: none" href=#none id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='- 가사 접기'} 
+else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보기</a>
+<div id="hide" style="display: none">
                 <p>
                 Hello Mr. my yesterday 전해주지 않을래?</br>
                 꿈이 이루어지는 그때 꼭 다시 만나자고</br>
@@ -536,6 +558,7 @@ $(document).ready(function () {
                 Hello Mr. my yesterday...</br>
                 Hello Mr. my yesterday...
                 </p>
+            </div>
             </div>
         `
         }
@@ -773,5 +796,7 @@ $(document).ready(function () {
             }
         });
     }
+
+
 
 });     // ready 범위

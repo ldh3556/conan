@@ -101,7 +101,7 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <a class="swiper-slide" href="../puzzle/puzzle_EyeNoseMouth.jsp">
+            <a class="swiper-slide" href="../puzzle/puzzle.jsp">
                 <span>얼굴 맞추기</span>
             </a>
             <a class="swiper-slide" href="../balloon/">

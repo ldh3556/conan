@@ -1,6 +1,6 @@
 package com.conan.semi.encyclop;
 
-public class CharscterDTO {
+public class CharacterDTO {
     private long id;
     private String name;
     private String age;
@@ -11,10 +11,10 @@ public class CharscterDTO {
     private String buttonImage;
     private String mainImage;
 
-    public CharscterDTO() {
+    public CharacterDTO() {
     }
 
-    public CharscterDTO(long id, String name, String age, String quote, String description, String buttonImage) {
+    public CharacterDTO(long id, String name, String age, String quote, String description, String buttonImage) {
         this.id = id;
         this.name = name;
         this.age = age;

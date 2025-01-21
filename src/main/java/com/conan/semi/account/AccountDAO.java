@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 
 public class AccountDAO {
 
+
     // 계정 생성
     public static void regUser(HttpServletRequest request) {
         String name = request.getParameter("name");
@@ -74,11 +75,13 @@ public class AccountDAO {
         ResultSet rs = null;
         String sql = "select * from account_table_hdh where id = ?";
 
+
         try {
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, id);
             rs = pstmt.executeQuery();
+
 
             if (rs.next()) {
                 String dbID = rs.getString(7);
@@ -139,6 +142,7 @@ public class AccountDAO {
         }
 
         return result;  // 결과 반환
+
     }
 
 

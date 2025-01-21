@@ -74,6 +74,13 @@
       <artifactId>ojdbc11</artifactId>
       <version>21.10.0.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
 
     <!-- JSTL -->
     <dependency>
@@ -87,6 +94,7 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.36</version>
+
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->

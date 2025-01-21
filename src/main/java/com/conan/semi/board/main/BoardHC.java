@@ -1,4 +1,7 @@
-package com.conan.semi.login;
+package com.conan.semi.board.main;
+
+
+import com.conan.semi.board.free.BoardFreeDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,20 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/Find_PWC")
-public class Find_PWC extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebServlet("/BoardHC")
+public class BoardHC extends HttpServlet {
 
-    request.getRequestDispatcher("jsp/login/login_find_pw_input.jsp").forward(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        BoardFreeDAO.showAllBoardFree(request);
+BoardFreeDAO.pagingFreeBoard(1, request);
+        request.setAttribute("content", "board_free/board_free.jsp");
+ request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.setCharacterEncoding("utf-8");
-    // 비밀번호 찾기
-    FindDAO.findPW(request);
 
-    // 어디로?
-    request.getRequestDispatcher("jsp/login/login_find_pw_output.jsp").forward(request, response);
     }
 
 }

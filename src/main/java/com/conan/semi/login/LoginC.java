@@ -10,7 +10,9 @@ import java.io.IOException;
 @WebServlet("/LoginC")
 public class LoginC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.getRequestDispatcher("jsp/login/login_input.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

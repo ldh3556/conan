@@ -14,21 +14,20 @@ public class LoginDAO {
         UserDTO u = (UserDTO) req.getSession().getAttribute("user");
         System.out.println(u);
         if (u == null) {
-            req.setAttribute("loginPage","index.jsp");
+            req.setAttribute("loginPage","index_loginPlease.jsp");
         } else {
             req.setAttribute("loginPage","index_loginOK.jsp");
         }
     }
 
-
     public static void login(HttpServletRequest request) {
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-    String nickname = request.getParameter("nickname");
+    // String nickname = request.getParameter("nickname");
 
     System.out.println(id);
     System.out.println(pw);
-    System.out.println(nickname);
+    // System.out.println(nickname);
 
         Connection con = null;
         PreparedStatement pstmt = null;

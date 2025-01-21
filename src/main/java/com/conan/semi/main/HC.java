@@ -14,7 +14,7 @@ import java.io.IOException;
 public class HC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LoginDAO.loginCheck(request);
-        request.setAttribute("loginPage","index_loginOK.jsp");
+      //  request.setAttribute("loginPage","index_loginOK.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);
         // request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
     }

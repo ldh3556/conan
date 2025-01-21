@@ -21,6 +21,6 @@ public class AccountC extends HttpServlet {
         AccountDAO.regUser(request);
         System.out.println("AccountC(POST)에서 등록 완료!");
         // 어디로?
-        request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

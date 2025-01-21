@@ -32,18 +32,18 @@
         }
 
         #mouth {
-            width: 310px;  /* 입 이미지 가로 길이를 넓혀서 길게 만듦 */
-            height: 100px;   /* 세로 길이는 자동으로 비율에 맞게 설정 */
+            width: 310px; /* 입 이미지 가로 길이를 넓혀서 길게 만듦 */
+            height: 100px; /* 세로 길이는 자동으로 비율에 맞게 설정 */
         }
 
         .full-face {
             display: none;
             margin-top: 20px;
-            text-align: center;  /* 이미지가 중앙에 위치하도록 */
+            text-align: center; /* 이미지가 중앙에 위치하도록 */
         }
 
         #full-face img {
-            width: 300px;  /* 모든 이미지의 크기를 동일하게 설정 */
+            width: 300px; /* 모든 이미지의 크기를 동일하게 설정 */
             height: 300px; /* 고정된 높이로 설정 */
             object-fit: cover; /* 이미지 비율을 유지하면서 크기 맞추기 */
             border-radius: 10px; /* 모서리 둥글게 */
@@ -58,28 +58,30 @@
 
     </style>
 </head>
+<link rel="stylesheet" href="../../../css/game/">
 <body>
-<div class="quiz-container">
-    <!-- 인물의 부분별 사진 -->
-    <div class="row">
-        <img id="left-eye" src="" alt="왼쪽 눈">
-        <img id="nose" src="" alt="코">
-        <img id="right-eye" src="" alt="오른쪽 눈">
-    </div>
-    <div class="row">
-        <img id="mouth" src="" alt="입">
-    </div>
+<div class="wrapper">
+    <div class="quiz-container">
+        <!-- 인물의 부분별 사진 -->
+        <div class="row">
+            <img id="left-eye" src="" alt="왼쪽 눈">
+            <img id="nose" src="" alt="코">
+            <img id="right-eye" src="" alt="오른쪽 눈">
+        </div>
+        <div class="row">
+            <img id="mouth" src="" alt="입">
+        </div>
 
-    <!-- 정답을 맞히면 보이는 완전한 얼굴 -->
-    <div id="full-face" class="full-face">
-        <img src="" alt="정답 얼굴">
-    </div>
+        <!-- 정답을 맞히면 보이는 완전한 얼굴 -->
+        <div id="full-face" class="full-face">
+            <img src="" alt="정답 얼굴">
+        </div>
 
-    <!-- 정답 확인 버튼 -->
-    <button id="check-answer">정답 확인</button>
-    <button id="next-question">다음 문제</button>
+        <!-- 정답 확인 버튼 -->
+        <button id="check-answer">정답 확인</button>
+        <button id="next-question">다음 문제</button>
+    </div>
 </div>
-
 <script>
     const images = [
         {

@@ -9,7 +9,7 @@
 <body>
 
 <div class="wrapper">
-    <span>GAME LOADING...</span>
+    <span class="char" data-text="GAME&nbsp;LOADING...">GAME&nbsp;LOADING...</span>
 
     <div class="load_ani_wrapper">
         <div class="box-wrap">

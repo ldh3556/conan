@@ -181,7 +181,14 @@
         </div>
         <div class="index_Sec03_R">
             <div class="commu_box_wrapper">
+                <div class="notice_togo">
+                    <span>Community</span>
+                    <a href=""> 커뮤니티 바로가기</a>
+                </div>
+                <hr style="width: 100%">
+                <div class="commu_post_wrapper">
 
+                </div>
             </div>
         </div>
 

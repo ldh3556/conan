@@ -21,7 +21,7 @@
     </div>
 
     <hr>
-    <span id="selectedFSongPK">${selectedFSongPK}</span>
+<%--    <span id="selectedFSongPK">${selectedFSongPK}</span>--%>
     <!-- 댓글 입력 폼 -->
     <div style="margin-bottom: 20px;">
 

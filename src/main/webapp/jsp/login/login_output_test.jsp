@@ -15,10 +15,8 @@
 <h1> LOGIN OUTPUT </h1>
 <div class="result-container">
     <div class="info">
-        환영합니다, ${sessionScope.user.nickname} 님
-    </div>
-    <div class="user-container">
-        <a href="/LogoutC"> 로그아웃 </a> / <a href="/MyPageC"> 마이페이지 </a>
+        ID: ${param.id} <br>
+        PW: ${param.pw} <br>
     </div>
     <hr>
     <h1 class="result-message">${result}</h1>

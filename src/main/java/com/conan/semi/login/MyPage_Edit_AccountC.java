@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/LoginC")
-public class LoginC extends HttpServlet {
+@WebServlet("/MyPage_Edit_AccountC")
+public class MyPage_Edit_AccountC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("jsp/login/login_input.jsp").forward(request, response);
+        request.setCharacterEncoding("utf-8");
+        request.getRequestDispatcher("jsp/login/login_edit_account_input.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // 로그인
-    LoginDAO.login(request);
+        request.setCharacterEncoding("utf-8");
+        // 회원정보 수정
+        EditDAO_original.editAccount(request);
 
-    // 어디로?
-    request.getRequestDispatcher("jsp/login/login_output.jsp").forward(request, response);
+        // 어디로?
+        request.getRequestDispatcher("jsp/login/login_myPage.jsp").forward(request, response);
     }
 }

@@ -39,9 +39,9 @@
             </div>
         </div>
         <div style="position: relative; bottom: -50px;">
-            <button class="board-reg-btn" onclick="location.href='BoardFreeUpdateC?no=${board.b_no}'">update</button>
+            <button class="board-reg-btn" onclick="location.href='BoardAnimeUpdateC?no=${board.b_no}'">update</button>
             <button class="board-reg-btn" onclick="deleteBoard('${board.b_no}')">delete</button>
-            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardAnimeC'">list</button>
         </div>
     </div>
     <hr>
@@ -60,7 +60,7 @@
 
     <!-- 댓글 작성 폼 -->
 <div>
-    <form method="get" action="FreeCommentRegC">
+    <form method="get" action="AnimeCommentRegC">
         <input type="hidden" name="no" value="${board.b_no}">
         <div>
             <label for="c_writer">이름:</label>
@@ -78,7 +78,7 @@
     function deleteBoard(no) {
         if (confirm('정말로 삭제하시겠습니까?')) {
             alert('삭제 되었습니다.')
-            location.href = 'BoardFreeDelC?no=' + no;
+            location.href = 'BoardAnimeDelC?no=' + no;
         }
     }
 

@@ -20,9 +20,8 @@
   <div class="board-menu">
     <div> <a href="BoardNoticeC">공지</a></div>
     <div> <a href="BoardFreeC">자유 게시판</a></div>
-    <div> <a href="BoardMangaC">만화 후기 게시판</a></div>
-    <div> <a href="">애니 후기 게시판</a></div>
-    <div> <a href="">영화 후기 게시판</a></div>
+    <div> <a href="BoardAnimeC">애니&만화 후기 게시판</a></div>
+    <div> <a href="BoardMovieC">영화 후기 게시판</a></div>
 </div>
   <hr>
 <div class="content">

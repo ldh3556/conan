@@ -17,7 +17,7 @@
 <div>
 <c:forEach var="b" items="${boards }">
 
-    <a href="BoardFreeDetailC?no=${b.b_no }" >
+    <a href="BoardAnimeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
     <div>${b.b_begin }</div>
@@ -26,11 +26,11 @@
         <hr></a>
 </c:forEach>
     <div>
-        <a href="BoardFreePageC?p=1">[begin]</a>
+        <a href="BoardAnimePageC?p=1">[begin]</a>
         <c:forEach begin="1" end="${pageCount }" var="i">
-            <a href="BoardFreePageC?p=${i }">[${i }]</a>
+            <a href="BoardAnimePageC?p=${i }">[${i }]</a>
         </c:forEach>
-        <a href="BoardFreePageC?p=${pageCount }">[end]</a>
+        <a href="BoardAnimePageC?p=${pageCount }">[end]</a>
     </div>
 </div>
     <div>

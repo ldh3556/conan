@@ -1,4 +1,4 @@
-package com.conan.semi.board.free;
+package com.conan.semi.board.anime;
 
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class BoardFreeDTO {
+public class BoardAnimeDTO {
     private String b_no;
     private String b_id;
     private String b_name;

@@ -1,5 +1,4 @@
-package com.conan.semi.board.manga;
-
+package com.conan.semi.board.anime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,11 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/BoardMangaC")
-public class BoardMangaC extends HttpServlet {
-
+@WebServlet("/BoardAnimeSearchC")
+public class BoardAnimeSearchC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+BoardAnimeDAO.searchBoardFree(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

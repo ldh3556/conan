@@ -1,4 +1,5 @@
-package com.conan.semi.board.free;
+package com.conan.semi.board.anime;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,16 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/FreeCommentPageC")
-public class FreeCommentPageC extends HttpServlet {
+@WebServlet("/BoardAnimeUpdateC")
+public class BoardAnimeUpdateC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-int p = Integer.parseInt(request.getParameter("p"));
-      //  FreeCommentDAO.pagingComment(p, request);
+        request.setCharacterEncoding("utf-8");
+        BoardAnimeDAO.detailBoardFree(request);
+request.setAttribute("content", "board_free/board_free_update.jsp");
+request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
-        //request.setAttribute();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        BoardAnimeDAO.updatBoardFree(request);
+        response.sendRedirect("BoardAnimeC");
 
     }
 

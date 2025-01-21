@@ -12,7 +12,11 @@ import java.io.IOException;
 public class BoardAnimeC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+      request.setCharacterEncoding("utf-8");
+        BoardAnimeDAO.showAllBoardFree(request);
+        BoardAnimeDAO.pagingFreeBoard(1, request);
+request.setAttribute("content", "board_anime.jsp");
+request.getRequestDispatcher("jsp/board/board_anime/board_anime.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

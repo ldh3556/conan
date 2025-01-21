@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
+<form action="BoardAnimeUpdateC?no=${board.b_no }" method="post">
 <div class="board-wrap">
     <div>
         <div>
@@ -46,8 +46,8 @@
         </div>
         <div style="position: relative; bottom: -50px;">
             <button class="board-reg-btn">수정완료</button>
-            <button type="button"  onclick="cancelUpdatBoard()">취소</button>
-            <button type="button"  onclick="location.href='BoardFreeC'">list</button>
+            <button type="button" class="board-reg-btn" onclick="cancelUpdatBoard()">취소</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
         </div>
     </div>
 </div>

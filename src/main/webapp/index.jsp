@@ -22,18 +22,9 @@
         <div class="conan_logo">
             <img src="../img/index/logoimg.png">
         </div>
-        <div class="account_wrapper">
-            <div class="login_text_wrapper">
-                <jsp:include page="${loginPage}">
-                <span>로그인</span> 해주세요.
-                </jsp:include>
-                <div class="login_text">
-                    <a href="/LoginC" id="login_text_id"> 로그인 </a>
-                    <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
-                </div>
-            </div>
-            <a href="/LoginC" id="account_icon"></a>
-        </div>
+
+                <jsp:include page="${loginPage}"></jsp:include>
+
     </div>
     <div class="index_Sec01">
         <div class="index_Sec01_L">

@@ -7,14 +7,13 @@
 
 <div class="account_wrapper">
     <div class="login_text_wrapper">
-        환영합니다, ${sessionScope.user.nickname} 님 <br>
+        <span>로그인</span> 해주세요.
         <div class="login_text">
-            <a href="/LogoutC" id="login_text_id"> 로그아웃 </a>
-            <a href="/MyPageC" id="login_text_reg"> 마이페이지 </a>
+            <a href="/LoginC" id="login_text_id"> 로그인 </a>
+            <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
         </div>
     </div>
-    <a href="/MyPageC" id="account_icon"></a>
-    
+    <a href="/LoginC" id="account_icon"></a>
 </div>
 </body>
 </html>

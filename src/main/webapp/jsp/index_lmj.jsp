@@ -35,7 +35,7 @@
     </div>
     <div class="index_Sec01">
         <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="game/loading/loading.jsp">
+            <a class="playlogo_wrapper" href="./game/loading/loading.jsp">
                 <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
@@ -181,8 +181,12 @@
             <div class="commu_box_wrapper">
                 <div class="notice_togo">
                     <span>Community</span>
-                    <a href="menubox_test.jsp"> 커뮤니티 바로가기</a>
+                    <a href=""> 커뮤니티 바로가기</a>
                 </div>
+            </div>
+            <hr>
+            <div class="commu_post_wrapper">
+
             </div>
         </div>
 

@@ -35,13 +35,13 @@
     </div>
     <div class="index_Sec01">
         <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="game/loading/loading.jsp">
+            <a class="playlogo_wrapper" href="jsp/game/loading/loading.jsp">
                 <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
-            <a class="votelogo_wrapper">
+            <a class="votelogo_wrapper" href="jsp/vote/loading/loading.jsp">
                 <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>

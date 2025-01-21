@@ -116,6 +116,7 @@ img.conan_logo{
     font-weight: bolder;
     transition: all 0.2s;
     text-align: center;
+    text-decoration: none;
 }
 
 .conan_attr_logo {
@@ -153,6 +154,7 @@ img.conan_logo{
     font-size:40pt;
     text-align: center;
     font-weight: bolder;
+    text-decoration: none;
 }
 
  .votelogo_wrapper:hover{
@@ -503,7 +505,7 @@ flex-wrap: wrap;
     }
 }
 /*swiper pagination button color : active*/
-span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active{
     --swiper-pagination-color: #eda127;
-    --swiper-pagination-color: #393939;
+    --swiper-pagination-color: #eda127;
 }

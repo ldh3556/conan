@@ -17,6 +17,7 @@ public class FreeCommentDTO {
     private String c_content;
     private Date c_date;
 
+
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return sdf.format(c_date);

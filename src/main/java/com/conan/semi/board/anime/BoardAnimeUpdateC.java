@@ -13,7 +13,7 @@ public class BoardAnimeUpdateC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         BoardAnimeDAO.detailBoardFree(request);
-request.setAttribute("content", "board_free/board_free_update.jsp");
+request.setAttribute("content", "board_anime/board_anime_update.jsp");
 request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
     }

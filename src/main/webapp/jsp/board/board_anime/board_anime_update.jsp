@@ -47,7 +47,7 @@
         <div style="position: relative; bottom: -50px;">
             <button class="board-reg-btn">수정완료</button>
             <button type="button" class="board-reg-btn" onclick="cancelUpdatBoard()">취소</button>
-            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardAnimeC'">list</button>
         </div>
     </div>
 </div>

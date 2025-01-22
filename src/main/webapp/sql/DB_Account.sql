@@ -47,6 +47,28 @@ insert into account_table_hdh values(account_table_hdh_seq.nextval,'성기훈', 
 
 select * from account_table_hdh;
 
+update account_table_hdh
+set e_mail = 'aaatest'
+where nickname = '456번';
+
+update account_table_hdh
+set nickname = '11111',
+    name = 'qqqq'
+where e_mail = 'aaatest';
+
+update account_table_hdh
+set nickname = '000000',
+    name = '000000',
+    e_mail = 'aaatest'
+where id = 'sgh456';
+
+
+
+
+
+
+
+
 
 
 

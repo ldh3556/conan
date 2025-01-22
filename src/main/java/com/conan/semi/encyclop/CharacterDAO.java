@@ -1,8 +1,5 @@
 package com.conan.semi.encyclop;
-
 import com.conan.semi.DBManager;
-import com.conan.semi.encyclop.CharacterDTO;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
 import java.util.ArrayList;

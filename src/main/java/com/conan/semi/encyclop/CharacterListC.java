@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.conan.semi.encyclop.CharacterDAO.*;
-
 @WebServlet("/CharacterListC")
 public class CharacterListC extends HttpServlet {
     @Override

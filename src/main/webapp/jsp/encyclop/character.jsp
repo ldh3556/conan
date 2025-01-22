@@ -9,27 +9,20 @@
 <head>
     <meta charset="UTF-8">
     <title>캐릭터 도감</title>
-    <!-- CSS 연동 (예: /css/style.css) -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/encyclop/character/character.css" />
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-
-<!-- 상단 헤더 메뉴 -->
 <div class="header">
-    <!-- 메뉴 버튼 예시 -->
-    <img class="menu_button" src="${pageContext.request.contextPath}/img/encyclop/menu.png" alt="menu button" />
-
-    <!-- 중앙 로고 -->
-    <img class="conan_logo" src="${pageContext.request.contextPath}/img/encyclop/conan_logo.png" alt="conan logo" />
-
-    <!-- 우측 프로필 아이콘 -->
-    <img class="profile_icon" src="${pageContext.request.contextPath}/img/encyclop/profile_icon.png" alt="profile icon" />
+    <img class="menu_button" src="img/index/menu.svg" alt="menu button" />
+    <img class="conan_logo" src="img/index/logoimg.png" alt="conan logo" />
+    <img class="profile_icon" src="img/login/conanicon.png" alt="profile icon" />
 
     <div class="header_login_wrapper">
         로그인 해주세요
         <div class="header_login_inner">
-            <a href="${pageContext.request.contextPath}/LoginC">로그인</a>
-            <a href="${pageContext.request.contextPath}/AccountC">회원가입</a>
+            <a href="LoginC">로그인</a>
+            <a href="AccountC">회원가입</a>
         </div>
     </div>
 </div>
@@ -46,11 +39,12 @@
     <!-- 헤더 영역 (타이틀 + 필터링 및 정렬 폼) -->
     <div class="sec01_head">
         <div class="sec01_head_text">CHARACTER</div>
+
         <div class="sec01_select_wrapper">
             <!-- 필터링 및 정렬 폼 -->
-            <form action="${pageContext.request.contextPath}/CharacterListC" method="get" style="display: flex; width: 100%;">
+            <form action="CharacterListC" method="get">
                 <!-- 카테고리 선택 -->
-                <select name="category" id="category" style="flex: 2;">
+                <select name="category" id="category">
                     <option value="all" <c:if test="${currentCategory == 'all'}">selected</c:if>>전체</option>
                     <c:forEach var="cat" items="${categories}">
                         <option value="${cat}" <c:if test="${cat == currentCategory}">selected</c:if>>${cat}</option>
@@ -58,13 +52,13 @@
                 </select>
 
                 <!-- 정렬 옵션 선택 -->
-                <select name="sortOption" id="sortOption" style="flex: 1; margin-left: 10px;">
+                <select name="sortOption" id="sortOption">
                     <option value="" <c:if test="${empty currentSortOption}">selected</c:if>>정렬 선택</option>
                     <option value="nameAsc" <c:if test="${currentSortOption == 'nameAsc'}">selected</c:if>>이름 오름차순</option>
                     <option value="nameDesc" <c:if test="${currentSortOption == 'nameDesc'}">selected</c:if>>이름 내림차순</option>
                 </select>
 
-                <input type="submit" value="적용" style="margin-left: 10px;">
+                <input type="submit" value="적용">
             </form>
         </div>
     </div>

@@ -9,29 +9,32 @@
 <head>
     <meta charset="UTF-8">
     <title>캐릭터 도감</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/encyclop/character/character.css" />
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/encyclop/character/character.css" />
+    <link rel="stylesheet" href="/css/index.css"/>
 </head>
 <body>
 <div class="header">
-    <img class="menu_button" src="img/index/menu.svg" alt="menu button" />
-    <img class="conan_logo" src="img/index/logoimg.png" alt="conan logo" />
-    <img class="profile_icon" src="img/login/conanicon.png" alt="profile icon" />
-
-    <div class="header_login_wrapper">
-        로그인 해주세요
-        <div class="header_login_inner">
-            <a href="LoginC">로그인</a>
-            <a href="AccountC">회원가입</a>
-        </div>
+    <button class="menu_button">
+    <%-- 야 안누리 메뉴버튼에 넣을거 만들어야 된다--%>
+    </button>
+    <div class="conan_logo">
+        <img src="/img/index/logoimg.png">
     </div>
+
+    <jsp:include page="${loginPage}"></jsp:include>
+</div>
+
+<%-- 상단 코난 이미지 있는거.. --%>
+<div class="conandex_wrapper">CONAN'DEX
+    <div class="conandex_inner">코난 도감</div>
+    <div class="conandex_logo"><img style="width: 100%;" src="/img/index/conandex_customicon_big.png" alt="conandex_img"></div>
 </div>
 
 <!-- 상단 Category 바 -->
 <div class="category">
-    <span class="category_text">캐릭터</span>
-    <span class="category_text">발명품</span>
-    <span class="category_text">영화</span>
+    <div class="category_text">캐릭터</div>
+    <div class="category_text">발명품</div>
+    <div class="category_text">영화</div>
 </div>
 
 <!-- 본문: 캐릭터 목록 섹션 -->
@@ -39,27 +42,20 @@
     <!-- 헤더 영역 (타이틀 + 필터링 및 정렬 폼) -->
     <div class="sec01_head">
         <div class="sec01_head_text">CHARACTER</div>
-
         <div class="sec01_select_wrapper">
-            <!-- 필터링 및 정렬 폼 -->
-            <form action="CharacterListC" method="get">
-                <!-- 카테고리 선택 -->
-                <select name="category" id="category">
-                    <option value="all" <c:if test="${currentCategory == 'all'}">selected</c:if>>전체</option>
-                    <c:forEach var="cat" items="${categories}">
-                        <option value="${cat}" <c:if test="${cat == currentCategory}">selected</c:if>>${cat}</option>
-                    </c:forEach>
-                </select>
-
-                <!-- 정렬 옵션 선택 -->
-                <select name="sortOption" id="sortOption">
-                    <option value="" <c:if test="${empty currentSortOption}">selected</c:if>>정렬 선택</option>
-                    <option value="nameAsc" <c:if test="${currentSortOption == 'nameAsc'}">selected</c:if>>이름 오름차순</option>
-                    <option value="nameDesc" <c:if test="${currentSortOption == 'nameDesc'}">selected</c:if>>이름 내림차순</option>
-                </select>
-
-                <input type="submit" value="적용">
-            </form>
+            <div class="sec01_select_wrapper_R">
+                <!-- 필터링 및 정렬 폼 -->
+                <form action="CharacterListC">
+                    <!-- 카테고리 선택 -->
+                    <select name="category" id="category">
+                        <option value="all" <c:if test="${currentCategory == 'all'}">selected</c:if>>모든 캐릭터</option>
+                        <c:forEach var="cat" items="${categories}">
+                            <option value="${cat}" <c:if test="${cat == currentCategory}">selected</c:if>>${cat}</option>
+                        </c:forEach>
+                    </select>
+                    <input type="submit" value="적용">
+                </form>
+            </div>
         </div>
     </div>
 
@@ -98,8 +94,8 @@
                 </div>
             </div>
             <c:set var="count" value="${count + 1}" />
-            <!-- 4개 단위로 줄바꿈 -->
-            <c:if test="${count % 4 == 0}">
+            <!-- 6개 단위로 줄바꿈 -->
+            <c:if test="${count % 6 == 0}">
         </div>
         <div class="chara_list_01">
             </c:if>
@@ -109,9 +105,9 @@
                 <p>캐릭터 정보가 없습니다.</p>
             </c:otherwise>
             </c:choose>
-        </div> <!-- chara_list_01 -->
-    </div> <!-- chara_list_wrapper -->
-</div> <!-- sec01_chara -->
+        </div>
+    </div>
+</div>
 
 <!-- footer 영역 (원하는 경우) -->
 <div class="footer">

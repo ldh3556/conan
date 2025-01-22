@@ -24,8 +24,9 @@
         </div>
 
                 <jsp:include page="${loginPage}"></jsp:include>
-
     </div>
+
+
     <div class="index_Sec01">
         <div class="index_Sec01_L">
             <a class="playlogo_wrapper" href="jsp/game/loading/loading.jsp">

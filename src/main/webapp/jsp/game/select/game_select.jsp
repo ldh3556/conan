@@ -18,6 +18,9 @@
 
     <!-- Demo styles -->
     <style>
+        span.swiper-pagination-bullet{
+            border: 2px solid #ffffff;
+        }
         html,
         body {
             position: relative;
@@ -31,7 +34,7 @@
             color: #000;
             margin: 0;
             padding: 0;
-            background: url("../../../img/index/sec_bg_2.jpg");
+            background: url("/img/index/sec_bg_2.jpg");
         }
 
         .swiper {
@@ -40,8 +43,6 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
         }
 
         .swiper-slide {
@@ -76,7 +77,7 @@
             margin: 0 30px;
         }
     </style>
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -85,24 +86,25 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <div class="conan_logo">
-            <img src="../img/index/logoimg.png">
-        </div>
+        <a class="conan_logo" href="/index.jsp">
+            <img src="/img/index/logoimg.png">
+        </a>
 
-                <jsp:include page="${loginPage}"></jsp:include>
+        <jsp:include page="${loginPage}"></jsp:include>
 
-        </div>
     </div>
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+
             <a class="swiper-slide" href="/LoadingFaceGameC">
+
                 <span>얼굴 맞추기</span>
             </a>
-            <a class="swiper-slide" href="../balloon/">
+            <a class="swiper-slide" href="/balloon/">
                 <span>말풍선 채워넣기</span>
             </a>
-            <a class="swiper-slide" href="../destiny/destiny.jsp">
+            <a class="swiper-slide" href="/jsp/game/destiny/destiny.jsp">
                 <span>나의 운명의</span>
                 <span style="font-size: 40pt">캐릭터</span>
             </a>
@@ -121,6 +123,7 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        loop:true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,

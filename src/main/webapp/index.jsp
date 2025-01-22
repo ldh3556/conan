@@ -53,7 +53,7 @@
                 </div>
                 <h1 class="textStyle">이다.</h1>
             </div>
-            <div class="Sec02_conandex">
+            <div class="Sec02_conandex" onclick="location.href='CharacterListC'">
                 <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
             </div>
@@ -191,12 +191,32 @@
             <div class="commu_box_wrapper">
                 <div class="notice_togo">
                     <span>Community</span>
-                    <a href=""> 커뮤니티 바로가기</a>
+                    <a href="/jsp/b"> 커뮤니티 바로가기</a>
                 </div>
                 <hr style="width: 100%">
-                <div class="commu_post_wrapper">
-
-                </div>
+                <a class="commu_post_wrapper">
+                    <span>[공지사항]</span>
+                    <span>사이트 운영 방침 안내</span>
+                    <span>2025.01.22</span>
+                </a>
+                <hr>
+                <a class="commu_post_wrapper">
+                    <span>[공지사항]</span>
+                    <span>사이트 운영 방침 안내</span>
+                    <span>2025.01.22</span>
+                </a>
+                <hr>
+                <a class="commu_post_wrapper">
+                    <span>[자유게시판]</span>
+                    <span>요즘 코난</span>
+                    <span>2025.01.22</span>
+                </a>
+                <hr>
+                <a class="commu_post_wrapper">
+                    <span>[영화 후기]</span>
+                    <span>내돈내산 100만 달러의 펜타그램</span>
+                    <span>2025.01.22</span>
+                </a>
             </div>
         </div>
 

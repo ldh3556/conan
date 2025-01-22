@@ -81,9 +81,11 @@
 
 <body>
 <div class="wrapper">
+
     <div class="header">
         <button class="menu_button">
         </button>
+<<<<<<< HEAD
         <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">
         </a>
@@ -96,12 +98,24 @@
                 </div>
             </div>
             <a href="/LoginC" id="account_icon"></a>
+=======
+        <div class="conan_logo">
+            <img src="../img/index/logoimg.png">
+        </div>
+
+                <jsp:include page="${loginPage}"></jsp:include>
+
+>>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
         </div>
     </div>
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+<<<<<<< HEAD
             <a class="swiper-slide" href="/puzzle/puzzle.jsp">
+=======
+            <a class="swiper-slide" href="/LoadingFaceGameC">
+>>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
                 <span>얼굴 맞추기</span>
             </a>
             <a class="swiper-slide" href="/balloon/">

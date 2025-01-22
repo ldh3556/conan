@@ -1,3 +1,4 @@
+
 -- create table account_table_test (
 --     id varchar2(20 char) primary key,
 --     pw varchar2(20 char) not null,
@@ -17,6 +18,7 @@
 
 ------------------------------------------------------------------
 
+
 -- [요소 더 넣어서 재구성ing]
 create table account_table_hdh (
     no varchar2(20 char) primary key,
@@ -31,15 +33,35 @@ create table account_table_hdh (
     pw_check varchar2(20 char) not null,
     nickname varchar2(20 char) not null,
 
+
     -- no(pk) 외에 유니크 제약 조건 추가
+
     constraint unique_nickname unique (nickname),
     constraint unique_e_mail unique (e_mail),
     constraint unique_id unique (id)
 );
 
-create sequence account_table_hdh_seq;
-insert into account_table_hdh values(account_table_hdh_seq.nextval,
-'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'홍길동', '2000', '01', '01','남', 'merong@123.com', 'www123', 'www123', 'www123', '내이름은함정고난이죠');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'성기훈', '1980', '04', '04','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번');
 
 select * from account_table_hdh;
+
+
+
+
 -- DROP TABLE account_table_hdh;
+-- DROP TABLE account_table_hdh CASCADE CONSTRAINTS;
+
+-- 기존 시퀀스 삭제
+-- DROP SEQUENCE account_table_hdh_seq;
+
+-- 새로운 시퀀스 생성
+-- CREATE SEQUENCE account_table_hdh_seq
+-- START WITH 1  -- 1부터 시작
+-- INCREMENT BY 1;  -- 1씩 증가
+
+-- 시퀀스 이름 확인
+-- SELECT sequence_name
+-- FROM user_sequences
+-- WHERE sequence_name = 'ACCOUNT_TABLE_HDH_SEQ';

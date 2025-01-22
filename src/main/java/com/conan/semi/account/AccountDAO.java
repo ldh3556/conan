@@ -1,12 +1,15 @@
 package com.conan.semi.account;
+
 import com.conan.semi.DBManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AccountDAO {
+
 
     // 계정 생성
     public static void regUser(HttpServletRequest request) {
@@ -21,21 +24,27 @@ public class AccountDAO {
         String pw_check = request.getParameter("pw_check");
         String nickname = request.getParameter("nickname");
 
-        System.out.println(name);
-        System.out.println(birth_year);
-        System.out.println(birth_month);
-        System.out.println(birth_day);
-        System.out.println(gender);
-        System.out.println(e_mail);
-        System.out.println(id);
-        System.out.println(pw);
-        System.out.println(pw_check);
-        System.out.println(nickname);
+        // 비밀번호 확인
+        if (!pw.equals(pw_check)) {
+            System.out.println("비밀번호 불일치");
+            return;  // 비밀번호 불일치 시 종료
+        }
+
+        // 중복 확인 (아이디, 이메일, 닉네임)
+        String idCheck = checkIdExists(request);
+        String emailCheck = checkEmailExists(request);
+        String nicknameCheck = checkNicknameExists(request);
+
+        if ("exists".equals(idCheck) || "exists".equals(emailCheck) || "exists".equals(nicknameCheck)) {
+            System.out.println("아이디, 이메일 또는 닉네임이 이미 존재합니다.");
+            return;  // 중복된 값이 있으면 종료
+        }
 
         // 계정 생성 SQL 실행
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into account_table_hdh (name, birth_year, birth_month, birth_day, gender, e_mail, id, pw, pw_check, nickname) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into account_table_hdh (no, name, birth_year, birth_month, birth_day, gender, e_mail, id, pw, pw_check, nickname) "
+                + "values (account_table_hdh_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             con = DBManager.connect();
@@ -51,28 +60,30 @@ public class AccountDAO {
             pstmt.setString(9, pw_check);
             pstmt.setString(10, nickname);
 
-            if (pstmt.executeUpdate() == 1) {
-                System.out.println("AccountDAO에서 회원정보 등록 성공!");
+            // executeUpdate는 결과를 반환하지 않음. 실행 성공 시 1을 반환
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected == 1) {
+                System.out.println("회원정보 등록 성공!");
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            DBManager.close(con, pstmt, null);
+            DBManager.close(con, pstmt, null); // rs가 없으므로 null 전달
         }
     }
 
-    // [아이디 중복확인]
+    // 아이디 중복 확인
     public static String checkIdExists(HttpServletRequest request) {
         String id = request.getParameter("id");
         String result = "available";  // 기본값은 "사용 가능"으로 설정
 
         System.out.println(id + " checkIdExists 함수 돌입!");
 
-        // 아이디 중복확인 SQL 실행
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         String sql = "select * from account_table_hdh where id = ?";
+
 
         try {
             con = DBManager.connect();
@@ -80,14 +91,12 @@ public class AccountDAO {
             pstmt.setString(1, id);
             rs = pstmt.executeQuery();
 
+
             if (rs.next()) {
-                String dbID = rs.getString(7);
-                if (id.equals(dbID)) {
-                    result = "exists";  // 아이디가 이미 존재하면 "exists" 반환
-                    System.out.println("아이디가 DB에 존재합니다");
-                }
+                result = "exists";  // 아이디가 이미 존재하면 "exists" 반환
+                System.out.println("아이디가 DB에 존재합니다");
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             result = "error";  // 오류 발생 시 "error" 반환
         } finally {
@@ -97,14 +106,46 @@ public class AccountDAO {
         return result;  // 결과 반환
     }
 
-    // [닉네임 중복확인]
+    // 이메일 중복 확인
+    public static String checkEmailExists(HttpServletRequest request) {
+        String e_mail = request.getParameter("e_mail");
+        String result = "available";  // 기본값은 "사용 가능"으로 설정
+
+        System.out.println("이메일 확인 요청: " + e_mail);
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "select * from account_table_hdh where e_mail = ?";
+
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, e_mail);
+
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                result = "exists";  // 이메일이 이미 존재하면 "exists" 반환
+                System.out.println("이메일이 DB에 존재합니다.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            result = "error";  // 오류 발생 시 "error" 반환
+        } finally {
+            DBManager.close(con, pstmt, rs);
+        }
+
+        return result;  // 결과 반환
+    }
+
+    // 닉네임 중복 확인
     public static String checkNicknameExists(HttpServletRequest request) {
         String nickname = request.getParameter("nickname");
         String result = "available";  // 기본값은 "사용 가능"으로 설정
 
-        System.out.println("닉네임 확인 요청: " + nickname);  // 전달된 닉네임 값 확인
+        System.out.println("닉네임 확인 요청: " + nickname);
 
-        // 닉네임 중복확인 SQL 실행
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -115,23 +156,13 @@ public class AccountDAO {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, nickname);
 
-            // 쿼리 실행
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                String dbNickname = rs.getString("nickname");
-                System.out.println("DB에서 찾은 닉네임: " + dbNickname);  // DB에서 찾은 닉네임 출력
-
-                // 입력된 닉네임과 DB에서 찾은 닉네임이 일치하는지 확인
-                if (nickname.equals(dbNickname)) {
-                    result = "exists";  // 닉네임이 이미 존재하면 "exists" 반환
-                    System.out.println("닉네임이 DB에 존재합니다.");
-                }
-            } else {
+                result = "exists";  // 닉네임이 이미 존재하면 "exists" 반환
                 System.out.println("닉네임이 DB에 존재합니다.");
             }
-
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             result = "error";  // 오류 발생 시 "error" 반환
         } finally {
@@ -139,8 +170,6 @@ public class AccountDAO {
         }
 
         return result;  // 결과 반환
+
     }
-
-
-
 }

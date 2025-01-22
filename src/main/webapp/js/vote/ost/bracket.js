@@ -714,7 +714,7 @@ else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보�
         $(document).off('click','#voteButton.finalVoteButton')
             .on('click','#voteButton.finalVoteButton',function () {
                 let finalVictorySong = selectedFDiv.find('a').text();
-                let pk =    $(finalVictorySong).parent().data("pk");
+               // let pk =    $(finalVictorySong).parent().data("pk");
                 pauseAudio();
                 console.log(selectedFSongPK)
 

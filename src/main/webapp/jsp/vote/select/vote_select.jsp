@@ -86,21 +86,19 @@
         <a class="conan_logo" href="/jsp/index.jsp">
             <img src="/img/index/logoimg.png">
         </a>
-        <div class="account_wrapper">
-            <div class="login_text_wrapper">
-                <span>로그인</span> 해주세요.
-                <div class="login_text">
-                    <a href="/LoginC" id="login_text_id"> 로그인 </a>
-                    <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
-                </div>
-            </div>
-            <a href="/LoginC" id="account_icon"></a>
+
+        <jsp:include page="${loginPage}"></jsp:include>
+
         </div>
     </div>
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+<<<<<<< HEAD
             <a class="swiper-slide" href="/jsp/vote/worldcup/worldcup_main.jsp">
+=======
+            <a class="swiper-slide" href="/LoadingWorldcupVoteC">
+>>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
                 <span>WORLD CUP</span>
             </a>
             <a class="swiper-slide" href="/jsp/vote/ost/ost_main.jsp">

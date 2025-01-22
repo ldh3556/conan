@@ -84,6 +84,11 @@ button.menu_button {
     border-radius: 100%;
 }
 
+#account_icon img{
+    width: 80%;
+    height: 80%;
+}
+
 /*INDEX_SEC01_R,L WRAPPER*/
 .index_Sec01{
     display: flex;

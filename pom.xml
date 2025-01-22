@@ -20,7 +20,7 @@
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
-              <version>1.18.30</version> <!-- Lombok 버전 -->
+              <version>1.18.36</version> <!-- Lombok 버전 -->
             </path>
           </annotationProcessorPaths>
         </configuration>
@@ -81,14 +81,6 @@
       <version>1.2</version>
     </dependency>
 
-
-
-    <!-- JSTL -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
 
     <!-- Lombok -->
     <dependency>

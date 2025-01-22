@@ -123,7 +123,7 @@
             top: 300px;
             left: 400px;
             z-index: 2;
-            width: 100px
+            width: 200px
 
         }
 

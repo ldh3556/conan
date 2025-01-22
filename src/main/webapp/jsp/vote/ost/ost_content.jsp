@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Title</title>
-<link rel="stylesheet" href="css/vote/ost/ost_content.css">
+<link rel="stylesheet" href="/css/vote/ost/ost_content.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<style>
 		.bracket-lines {

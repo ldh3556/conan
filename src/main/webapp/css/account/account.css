@@ -13,7 +13,7 @@ body{
 .sec01_L{
     width: 40%;
     min-height: 100vh;
-    background: url("../../img/login/conan_lineart.png");
+    background: url("//img/login/conan_lineart.png");
     background-size: cover;
     position: relative;
     isolation: isolate;

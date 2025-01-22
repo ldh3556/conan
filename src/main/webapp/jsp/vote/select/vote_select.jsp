@@ -15,10 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 
     <!-- Demo styles -->
     <style>
+        span.swiper-pagination-bullet{
+            border: 2px solid #ffffff;
+        }
         html,
         body {
             position: relative;
@@ -32,7 +35,7 @@
             color: #000;
             margin: 0;
             padding: 0;
-            background:url("../../../img/index/sec_bg_2.jpg");
+            background:url("/img/index/sec_bg_2.jpg");
         }
 
         .swiper {
@@ -41,8 +44,6 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
         }
 
         .swiper-slide {
@@ -75,7 +76,7 @@
             margin: 30px;
         }
     </style>
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -83,8 +84,8 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="../../../index.jsp">
-            <img src="../../../img/index/logoimg.png">
+        <a class="conan_logo" href="/jsp/index.jsp">
+            <img src="/img/index/logoimg.png">
         </a>
 
         <jsp:include page="${loginPage}"></jsp:include>
@@ -94,13 +95,18 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+
+
+
             <a class="swiper-slide" href="/LoadingWorldcupVoteC">
+
                 <span>WORLD CUP</span>
             </a>
+            <a class="swiper-slide" href="/jsp/vote/ost/ost_main.jsp">
             <a class="swiper-slide" href="/ost_contentC2">
                 <span>OST</span>
             </a>
-            <a class="swiper-slide" href="../story/">
+            <a class="swiper-slide" href="/jsp/vote/story/">
                 <span>STORY</span>
             </a>
 
@@ -119,6 +125,7 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        loop:true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,

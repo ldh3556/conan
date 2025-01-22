@@ -104,7 +104,7 @@
             <a class="swiper-slide" href="/balloon/">
                 <span>말풍선 채워넣기</span>
             </a>
-            <a class="swiper-slide" href="/jsp/game/destiny/destiny.jsp">
+            <a class="swiper-slide" href="  /jsp/game/destiny/destiny.jsp">
                 <span>나의 운명의</span>
                 <span style="font-size: 40pt">캐릭터</span>
             </a>

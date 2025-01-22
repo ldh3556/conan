@@ -217,14 +217,16 @@ input[type="submit"]:hover{
 }
 
 select{
-    width: 260px;
+    width: 340px;
+    height: 45px;
     font-size: 15px;
     color: #393939;
+    border: none;
     background: url("/img/encyclop/arrow-down.svg") no-repeat top right;
 }
 
 select:focus{
-    width: 260px;
+    width: 340px;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
     outline: none;
     font-size: 15pt;
@@ -239,7 +241,8 @@ select:hover{
     /*select 밑에 있는 세력을 표시하는 라벨바*/
     width: 95%;
     height: 44px;
-    background: url("/img/encyclop/labelbar.png") no-repeat;
+    background-color: #001A6D;
+    background-size: contain;
     display: flex;
     align-items: center;
     font-family: "Noto Sans KR Medium";

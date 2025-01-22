@@ -564,10 +564,35 @@ VALUES ('미즈나시 레나 / 혼도 히데미 / 키르 (손예나 / 문재인 
         'img/Characters/mizunashi/mizunashi.png',
         'img/Characters/mizunashi/main_img.png');
 
-CREATE TABLE backup_table AS SELECT * FROM your_table_name;
+/*소노코 수정문*/
+UPDATE characters_test_nr
+SET button_image = REPLACE(button_image, '"', '')
+WHERE button_image LIKE '"%';
 
+/*
+UPDATE characters_test_nr
+SET button_image = CONCAT('img/Characters/', button_image)
+WHERE button_image NOT LIKE '%/%';*/
 
+/*쿄고쿠 수정문*/
+UPDATE characters_test_nr
+SET button_image = REPLACE(button_image, '.png', 'kyogoku.png')
+WHERE button_image = 'img/Characters/kyogoku/.png';
 
+/*산고 수정문*/
+UPDATE characters_test_nr
+SET button_image = REPLACE(button_image, '/snago/', '/sango/'),
+    main_image = REPLACE(main_image, '/snago/', '/sango/')
+WHERE button_image LIKE '%/snago/%' OR main_image LIKE '%/snago/%';
+
+/*진 수정문*/
+UPDATE characters_test_nr
+SET button_image = REPLACE(button_image, '/jin/', '/gin/'),
+    main_image = REPLACE(main_image, '/jin/', '/gin/')
+WHERE button_image LIKE '%/jin/%' OR main_image LIKE '%/jin/%';
+UPDATE characters_test_nr
+SET button_image = REPLACE(button_image, 'jin.png', 'gin.png')
+WHERE button_image LIKE '%jin.png';
 
 
 CREATE TABLE categories (

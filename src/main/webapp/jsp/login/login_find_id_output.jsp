@@ -36,7 +36,11 @@
     </div>
 
 </div>
-<div class="footer"></div>
+<div class="footer">
+    <a>이용약관</a>
+    <a>개인정보 처리방침</a>
+    <a>About us</a>
+</div>
 
 
 

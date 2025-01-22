@@ -21,11 +21,11 @@
             <div class="box six"></div>
         </div>
     </div>
-<<<<<<< HEAD
+
     <a class="blinking-text" href="/jsp/vote/select/vote_select.jsp">START HERE</a>
-=======
+
     <a class="blinking-text" href="/LoadingVoteSelectC">START HERE</a>
->>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
+
 </div>
 </body>
 </html>

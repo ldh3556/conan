@@ -19,6 +19,9 @@
 
     <!-- Demo styles -->
     <style>
+        span.swiper-pagination-bullet{
+            border: 2px solid #ffffff;
+        }
         html,
         body {
             position: relative;
@@ -41,8 +44,6 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
         }
 
         .swiper-slide {
@@ -94,11 +95,11 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-<<<<<<< HEAD
-            <a class="swiper-slide" href="/jsp/vote/worldcup/worldcup_main.jsp">
-=======
+
+
+
             <a class="swiper-slide" href="/LoadingWorldcupVoteC">
->>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
+
                 <span>WORLD CUP</span>
             </a>
             <a class="swiper-slide" href="/jsp/vote/ost/ost_main.jsp">
@@ -123,6 +124,7 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        loop:true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,

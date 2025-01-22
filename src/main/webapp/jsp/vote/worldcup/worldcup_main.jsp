@@ -17,7 +17,6 @@
         <jsp:include page="${loginPage}"></jsp:include>
 
         </div>
-    </div>
     <div class="vote_wrapper">
         <div class="vote_inner">
             <div class="title-container">
@@ -69,6 +68,7 @@
         </div>
     </div>
 </div>
+</div>
 
 </body>
 
@@ -88,9 +88,9 @@
         text-align: center;
         left: 50%;
 
-        width: 1000px;
+        width: 95%;
         height: 150px;
-        border-radius: 50px;
+        border-radius: 10px;
         box-shadow: 5px 10px 5px #ccc;
     }
 
@@ -130,7 +130,6 @@
     /* card 스타일 */
     .card {
         width: 470px;
-        height: 380px;
         border: 1px solid #ccc;
         text-align: center;
     }

@@ -77,6 +77,7 @@
             justify-content: center;
             gap: 20px; /* 버튼들 간의 간격을 설정 */
             margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         #retry-btn, #show-answer-btn, #next-btn {
@@ -89,21 +90,25 @@
             flex: 1; /* 버튼들이 고르게 크기를 가지게 함 */
         }
 
-        #retry-btn {
+        #next-btn {
             background-color: #ffc107;
+            width: 100px;
         }
 
         #show-answer-btn {
             background-color: #28a745;
+            width: 100px;
         }
 
         #next-btn {
             background-color: #007bff;
+            width: 100px;
         }
 
         /* 버튼들에 hover 효과 */
         #next-btn:hover, #retry-btn:hover, #show-answer-btn:hover {
             background-color: #138496;
+
         }
 
         .game-over {
@@ -113,21 +118,20 @@
         }
 
     </style>
-    <link rel="stylesheet" href="///css/game/game_template.css">
-    <link rel="stylesheet" href="///css/index.css">
+    <link rel="stylesheet" href="/css/game/game_template.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 <div class="wrapper">
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="///index.jsp">
-            <img src="///img/index/logoimg.png">
+        <a class="conan_logo" href="/index.jsp">
+            <img src="/img/index/logoimg.png">
         </a>
 
         <jsp:include page="${loginPage}"></jsp:include>
 
-        </div>
     </div>
     <div class="game_wrapper">
         <div class="game_inner">
@@ -150,6 +154,8 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>
 
 <script>

@@ -18,6 +18,9 @@
 
     <!-- Demo styles -->
     <style>
+        span.swiper-pagination-bullet{
+            border: 2px solid #ffffff;
+        }
         html,
         body {
             position: relative;
@@ -40,8 +43,6 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
         }
 
         .swiper-slide {
@@ -85,43 +86,25 @@
     <div class="header">
         <button class="menu_button">
         </button>
-<<<<<<< HEAD
-        <a class="conan_logo" href="/index.jsp">
-            <img src="/img/index/logoimg.png">
-        </a>
-        <div class="account_wrapper">
-            <div class="login_text_wrapper">
-                <span>로그인</span> 해주세요.
-                <div class="login_text">
-                    <a href="/LoginC" id="login_text_id"> 로그인 </a>
-                    <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
-                </div>
-            </div>
-            <a href="/LoginC" id="account_icon"></a>
-=======
         <div class="conan_logo">
-            <img src="../img/index/logoimg.png">
+            <img src="/img/index/logoimg.png">
         </div>
 
-                <jsp:include page="${loginPage}"></jsp:include>
+        <jsp:include page="${loginPage}"></jsp:include>
 
->>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
-        </div>
     </div>
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-<<<<<<< HEAD
-            <a class="swiper-slide" href="/puzzle/puzzle.jsp">
-=======
+
             <a class="swiper-slide" href="/LoadingFaceGameC">
->>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
+
                 <span>얼굴 맞추기</span>
             </a>
             <a class="swiper-slide" href="/balloon/">
                 <span>말풍선 채워넣기</span>
             </a>
-            <a class="swiper-slide" href="/destiny/destiny.jsp">
+            <a class="swiper-slide" href="/jsp/game/destiny/destiny.jsp">
                 <span>나의 운명의</span>
                 <span style="font-size: 40pt">캐릭터</span>
             </a>
@@ -140,6 +123,7 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        loop:true,
         coverflowEffect: {
             rotate: 50,
             stretch: 0,

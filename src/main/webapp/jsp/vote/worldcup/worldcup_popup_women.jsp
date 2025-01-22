@@ -139,11 +139,11 @@
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        width: 1000px;
+        width: 95%;
         margin-bottom: 50px;
         padding-top: 20px;
         box-shadow: 5px 10px 5px #ccc;
-        border-radius: 50px;
+        border-radius: 10px;
     }
 
     .image-container {

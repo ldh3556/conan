@@ -27,8 +27,8 @@
 }
 
 .match {
-  width: 120px;
-  height: 50px;
+  width: 130px;
+  height: 55px;
   border: 2px solid darkblue;
   display: flex;
   justify-content: center;
@@ -37,7 +37,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 5px;
-  padding: 5px;
 }
 
 .defeated {

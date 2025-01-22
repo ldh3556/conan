@@ -151,12 +151,11 @@
 .sec01_chara {
     /*character wrapper*/
     width: 100%;
-    margin: 0 40px;
 }
 .sec01_head{
     /*input과 상단 카테고리 text 표시*/
     display: flex;
-    width: 100%;
+    width: 95%;
 }
 
 .sec01_head_text{
@@ -198,7 +197,7 @@
 }
 
 .item_list_01{
-    /*캐릭터 box_set을 감싸는 열 *여러번 반복 가능**/
+    /*캐릭터 chara_list_box_set을 감싸는 열 *여러번 반복 가능**/
     display: flex;
     justify-content: space-between;
 }

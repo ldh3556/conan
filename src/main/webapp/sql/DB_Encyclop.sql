@@ -564,6 +564,12 @@ VALUES ('미즈나시 레나 / 혼도 히데미 / 키르 (손예나 / 문재인 
         'img/Characters/mizunashi/mizunashi.png',
         'img/Characters/mizunashi/main_img.png');
 
+CREATE TABLE backup_table AS SELECT * FROM your_table_name;
+
+
+
+
+
 CREATE TABLE categories (
 category_id   NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 category_name VARCHAR2(100 CHAR) NOT NULL

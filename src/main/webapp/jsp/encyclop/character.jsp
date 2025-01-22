@@ -52,13 +52,13 @@
                     <!-- 카테고리 선택 -->
                     <select name="category" id="category" onchange="this.form.submit()">
                         <option value="all" <c:if test="${currentCategory == 'all'}">selected</c:if>>모든 캐릭터</option>
-                        <option value="1" <c:if test="${currentCategory == '모리 탐정사무소'}">selected</c:if>>모리 탐정사무소</option>
-                        <option value="2" <c:if test="${currentCategory == '소년 탐정단'}">selected</c:if>>소년 탐정단</option>
-                        <option value="3" <c:if test="${currentCategory == '경시청'}">selected</c:if>>경시청</option>
-                        <option value="4" <c:if test="${currentCategory == 'CIA'}">selected</c:if>>CIA</option>
-                        <option value="5" <c:if test="${currentCategory == 'FBI'}">selected</c:if>>FBI</option>
-                        <option value="6" <c:if test="${currentCategory == '검은조직'}">selected</c:if>>검은조직</option>
-                        <option value="7" <c:if test="${currentCategory == '지방청'}">selected</c:if>>지방청</option>
+                        <option value="1" <c:if test="${currentCategory == '1'}">selected</c:if>>모리 탐정사무소</option>
+                        <option value="2" <c:if test="${currentCategory == '2'}">selected</c:if>>소년 탐정단</option>
+                        <option value="3" <c:if test="${currentCategory == '3'}">selected</c:if>>경시청</option>
+                        <option value="4" <c:if test="${currentCategory == '4'}">selected</c:if>>CIA</option>
+                        <option value="5" <c:if test="${currentCategory == '5'}">selected</c:if>>FBI</option>
+                        <option value="6" <c:if test="${currentCategory == '6'}">selected</c:if>>검은조직</option>
+                        <option value="7" <c:if test="${currentCategory == '7'}">selected</c:if>>지방청</option>
                     </select>
 
                 </form>

@@ -9,7 +9,7 @@
 <html>
 <head>
     <title> LOGIN OUTPUT </title>
-    <link rel="stylesheet" href="//css/login/login.css">
+    <link rel="stylesheet" href="/css/login/login.css">
 </head>
 <body>
 

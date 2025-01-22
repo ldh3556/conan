@@ -1,11 +1,13 @@
 package com.conan.semi.login;
 
+
 import com.conan.semi.DBManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 
 public class LoginDAO_test {
     public static void login(HttpServletRequest request) {
@@ -14,6 +16,7 @@ public class LoginDAO_test {
 
     System.out.println(id);
     System.out.println(pw);
+
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -47,5 +50,6 @@ public class LoginDAO_test {
             DBManager.close(con, pstmt, rs);
         }
     }
+
 
 }

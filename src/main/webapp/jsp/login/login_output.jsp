@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="../../css/login/login.css">
 </head>
 <body>
+
+<h1> LOGIN OUTPUT </h1>
+<div class="result-container">
+    <div class="info">
+        환영합니다, ${sessionScope.user.nickname} 님
+    </div>
+    <div class="user-container">
+        <a href="/LogoutC"> 로그아웃 </a> / <a href="/MyPageC"> 마이페이지 </a>
 <div class="wrapper">
     <div class="sec01_L">
         <a href="/jsp/index_lmj.jsp"><img src="../../img/login/logoimg.png"></a>

@@ -13,26 +13,13 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            margin: 0;
+            padding: 0;
         }
 
         .outer-container {
             margin: 0 auto; /* 화면 중앙 정렬 */
             border: solid 3pt red;
-        }
-
-        .game-container {
-            width: 600px;
-            text-align: center;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -44,7 +31,7 @@
             margin-bottom: 30px;
         }
 
-        img {
+        .game_wrapper img {
             width: 300px;
             height: 300px; /* 높이를 지정하여 크기를 일정하게 유지 */
             object-fit: cover; /* 이미지가 크기에 맞게 잘리거나 비율을 맞추어 표시 */
@@ -126,26 +113,41 @@
         }
 
     </style>
+    <link rel="stylesheet" href="../../../css/game/game_template.css">
+    <link rel="stylesheet" href="../../../css/index.css">
 </head>
 <body>
-<div class="outer-container">
-    <div class="game-container">
-        <div class="header-container">
-            <h1> 인물 맞추기 퀴즈 <span id="numbering">1/5</span></h1>
+<div class="wrapper">
+    <div class="header">
+        <button class="menu_button">
+        </button>
+        <a class="conan_logo" href="../../../index.jsp">
+            <img src="../../../img/index/logoimg.png">
+        </a>
+
+        <jsp:include page="${loginPage}"></jsp:include>
+
         </div>
-        <div class="photo-container">
-            <img id="game-photo" src="" alt="사진">
-        </div>
-        <div class="options-container">
-            <!-- 옵션 버튼들이 여기에 동적으로 추가됩니다 -->
-        </div>
-        <div class="button-container">
-            <button id="show-answer-btn" onclick="showAnswer()">정답 보기</button>
-            <button id="next-btn" onclick="nextQuestion()">다음 문제</button>
-            <button id="retry-btn" onclick="restartGame()">다시하기</button>
-        </div>
-        <div id="game-over-message" class="game-over" style="display: none;">
-            게임이 끝났습니다! <span id="scoring">0</span>
+    </div>
+    <div class="game_wrapper">
+        <div class="game_inner">
+            <div class="header-container">
+                <h1> 인물 맞추기 퀴즈 <span id="numbering">1/5</span></h1>
+            </div>
+            <div class="photo-container">
+                <img id="game-photo" src="" alt="사진">
+            </div>
+            <div class="options-container">
+                <!-- 옵션 버튼들이 여기에 동적으로 추가됩니다 -->
+            </div>
+            <div class="button-container">
+                <button id="show-answer-btn" onclick="showAnswer()">정답 보기</button>
+                <button id="next-btn" onclick="nextQuestion()">다음 문제</button>
+                <button id="retry-btn" onclick="restartGame()">다시하기</button>
+            </div>
+            <div id="game-over-message" class="game-over" style="display: none;">
+                게임이 끝났습니다! <span id="scoring">0</span>
+            </div>
         </div>
     </div>
 </div>

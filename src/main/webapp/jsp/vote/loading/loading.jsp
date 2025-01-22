@@ -9,7 +9,7 @@
 <body>
 
 <div class="wrapper">
-    <span>LOADING...</span>
+    <span class="char" data-text="LOADING...">LOADING...</span>
 
     <div class="load_ani_wrapper">
         <div class="box-wrap">
@@ -21,7 +21,7 @@
             <div class="box six"></div>
         </div>
     </div>
-    <a class="blinking-text" href="../select/vote_select.jsp">START HERE</a>
+    <a class="blinking-text" href="/LoadingVoteSelectC">START HERE</a>
 </div>
 </body>
 </html>

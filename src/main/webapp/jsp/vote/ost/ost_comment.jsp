@@ -15,8 +15,8 @@
 
     <!-- 버튼 영역 -->
     <div style="margin-bottom: 10px;">
-        <button onclick="location.href='/ost_rankingC'">통계~~~</button>
-        <button type="button" onclick="location.href='/ost_mainC'">다시하기</button>
+        <button onclick="location.href='/ost_rankingC'">통계보기</button>
+        <button type="button" onclick="location.href='/ost_contentC2'">다시하기</button>
 <%--        <button type="button" onclick="location.href='/action3'">다른게임</button>--%>
     </div>
 

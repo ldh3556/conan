@@ -23,7 +23,7 @@ public class RegCommentC extends HttpServlet {
         String commentText = request.getParameter("comment");
 
         // 댓글 등록 처리 (DAO 메서드 호출)
-        OstDAO.registComments(request);  // 댓글 등록
+        //OstDAO.registComments(request);  // 댓글 등록
 
         // JSON 형식의 응답을 전송 (클라이언트에서 success 콜백 처리)
         response.setContentType("application/json;charset=UTF-8");

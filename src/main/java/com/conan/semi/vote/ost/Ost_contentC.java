@@ -18,7 +18,7 @@ public class Ost_contentC extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 대진표 DB 불러오기
-        OstDAO.getBracket(request);
+        OstDAO.getBracket(request, response);
 
         // 1. 로그인 정보 가져오기
         String insertedId = request.getParameter("id");

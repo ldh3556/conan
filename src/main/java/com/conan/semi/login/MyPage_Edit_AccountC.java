@@ -17,7 +17,7 @@ public class MyPage_Edit_AccountC extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         // 회원정보 수정
-        EditDAO_original.editAccount(request);
+        EditDAO_trial.editAccount(request);
 
         // 어디로?
         request.getRequestDispatcher("jsp/login/login_myPage.jsp").forward(request, response);

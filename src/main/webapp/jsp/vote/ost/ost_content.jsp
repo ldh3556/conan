@@ -45,13 +45,13 @@
 </div>
 
 <%--이하 디버깅용 코드입니다. --%>
-<div>
-	id : ${id}
-	<hr>
-	pw: ${pw}
-	<hr>
-	nickname: ${nickname}
-</div>
+<%--<div>--%>
+<%--	id : ${id}--%>
+<%--	<hr>--%>
+<%--	pw: ${pw}--%>
+<%--	<hr>--%>
+<%--	nickname: ${nickname}--%>
+<%--</div>--%>
 <div class="wrapper">
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->

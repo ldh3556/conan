@@ -26,18 +26,19 @@
             <img src="/img/index/logoimg.png">
         </div>
 
-        <jsp:include page="${loginPage}"></jsp:include>
-
+                <jsp:include page="${loginPage}"></jsp:include>
     </div>
+
+
     <div class="index_Sec01">
         <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="jsp/game/loading/loading.jsp">
+            <a class="playlogo_wrapper" href="/jsp/game/loading/loading.jsp">
                 <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
-            <a class="votelogo_wrapper" href="jsp/vote/loading/loading.jsp">
+            <a class="votelogo_wrapper" href="/jsp/vote/loading/loading.jsp">
                 <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>
@@ -59,7 +60,7 @@
 
 
             <%----%>
-            <div class="Sec02_conandex" onclick="location.href='CharacterList'">
+            <div class="Sec02_conandex" onclick="location.href='CharacterListC'">
                 <img src="/img/index/conandex_customicon_big.png" id="conandexicon">
                 <%----%>
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>

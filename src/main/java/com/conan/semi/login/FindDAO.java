@@ -37,9 +37,9 @@ public class FindDAO {
 
             String msg = null;
             if (rs.next()) {
-                String dbName = rs.getString(1);
-                String dbE_mail = rs.getString(6);
-                String dbId = rs.getString(7);
+                String dbName = rs.getString(2);
+                String dbE_mail = rs.getString(7);
+                String dbId = rs.getString(8);
                 if (e_mail.equals(dbE_mail) && name.equals(dbName)) {
                     msg = "'" + dbName + "'" + " 님의 아이디는 [ " + dbId + " ] 입니다.";
                 } else {
@@ -98,51 +98,45 @@ public class FindDAO {
 //    }
 
         // 입력 받은 정보
-        String id = request.getParameter("id");
-        String birth_year = request.getParameter("birth_year");
-        String birth_month = request.getParameter("birth_month");
-        String birth_day = request.getParameter("birth_day");
-        String gender = request.getParameter("gender");
-        String e_mail = request.getParameter("e_mail");
+        String id = request.getParameter("id").trim();
+        String birth_year = request.getParameter("birth_year").trim();
+        String birth_month = request.getParameter("birth_month").trim();
+        String birth_day = request.getParameter("birth_day").trim();
+        String gender = request.getParameter("gender").trim();
+        String e_mail = request.getParameter("e_mail").trim();
 
-        // 입력 값이 없을 경우 처리
-        if (id == null || id.trim().isEmpty() || birth_year == null || birth_year.trim().isEmpty() || birth_month == null || birth_month.trim().isEmpty() || birth_day == null || birth_day.trim().isEmpty() || gender == null || gender.trim().isEmpty() || e_mail == null || e_mail.trim().isEmpty() ) {
+        // 필수 입력 값 체크
+        if (id == null || id.isEmpty() || birth_year.isEmpty() || birth_month.isEmpty() || birth_day.isEmpty() || gender.isEmpty() || e_mail.isEmpty()) {
             request.setAttribute("result", "정보를 모두 입력해 주세요.");
-            return;  // 더 이상 진행하지 않고 종료
+            return;
         }
 
-        System.out.println(id + " " + birth_year + "-" + birth_month + "-" + birth_day + " " + gender + " " + e_mail);
+        System.out.println("입력 값: " + id + " " + birth_year + "-" + birth_month + "-" + birth_day + " " + gender + " " + e_mail);
 
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        // SQL 쿼리
-        String sql = "select * from account_table_hdh where id = ? and birth_year = ? and birth_month = ? and birth_day = ? and gender = ? and e_mail = ?";
+        // SQL 쿼리 (날짜 형식 맞추기)
+        String sql = "SELECT * FROM account_table_hdh WHERE id = ? AND TO_DATE(birth_year || '-' || birth_month || '-' || birth_day, 'yyyy-mm-dd') = TO_DATE(?, 'yyyy-mm-dd') AND gender = ? AND e_mail = ?";
 
         try {
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, id);
-            pstmt.setString(2, birth_year);
-            pstmt.setString(3, birth_month);
-            pstmt.setString(4, birth_day);
-            pstmt.setString(5, gender);
-            pstmt.setString(6, e_mail);
+            pstmt.setString(2, birth_year + "-" + birth_month + "-" + birth_day);
+            pstmt.setString(3, gender);
+            pstmt.setString(4, e_mail);
 
-            // db tbl 과 비교
             rs = pstmt.executeQuery();
 
             String msg = null;
             if (rs.next()) {
                 String dbId = rs.getString("id");
-                String dbBirth_year = rs.getString("birth_year");
-                String dbBirth_month = rs.getString("birth_month");
-                String dbBirth_day = rs.getString("birth_day");
-                String dbGender = rs.getString("gender");
-                String dbE_mail = rs.getString("e_mail");
                 String dbPw = rs.getString("pw");
-                if (id.equals(dbId) && birth_year.equals(dbBirth_year) && birth_month.equals(dbBirth_month) && birth_day.equals(dbBirth_day) && gender.equals(dbGender) && e_mail.equals(dbE_mail)) {
+
+                // 비밀번호가 일치하면 보여주기
+                if (id.equals(dbId)) {
                     msg = "'" + dbId + "'" + " 님의 비밀번호는 [ " + dbPw + " ] 입니다.";
                 } else {
                     msg = "입력하신 정보에 해당하는 계정이 없습니다.";
@@ -150,9 +144,12 @@ public class FindDAO {
             } else {
                 msg = "입력하신 정보에 해당하는 계정이 없습니다.";
             }
+
             request.setAttribute("result", msg);
+
         } catch (Exception e) {
             e.printStackTrace();
+            request.setAttribute("result", "서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
         } finally {
             DBManager.close(con, pstmt, rs);
         }

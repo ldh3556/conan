@@ -14,10 +14,10 @@
 <body>
 <form action="BoardNoticeRegC" method="post" onsubmit="regBoard(e)">
     <div>
-        id <input name="id">
+        id <input name="id" value="${sessionScope.user.id }">
     </div>
     <div>
-        name <input name="name">
+        name <input name="name" value="${sessionScope.user.nickname }">
     </div>
     <div>
         말머리 선택 : <select name="begin">

@@ -11,7 +11,6 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class BoardNoticeDTO {
     private String b_no;
     private String b_id;
@@ -20,6 +19,10 @@ public class BoardNoticeDTO {
     private String b_title;
     private String b_text;
     private Date b_date;
+    
+
+
+
 
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");

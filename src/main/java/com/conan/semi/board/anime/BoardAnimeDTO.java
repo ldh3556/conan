@@ -21,6 +21,7 @@ public class BoardAnimeDTO {
     private String b_text;
     private Date b_date;
 
+
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return sdf.format(b_date);

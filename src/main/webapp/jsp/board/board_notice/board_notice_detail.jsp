@@ -39,9 +39,9 @@
             </div>
         </div>
         <div style="position: relative; bottom: -50px;">
-            <button class="board-reg-btn" onclick="location.href='BoardFreeUpdateC?no=${board.b_no}'">update</button>
+            <button class="board-reg-btn" onclick="location.href='BoardNoticeUpdateC?no=${board.b_no}'">update</button>
             <button class="board-reg-btn" onclick="deleteBoard('${board.b_no}')">delete</button>
-            <button type="button" class="board-reg-btn" onclick="location.href='BoardFreeC'">list</button>
+            <button type="button" class="board-reg-btn" onclick="location.href='BoardNoticeC'">list</button>
         </div>
     </div>
     <hr>
@@ -60,11 +60,11 @@
 
     <!-- 댓글 작성 폼 -->
 <div>
-    <form method="get" action="FreeCommentRegC">
+    <form method="get" action="NoticeCommentRegC">
         <input type="hidden" name="no" value="${board.b_no}">
         <div>
             <label for="c_writer">이름:</label>
-            <input type="text" id="c_writer" name="c_writer" required>
+            <input type="text" id="c_writer" value="${sessionScope.user.nickname }" name="c_writer" required>
         </div>
         <div>
             <label for="c_content">댓글:</label>

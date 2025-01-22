@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class BoardMovieDTO {
     private String b_no;

@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class LoginDAO {
+    // 메인페이지에서 로그인 했을 때와 안 했을 때 [우측 상단] 차이
     public static void loginCheck(HttpServletRequest req) {
         UserDTO u = (UserDTO) req.getSession().getAttribute("user");
         System.out.println(u);
@@ -17,6 +18,17 @@ public class LoginDAO {
             req.setAttribute("loginPage","index_loginPlease.jsp");
         } else {
             req.setAttribute("loginPage","index_loginOK.jsp");
+        }
+    }
+
+    // 메인페이지에서 PLAY&VOTE 클릭했을 때 [우측 상단] 차이
+    public static void loginCheck2(HttpServletRequest req) {
+        UserDTO u = (UserDTO) req.getSession().getAttribute("user");
+        System.out.println(u);
+        if (u == null) {
+            req.setAttribute("loginPage","/index_loginPlease.jsp");
+        } else {
+            req.setAttribute("loginPage","/index_loginOK.jsp");
         }
     }
 

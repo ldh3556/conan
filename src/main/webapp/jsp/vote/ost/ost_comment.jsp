@@ -15,13 +15,13 @@
 
     <!-- 버튼 영역 -->
     <div style="margin-bottom: 10px;">
-        <button onclick="location.href='/ost_rankingC'">통계~~~</button>
-        <button type="button" onclick="location.href='/ost_mainC'">다시하기</button>
+        <button onclick="location.href='/ost_rankingC'">통계보기</button>
+        <button type="button" onclick="location.href='/ost_contentC2'">다시하기</button>
 <%--        <button type="button" onclick="location.href='/action3'">다른게임</button>--%>
     </div>
 
     <hr>
-<%--    <span id="selectedFSongPK">${selectedFSongPK}</span>--%>
+    <span hidden="hidden" id="selectedFSongPK">${selectedFSongPK}</span>
     <!-- 댓글 입력 폼 -->
     <div style="margin-bottom: 20px;">
 
@@ -53,25 +53,25 @@
     </div>
 
     <!-- 페이징 영역 -->
-    <div style="text-align: center; margin-top: 20px;">
-        <c:if test="${totalPages > 1}">
-            <!-- 이전 버튼 -->
-            <c:if test="${currentPage > 1}">
-                <a href="?page=${currentPage - 1}">이전</a>
-            </c:if>
-            <!-- 페이지 번호 -->
-            <c:forEach var="pageNum" begin="1" end="${totalPages}">
-                <a href="?page=${pageNum}"
-                   style="<c:if test='${pageNum == currentPage}'>font-weight: bold; color: red;</c:if>">
-                        ${pageNum}
-                </a>
-            </c:forEach>
-            <!-- 다음 버튼 -->
-            <c:if test="${currentPage < totalPages}">
-                <a href="?page=${currentPage + 1}">다음</a>
-            </c:if>
-        </c:if>
-    </div>
+<%--    <div style="text-align: center; margin-top: 20px;">--%>
+<%--        <c:if test="${totalPages > 1}">--%>
+<%--            <!-- 이전 버튼 -->--%>
+<%--            <c:if test="${currentPage > 1}">--%>
+<%--                <a href="?page=${currentPage - 1}">이전</a>--%>
+<%--            </c:if>--%>
+<%--            <!-- 페이지 번호 -->--%>
+<%--            <c:forEach var="pageNum" begin="1" end="${totalPages}">--%>
+<%--                <a href="?page=${pageNum}"--%>
+<%--                   style="<c:if test='${pageNum == currentPage}'>font-weight: bold; color: red;</c:if>">--%>
+<%--                        ${pageNum}--%>
+<%--                </a>--%>
+<%--            </c:forEach>--%>
+<%--            <!-- 다음 버튼 -->--%>
+<%--            <c:if test="${currentPage < totalPages}">--%>
+<%--                <a href="?page=${currentPage + 1}">다음</a>--%>
+<%--            </c:if>--%>
+<%--        </c:if>--%>
+<%--    </div>--%>
 
 </div>
 <%--<script src="/js/vote/ost/ost_comment.js"></script>--%>

@@ -1,5 +1,7 @@
 package com.conan.semi.encyclop;
 
+import java.util.List;
+
 public class CharacterDTO {
     private long id;
     private String name;
@@ -10,18 +12,20 @@ public class CharacterDTO {
     // 이미지 경로 필드
     private String buttonImage;
     private String mainImage;
+    private List<String> categories;
 
     public CharacterDTO() {
     }
 
-    public CharacterDTO(long id, String name, String age, String quote, String description, String buttonImage) {
+    public CharacterDTO(long id, String name, String age, String quote, String description, String buttonImage, String mainImage, List<String> categories) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.quote = quote;
         this.description = description;
         this.buttonImage = buttonImage;
-        this.mainImage = buttonImage;
+        this.mainImage = mainImage;
+        this.categories = categories;
     }
 
     public long getId() {
@@ -80,9 +84,16 @@ public class CharacterDTO {
         this.mainImage = mainImage;
     }
 
+    public List<String> getCategories() {
+        return categories;
+    }
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
+    }
+
     @Override
     public String toString() {
-        return "CharscterDTO{" +
+        return "CharacterDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
@@ -90,6 +101,7 @@ public class CharacterDTO {
                 ", description='" + description + '\'' +
                 ", buttonImage='" + buttonImage + '\'' +
                 ", mainImage='" + mainImage + '\'' +
+                ", categories=" + categories +
                 '}';
     }
 }

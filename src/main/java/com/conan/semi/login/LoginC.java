@@ -16,6 +16,8 @@ public class LoginC extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    System.out.println("로그인 시 Post 접속 완료!");
+
     // 로그인
     LoginDAO.login(request);
 

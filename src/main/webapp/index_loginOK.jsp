@@ -14,7 +14,7 @@
         </div>
     </div>
     <a href="/MyPageC" id="account_icon"></a>
-    
 </div>
+
 </body>
 </html>

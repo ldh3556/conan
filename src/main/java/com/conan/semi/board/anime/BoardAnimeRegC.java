@@ -12,7 +12,7 @@ import java.io.IOException;
 public class BoardAnimeRegC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-request.setAttribute("content", "board_free/board_anime_reg.jsp");
+request.setAttribute("content", "board_anime/board_anime_reg.jsp");
 request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     }
 

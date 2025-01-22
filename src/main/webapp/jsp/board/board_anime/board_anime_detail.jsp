@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: kimsuhyeon
@@ -64,7 +65,7 @@
         <input type="hidden" name="no" value="${board.b_no}">
         <div>
             <label for="c_writer">이름:</label>
-            <input type="text" id="c_writer" name="c_writer" required>
+            <input type="text" id="c_writer" value="${sessionScope.user.nickname }" name="c_writer" required>
         </div>
         <div>
             <label for="c_content">댓글:</label>

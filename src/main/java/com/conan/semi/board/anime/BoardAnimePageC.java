@@ -15,7 +15,7 @@ public class BoardAnimePageC extends HttpServlet {
     int p = Integer.parseInt(request.getParameter("p"));
     BoardAnimeDAO.pagingFreeBoard(p, request);
 
-    request.setAttribute("content", "board_free/board_anime.jsp");
+    request.setAttribute("content", "board_anime/board_anime.jsp");
     request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
 

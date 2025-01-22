@@ -11,10 +11,7 @@
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
         <property name="TNSADMIN_DIR" value="$PROJECT_DIR$/../Wallet_DEX1FS1Q66CK1A1S" />
-<<<<<<< HEAD
-=======
         <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
->>>>>>> 9cc2e4c272b97dc5d5861bd33093c567ba93bd8f
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>

@@ -7,9 +7,7 @@ import lombok.Setter;
 
 import java.util.Date;
 
-//@Data
-@Getter
-@Setter
+@Data
 public class CommentDTO {
     private int ost_vote_comment_pk;
     private String ost_login_nickname_fk;
@@ -17,6 +15,8 @@ public class CommentDTO {
     private String comment_text;
     private Date comment_date;
     private String song_title;
+
+
 
     public String toJSON(){
         Gson gson = new Gson();

@@ -45,15 +45,13 @@
 </div>
 
 <%--이하 디버깅용 코드입니다. --%>
-<%--<div>--%>
-<%--	id : ${param.id}--%>
-<%--	<hr>--%>
-<%--	pw: ${param.pw}--%>
-<%--	<br>--%>
-<%--	${result}--%>
-<%--	<br>--%>
-<%--	nickname: ${nickname}--%>
-<%--</div>--%>
+<div>
+	id : ${id}
+	<hr>
+	pw: ${pw}
+	<hr>
+	nickname: ${nickname}
+</div>
 <div class="wrapper">
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
@@ -68,22 +66,22 @@
 
 	<!-- Second Round -->
 	<div class="round">
-		<div class="match s1">s1</div>
-		<div class="match s2">s2</div>
+		<div class="match s1">준결승</div>
+		<div class="match s2">준결승</div>
 	</div>
 
 	<!-- Final Round -->
 	<div class="round">
-		<div class="match f1">f1</div>
+		<div class="match f1">결승</div>
 	</div>
 	<div class="round">
-		<div class="match f2">f2</div>
+		<div class="match f2">결승</div>
 	</div>
 
 	<!-- Second Round -->
 	<div class="round">
-		<div class="match s3">s3</div>
-		<div class="match s4">s4</div>
+		<div class="match s3">준결승</div>
+		<div class="match s4">준결승</div>
 	</div>
 
 	<!-- First Round -->

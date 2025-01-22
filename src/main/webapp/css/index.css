@@ -142,7 +142,7 @@ button.menu_button {
     background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(/img/index/index_Sec01_L_bg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     transition: all 1s;
     display: flex;
     justify-content: center;

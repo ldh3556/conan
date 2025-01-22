@@ -10,7 +10,7 @@
 <head>
     <title> CONAN'DEX </title>
 </head>
-<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="/css/index.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <body>
@@ -20,7 +20,7 @@
         <button class="menu_button">
         </button>
         <div class="conan_logo">
-            <img src="../img/index/logoimg.png">
+            <img src="/img/index/logoimg.png">
         </div>
         <div class="account_wrapper">
             <div class="login_text_wrapper">
@@ -36,13 +36,13 @@
     <div class="index_Sec01">
         <div class="index_Sec01_L">
             <a class="playlogo_wrapper" href="./game/loading/loading.jsp">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
             <a class="votelogo_wrapper">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>
         </div>
@@ -61,7 +61,7 @@
                 <h1 class="textStyle">이다.</h1>
             </div>
             <div class="Sec02_conandex">
-                <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
+                <img src="/img/index/conandex_customicon_big.png" id="conandexicon">
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
             </div>
         </div>
@@ -169,7 +169,7 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="../img/index/sec03_img.jpg">
+                        <img src="/img/index/sec03_img.jpg">
                     </div>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
@@ -198,7 +198,11 @@
         </div>
 
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <a>이용약관</a>
+        <a>개인정보 처리방침</a>
+        <a>About us</a>
+    </div>
 </div>
 
 
@@ -216,6 +220,7 @@
         initialSlide: 1,
         resistanceRatio: 0,
         slideToClickedSlide: true,
+        loop: true,
         on: {
             slideChangeTransitionStart: function () {
                 var slider = this;

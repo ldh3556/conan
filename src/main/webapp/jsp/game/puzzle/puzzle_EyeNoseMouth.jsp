@@ -58,7 +58,7 @@
 
     </style>
 </head>
-<link rel="stylesheet" href="../../../css/game/">
+<link rel="stylesheet" href="///css/game/">
 <body>
 <div class="wrapper">
     <div class="quiz-container">

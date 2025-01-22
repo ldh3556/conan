@@ -86,9 +86,9 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <div class="conan_logo">
+        <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">
-        </div>
+        </a>
 
         <jsp:include page="${loginPage}"></jsp:include>
 

@@ -99,10 +99,9 @@
 
 
             <a class="swiper-slide" href="/LoadingWorldcupVoteC">
-
                 <span>WORLD CUP</span>
             </a>
-            <a class="swiper-slide" href="/jsp/vote/ost/ost_main.jsp">
+
             <a class="swiper-slide" href="/ost_contentC2">
                 <span>OST</span>
             </a>

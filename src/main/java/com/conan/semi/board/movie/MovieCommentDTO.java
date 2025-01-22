@@ -1,4 +1,4 @@
-package com.conan.semi.board.anime;
+package com.conan.semi.board.movie;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class AnimeCommentDTO {
+public class MovieCommentDTO {
     private String c_no;
     private String b_no; // 게시글 번호
     private String c_writer;

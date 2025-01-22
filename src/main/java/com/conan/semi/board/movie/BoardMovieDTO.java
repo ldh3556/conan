@@ -1,4 +1,4 @@
-package com.conan.semi.board.anime;
+package com.conan.semi.board.movie;
 
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
@@ -8,11 +8,9 @@ import lombok.NoArgsConstructor;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 
-public class BoardAnimeDTO {
+
+public class BoardMovieDTO {
     private String b_no;
     private String b_id;
     private String b_name;
@@ -21,6 +19,7 @@ public class BoardAnimeDTO {
     private String b_text;
     private Date b_date;
 
+    
     public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return sdf.format(b_date);

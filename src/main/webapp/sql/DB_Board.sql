@@ -102,7 +102,7 @@ CREATE TABLE board_movie_comment (
 
 create sequence board_movie_comment_seq;
 
-insert into board_movie_comment (b_no, c_writer, c_content, c_date)values (182, '진현', '좋은글입니다.', systimestamp);
+insert into board_movie_comment (b_no, c_writer, c_content, c_date)values (185, '진현', '좋은글입니다.', systimestamp);
 select * from board_movie_comment;
 
 drop table board_movie_comment;
@@ -137,7 +137,7 @@ CREATE TABLE board_notice_comment (
 
 create sequence board_notice_comment_seq;
 
-insert into board_notice_comment (b_no, c_writer, c_content, c_date)values (182, '진현', '좋은글입니다.', systimestamp);
+insert into board_notice_comment (b_no, c_writer, c_content, c_date)values (186, '진현', '좋은글입니다.', systimestamp);
 select * from board_notice_comment;
 
 drop table board_notice_comment;

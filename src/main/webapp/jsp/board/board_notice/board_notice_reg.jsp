@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardFreeRegC" method="post" onsubmit="regBoard(e)">
+<form action="BoardNoticeRegC" method="post" onsubmit="regBoard(e)">
     <div>
         id <input name="id">
     </div>
@@ -21,10 +21,9 @@
     </div>
     <div>
         말머리 선택 : <select name="begin">
-            <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
-            <option value="[이벤트 후기]">[이벤트 후기]</option>
-            <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
-            <option value="[건의하기]">[건의하기]</option>
+        <option value="[운영 공지]">[운영 공지]</option>
+        <option value="[이벤트 공지]">[이벤트 공지]</option>
+        <option value="[신작 공지]">[신작 공지]</option>
         </select>
     </div>
     <div>
@@ -53,7 +52,7 @@
     function cancelregBoard(){
         if (confirm("등록을 취소 하시겠습니까?")){
             alert("취소되었습니다")
-        location.href="BoardFreeC"}
+        location.href="BoardNoticeC"}
     }
     const textarea = document.querySelector("textarea[name='text']");
     const cntSpan = document.querySelector("#cntSpan");

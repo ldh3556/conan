@@ -1,4 +1,4 @@
-package com.conan.semi.board.anime;
+package com.conan.semi.board.movie;
 
 import com.conan.semi.DBManager;
 
@@ -9,24 +9,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class BoardAnimeDAO {
-    static ArrayList<BoardAnimeDTO> boards = null;
+public class BoardMovieDAO {
+    static ArrayList<BoardMovieDTO> boards = null;
     private static Connection con = null;
 
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_anime_table ORDER BY b_date desc";
+        String sql = "select * from board_movie_table ORDER BY b_date desc";
         try {
             System.out.println("connect --");
             con = DBManager.connect();
             System.out.printf("con done");
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            boards = new ArrayList<BoardAnimeDTO>();
-            BoardAnimeDTO board = null;
+            boards = new ArrayList<BoardMovieDTO>();
+            BoardMovieDTO board = null;
             while (rs.next()) {
-                board = new BoardAnimeDTO();
+                board = new BoardMovieDTO();
                 board.setB_no(rs.getString(1));
                 board.setB_id(rs.getString(2));
                 board.setB_name(rs.getString(3));
@@ -55,14 +55,14 @@ public class BoardAnimeDAO {
 
         try {
             String no = request.getParameter("no");
-            String sql = "select * from board_anime_table where b_no=?";
+            String sql = "select * from board_movie_table where b_no=?";
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, no);
             rs = pstmt.executeQuery();
-            BoardAnimeDTO board = null;
+            BoardMovieDTO board = null;
             if (rs.next()) {
-                board = new BoardAnimeDTO();
+                board = new BoardMovieDTO();
                 board.setB_no(rs.getString(1));
                 board.setB_id(rs.getString(2));
                 board.setB_name(rs.getString(3));
@@ -85,7 +85,7 @@ public class BoardAnimeDAO {
     public static void addBoardFree(HttpServletRequest request) {
         con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into board_anime_table values(board_table_test_seq.nextval, ?,?,?,?,?, sysdate)";
+        String sql = "insert into board_movie_table values(board_movie_table.nextval, ?,?,?,?,?, sysdate)";
 try {
     request.setCharacterEncoding("utf-8");
     String id = request.getParameter("id");
@@ -123,7 +123,7 @@ try {
     public static void delBoardFree(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "delete from board_anime_table where b_no=?";
+        String sql = "delete from board_movie_table where b_no=?";
         String no = request.getParameter("no");
         try {
             con = DBManager.connect();
@@ -144,7 +144,7 @@ try {
     public static void updatBoardFree(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "Update board_anime_table set b_begin=?, b_title = ?,b_text = ? where b_no = ?";
+        String sql = "Update board_movie_table set b_begin=?, b_title = ?,b_text = ? where b_no = ?";
         String no = request.getParameter("no");
         String begin = request.getParameter("begin");
         String title = request.getParameter("title");
@@ -191,7 +191,7 @@ try {
     int start = total - (count * (pageNum - 1));
     int end = (pageNum == pageCount) ? -1 : start - (count + 1);
 
-    ArrayList<BoardAnimeDTO> items = new ArrayList<BoardAnimeDTO>();
+    ArrayList<BoardMovieDTO> items = new ArrayList<BoardMovieDTO>();
 
     for (int i = start-1 ; i > end; i--) {
     items.add(boards.get(i));
@@ -203,7 +203,7 @@ try {
     public static void searchBoardFree(HttpServletRequest request, HttpServletResponse response) {
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-    String sql = "select * from board_anime_table where b_title like '%'||?||'%'";
+    String sql = "select * from board_movie_table where b_title like '%'||?||'%'";
 
     try {
         con = DBManager.connect();
@@ -212,9 +212,9 @@ try {
         rs = pstmt.executeQuery();
         ArrayList<String> boards = new ArrayList<String>();
 
-        BoardAnimeDTO b = null;
+        BoardMovieDTO b = null;
         while (rs.next()) {
-            b = new BoardAnimeDTO();
+            b = new BoardMovieDTO();
             b.setB_no(rs.getString(1));
             b.setB_id(rs.getString(2));
             b.setB_name(rs.getString(3));

@@ -14,9 +14,11 @@
 </head>
 <body>
 <div>
+    <div><a href="BoardFreeRegC">글쓰기</a></div>
 <div>
+    <c:choose>
+        <c:when test="${not empty boards}">
 <c:forEach var="b" items="${boards }">
-
     <a href="BoardFreeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
@@ -25,6 +27,11 @@
     <div> <fmt:formatDate value="${b.b_date }" pattern="yyyy-MM-dd HH:mm"/></div>
         <hr></a>
 </c:forEach>
+    </c:when>
+        <c:otherwise>
+            <p>게시글이 없습니다. 첫 게시글을 작성해보세요!</p>
+        </c:otherwise>
+    </c:choose>
     <div>
         <a href="BoardFreePageC?p=1">[begin]</a>
         <c:forEach begin="1" end="${pageCount }" var="i">

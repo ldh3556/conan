@@ -1,4 +1,4 @@
-package com.conan.semi.board.anime;
+package com.conan.semi.board.movie;
 
 
 import javax.servlet.ServletException;
@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/BoardAnimeUpdateC")
-public class BoardAnimeUpdateC extends HttpServlet {
+@WebServlet("/BoardMovieUpdateC")
+public class BoardMovieUpdateC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        BoardAnimeDAO.detailBoardFree(request);
-request.setAttribute("content", "board_anime/board_anime_update.jsp");
+        BoardMovieDAO.detailBoardFree(request);
+request.setAttribute("content", "board_movie/board_movie_update.jsp");
 request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        BoardAnimeDAO.updatBoardFree(request);
-        response.sendRedirect("BoardAnimeC");
+        BoardMovieDAO.updatBoardFree(request);
+        response.sendRedirect("BoardMovieC");
 
     }
 

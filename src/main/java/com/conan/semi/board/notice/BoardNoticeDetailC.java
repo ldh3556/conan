@@ -1,4 +1,4 @@
-package com.conan.semi.board.anime;
+package com.conan.semi.board.notice;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/BoardAnimeDetailC")
-public class BoardAnimeDetailC extends HttpServlet {
+@WebServlet("/BoardNoticeDetailC")
+public class BoardNoticeDetailC extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- BoardAnimeDAO.detailBoardFree(request);
- AnimeCommentDAO.showAllComment(request);
+ BoardNoticeDAO.detailBoardFree(request);
+ NoticeCommentDAO.showAllComment(request);
 
  request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     }

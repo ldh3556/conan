@@ -16,7 +16,6 @@
 <div class="board-container">
   <div class="board-title"><a href="BoardHC"><h1>게시판</h1></a></div>
   <hr>
-  <div><a href="BoardFreeRegC">글쓰기</a></div>
   <div class="board-menu">
     <div> <a href="BoardNoticeC">공지</a></div>
     <div> <a href="BoardFreeC">자유 게시판</a></div>

@@ -15,8 +15,8 @@ public class BoardAnimeC extends HttpServlet {
       request.setCharacterEncoding("utf-8");
         BoardAnimeDAO.showAllBoardFree(request);
         BoardAnimeDAO.pagingFreeBoard(1, request);
-request.setAttribute("content", "board_anime.jsp");
-request.getRequestDispatcher("jsp/board/board_anime/board_anime.jsp").forward(request, response);
+request.setAttribute("content", "board_anime/board_anime.jsp");
+        request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

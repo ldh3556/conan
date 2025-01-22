@@ -12,17 +12,17 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
+<form action="BoardMovieUpdateC?no=${board.b_no }" method="post">
 <div class="board-wrap">
     <div>
         <div>
             <div>작성인 : ${board.b_name }</div>
             <div>
                 말머리 선택 : <select name="begin">
-                <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
-                <option value="[이벤트 후기]">[이벤트 후기]</option>
-                <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
-                <option value="[건의하기]">[건의하기]</option>
+                <option value="[1기]">[1기]</option>
+                <option value="[2기]">[2기]</option>
+                <option value="[3기]">[3기]</option>
+                <option value="[4기]">[4기]</option>
             </select>
             </div>
             <div class="board-reg-col">Title</div>
@@ -47,7 +47,7 @@
         <div style="position: relative; bottom: -50px;">
             <button class="board-reg-btn">수정완료</button>
             <button type="button"  onclick="cancelUpdatBoard()">취소</button>
-            <button type="button"  onclick="location.href='BoardFreeC'">list</button>
+            <button type="button"  onclick="location.href='BoardMovieC'">list</button>
         </div>
     </div>
 </div>

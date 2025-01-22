@@ -14,12 +14,12 @@
 </head>
 <body>
 <div>
-    <div><a href="BoardFreeRegC">글쓰기</a></div>
+    <div><a href="BoardNoticeRegC">글쓰기</a></div>
 <div>
     <c:choose>
         <c:when test="${not empty boards}">
 <c:forEach var="b" items="${boards }">
-    <a href="BoardFreeDetailC?no=${b.b_no }" >
+    <a href="BoardNoticeDetailC?no=${b.b_no }" >
     <div>${b.b_id }</div>
     <div>${b.b_name }</div>
     <div>${b.b_begin }</div>
@@ -33,11 +33,11 @@
         </c:otherwise>
     </c:choose>
     <div>
-        <a href="BoardFreePageC?p=1">[begin]</a>
+        <a href="BoardNoticePageC?p=1">[begin]</a>
         <c:forEach begin="1" end="${pageCount }" var="i">
-            <a href="BoardFreePageC?p=${i }">[${i }]</a>
+            <a href="BoardNoticePageC?p=${i }">[${i }]</a>
         </c:forEach>
-        <a href="BoardFreePageC?p=${pageCount }">[end]</a>
+        <a href="BoardNoticePageC?p=${pageCount }">[end]</a>
     </div>
 </div>
     <div>

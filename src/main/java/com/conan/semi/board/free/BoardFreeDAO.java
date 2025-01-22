@@ -85,7 +85,7 @@ public class BoardFreeDAO {
     public static void addBoardFree(HttpServletRequest request) {
         con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into board_table_test values(board_free_table_seq.nextval, ?,?,?,?,?, sysdate)";
+        String sql = "insert into board_free_table values(board_free_table_seq.nextval, ?,?,?,?,?, sysdate)";
 try {
     request.setCharacterEncoding("utf-8");
     String id = request.getParameter("id");

@@ -16,7 +16,7 @@ public class BoardAnimeDAO {
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_anime_comment ORDER BY b_date desc";
+        String sql = "select * from board_anime_table ORDER BY b_date desc";
         try {
             System.out.println("connect --");
             con = DBManager.connect();
@@ -55,7 +55,7 @@ public class BoardAnimeDAO {
 
         try {
             String no = request.getParameter("no");
-            String sql = "select * from board_anime_comment where b_no=?";
+            String sql = "select * from board_anime_table where b_no=?";
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, no);
@@ -85,7 +85,7 @@ public class BoardAnimeDAO {
     public static void addBoardFree(HttpServletRequest request) {
         con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into board_anime_comment values(board_table_test_seq.nextval, ?,?,?,?,?, sysdate)";
+        String sql = "insert into board_anime_table values(board_table_test_seq.nextval, ?,?,?,?,?, sysdate)";
 try {
     request.setCharacterEncoding("utf-8");
     String id = request.getParameter("id");
@@ -123,7 +123,7 @@ try {
     public static void delBoardFree(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "delete from board_anime_comment where b_no=?";
+        String sql = "delete from board_anime_table where b_no=?";
         String no = request.getParameter("no");
         try {
             con = DBManager.connect();
@@ -144,7 +144,7 @@ try {
     public static void updatBoardFree(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "Update board_anime_comment set b_begin=?, b_title = ?,b_text = ? where b_no = ?";
+        String sql = "Update board_anime_table set b_begin=?, b_title = ?,b_text = ? where b_no = ?";
         String no = request.getParameter("no");
         String begin = request.getParameter("begin");
         String title = request.getParameter("title");
@@ -203,7 +203,7 @@ try {
     public static void searchBoardFree(HttpServletRequest request, HttpServletResponse response) {
     PreparedStatement pstmt = null;
     ResultSet rs = null;
-    String sql = "select * from board_anime_comment where b_title like '%'||?||'%'";
+    String sql = "select * from board_anime_table where b_title like '%'||?||'%'";
 
     try {
         con = DBManager.connect();

@@ -53,7 +53,7 @@
                 </div>
                 <h1 class="textStyle">이다.</h1>
             </div>
-            <div class="Sec02_conandex">
+            <div class="Sec02_conandex" onclick="location.href='CharacterListC'">
                 <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
             </div>

@@ -1,3 +1,6 @@
+/*body{*/
+/*  background-image: url('../img/index/sec_bg_2.jpg');*/
+/*}*/
 /* 새로운 wrapper 추가 */
 .wrapper {
   display: flex;
@@ -7,7 +10,9 @@
   gap: 40px; /* 각 round 사이에 간격 추가 */
   width: 100%; /* 부모 영역에 꽉 차도록 설정 */
   flex-wrap: wrap; /* 공간에 맞춰 자동으로 줄 바꿈 */
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  background-color: rgba(191, 191, 191, 0.8);
+  border-radius: 1rem;
 }
 
 .round {
@@ -22,15 +27,16 @@
 }
 
 .match {
-  width: 120px;
-  height: 50px;
-  border: 2px solid #000;
+  width: 130px;
+  height: 55px;
+  border: 2px solid darkblue;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 5px;
 }
 
 .defeated {

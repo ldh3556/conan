@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Loading...</title>
-    <link rel="stylesheet" href="../../../css/vote/loading/vote_loading.css">
+    <link rel="stylesheet" href="/css/vote/loading/vote_loading.css">
 
 </head>
 <body>
@@ -21,7 +21,11 @@
             <div class="box six"></div>
         </div>
     </div>
+
+    <a class="blinking-text" href="/jsp/vote/select/vote_select.jsp">START HERE</a>
+
     <a class="blinking-text" href="/LoadingVoteSelectC">START HERE</a>
+
 </div>
 </body>
 </html>

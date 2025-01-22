@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <link rel="stylesheet" href="../../../css/game/destiny/destiny.css">
+    <link rel="stylesheet" href="/css/game/destiny/destiny.css">
+    <link rel="stylesheet" href="/css/game/game_template.css">
   </head>
   <body>
   

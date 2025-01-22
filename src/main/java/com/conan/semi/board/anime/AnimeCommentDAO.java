@@ -40,8 +40,8 @@ private static Connection con = null;
                 animeComments.add(animeComment);
             }
 
-            request.setAttribute("comments", "/jsp/board/board_free/board_free_comments.jsp");
-            request.setAttribute("content", "board_free/board_free_detail.jsp");
+            request.setAttribute("comments", "/jsp/board/board_anime/board_anime_comments.jsp");
+            request.setAttribute("content", "board_anime/board_anime_detail.jsp");
             request.setAttribute("animeComments", animeComments);
             // request에 댓글 리스트 저장
   //          request.setAttribute("freeComments", freeComments);

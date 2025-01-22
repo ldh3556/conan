@@ -20,7 +20,6 @@
         <c:when test="${not empty boards}">
 <c:forEach var="b" items="${boards }">
     <a href="BoardMovieDetailC?no=${b.b_no }" >
-    <div>${b.b_id }</div>
     <div>${b.b_name }</div>
     <div>${b.b_begin }</div>
     <div>${b.b_title }</div>
@@ -41,7 +40,7 @@
     </div>
 </div>
     <div>
-        <input id="search-input" placeholder="이 게시판 내 검색">
+        <input id="search-input" placeholder="이 게시판 내 제목 검색">
         <button id="search-btn">
             search
         </button>

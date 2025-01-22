@@ -195,7 +195,7 @@
             <div class="commu_box_wrapper">
                 <div class="notice_togo">
                     <span>Community</span>
-                    <a href="/jsp/b"> 커뮤니티 바로가기</a>
+                    <a href="BoardHC"> 커뮤니티 바로가기</a>
                 </div>
                 <hr style="width: 100%">
                 <a class="commu_post_wrapper">

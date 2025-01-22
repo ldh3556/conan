@@ -20,7 +20,7 @@
         <button class="menu_button">
         </button>
         <div class="conan_logo">
-            <img src="../img/index/logoimg.png">
+            <img src="/img/index/logoimg.png">
         </div>
 
                 <jsp:include page="${loginPage}"></jsp:include>
@@ -29,13 +29,13 @@
     <div class="index_Sec01">
         <div class="index_Sec01_L">
             <a class="playlogo_wrapper" href="jsp/game/loading/loading.jsp">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
             <a class="votelogo_wrapper" href="jsp/vote/loading/loading.jsp">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>
         </div>
@@ -54,7 +54,7 @@
                 <h1 class="textStyle">이다.</h1>
             </div>
             <div class="Sec02_conandex">
-                <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
+                <img src="/img/index/conandex_customicon_big.png" id="conandexicon">
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
             </div>
         </div>
@@ -172,7 +172,7 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="../img/index/sec03_img.jpg">
+                        <img src="/img/index/sec03_img.jpg">
                     </div>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>

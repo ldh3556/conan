@@ -533,7 +533,7 @@ else {hide.style.display='none';show.innerText='- 가사 보기'}">- 가사 보�
                 내 삶의 증거야</br>
                 </br>
                 Hello Mr. my yesterday...</br>
-                Hello Mr. my yesterday...</br>
+                Hello Mr. my yesterday.</br>
                 </br>
                 아침이 올 때마다 내가 나일 수 있도록</br>
                 내 곁을 지켜준 네게 내 삶을 약속해</br>

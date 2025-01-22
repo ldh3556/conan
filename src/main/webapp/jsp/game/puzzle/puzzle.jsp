@@ -113,16 +113,16 @@
         }
 
     </style>
-    <link rel="stylesheet" href="../../../css/game/game_template.css">
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="///css/game/game_template.css">
+    <link rel="stylesheet" href="///css/index.css">
 </head>
 <body>
 <div class="wrapper">
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="../../../index.jsp">
-            <img src="../../../img/index/logoimg.png">
+        <a class="conan_logo" href="///index.jsp">
+            <img src="///img/index/logoimg.png">
         </a>
         <div class="account_wrapper">
             <div class="login_text_wrapper">

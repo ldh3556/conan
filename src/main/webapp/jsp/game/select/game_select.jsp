@@ -31,7 +31,7 @@
             color: #000;
             margin: 0;
             padding: 0;
-            background: url("../../../img/index/sec_bg_2.jpg");
+            background: url("/img/index/sec_bg_2.jpg");
         }
 
         .swiper {
@@ -76,7 +76,7 @@
             margin: 0 30px;
         }
     </style>
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -84,8 +84,8 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="../../../index.jsp">
-            <img src="../../../img/index/logoimg.png">
+        <a class="conan_logo" href="/index.jsp">
+            <img src="/img/index/logoimg.png">
         </a>
         <div class="account_wrapper">
             <div class="login_text_wrapper">
@@ -101,13 +101,13 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <a class="swiper-slide" href="../puzzle/puzzle.jsp">
+            <a class="swiper-slide" href="/puzzle/puzzle.jsp">
                 <span>얼굴 맞추기</span>
             </a>
-            <a class="swiper-slide" href="../balloon/">
+            <a class="swiper-slide" href="/balloon/">
                 <span>말풍선 채워넣기</span>
             </a>
-            <a class="swiper-slide" href="../destiny/destiny.jsp">
+            <a class="swiper-slide" href="/destiny/destiny.jsp">
                 <span>나의 운명의</span>
                 <span style="font-size: 40pt">캐릭터</span>
             </a>

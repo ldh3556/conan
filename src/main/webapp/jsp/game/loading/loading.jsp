@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Loading...</title>
-    <link rel="stylesheet" href="../../../css/game/loading/game_loading.css">
+    <link rel="stylesheet" href="/css/game/loading/game_loading.css">
 
 </head>
 <body>
@@ -21,7 +21,7 @@
             <div class="box six"></div>
         </div>
     </div>
-    <a class="blinking-text" href="../select/game_select.jsp">START HERE</a>
+    <a class="blinking-text" href="/jsp/game/select/game_select.jsp">START HERE</a>
 </div>
 </body>
 </html>

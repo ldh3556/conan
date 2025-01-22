@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 
     <!-- Demo styles -->
     <style>
@@ -32,7 +32,7 @@
             color: #000;
             margin: 0;
             padding: 0;
-            background:url("../../../img/index/sec_bg_2.jpg");
+            background:url("/img/index/sec_bg_2.jpg");
         }
 
         .swiper {
@@ -75,7 +75,7 @@
             margin: 30px;
         }
     </style>
-    <link rel="stylesheet" href="../../../css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -83,8 +83,8 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="../../../index.jsp">
-            <img src="../../../img/index/logoimg.png">
+        <a class="conan_logo" href="/jsp/index.jsp">
+            <img src="/img/index/logoimg.png">
         </a>
         <div class="account_wrapper">
             <div class="login_text_wrapper">
@@ -100,13 +100,13 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <a class="swiper-slide" href="../worldcup/worldcup_main.jsp">
+            <a class="swiper-slide" href="/jsp/vote/worldcup/worldcup_main.jsp">
                 <span>WORLD CUP</span>
             </a>
-            <a class="swiper-slide" href="../ost/ost_main.jsp">
+            <a class="swiper-slide" href="/jsp/vote/ost/ost_main.jsp">
                 <span>OST</span>
             </a>
-            <a class="swiper-slide" href="../story/">
+            <a class="swiper-slide" href="/jsp/vote/story/">
                 <span>STORY</span>
             </a>
 

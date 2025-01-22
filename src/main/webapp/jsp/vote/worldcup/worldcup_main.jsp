@@ -2,16 +2,16 @@
 <html>
 <head>
     <title>VOTE(MAIN)</title>
-    <link href="../../../css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/vote/vote_template.css">
+    <link href="/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/vote/vote_template.css">
 </head>
 <body>
 <div class="wrapper">
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="../../../index.jsp">
-            <img src="../../../img/index/logoimg.png">
+        <a class="conan_logo" href="/index.jsp">
+            <img src="/img/index/logoimg.png">
         </a>
         <div class="account_wrapper">
             <div class="login_text_wrapper">

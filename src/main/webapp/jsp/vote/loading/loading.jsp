@@ -21,7 +21,7 @@
             <div class="box six"></div>
         </div>
     </div>
-    <a class="blinking-text" href="../select/vote_select.jsp">START HERE</a>
+    <a class="blinking-text" href="/LoadingVoteSelectC">START HERE</a>
 </div>
 </body>
 </html>

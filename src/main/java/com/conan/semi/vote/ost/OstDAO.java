@@ -1,6 +1,8 @@
 package com.conan.semi.vote.ost;
 
 import com.conan.semi.DBManager;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +12,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class OstDAO {
+    private static final Log log = LogFactory.getLog(OstDAO.class);
+
     public static void getBracket(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement ps = null;
@@ -249,11 +253,11 @@ public class OstDAO {
             String text = req.getParameter("text");
             String pk = req.getParameter("pk");
             String nickname = (String)req.getSession().getAttribute("nickname");
+       System.out.println(text);
+        System.out.println("----------");
+       System.out.println(nickname);
 //            String ost_login_pk = (String)req.getSession().getAttribute("ost_login_pk");
-            String sql = "insert into ost_vote_comments (" +
-                    "    ost_login_nickname_fk," +
-                    "    user_pick," +
-                    "    comment_text) values (?, ?, ?)";
+            String sql = "insert into ost_vote_comments (ost_login_nickname_fk, user_pick, comment_text) values (?, ?, ?)";
             try {
             con = DBManager.connect();
             ps = con.prepareStatement(sql);

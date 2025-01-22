@@ -12,7 +12,7 @@
 --
 -- insert into account_table_test values('gh456', 'gh456', 'gh456', '성기훈', '456번');
 --
--- select * from account_table_test;
+--  * from account_table_test;
 --
 -- DROP TABLE account_table_test;
 

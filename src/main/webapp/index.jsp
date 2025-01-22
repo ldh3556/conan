@@ -9,6 +9,9 @@
 <html>
 <head>
     <title> CONAN'DEX </title>
+    <style>
+
+    </style>
 </head>
 <link rel="stylesheet" href="css/index.css">
 
@@ -20,22 +23,23 @@
         <button class="menu_button">
         </button>
         <div class="conan_logo">
-            <img src="../img/index/logoimg.png">
+            <img src="/img/index/logoimg.png">
         </div>
 
                 <jsp:include page="${loginPage}"></jsp:include>
-
     </div>
+
+
     <div class="index_Sec01">
         <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="jsp/game/loading/loading.jsp">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+            <a class="playlogo_wrapper" href="/jsp/game/loading/loading.jsp">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
-            <a class="votelogo_wrapper" href="jsp/vote/loading/loading.jsp">
-                <img src="../img/index/conandex_customicon.png" class="conan_attr_logo">
+            <a class="votelogo_wrapper" href="/jsp/vote/loading/loading.jsp">
+                <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>
         </div>
@@ -53,9 +57,14 @@
                 </div>
                 <h1 class="textStyle">이다.</h1>
             </div>
+
+
+            <%----%>
             <div class="Sec02_conandex" onclick="location.href='CharacterListC'">
-                <img src="../img/index/conandex_customicon_big.png" id="conandexicon">
+                <img src="/img/index/conandex_customicon_big.png" id="conandexicon">
+                <%----%>
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
+
             </div>
         </div>
         <div class="index_Sec02_R">
@@ -107,31 +116,27 @@
                     </swiper-slide>
                     <swiper-slide class="charabox c04">
                         <div class="title" data-swiper-parallax="-300">브라운 박사</div>
-                        <div class="subtitle" data-swiper-parallax="-200">코난의 아이템</div>
+                        <div class="subtitle" data-swiper-parallax="-200">코난의 옆집에 사는 천재 발명가</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                남도일이 어릴적부터 옆집에 살았던 천재 발명가이다.<br>
+                                코난이 사용하는 발명품들을 만든 장본인이다.<br>
+                                현재는 집에서 검은조직의 일원이었던 홍장미와 함께 지내고 있다.
                             </p>
                         </div>
                     </swiper-slide>
                     <swiper-slide class="charabox c05">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">유미란</div>
+                        <div class="subtitle" data-swiper-parallax="-200">남도일의 소쑵친구</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                아버지인 유명한 탐정을 따라다니며, 항상 사건에 휘말린다.<br>
+                                태권도 유단자이며 전국체전에서 우승한 적도 있는 실력자이다.<br>
+                                도일이와 오랜시간을 함께 지내며 둘은 연애를 하고있다.
                             </p>
                         </div>
                     </swiper-slide>
-                    <swiper-slide class="charabox c06">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                        <div class="text" data-swiper-parallax="-100">
-                            <p>
-                                내용1
-                            </p>
-                        </div>
-                    </swiper-slide>
+
                 </swiper-container>
             </div>
 
@@ -172,7 +177,7 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="../img/index/sec03_img.jpg">
+                        <img src="/img/index/sec03_img.jpg">
                     </div>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
@@ -199,19 +204,16 @@
                     <span>사이트 운영 방침 안내</span>
                     <span>2025.01.22</span>
                 </a>
-                <hr>
                 <a class="commu_post_wrapper">
                     <span>[공지사항]</span>
                     <span>사이트 운영 방침 안내</span>
                     <span>2025.01.22</span>
                 </a>
-                <hr>
                 <a class="commu_post_wrapper">
                     <span>[자유게시판]</span>
                     <span>요즘 코난</span>
                     <span>2025.01.22</span>
                 </a>
-                <hr>
                 <a class="commu_post_wrapper">
                     <span>[영화 후기]</span>
                     <span>내돈내산 100만 달러의 펜타그램</span>
@@ -221,10 +223,12 @@
         </div>
 
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <a>이용약관</a>
+        <a>개인정보 처리방침</a>
+        <a>About us</a>
+    </div>
 </div>
-
-
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

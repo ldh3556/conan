@@ -9,7 +9,7 @@
 <html>
 <head>
     <title> LOGIN OUTPUT </title>
-    <link rel="stylesheet" href="../../css/login/login.css">
+    <link rel="stylesheet" href="/css/login/login.css">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
         <a href="/LogoutC"> 로그아웃 </a> / <a href="/MyPageC"> 마이페이지 </a>
 <div class="wrapper">
     <div class="sec01_L">
-        <a href="/jsp/index_lmj.jsp"><img src="../../img/login/logoimg.png"></a>
+        <a href="/jsp/index_lmj.jsp"><img src="/img/login/logoimg.png"></a>
     </div>
     <div class="sec01_R">
         <div class="deco_line"></div>
@@ -42,7 +42,11 @@
     </div>
 
 </div>
-<div class="footer"></div>
+<div class="footer">
+    <a>이용약관</a>
+    <a>개인정보 처리방침</a>
+    <a>About us</a>
+</div>
 
 
 

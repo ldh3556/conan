@@ -31,7 +31,7 @@ button.menu_button {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: url("../img/index/menu.svg") no-repeat;
+    background: url("/img/index/menu.svg") no-repeat;
     background-size: cover;
     border: none;
 
@@ -101,7 +101,7 @@ button.menu_button {
 .index_Sec01_R{
     width: 50%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(../img/index/index_Sec01_R_bg.png);
+    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(/img/index/index_Sec01_R_bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 140%;
@@ -139,10 +139,10 @@ button.menu_button {
 .index_Sec01_L{
     width: 50%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(../img/index/index_Sec01_L_bg.png);
+    background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(/img/index/index_Sec01_L_bg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     transition: all 1s;
     display: flex;
     justify-content: center;
@@ -179,7 +179,7 @@ button.menu_button {
 .index_Sec02_L{
     width: 30%;
     height: 100%;
-    background: url("../img/index/sec_bg_1.jpg");
+    background: url("/img/index/sec_bg_1.jpg");
     position: relative;
 }
 
@@ -210,7 +210,7 @@ button.menu_button {
 }
 
 .arrow_left{
-    background:url("../img/index/arrow-left.svg") no-repeat;
+    background:url("/img/index/arrow-left.svg") no-repeat;
     color: #eda127;
     width: 12px;
     height: 12px;
@@ -222,7 +222,7 @@ button.menu_button {
     justify-content: center;
 
     width: 70%;
-    background: url("../img/index/sec_bg_2.jpg");
+    background: url("/img/index/sec_bg_2.jpg");
     padding: 25px;
     position: relative;
 }
@@ -273,27 +273,27 @@ flex-wrap: wrap;
     font-size: 12pt;
 }
 .c01{
-    background: url("../img/index/conan_chara.webp") no-repeat;
+    background: url("/img/index/conan_chara.webp") no-repeat;
     background-position: left;
     background-size: contain;
 }
 .c02{
-    background: url("../img/index/kudo_chara.webp") no-repeat;
+    background: url("/img/index/kudo_chara.webp") no-repeat;
     background-position: left;
     background-size: contain;
 }
 .c03{
-    background: url("../img/index/kogoro_chara.webp") no-repeat;
+    background: url("/img/index/kogoro_chara.webp") no-repeat;
     background-position: left;
     background-size: contain;
 }
 .c04{
-    background: url("../img/index/agasa_chara.webp") no-repeat;
+    background: url("/img/index/agasa_chara.webp") no-repeat;
     background-position: left;
     background-size: contain;
 }
 .c05{
-    background: url("../img/index/ran_chara.webp") no-repeat;
+    background: url("/img/index/ran_chara.webp") no-repeat;
     background-position: left;
     background-size: contain;
 }
@@ -310,7 +310,7 @@ flex-wrap: wrap;
 /*INDEX_SEC_03_L with Contents(Movie Post Information)*/
 .index_Sec03_L{
     width: 60%;
-    background: url("../img/index/sec_bg_2.jpg");
+    background: url("/img/index/sec_bg_2.jpg");
     height: 100%;
     padding:0 20px;
     display: flex;
@@ -320,6 +320,7 @@ flex-wrap: wrap;
 
 .movie_box_wrapper{
     width: 100%;
+    height: 90%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -345,7 +346,7 @@ flex-wrap: wrap;
 }
 .moviebox_text{
     padding: 10px;
-    height: 120px;
+    height: 27%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -367,7 +368,7 @@ flex-wrap: wrap;
 /*INDEX_SEC_03_R with Contents(Community and Event posts)*/
 .index_Sec03_R{
     width: 40%;
-    background: url("../img/index/sec_bg_1.jpg");
+    background: url("/img/index/sec_bg_1.jpg");
     padding: 25px;
 }
 .commu_box_wrapper{
@@ -415,7 +416,18 @@ flex-wrap: wrap;
     width: 100%;
     height: 200px;
     background: #393939;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #001A6D;
+    font-size: 15pt;
 }
+
+.footer a:hover{
+    color: #eda127;
+}
+
 
 /*font-animation sec02*/
 
@@ -497,6 +509,7 @@ flex-wrap: wrap;
     display: flex;
     font-size: 12pt;
     justify-content: space-between;
+    padding: 10px 0;
 
 }
 

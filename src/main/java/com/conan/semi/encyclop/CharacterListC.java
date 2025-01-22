@@ -41,7 +41,9 @@ public class CharacterListC extends HttpServlet {
         request.setAttribute("characterList", characterList);
         request.setAttribute("currentCategory", category);
         request.setAttribute("currentSortOption", sortOption);
-
+        System.out.println(characterList);
+        System.out.println(category);
+        System.out.println(sortOption);
         // JSP로 포워딩
         request.getRequestDispatcher("/jsp/encyclop/character.jsp").forward(request, response);
     }

@@ -57,17 +57,17 @@ public class LoginDAO {
 
             String msg = null;
             if (rs.next()) {
-                String dbNo = rs.getString(1);
-                String dbName = rs.getString(2);
-                String dbBirth_year = rs.getString(3);
-                String dbBirth_month = rs.getString(4);
-                String dbBirth_day = rs.getString(5);
-                String dbGender = rs.getString(6);
-                String dbE_mail = rs.getString(7);
-                String dbId = rs.getString(8);
+//                String dbNo = rs.getString(1);
+//                String dbName = rs.getString(2);
+//                String dbBirth_year = rs.getString(3);
+//                String dbBirth_month = rs.getString(4);
+//                String dbBirth_day = rs.getString(5);
+//                String dbGender = rs.getString(6);
+//                String dbE_mail = rs.getString(7);
+//                String dbId = rs.getString(8);
                 String dbPw = rs.getString(9);
-                String dbPw_check = rs.getString(10);
-                String dbNickname = rs.getString(11);
+//                String dbPw_check = rs.getString(10);
+//                String dbNickname = rs.getString(11);
                 if (pw.equals(dbPw)) {
                     msg = "로그인 성공";
 

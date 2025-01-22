@@ -24,7 +24,7 @@ public class LoginC extends HttpServlet {
     // 어디로?
     LoginDAO.loginCheck(request);
 
-    request.setAttribute("loginPage","index_loginOK.jsp");
+    // request.setAttribute("loginPage","index_loginOK.jsp");
     request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

@@ -83,6 +83,11 @@ button.menu_button {
     border-radius: 100%;
 }
 
+#account_icon img{
+    width: 80%;
+    height: 80%;
+}
+
 /*INDEX_SEC01_R,L WRAPPER*/
 .index_Sec01{
     display: flex;
@@ -136,7 +141,7 @@ button.menu_button {
     background: linear-gradient(0deg, rgba(57, 57, 57, 0.9), rgba(57, 57, 57, 0.9)), url(../img/index/index_Sec01_L_bg.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 165%;
+    background-size: 100%;
     transition: all 1s;
     display: flex;
     justify-content: center;
@@ -144,7 +149,7 @@ button.menu_button {
 }
 
 .index_Sec01_L:hover{
-    background-size: 175%;
+
 }
 
 .votelogo_wrapper{
@@ -374,7 +379,6 @@ flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
 }
 
@@ -488,13 +492,23 @@ flex-wrap: wrap;
 }
 
 .commu_post_wrapper{
-    width: 60%;
+    width: 95%;
     display: flex;
+    font-size: 12pt;
     justify-content: space-between;
+
 }
 
-.commu_post_wrapper span{
+.commu_post_wrapper span:nth-child(1){
+    font-weight: bold;
+}
 
+.commu_post_wrapper span:nth-child(2){
+    margin-left: 10px;
+}
+
+.commu_post_wrapper span:nth-child(3){
+    text-align: right;
 }
 
 @keyframes updown{

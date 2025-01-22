@@ -1,6 +1,9 @@
 package com.conan.semi.vote.ost;
 
 import com.conan.semi.DBManager;
+import com.conan.semi.login.UserDTO;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,15 +13,26 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class OstDAO {
-    public static void getBracket(HttpServletRequest request) {
+    //private static final Log log = LogFactory.getLog(OstDAO.class);
+
+    public static void getBracket(HttpServletRequest req, HttpServletResponse resp) {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         String sql = "select * from bracket_test order by DBMS_RANDOM.RANDOM FETCH FIRST 8 ROWS ONLY";
         try {
+                // 세션에서 UserDTO 객체 가져오기
+                UserDTO user = (UserDTO) req.getSession().getAttribute("user");
+                if (user == null) {
+                    resp.getWriter().println(0); // 비로그인 상태
+                    return;
+                }
             con = DBManager.connect();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
+            req.setAttribute("id", user.getId());
+            req.setAttribute("pw", user.getPw());
+            req.setAttribute("nickname", user.getNickname());
             OstDTO song = null;
             ArrayList<OstDTO> songs = new ArrayList<OstDTO>();
             while (rs.next()) {
@@ -32,7 +46,7 @@ public class OstDAO {
                 songs.add(song);
             }
 
-            request.setAttribute("songs", songs);
+            req.setAttribute("songs", songs);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,66 +157,6 @@ public class OstDAO {
         return judge;
     }
 
-    public static void registComments(HttpServletRequest request) {
-        Connection con = null;
-        PreparedStatement ps = null;
-        String songTitle = (String) request.getParameter("songTitle");
-        String userNickname = (String) request.getSession().getAttribute("nickName");
-        String commentText = request.getParameter("comment");  // 유저가 작성한 댓글 내용
-        String sql = "insert into ost_vote_comments values (ost_vote_comment_pk.nextval, ?, ?, ?, sysdate)";
-        try {
-            request.setCharacterEncoding("utf-8");
-            String text = request.getParameter("comment");
-
-            con = DBManager.connect();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, userNickname);
-            ps.setString(2, songTitle);
-            ps.setString(3, text);
-            System.out.println(userNickname);
-            System.out.println(songTitle);
-            System.out.println(text);
-            if (ps.executeUpdate() == 1) {
-                System.out.println("등록성공");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(con, ps, null);
-        }
-
-
-    }
-
-    public static void getComments(HttpServletRequest request) {
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String sql = "select ost_login_nickname_fk, user_pick, comment_text, comment_date from ost_vote_comments where ost_vote_comment_pk = ?";
-
-        try {
-            request.setCharacterEncoding("utf-8");
-            con = DBManager.connect();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, request.getParameter("comme"));
-            rs = ps.executeQuery();
-
-            ArrayList<OstCommentsDTO> ostComments = new ArrayList<OstCommentsDTO>();
-            OstCommentsDTO ostComment = null;
-            while (rs.next()) {
-                ostComment = new OstCommentsDTO();
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(con, ps, rs);
-        }
-    }
-
-
-
 
     public static void getAllComment(HttpServletRequest req, HttpServletResponse resp) {
         resp.setContentType("application/json;charset=utf-8");
@@ -216,6 +170,7 @@ public class OstDAO {
             con = DBManager.connect();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
+
             ArrayList<String> comments = new ArrayList<>();
             CommentDTO commentDTO = null;
             while (rs.next()) {
@@ -227,6 +182,7 @@ public class OstDAO {
                 commentDTO.setSong_title(rs.getString("song_title"));
                 comments.add(commentDTO.toJSON());
             }
+            System.out.println(comments);
             resp.setContentType("application/json;charset=utf-8");
             resp.getWriter().println(comments);
 
@@ -246,15 +202,19 @@ public class OstDAO {
             Connection con = null;
             PreparedStatement ps = null;
 
+            try {
+                // 세션에서 UserDTO 객체 가져오기
+                UserDTO user = (UserDTO) req.getSession().getAttribute("user");
+                if (user == null) {
+                    resp.getWriter().println(0); // 비로그인 상태
+                    return;
+                }
+
             String text = req.getParameter("text");
             String pk = req.getParameter("pk");
-            String nickname = (String)req.getSession().getAttribute("nickname");
-//            String ost_login_pk = (String)req.getSession().getAttribute("ost_login_pk");
-            String sql = "insert into ost_vote_comments (" +
-                    "    ost_login_nickname_fk," +
-                    "    user_pick," +
-                    "    comment_text) values (?, ?, ?)";
-            try {
+            String nickname = user.getNickname(); // 닉네임 가져오기
+
+            String sql = "insert into ost_vote_comments (ost_login_nickname_fk, user_pick, comment_text) values (?, ?, ?)";
             con = DBManager.connect();
             ps = con.prepareStatement(sql);
             ps.setString(1, nickname);

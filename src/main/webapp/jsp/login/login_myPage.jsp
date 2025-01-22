@@ -91,13 +91,13 @@
 
 <!-- 첫 번째 필드 -->
 <div class="top-group" style="border: 3pt solid green; height: 180px">
-    <img src="img/index/logoimg.png">
+    <img src="/img/index/logoimg.png">
     <button type="button" class="back-btn" onclick="location.href='index.jsp'" style="background: #001a6d; color: white"> 메인으로</button>
 </div>
 
 <!-- 두 번째 필드 -->
 <div class="input-group" style="width: 100%; height: 120px; background: #001a6d; border-radius: 50px; z-index: 0; position: absolute; top: 230px;">
-    <img src="img/index/aaaa.png" style="width: 100px">
+    <img src="/img/index/aaaa.png" style="width: 100px">
     <span style="margin-left: 150px;">${sessionScope.user.nickname} 님 </span> <br>
 </div>
 

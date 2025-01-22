@@ -84,7 +84,7 @@
     <div class="header">
         <button class="menu_button">
         </button>
-        <a class="conan_logo" href="/jsp/index.jsp">
+        <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">
         </a>
 

@@ -25,4 +25,4 @@ public class AccountC extends HttpServlet {
         // 계정 생성 후, 성공 여부에 따라 리다이렉트
         response.sendRedirect("index.jsp");  // 성공 후 홈 페이지로 리다이렉트
         System.out.println("AccountC(POST)에서 등록 완료!");
-}
+    }

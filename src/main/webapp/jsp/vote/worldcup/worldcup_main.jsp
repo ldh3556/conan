@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>VOTE(MAIN)</title>
+    <title>VOTE WORLDCUP(MAIN)</title>
     <link href="/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/vote/vote_template.css">
 </head>

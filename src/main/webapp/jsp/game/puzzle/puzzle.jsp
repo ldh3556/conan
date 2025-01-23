@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 인물 맞추기 퀴즈 </title>
+    <title> GUESS WHO </title>
     <style>
         * {
             margin: 0;
@@ -80,17 +80,17 @@
             margin-bottom: 20px;
         }
 
-        #retry-btn, #show-answer-btn, #next-btn {
+        #retry-btn, #show-answer-btn, #next-btn, #back-btn {
             background-color: #17a2b8;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             flex: 1; /* 버튼들이 고르게 크기를 가지게 함 */
         }
 
-        #next-btn {
+        #back-btn {
             background-color: #ffc107;
             width: 100px;
         }
@@ -106,7 +106,7 @@
         }
 
         /* 버튼들에 hover 효과 */
-        #next-btn:hover, #retry-btn:hover, #show-answer-btn:hover {
+        #next-btn:hover, #retry-btn:hover, #show-answer-btn:hover, #back-btn:hover  {
             background-color: #138496;
 
         }
@@ -148,6 +148,7 @@
                 <button id="show-answer-btn" onclick="showAnswer()">정답 보기</button>
                 <button id="next-btn" onclick="nextQuestion()">다음 문제</button>
                 <button id="retry-btn" onclick="restartGame()">다시하기</button>
+                <button id="back-btn" onclick="location.href='LoadingGameSelectC'"> 게임 선택창</button>
             </div>
             <div id="game-over-message" class="game-over" style="display: none;">
                 게임이 끝났습니다! <span id="scoring">0</span>

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>VOTE WORLDCUP(MAIN)</title>
+    <title>WORLDCUP(MAIN)</title>
     <link href="/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/vote/vote_template.css">
 </head>
@@ -13,10 +13,9 @@
         <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">
         </a>
-
         <jsp:include page="${loginPage}"></jsp:include>
+    </div>
 
-        </div>
     <div class="vote_wrapper">
         <div class="vote_inner">
             <div class="title-container">
@@ -28,12 +27,12 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold;">여성 캐릭터</h5>
-                            <hr>
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <img src="/img/vote/worldcup/woman.jpg" style="width: 180px; height: 180px;">
                             </h6>
                             <div class="btn-group">
-                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
+                                <button class="btn"
+                                        onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
                                     시작
                                 </button>
                                 <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
@@ -49,12 +48,12 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold;">남성 캐릭터</h5>
-                            <hr>
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <img src="/img/vote/worldcup/man.jpg" style="width: 180px; height: 180px;">
                             </h6>
                             <div class="btn-group">
-                                <button class="btn" onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
+                                <button class="btn"
+                                        onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
                                     시작
                                 </button>
                                 <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">
@@ -79,7 +78,6 @@
         max-width: 1200px;
         margin: 0 auto; /* 화면 중앙 정렬 */
         padding: 20px;
-        border: solid 3pt red;
         position: relative; /* 자식 요소들에 상대적인 위치 지정 */
     }
 
@@ -87,11 +85,9 @@
     .title-container {
         text-align: center;
         left: 50%;
-
         width: 95%;
         height: 150px;
-        border-radius: 10px;
-        box-shadow: 5px 10px 5px #ccc;
+        /*border-radius: 10px;*/
     }
 
     h2 {
@@ -101,7 +97,7 @@
         display: inline-block;
         transform: translateX(-50%);
         left: 50%;
-        font-size: 50px;
+        font-size: 40px;
     }
 
     @keyframes fadeInLetters {
@@ -120,30 +116,38 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 30px;
+        margin-top: -50px;
+        margin-bottom: 30px;
         width: 1000px;
         left: 50%;
-
         gap: 20px;
     }
 
     /* card 스타일 */
     .card {
         width: 470px;
-        border: 1px solid #ccc;
         text-align: center;
     }
 
     /* 버튼 스타일 */
     .btn {
-        width: 200px;
-        height: 30px;
-        transition: all 0.3s ease-in-out;
-        background-color: rgba(125, 58, 210, 0.15);
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 9px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        min-width: 120px;
+        text-align: center;
     }
 
     .btn:hover {
         transform: scale(1.1);
+    }
+
+    h5 {
+        font-size: 20px;
     }
 </style>
 

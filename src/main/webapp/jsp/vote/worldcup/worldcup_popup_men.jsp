@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title>남성 캐릭터 16강</title>
+    <title>WORLDCUP(MEN)</title>
     <script>
         var text = "";
         var images = [];

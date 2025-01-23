@@ -28,6 +28,34 @@
 			color: blue;
 			cursor: pointer;
 		}
+		.header{
+			width: 100%;
+			height: 120px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 3;
+		}
+
+		button.menu_button {
+			left: 20px;
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			background: url("/img/index/menu.svg") no-repeat;
+			background-size: cover;
+			border: none;
+
+			color: #eda127;
+		}
+
+		.conan_logo > img{
+			width: 125px;
+			height: 55px;
+		}
 	</style>
 </head>
 <body>
@@ -53,6 +81,17 @@
 <%--	nickname: ${nickname}--%>
 <%--</div>--%>
 <div class="wrapper">
+	<div class="header">
+		<button class="menu_button">
+		</button>
+		<a class="conan_logo" href="/index.jsp">
+			<img src="/img/index/logoimg.png">
+		</a>
+
+		<jsp:include page="${loginPage}"></jsp:include>
+
+	</div>
+	<div class="round-wrapper">
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">
@@ -94,6 +133,7 @@
 				</div>
 			</c:if>
 		</c:forEach>
+	</div>
 	</div>
 </div>
 <script src="js/vote/ost/bracket.js"></script>

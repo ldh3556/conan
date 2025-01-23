@@ -7,6 +7,9 @@
     <title>우승곡 및 댓글</title>
 <%--    <link rel="stylesheet" href="css/vote/ost/ost_result.css">--%>
     <style>
+        body{
+            background-image: url("/img/index/sec_bg_2.jpg");
+        }
         /* css/vote/ost/ost_result.css */
         .container {
             display: flex; /* 좌우 배치를 위한 Flexbox */

@@ -11,7 +11,7 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Swiper demo</title>
+    <title> GAME SELECT </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -98,13 +98,12 @@
         <div class="swiper-wrapper">
 
             <a class="swiper-slide" href="/LoadingFaceGameC">
-
-                <span>얼굴 맞추기</span>
+                <span>인물 맞추기</span>
             </a>
             <a class="swiper-slide" href="/balloon/">
                 <span>말풍선 채워넣기</span>
             </a>
-            <a class="swiper-slide" href="  /jsp/game/destiny/destiny.jsp">
+            <a class="swiper-slide" href="/jsp/game/destiny/destiny.jsp">
                 <span>나의 운명의</span>
                 <span style="font-size: 40pt">캐릭터</span>
             </a>

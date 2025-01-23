@@ -43,7 +43,7 @@
         }
 
         /* 메인으로 버튼 */
-        .back-btn {
+        .main-btn {
             background: #001a6d;
             color: white;
             position: absolute;
@@ -113,6 +113,29 @@
             flex-direction: column;
         }
 
+        /* MY PROFILE */
+        .include-group-1 span {
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 60px;
+            left: 200px;
+            z-index: 2;
+            width: 200px;
+            font-weight: bold;
+        }
+
+        /* password-match-message */
+        .include-group span {
+            color: white;
+            padding: 10px;
+            top: 60px;
+            left: 200px;
+            z-index: 2;
+            width: 200px;
+            font-weight: bold;
+        }
+
         .include-group button {
             margin-left: 10px;
         }
@@ -124,24 +147,18 @@
             height: 100%;
         }
 
-        /* MY PROFILE */
-        .include-group span {
-            color: white;
-            padding: 10px;
-            position: absolute;
-            top: 60px;
-            left: 200px;
-            z-index: 2;
-            width: 200px;
-            font-weight: bold;
-        }
-
-
         /* 버튼 숨기기(배경 색상과 똑같이 지정해서) + hover 커서 기능 없애기 */
         .edit-account-btn, .edit-icon-btn, .edit-bg-btn {
             cursor: default;
             background: #001a6d;
             color: #001a6d;
+        }
+
+        /* 뒤로가기 버튼 */
+        .back-btn {
+            background: #EFEFEF;
+            color: black;
+            left: 150px;
         }
 
         /* 프로필 섹션 */
@@ -459,7 +476,7 @@
 <!-- 첫 번째 필드 -->
 <div class="top-group">
     <img src="img/index/logoimg.png">
-    <button type="button" class="back-btn" onclick="location.href='index.jsp'"> 메인으로</button>
+    <button type="button" class="main-btn" onclick="location.href='index.jsp'"> 메인으로</button>
 </div>
 
 <!-- 두 번째 필드 -->
@@ -469,20 +486,21 @@
 </div>
 
 <!-- 세 번째 필드 (jsp include 사용할 예상) -->
-<div class="include-group">
-    <div class="include-group-1">
-        <span>MY PROFILE</span>
-        <textarea></textarea>
-    </div>
-    <div>
-        <div class="include-group-2">
-            <div>
-                <button class="edit-account-btn" onclick="location.href='MyPage_Edit_AccountC'"> 회원정보 수정</button>
-                <button class="edit-icon-btn"> 프로필 아이콘 변경</button>
-                <button class="edit-bg-btn"> 배경이미지 변경</button>
-            </div>
-            <div>
-                <form action="MyPage_Edit_AccountC" method="post">
+<form action="MyPage_Edit_AccountC" method="post">
+    <div class="include-group">
+        <div class="include-group-1">
+            <span>MY PROFILE</span>
+            <textarea name="text">${sessionScope.user.text}</textarea>
+        </div>
+        <div>
+            <div class="include-group-2">
+                <div>
+                    <button class="edit-account-btn" onclick="location.href='MyPage_Edit_AccountC'"> 회원정보 수정</button>
+                    <button class="edit-icon-btn"> 프로필 아이콘 변경</button>
+                    <button class="edit-bg-btn"> 배경이미지 변경</button>
+                </div>
+                <div>
+
                     <div> 이름
                         <input name="name" type="text" value="${sessionScope.user.name}">
                         <span id="name-error" class="error"></span> <!-- 이름 오류 메시지 -->
@@ -510,12 +528,13 @@
                     <div id="register-error" class="error"></div> <!-- 아이디 또는 닉네임 중복 시 나타날 오류 메시지 -->
                     <div>
                         <button type="submit" disabled> 수정완료</button> <!-- 초기 상태에서 disabled 속성 추가 -->
+                        <button type="button" class="back-btn" onclick="location.href='MyPageC'"> 뒤로가기</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 
 </body>
 </html>

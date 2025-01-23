@@ -32,6 +32,7 @@ create table account_table_hdh (
     pw varchar2(20 char) not null,
     pw_check varchar2(20 char) not null,
     nickname varchar2(20 char) not null,
+    text varchar2(500 char) not null, /* 자기소개 text 내용 500자 */
 
     -- no(pk) 외에 유니크 제약 조건 추가
     constraint unique_nickname unique (nickname),
@@ -39,9 +40,18 @@ create table account_table_hdh (
     constraint unique_id unique (id)
 );
 
-insert into account_table_hdh values(account_table_hdh_seq.nextval,'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면');
-insert into account_table_hdh values(account_table_hdh_seq.nextval,'홍길동', '2000', '01', '01','남', 'merong@123.com', 'www123', 'www123', 'www123', '내이름은함정고난이죠');
-insert into account_table_hdh values(account_table_hdh_seq.nextval,'성기훈', '1980', '04', '04','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번');
+ALTER TABLE account_table_hdh
+    ADD (text VARCHAR2(500 CHAR) DEFAULT '');
+
+ALTER TABLE account_table_hdh
+    MODIFY (text VARCHAR2(500 CHAR) NOT NULL);
+
+select * from account_table_hdh;
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'둘리', '1980', '05', '21','남', 'hoitt@123.com', 'dul', 'dul', 'dul', '호잇이계속되면', '자기소개를 작성하시오.');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'홍길동', '2000', '01', '01','남', 'merong@123.com', 'www123', 'www123', 'www123', '내이름은함정고난이죠', '자기소개를 작성하시오.');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'성기훈', '1980', '04', '04','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번', '자기소개를 작성하시오.');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'장덕수', '1960', '01', '01','남', 'jds101@gmail.com', 'jds101', 'jds101', 'jds101', '101번', '자기소개를 작성하시오.');
+insert into account_table_hdh values(account_table_hdh_seq.nextval,'이원호', '1960', '01', '01','남', 'lwh123@gmail.com', 'lwh123', 'lwh123', 'lwh123', '나름 신사', '자기소개를 작성하시오.');
 
 select * from account_table_hdh;
 

@@ -122,6 +122,7 @@
             resize: none;
             width: 100%;
             height: 100%;
+            user-select: none; /* 텍스트 선택 불가 */
         }
 
         /* MY PROFILE */
@@ -180,7 +181,7 @@
 <div class="include-group">
     <div class="include-group-1">
         <span>MY PROFILE</span>
-        <textarea></textarea>
+        <textarea disabled>${sessionScope.user.text}</textarea>
     </div>
     <div class="include-group-2">
         <button class="edit-account-btn" onclick="location.href='MyPage_Edit_AccountC'"> 회원정보 수정</button>

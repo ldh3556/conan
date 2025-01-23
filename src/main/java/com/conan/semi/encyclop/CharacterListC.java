@@ -1,4 +1,6 @@
 package com.conan.semi.encyclop;
+import com.conan.semi.login.LoginDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,6 +65,7 @@ public class CharacterListC extends HttpServlet {
         request.setAttribute("currentSortOption", sortOption);
 
         // JSP로 포워딩
+        LoginDAO.loginCheck2(request);
         request.getRequestDispatcher("/jsp/encyclop/character.jsp").forward(request, response);
     }
 

@@ -19,7 +19,7 @@ public class BoardAnimeDAO {
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_anime_table ORDER BY b_date desc";
+        String sql = "select * from board_anime_table ORDER BY b_date ";
 
         try {
             System.out.println("connect --");
@@ -89,7 +89,7 @@ public class BoardAnimeDAO {
 
 
     public static void addBoardFree(HttpServletRequest request) {
-        String path = request.getServletContext().getRealPath("jsp/board/board_anime/board_anime_img");
+        String path = request.getServletContext().getRealPath("/jsp/board/board_anime/board_anime_img");
         con = null;
         PreparedStatement pstmt = null;
         try {

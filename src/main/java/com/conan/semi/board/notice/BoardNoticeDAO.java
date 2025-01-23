@@ -19,7 +19,7 @@ public class BoardNoticeDAO {
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_notice_table ORDER BY b_date desc";
+        String sql = "select * from board_notice_table ORDER BY b_date";
 
         try {
             System.out.println("connect --");
@@ -90,6 +90,7 @@ public class BoardNoticeDAO {
 
     public static void addBoardFree(HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("jsp/board/board_notice/board_notice_img");
+        System.out.println("path : " + path);
         con = null;
         PreparedStatement pstmt = null;
         try {

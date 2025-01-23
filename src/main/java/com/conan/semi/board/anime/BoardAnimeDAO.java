@@ -192,7 +192,7 @@ public class BoardAnimeDAO {
     System.out.println(pageNum);
         int total = boards.size();
         System.out.println(total);
-    int count = 5;
+    int count = 7;
         System.out.println(count);
     int pageCount = (int) Math.ceil((double)total / count);
     try {

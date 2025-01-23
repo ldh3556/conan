@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<div>
+
     <div class="search_box">
         <input id="search-input" placeholder="이 게시판 내 제목 검색">
         <button id="search-btn">
@@ -22,6 +22,7 @@
         <span id="result"></span>
     </div>
     <div class="board_con">
+        <div class="board_post_wrap">
         <c:choose>
             <c:when test="${not empty boards}">
                 <c:forEach var="b" items="${boards }">
@@ -30,7 +31,7 @@
                         <div>${b.b_begin }</div>
                         <div>${b.b_title }</div>
                         <div><fmt:formatDate value="${b.b_date }" pattern="yyyy-MM-dd HH:mm"/></div>
-                        <hr>
+
                     </a>
                 </c:forEach>
             </c:when>
@@ -38,6 +39,7 @@
                 <p>게시글이 없습니다. 첫 게시글을 작성해보세요!</p>
             </c:otherwise>
         </c:choose>
+        </div>
         <div class="pagination">
             <a href="BoardMoviePageC?p=1">BEGIN</a>
             <c:forEach begin="1" end="${pageCount }" var="i">
@@ -52,6 +54,6 @@
         </div>
     </div>
 
-</div>
+
 </body>
 </html>

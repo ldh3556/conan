@@ -23,7 +23,7 @@
         <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">
         </a>
-            <jsp:include page="${loginPage}"></jsp:include>
+        <jsp:include page="${loginPage}"></jsp:include>
     </div>
     <div class="board_wrap">
         <div class="board_title">
@@ -38,25 +38,10 @@
             </div>
         </div>
 
-        <div class="content">
+        <div class="content_board">
             <jsp:include page="${content }"/>
         </div>
     </div>
-<div class="board-container">
-  <div class="board-title"><a href="BoardHC"><h1>Community</h1></a></div>
-  <div><a href="HC">home</a></div>
-  <hr>
-  <div class="board-menu">
-    <div> <a href="BoardNoticeC">[공지사항]</a></div>
-    <div> <a href="BoardFreeC">[자유게시판]</a></div>
-    <div> <a href="BoardAnimeC">[애니&만화 후기게시판]</a></div>
-    <div> <a href="BoardMovieC">[영화 후기게시판]</a></div>
-</div>
-  <hr>
-<div class="content">
-  <jsp:include page="${content }" />
-</div>
-
 </div>
 </body>
 </html>

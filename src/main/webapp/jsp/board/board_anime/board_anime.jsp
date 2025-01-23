@@ -13,45 +13,45 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <div class="search_box">
-        <input id="search-input" placeholder="이 게시판 내 제목 검색">
-        <button id="search-btn">
-            search
-        </button>
-        <span id="result"></span>
-    </div>
-    <div class="board_con">
-        <c:choose>
-            <c:when test="${not empty boards}">
-                <c:forEach var="b" items="${boards }">
-                    <a href="BoardAnimeDetailC?no=${b.b_no }" class="board_box">
-                        <div>${b.b_name }</div>
-                        <div>${b.b_begin }</div>
-                        <div>${b.b_title }</div>
-                        <div><fmt:formatDate value="${b.b_date }" pattern="yyyy-MM-dd HH:mm"/></div>
-                        <hr>
-                    </a>
-                </c:forEach>
-            </c:when>
-            <c:otherwise>
-                <p>게시글이 없습니다. 첫 게시글을 작성해보세요!</p>
-            </c:otherwise>
-        </c:choose>
-        <div class="pagination">
-            <a href="BoardAnimePageC?p=1">BEGIN</a>
-            <c:forEach begin="1" end="${pageCount }" var="i">
-                <a href="BoardAnimePageC?p=${i }">${i }</a>
-            </c:forEach>
-            <a href="BoardAnimePageC?p=${pageCount }">END</a>
-        </div>
-        <div class="under_buttons">
-            <div class="buttons">
-                <a href="BoardNoticeRegC">글쓰기</a>
-            </div>
-        </div>
-    </div>
-
+<div class="search_box">
+    <input id="search-input" placeholder="이 게시판 내 제목 검색">
+    <button id="search-btn">
+        search
+    </button>
+    <span id="result"></span>
 </div>
+<div class="board_con">
+    <div class="board_post_wrap">
+    <c:choose>
+        <c:when test="${not empty boards}">
+            <c:forEach var="b" items="${boards }">
+                <a href="BoardAnimeDetailC?no=${b.b_no }" class="board_box">
+                    <div>${b.b_name }</div>
+                    <div>${b.b_begin }</div>
+                    <div>${b.b_title }</div>
+                    <div><fmt:formatDate value="${b.b_date }" pattern="yyyy-MM-dd HH:mm"/></div>
+
+                </a>
+            </c:forEach>
+        </c:when>
+        <c:otherwise>
+            <p>게시글이 없습니다. 첫 게시글을 작성해보세요!</p>
+        </c:otherwise>
+    </c:choose>
+    </div>
+    <div class="pagination">
+        <a href="BoardAnimePageC?p=1">BEGIN</a>
+        <c:forEach begin="1" end="${pageCount }" var="i">
+            <a href="BoardAnimePageC?p=${i }">${i }</a>
+        </c:forEach>
+        <a href="BoardAnimePageC?p=${pageCount }">END</a>
+    </div>
+    <div class="under_buttons">
+        <div class="buttons">
+            <a href="BoardNoticeRegC">글쓰기</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

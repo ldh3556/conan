@@ -28,7 +28,22 @@
 			color: blue;
 			cursor: pointer;
 		}
+		button{
+			padding: 10px 20px;
+			border-radius: 10px;
+			border:none;
+			box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+			color: #001a6d;
+			background: #ffffff;
+			transition: all 0.2s;
+		}
+		button:active{
+			background: #001A6D;
+			color: white;
+		}
+
 	</style>
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 
@@ -52,7 +67,19 @@
 <%--	<hr>--%>
 <%--	nickname: ${nickname}--%>
 <%--</div>--%>
-<div class="wrapper">
+<div class="header">
+	<button class="menu_button">
+	</button>
+	<div class="conan_logo">
+		<img src="/img/index/logoimg.png">
+	</div>
+
+	<jsp:include page="${loginPage}"></jsp:include>
+</div>
+<div class="ost_wrapper">
+
+
+
 	<div class="round">
 		<!-- 그룹 1 (q1, q2, q3, q4) -->
 		<c:forEach var="s" items="${songs}" varStatus="status">

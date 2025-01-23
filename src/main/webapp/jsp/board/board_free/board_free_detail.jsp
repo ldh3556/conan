@@ -15,7 +15,7 @@
 <body>
 
 <div class="board-wrap">
-    <div>
+    <div class="board_post_wrap">
         <div>
             <div>작성인 : ${board.b_name }</div>
             <div>${board.b_begin }</div>

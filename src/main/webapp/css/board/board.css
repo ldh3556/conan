@@ -63,7 +63,8 @@
     color: #FFFFFF;
 }
 
-.content {
+.content_board {
+    position: relative;
     padding: 30px;
     height: fit-content;
     border-radius: 10px;
@@ -72,7 +73,8 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+
 }
 
 #result {
@@ -120,20 +122,84 @@ button#search-btn {
     gap: 10px;
 }
 
-.board_box{
+.board_post_wrap{
     padding: 30px;
     display:flex;
     flex-direction: column;
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
-
+    gap: 20px;
 }
+
+.div_flex{
+    display: flex;
+    flex-direction: row;
+    gap: 20px   ;
+}
+
+select{
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+    border: none;
+}
+
+button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+    color: #001a6d;
+    background: #ffffff;
+    transition: all 0.2s;
+}
+
+.board_box{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.board_box div:last-child{
+    position: absolute;
+    right: 10px;
+}
+
+.div_col{
+    display: flex;
+    flex-direction: column;
+    font-size: 12pt;
+    gap: 20px;
+    font-weight: 400;
+}
+
+input{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+}
+
+textarea {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    height: 200px;
+}
+
+.cnt{
+    display: flex;
+}
+
 
 .pagination {
     width: 100%;
-    display: flex
-;
+    display: flex;
     justify-content: center;
     gap: 20px;
 }
@@ -152,4 +218,35 @@ button#search-btn {
 .pagination a:hover{
     color: #eda127;
     font-weight: 600;
+}
+
+
+.under_buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+
+.buttons a{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+    color: #001A6D;
+    text-decoration: none;
+    font-size: 10pt;
+    transition: all 0.2s;
+}
+
+button a:active, button:active{
+    background: #001A6D;
+    color: white;
+}
+.buttons{
+    background: #001A6D;
+}
+.buttons:hover a{
+    color: #FFFFFF;
 }

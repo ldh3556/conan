@@ -89,7 +89,7 @@ public class BoardMovieDAO {
 
 
     public static void addBoardFree(HttpServletRequest request) {
-        String path = request.getServletContext().getRealPath("jsp/board/board_movie/board_movie_img");
+        String path = request.getServletContext().getRealPath("/jsp/board/board_movie/board_movie_img");
         con = null;
         PreparedStatement pstmt = null;
         try {

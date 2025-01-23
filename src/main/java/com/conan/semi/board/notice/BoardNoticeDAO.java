@@ -89,7 +89,7 @@ public class BoardNoticeDAO {
 
 
     public static void addBoardFree(HttpServletRequest request) {
-        String path = request.getServletContext().getRealPath("jsp/board/board_notice/board_notice_img");
+        String path = request.getServletContext().getRealPath("/jsp/board/board_notice/board_notice_img");
         con = null;
         PreparedStatement pstmt = null;
         try {

@@ -20,7 +20,7 @@
         <div>
             <div>작성인 : ${board.b_name }</div>
             <div>${board.b_begin }</div>
-            <div><img style="width: 60px; height: 60px" src="jsp/board/board_anime/board_anime_img/${board.b_img }"></div>
+            <div><img style="width: 60px; height: 60px" src="/jsp/board/board_anime/board_anime_img/${board.b_img }"></div>
             <div class="board-reg-col">Title</div>
             <div class="board-reg-col2">
                 <input name="title" value="${board.b_title }" disabled="disabled">

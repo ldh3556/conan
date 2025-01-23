@@ -89,7 +89,7 @@ public class BoardAnimeDAO {
 
 
     public static void addBoardFree(HttpServletRequest request) {
-        String path = request.getServletContext().getRealPath("jsp/board/board_anime/board_anime_img");
+        String path = request.getServletContext().getRealPath("/jsp/board/board_anime/board_anime_img");
         con = null;
         PreparedStatement pstmt = null;
         try {

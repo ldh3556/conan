@@ -15,8 +15,8 @@
 </head>
 <body>
 <c:choose>
-    <c:when test="${not empty freeComments}">
-        <c:forEach var="comment" items="${freeComments}">
+    <c:when test="${not empty animeComments}">
+        <c:forEach var="comment" items="${animeComments}">
             <div class="comment" id="comment-${comment.c_no}">
                 <strong>${comment.c_writer}</strong>
                 <p>${comment.formattedDate}</p>

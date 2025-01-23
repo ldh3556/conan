@@ -22,26 +22,32 @@
         <div class="conan_logo">
             <img src="/img/index/logoimg.png">
         </div>
-        <div class="account_wrapper">
-            <div class="login_text_wrapper">
-                <span>로그인</span> 해주세요.
-                <div class="login_text">
-                    <a href="/LoginC" id="login_text_id"> 로그인 </a>
-                    <a href="/AccountC" id="login_text_reg"> 회원가입 </a>
+
+        <jsp:include page="${loginPage}"></jsp:include>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide menu">Menu slide</div>
+            <div class="swiper-slide content">
+                <div class="menu-button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
+                Content slide
             </div>
-            <a href="/LoginC" id="account_icon"></a>
         </div>
     </div>
+
     <div class="index_Sec01">
         <div class="index_Sec01_L">
-            <a class="playlogo_wrapper" href="./game/loading/loading.jsp">
+            <a class="playlogo_wrapper" href="/jsp/game/loading/loading.jsp">
                 <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="play">PLAY</span>
             </a>
         </div>
         <div class="index_Sec01_R">
-            <a class="votelogo_wrapper">
+            <a class="votelogo_wrapper" href="/jsp/vote/loading/loading.jsp">
                 <img src="/img/index/conandex_customicon.png" class="conan_attr_logo">
                 <span id="vote">VOTE</span>
             </a>
@@ -60,9 +66,14 @@
                 </div>
                 <h1 class="textStyle">이다.</h1>
             </div>
-            <div class="Sec02_conandex">
+
+
+            <%----%>
+            <div class="Sec02_conandex" onclick="location.href='CharacterListC'">
                 <img src="/img/index/conandex_customicon_big.png" id="conandexicon">
+                <%----%>
                 <a class="conandex_go"><span class="arrow_left"></span>캐릭터 정보 확인하기</a>
+
             </div>
         </div>
         <div class="index_Sec02_R">
@@ -77,59 +88,64 @@
                          data-swiper-parallax="-23%"></div>
 
                     <swiper-slide class="charabox c01">
-                        <div class="title" data-swiper-parallax="-300">Slide 1</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">코난</div>
+                        <div class="subtitle" data-swiper-parallax="-200">명탐정 코난의 주인공</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                그의 정체는 검은 조직이 개발한 정체 불명의 알약(APTX4869)을 먹고
+                                어린아이의 모습이된<br> 고등학생 탐정 남도일이다.
+                                검은 조직으로부터 정체를 숨기기 위해 코난이라는
+                                <br> 이름으로 아버지가 탐정사무소를 하는
+                                소꿉친구인 미란이의 집에서 함께 지내고 있다.
                             </p>
                         </div>
                     </swiper-slide>
                     <swiper-slide class="charabox c02">
-                        <div class="title" data-swiper-parallax="-300">Slide 2</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">남도일</div>
+                        <div class="subtitle" data-swiper-parallax="-200">천재 고등학생 명탐정</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                코난의 본 모습이자 미란이의 소꿉친구, 세계적인 추리소설가인 아버지<br>
+                                ,남건과 대배우인 어머니, 이하연의 아들이다. 그의 뛰어난 추리두뇌는<br>
+                                아버지의 영향을 많이 받았으며, 코난의 모습으로 여러가지 사건 사고를<br>
+                                해결해나간다.
                             </p>
                         </div>
                     </swiper-slide>
                     <swiper-slide class="charabox c03">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">유명한</div>
+                        <div class="subtitle" data-swiper-parallax="-200">소꿉친구, 미란이의 아버지</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                미란이의 아버지이자, 탐정으로 활동중이다.<br>
+                                유능한 형사이던 그는 경찰을 은퇴하고 탐정사무소를 차렸다. 코난과 함께<br>
+                                항상 온갖 사건 사고에 휘말리며, 코난은 그의 목소리를 빌려 사건을 해결한다.
                             </p>
                         </div>
                     </swiper-slide>
                     <swiper-slide class="charabox c04">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">브라운 박사</div>
+                        <div class="subtitle" data-swiper-parallax="-200">코난의 옆집에 사는 천재 발명가</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                남도일이 어릴적부터 옆집에 살았던 천재 발명가이다.<br>
+                                코난이 사용하는 발명품들을 만든 장본인이다.<br>
+                                현재는 집에서 검은조직의 일원이었던 홍장미와 함께 지내고 있다.
                             </p>
                         </div>
                     </swiper-slide>
                     <swiper-slide class="charabox c05">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                        <div class="title" data-swiper-parallax="-300">유미란</div>
+                        <div class="subtitle" data-swiper-parallax="-200">남도일의 소꿉친구</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
-                                내용1
+                                아버지인 유명한 탐정을 따라다니며, 항상 사건에 휘말린다.<br>
+                                태권도 유단자이며 전국체전에서 우승한 적도 있는 실력자이다.<br>
+                                도일이와 오랜시간을 함께 지내며 둘은 연애를 하고있다.
                             </p>
                         </div>
                     </swiper-slide>
-                    <swiper-slide class="charabox c06">
-                        <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                        <div class="text" data-swiper-parallax="-100">
-                            <p>
-                                내용1
-                            </p>
-                        </div>
-                    </swiper-slide>
+
                 </swiper-container>
             </div>
 
@@ -145,7 +161,7 @@
                         <img src="">
                     </div>
                     <div class="moviebox_text">
-                        <span>명탐정코난 X 소년선데이</span>
+                        <span>명탐정코난 X 선데이</span>
                         <span>콜라보 확정!</span>
                         <span>굿즈 출시</span>
                         <span class="to_go_movie_event">
@@ -155,8 +171,9 @@
                     </div>
                 </a>
                 <a class="moviebox_01">
-
-                    <img>
+                    <div class="movie_img">
+                        <img>
+                    </div>
                     <div class="moviebox_text">
                         <span>명탐정코난 :</span>
                         <span>100만 달러의 펜타그램</span>
@@ -169,7 +186,7 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="/img/index/sec03_img.jpg">
+                        <img src="/img/index/sec03_banner_241226(1).jpg">
                     </div>
                     <div class="moviebox_text">
                         <span>소년 선데이 S 2월호</span>
@@ -188,12 +205,29 @@
             <div class="commu_box_wrapper">
                 <div class="notice_togo">
                     <span>Community</span>
-                    <a href=""> 커뮤니티 바로가기</a>
+                    <a href="BoardHC"> 커뮤니티 바로가기</a>
                 </div>
-            </div>
-            <hr>
-            <div class="commu_post_wrapper">
-
+                <hr style="width: 100%">
+                <a class="commu_post_wrapper">
+                    <span>[공지사항]</span>
+                    <span>사이트 운영 방침 안내</span>
+                    <span>2025.01.22</span>
+                </a>
+                <a class="commu_post_wrapper">
+                    <span>[공지사항]</span>
+                    <span>사이트 운영 방침 안내</span>
+                    <span>2025.01.22</span>
+                </a>
+                <a class="commu_post_wrapper">
+                    <span>[자유게시판]</span>
+                    <span>요즘 코난</span>
+                    <span>2025.01.22</span>
+                </a>
+                <a class="commu_post_wrapper">
+                    <span>[영화 후기]</span>
+                    <span>내돈내산 100만 달러의 펜타그램</span>
+                    <span>2025.01.22</span>
+                </a>
             </div>
         </div>
 
@@ -204,43 +238,9 @@
         <a>About us</a>
     </div>
 </div>
-
-
 <a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>
-<%--swiper 라이브러리 가급적 건드리지 말 것--%>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<%--메뉴슬라이드 가급적 건드리지 말것--%>
-<script>
-    var menuButton = document.querySelector('.menu-button');
-    var openMenu = function () {
-        swiper.slidePrev();
-    };
-    var swiper = new Swiper('.swiper', {
-        slidesPerView: 'auto',
-        initialSlide: 1,
-        resistanceRatio: 0,
-        slideToClickedSlide: true,
-        loop: true,
-        on: {
-            slideChangeTransitionStart: function () {
-                var slider = this;
-                if (slider.activeIndex === 0) {
-                    menuButton.classList.add('cross');
-                    // required because of slideToClickedSlide
-                    menuButton.removeEventListener('click', openMenu, true);
-                } else {
-                    menuButton.classList.remove('cross');
-                }
-            },
-            slideChangeTransitionEnd: function () {
-                var slider = this;
-                if (slider.activeIndex === 1) {
-                    menuButton.addEventListener('click', openMenu, true);
-                }
-            },
-        },
-    });
-</script>
 
 </body>
 </html>

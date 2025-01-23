@@ -2,10 +2,14 @@
 /*  background-image: url('../img/index/sec_bg_2.jpg');*/
 /*}*/
 /* 새로운 wrapper 추가 */
+
+.ost_wrapper {
+
 body{
   background-image: url("/img/index/sec_bg_2.jpg");
 }
 .round-wrapper {
+
   display: flex;
   flex-direction: row; /* round 요소들을 가로로 정렬 */
   justify-content: center;
@@ -100,11 +104,12 @@ body{
   transform: translate(-50%, -50%);
   background: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 400px;
   text-align: center;
   max-height: 80vh; /* 모달이 너무 커지지 않도록 제한 */
   overflow-y: auto; /* 모달 내용이 많으면 스크롤 */
+  box-shadow: 0 0 10px 4px rgba(0,0,0,0.25);
 }
 
 .close-button {

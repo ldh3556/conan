@@ -6,52 +6,68 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+
+<form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
+    <div class="board-wrap">
+
 <form action="BoardFreeUpdateC?no=${board.b_no }" method="post" enctype="multipart/form-data">
 <div class="board-wrap">
     <div>
+
         <div>
-            <div>작성인 : ${board.b_name }</div>
-            <div>
-                말머리 선택 : <select name="begin">
-                <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
-                <option value="[이벤트 후기]">[이벤트 후기]</option>
-                <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
-                <option value="[건의하기]">[건의하기]</option>
-            </select>
+            <div class="board_post_wrap">
+                <div>
+                    <div class="div_flex">
+                        <div>작성인 : ${board.b_name }</div>
+                        <div>
+                            말머리 선택 :
+                            <select name="begin">
+                                <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
+                                <option value="[이벤트 후기]">[이벤트 후기]</option>
+                                <option value="[굿즈 리뷰]">[굿즈 리뷰]</option>
+                                <option value="[건의하기]">[건의하기]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="div_flex">
+                        <div class="board-reg-col">Title</div>
+                        <div class="board-reg-col2">
+                            <input name="title" value="${board.b_title }">
+                            <%-- 					${review.r_title } --%>
+                        </div>
+                    </div>
+                </div>
+                <div><input type="file" name="img" value="${board.b_img}"></div>
+                <div class="div_col">
+                    <div class="board-reg-col">Text</div>
+                    <div class="board-reg-col2">
+                        <textarea name="text" maxlength="4000">${board.b_text }</textarea>
+                        <div class="div_flex">
+                            <span id="cntSpan">0</span>
+                            <span> / 4000</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        Posted at
+                        <fmt:formatDate value="${board.b_date }"/>
+                    </div>
+                </div>
+                <div class="div_flex">
+                    <button class="board-reg-btn">수정완료</button>
+                    <button type="button" onclick="cancelUpdatBoard()">취소</button>
+                    <button type="button" onclick="location.href='BoardFreeC'">list</button>
+                </div>
             </div>
-            <div class="board-reg-col">Title</div>
-            <div class="board-reg-col2">
-                <input name="title" value="${board.b_title }">
-                <%-- 					${review.r_title } --%>
-            </div>
-        </div>
-        <div><input type="file" name="img" value="${board.b_img}"></div>
-        <div>
-            <div class="board-reg-col">Text</div>
-            <div class="board-reg-col2">
-                <textarea name="text" maxlength="4000">${board.b_text }</textarea>
-                <br> <span id="cntSpan">0</span> / 4000
-            </div>
-        </div>
-        <div>
-            <div>
-                Posted at
-                <fmt:formatDate value="${board.b_date }"/>
-            </div>
-        </div>
-        <div style="position: relative; bottom: -50px;">
-            <button class="board-reg-btn">수정완료</button>
-            <button type="button"  onclick="cancelUpdatBoard()">취소</button>
-            <button type="button"  onclick="location.href='BoardFreeC'">list</button>
         </div>
     </div>
-</div>
 </form>
 <script type="text/javascript">
     function cancelUpdatBoard() {

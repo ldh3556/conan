@@ -16,9 +16,9 @@
     <button class="menu_button">
     <%-- 야 안누리 메뉴버튼에 넣을거 만들어야 된다--%>
     </button>
-    <div class="conan_logo">
+    <a class="conan_logo" href="/index.jsp">
         <img src="${pageContext.request.contextPath}/img/index/logoimg.png">
-    </div>
+    </a>
     <jsp:include page="${loginPage}"></jsp:include>
 </div>
 

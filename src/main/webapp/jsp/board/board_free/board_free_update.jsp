@@ -12,8 +12,14 @@
     <title>Title</title>
 </head>
 <body>
+
 <form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
     <div class="board-wrap">
+
+<form action="BoardFreeUpdateC?no=${board.b_no }" method="post" enctype="multipart/form-data">
+<div class="board-wrap">
+    <div>
+
         <div>
             <div class="board_post_wrap">
                 <div>

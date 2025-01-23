@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardNoticeUpdateC?no=${board.b_no }" method="post">
+<form action="BoardNoticeUpdateC?no=${board.b_no }" method="post" enctype="multipart/form-data">
 <div class="board-wrap">
     <div>
         <div>

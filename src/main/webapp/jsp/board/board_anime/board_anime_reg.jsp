@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <form action="BoardNoticeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
     <div class="board_post_wrap">
         <div>
@@ -25,6 +26,19 @@
             <option value="[운영 공지]">[운영 공지]</option>
             <option value="[이벤트 공지]">[이벤트 공지]</option>
             <option value="[신작 공지]">[신작 공지]</option>
+
+<form action="BoardAnimeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
+    <div>
+        <input name="id" value="${sessionScope.user.id }" type="hidden">
+    </div>
+    <div>
+        name <input name="name" value="${sessionScope.user.nickname }" readonly>
+    </div>
+    <div>
+        말머리 선택 : <select name="begin">
+            <option value="[애니 후기]">[애니 후기]</option>
+            <option value="[만화 후기]">[만화 후기]</option>
+
         </select>
         </div>
         <div class="div_flex">

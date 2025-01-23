@@ -1,15 +1,14 @@
 create table board_free_table (
-
-                                   b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char),
-                                   b_name varchar2(20 char) not null,
-                                   b_begin varchar2(40 char) not null,
-                                   b_title varchar2(200 char) not null,
-                                   b_img varchar2(200 char) not null,
-                                   b_text varchar2(4000 char) not null,
-                                   b_date date not null,
-                                   FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
-                                   FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
+    b_no varchar2(20 char) unique,
+    b_id varchar2(20 char),
+    b_name varchar2(20 char) not null,
+    b_begin varchar2(40 char) not null,
+    b_title varchar2(200 char) not null,
+    b_img varchar2(200 char) not null,
+    b_text varchar2(4000 char) not null,
+    b_date date not null,
+    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
+    FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
 );
 ALTER TABLE board_free_table
     DROP PRIMARY KEY;
@@ -49,15 +48,14 @@ drop table board_free_comment;
 --/////////////////////////////////////////////////////////////////////////////////////
 
 create table board_movie_table (
-
-                                  b_no varchar2(20 char) unique,
-                                  b_id varchar2(20 char),
-                                  b_name varchar2(20 char) not null,
-                                  b_begin varchar2(40 char) not null,
-                                  b_title varchar2(200 char) not null,
-                                  b_img varchar2(200 char) not null,
-                                  b_text varchar2(4000 char) not null,
-                                  b_date date not null,
+    b_no varchar2(20 char) unique,
+    b_id varchar2(20 char),
+    b_name varchar2(20 char) not null,
+    b_begin varchar2(40 char) not null,
+    b_title varchar2(200 char) not null,
+    b_img varchar2(200 char) not null,
+    b_text varchar2(4000 char) not null,
+    b_date date not null,
 FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
 
     FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
@@ -94,16 +92,16 @@ drop table board_movie_comment;
 
 create table board_notice_table (
 
-                                   b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char),
-                                   b_name varchar2(20 char) not null,
-                                   b_begin varchar2(40 char) not null,
-                                   b_title varchar2(200 char) not null,
-                                   b_img varchar2(200 char) not null,
-                                   b_text varchar2(4000 char) not null,
-                                   b_date date not null,
-                                   FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
-                                   FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
+    b_no varchar2(20 char) unique,
+    b_id varchar2(20 char),
+    b_name varchar2(20 char) not null,
+    b_begin varchar2(40 char) not null,
+    b_title varchar2(200 char) not null,
+    b_img varchar2(200 char) not null,
+    b_text varchar2(4000 char) not null,
+    b_date date not null,
+    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
+    FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
 
 );
 
@@ -112,7 +110,7 @@ create sequence board_notice_table_seq;
 
 insert into board_notice_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요','b.jpg','코난이 참 좋아요', sysdate);
 
-select * from board_notice_table;
+select * from board_notice_table order by b_date desc ;
 
 drop table board_notice_table;
 
@@ -137,16 +135,16 @@ drop table board_notice_comment;
 
 create table board_anime_table (
 
-                                   b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char),
-                                   b_name varchar2(20 char) not null,
-                                   b_begin varchar2(40 char) not null,
-                                   b_title varchar2(200 char) not null,
-                                   b_img varchar2(200 char) not null,
-                                   b_text varchar2(4000 char) not null,
-                                   b_date date not null,
-                                   FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
-                                   FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
+    b_no varchar2(20 char) unique,
+    b_id varchar2(20 char),
+    b_name varchar2(20 char) not null,
+    b_begin varchar2(40 char) not null,
+    b_title varchar2(200 char) not null,
+    b_img varchar2(200 char) not null,
+    b_text varchar2(4000 char) not null,
+    b_date date not null,
+    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
+    FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
 
 );
 

@@ -25,8 +25,7 @@
         <div class="conan_logo">
             <img src="/img/index/logoimg.png">
         </div>
-
-                <jsp:include page="${loginPage}"></jsp:include>
+        <jsp:include page="${loginPage}"></jsp:include>
     </div>
 
 

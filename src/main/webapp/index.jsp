@@ -13,10 +13,22 @@
 
     </style>
 </head>
-<link rel="stylesheet" href="css/index.css">
-
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/menu_bar.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <body>
+<div class="menu_bar">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide menu">Menu slide</div>
+        <div class="swiper-slide content">
+            <div class="menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="wrapper">
 
     <div class="header">
@@ -72,7 +84,8 @@
                         class="Sec02_Swiper_wrapper"
                         style="--swiper-navigation-color: #fff; width: 100%; --swiper-pagination-color: #fff"
                         class="mySwiper"
-                        speed="600" parallax="true" pagination="true" pagination-clickable="true" navigation="true">
+                        speed="600" parallax="true" pagination="true" pagination-clickable="true"
+                        navigation="true">
                     <div slot="container-start" class="parallax-bg"
                          style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);"
                          data-swiper-parallax="-23%"></div>
@@ -236,9 +249,38 @@
         <a>About us</a>
     </div>
 </div>
-<a href="/Vote_worldcupC"> 이상형 월드컵 </a> / <a href="/Vote_OSTC"> OST 투표 </a> / <a href="/Vote_storyC"> 스토리 투표 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js">
+    var menuButton = document.querySelector(".menu-button");
+    var openMenu = function () {
+        swiper.slidePrev();
+    };
+    var swiper = new Swiper(".menu_bar", {
+        slidesPerView: "auto",
+        initialSlide: 1,
+        resistanceRatio: 0,
+        slideToClickedSlide: true,
+        on: {
+            slideChangeTransitionStart: function () {
+                var slider = this;
+                if (slider.activeIndex === 0) {
+                    menuButton.classList.add("cross");
+                    // required because of slideToClickedSlide
+                    menuButton.removeEventListener("click", openMenu, true);
+                } else {
+                    menuButton.classList.remove("cross");
+                }
+            },
+            slideChangeTransitionEnd: function () {
+                var slider = this;
+                if (slider.activeIndex === 1) {
+                    menuButton.addEventListener("click", openMenu, true);
+                }
+            },
+        },
+    });
+</script>
+
 
 </body>
 </html>

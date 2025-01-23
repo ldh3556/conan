@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form action="BoardNoticeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
+<form action="BoardAnimeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
     <div class="board_post_wrap">
         <div>
             <input name="id" value="${sessionScope.user.id }" type="hidden">
@@ -75,7 +75,7 @@
     function cancelregBoard() {
         if (confirm("등록을 취소 하시겠습니까?")) {
             alert("취소되었습니다")
-            location.href = "BoardNoticeC"
+            location.href = "BoardAnimeC"
         }
     }
 

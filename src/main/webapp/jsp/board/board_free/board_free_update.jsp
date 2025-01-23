@@ -13,19 +13,16 @@
 </head>
 <body>
 
-<form action="BoardFreeUpdateC?no=${board.b_no }" method="post">
-    <div class="board-wrap">
-
-<form action="BoardFreeUpdateC?no=${board.b_no }" method="post" enctype="multipart/form-data">
+s
 <div class="board-wrap">
-    <div>
 
-        <div>
+    <form action="BoardFreeUpdateC?no=${board.b_no }" method="post" enctype="multipart/form-data">
+        <div class="board-wrap">
             <div class="board_post_wrap">
-                <div>
+                <div class="div_col">
                     <div class="div_flex">
                         <div>작성인 : ${board.b_name }</div>
-                        <div>
+                        <div class="div_flex">
                             말머리 선택 :
                             <select name="begin">
                                 <option value="[나만의 팬픽 만들기]">[나만의 팬픽 만들기]</option>
@@ -46,11 +43,11 @@
                 <div><input type="file" name="img" value="${board.b_img}"></div>
                 <div class="div_col">
                     <div class="board-reg-col">Text</div>
-                    <div class="board-reg-col2">
+                    <div class="div_col">
                         <textarea name="text" maxlength="4000">${board.b_text }</textarea>
                         <div class="div_flex">
                             <span id="cntSpan">0</span>
-                            <span> / 4000</span>
+                            <span>/ 4000</span>
                         </div>
                     </div>
                 </div>
@@ -67,8 +64,9 @@
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
 <script type="text/javascript">
     function cancelUpdatBoard() {
         const result = confirm('수정을 취소하시겠습니까?');
@@ -88,5 +86,6 @@
     });
 
 </script>
+
 </body>
 </html>

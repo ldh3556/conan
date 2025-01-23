@@ -36,7 +36,7 @@
             <h1 class="result-message">${result}</h1>
             <div class="input_button">
                 <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
-                <button type="button" class="back-btn" onclick="location.href='jsp/main_HDH.jsp'">메인으로</button>
+                <button type="button" class="back-btn" onclick="location.href='../main_HDH_UNUSED.jsp'">메인으로</button>
             </div>
         </div>
     </div>

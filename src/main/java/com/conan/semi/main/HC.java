@@ -17,7 +17,7 @@ public class HC extends HttpServlet {
         LoginDAO.loginCheck(request);
       //  request.setAttribute("loginPage","index_loginOK.jsp");
         request.getRequestDispatcher("index.jsp").forward(request, response);
-        // request.getRequestDispatcher("jsp/main_HDH.jsp").forward(request, response);
+        // request.getRequestDispatcher("jsp/main_HDH_UNUSED.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -52,7 +52,7 @@
         var winnerImage = "우승자";
         var clickCount = 0;
 
-        names.sort(function(a, b) {
+        names.sort(function (a, b) {
             return 0.5 - Math.random();
         });
 
@@ -91,7 +91,7 @@
                         document.getElementById('hover01').style.display = 'none';
                     } else {
                         names = sImages.slice(0, matches * 2);
-                        names.sort(function(a, b) {
+                        names.sort(function (a, b) {
                             return 0.5 - Math.random();
                         });
                         showImg(currentMatch);
@@ -102,41 +102,53 @@
             }
         }
 
-        window.onload = function() {
+        window.onload = function () {
             showImg(currentMatch);
         };
     </script>
+    <link rel="stylesheet" href="/css/vote/vote_template.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 
-<div class="outer-container">
-    <div style="text-align: center;">
-        <div class="title-container" style="border: 3pt solid green">
+<div class="wrapper">
+    <div class="header">
+        <button class="menu_button">
+        </button>
+        <a class="conan_logo" href="/index.jsp">
+            <img src="/img/index/logoimg.png">
+        </a>
+        <jsp:include page="${loginPage}"></jsp:include>
+    </div>
+
+    <div class="vote_wrapper" style="text-align: center;">
+        <div class="vote_inner" style="border: 3pt solid green">
             <h1><span>남성 캐릭터 16강</span></h1>
             <p id="round"></p>
             <p id="cal"></p>
-        </div>
 
-        <figure class="hover01" id="hover01" style="border: 3pt solid blue">
-            <div class="image-container">
-                <img id="image1" onclick="change(0);" />
-                <p id="name1"></p>
+
+            <figure class="hover01" id="hover01" style="border: 3pt solid blue">
+                <div class="image-container">
+                    <img id="image1" onclick="change(0);"/>
+                    <p id="name1"></p>
+                </div>
+                <div class="image-container">
+                    <img id="image2" onclick="change(1);"/>
+                    <p id="name2"></p>
+                </div>
+            </figure>
+
+            <!-- 버튼들을 위치시키기 위한 div -->
+            <div class="button-container" style="border: 3pt solid black">
+                <button id="restartBtn" onclick="restartGame()">다시하기</button>
+                <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
             </div>
-            <div class="image-container">
-                <img id="image2" onclick="change(1);" />
-                <p id="name2"></p>
+
+            <div class="winner-container" id="winnerContainer" style="display: none;">
+                <img id="winnerImage"/>
+                <p id="winnerName"></p>
             </div>
-        </figure>
-
-        <!-- 버튼들을 위치시키기 위한 div -->
-        <div class="button-container" style="border: 3pt solid black">
-            <button id="restartBtn" onclick="restartGame()">다시하기</button>
-            <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
-        </div>
-
-        <div class="winner-container" id="winnerContainer" style="display: none;">
-            <img id="winnerImage" />
-            <p id="winnerName"></p>
         </div>
     </div>
 </div>

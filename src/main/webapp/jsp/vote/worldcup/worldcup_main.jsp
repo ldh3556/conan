@@ -32,7 +32,7 @@
                             </h6>
                             <div class="btn-group">
                                 <button class="btn"
-                                        onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_women.jsp'">
+                                        onclick="location.href='WorldcupVoteWC'">
                                     시작
                                 </button>
                                 <button class="btn" onclick="window.location.href='jsp/vote/worldcup/womrank.jsp';">
@@ -53,7 +53,7 @@
                             </h6>
                             <div class="btn-group">
                                 <button class="btn"
-                                        onclick="window.location.href='jsp/vote/worldcup/worldcup_popup_men.jsp'">
+                                        onclick="location.href='WorldcupVoteMC'">
                                     시작
                                 </button>
                                 <button class="btn" onclick="window.location.href='jsp/vote/worldcup/manrank.jsp';">

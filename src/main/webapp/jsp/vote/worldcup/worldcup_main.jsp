@@ -64,9 +64,11 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <button id="back-btn" onclick="location.href='LoadingVoteSelectC'"> 투표 선택창</button>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 </body>
@@ -149,6 +151,18 @@
     h5 {
         font-size: 20px;
     }
+
+    #back-btn {
+        background-color: #ffc107;
+        width: 100px;
+        color: white;
+        padding: 15px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        flex: 1;
+    }
+
 </style>
 
 </html>

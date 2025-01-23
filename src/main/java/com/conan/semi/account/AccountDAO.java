@@ -44,7 +44,7 @@ public class AccountDAO {
         Connection con = null;
         PreparedStatement pstmt = null;
         String sql = "insert into account_table_hdh (no, name, birth_year, birth_month, birth_day, gender, e_mail, id, pw, pw_check, nickname) "
-                + "values (account_table_hdh_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "values (account_table_hdh_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '자기소개가 없습니다')";
 
         try {
             con = DBManager.connect();

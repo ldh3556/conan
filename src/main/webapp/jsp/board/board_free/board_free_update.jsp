@@ -31,6 +31,7 @@
                 <%-- 					${review.r_title } --%>
             </div>
         </div>
+        <div><input type="file" name="img" value="${board.b_img}"></div>
         <div>
             <div class="board-reg-col">Text</div>
             <div class="board-reg-col2">

@@ -1,6 +1,8 @@
 package com.conan.semi.board.free;
 
 import com.conan.semi.DBManager;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +19,7 @@ public class BoardFreeDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         String sql = "select * from board_free_table ORDER BY b_date desc";
+
         try {
             System.out.println("connect --");
             con = DBManager.connect();
@@ -32,8 +35,9 @@ public class BoardFreeDAO {
                 board.setB_name(rs.getString(3));
                 board.setB_begin(rs.getString(4));
                 board.setB_title(rs.getString(5));
-                board.setB_text(rs.getString(6));
-                board.setB_date(rs.getDate(7));
+                board.setB_img(rs.getString(6));
+                board.setB_text(rs.getString(7));
+                board.setB_date(rs.getDate(8));
 
                 boards.add(board);
             }
@@ -68,8 +72,9 @@ public class BoardFreeDAO {
                 board.setB_name(rs.getString(3));
                 board.setB_begin(rs.getString(4));
                 board.setB_title(rs.getString(5));
-                board.setB_text(rs.getString(6));
-                board.setB_date(rs.getDate(7));
+                board.setB_img(rs.getString(6));
+                board.setB_text(rs.getString(7));
+                board.setB_date(rs.getDate(8));
 
                 request.setAttribute("board", board);
             }
@@ -81,30 +86,35 @@ public class BoardFreeDAO {
         }
     }
 
-
     public static void addBoardFree(HttpServletRequest request) {
+        String path = request.getServletContext().getRealPath("jsp/board/board_free/board_free_img");
         con = null;
         PreparedStatement pstmt = null;
-        String sql = "insert into board_free_table values(board_free_table_seq.nextval, ?,?,?,?,?, sysdate)";
 try {
+    MultipartRequest mr = new MultipartRequest(request, path, 1024 * 1024 * 20, "utf-8",
+            new DefaultFileRenamePolicy());
+    String sql = "insert into board_free_table values(board_free_table_seq.nextval, ?,?,?,?,?,?, sysdate)";
     request.setCharacterEncoding("utf-8");
-    String id = request.getParameter("id");
-    String name = request.getParameter("name");
-    String begin = request.getParameter("begin");
-    String title = request.getParameter("title");
-    String text = request.getParameter("text");
+    String id = mr.getParameter("id");
+    String name = mr.getParameter("name");
+    String begin = mr.getParameter("begin");
+    String title = mr.getParameter("title");
+    String img = mr.getOriginalFileName("img");
+    String text = mr.getParameter("text");
     con = DBManager.connect();
     pstmt = con.prepareStatement(sql);
     pstmt.setString(1, id);
     pstmt.setString(2, name);
     pstmt.setString(3, begin);
     pstmt.setString(4, title);
-    pstmt.setString(5, text);
+    pstmt.setString(5, img);
+    pstmt.setString(6, text);
 
     System.out.println(id);
     System.out.println(name);
     System.out.println(begin);
     System.out.println(title);
+    System.out.println(img);
     System.out.println(text);
 
     if (pstmt.executeUpdate() > 0) {
@@ -144,18 +154,20 @@ try {
     public static void updatBoardFree(HttpServletRequest request) {
         Connection con = null;
         PreparedStatement pstmt = null;
-        String sql = "Update board_free_table set b_begin=?, b_title = ?,b_text = ? where b_no = ?";
+        String sql = "Update board_free_table set b_begin=?, b_title = ?, b_img = ?, b_text = ? where b_no = ?";
         String no = request.getParameter("no");
         String begin = request.getParameter("begin");
         String title = request.getParameter("title");
+        String img = request.getParameter("img");
         String text = request.getParameter("text");
         try{
             con = DBManager.connect();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, begin);
             pstmt.setString(2, title);
-            pstmt.setString(3, text);
-            pstmt.setString(4, no);
+            pstmt.setString(3, img);
+            pstmt.setString(4, text);
+            pstmt.setString(5, no);
             if (pstmt.executeUpdate() > 0) {
                 System.out.println("업뎃성공");
             }

@@ -18,7 +18,7 @@ request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BoardNoticeDAO.addBoardFree(request);
-        response.sendRedirect("BoardAnimeC");
+        response.sendRedirect("BoardNoticeC");
     }
 
 }

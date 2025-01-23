@@ -1,20 +1,28 @@
 
 create table board_free_table (
                                    b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char) primary key,
+                                   b_id varchar2(20 char),
                                    b_name varchar2(20 char) not null,
                                    b_begin varchar2(40 char) not null,
                                    b_title varchar2(200 char) not null,
+                                   b_img varchar2(200 char) not null,
                                    b_text varchar2(4000 char) not null,
                                    b_date date not null,
                                    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
                                    FOREIGN KEY (b_name) REFERENCES account_table_hdh(nickname) ON DELETE CASCADE
 );
+ALTER TABLE board_free_table
+    DROP PRIMARY KEY;
 
 
 create sequence board_free_table_seq;
 
-insert into board_free_table values (board_table_test_seq.nextval,'sgh', '456번', '가입인사','안녕하세요' ,'코난이 참 좋아요', sysdate);
+SELECT MAX(b_no) FROM board_free_table;
+
+DROP SEQUENCE board_free_table_seq;
+
+
+insert into board_free_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요' ,'c.jpg','코난이 참 좋아요', sysdate);
 
 select * from board_free_table;
 
@@ -33,7 +41,7 @@ CREATE TABLE board_free_comment (
 
 create sequence board_free_comment_seq;
 
-insert into board_free_comment (b_no, c_writer, c_content, c_date)values (192,'호잇이계속되면', '좋은글입니다.', systimestamp);
+insert into board_free_comment (b_no, c_writer, c_content, c_date)values (223,'호잇이계속되면', '좋은글입니다.', systimestamp);
 select * from board_free_comment;
 
 drop table board_free_comment;
@@ -41,10 +49,11 @@ drop table board_free_comment;
 
 create table board_movie_table (
                                   b_no varchar2(20 char) unique,
-                                  b_id varchar2(20 char) primary key,
+                                  b_id varchar2(20 char),
                                   b_name varchar2(20 char) not null,
                                   b_begin varchar2(40 char) not null,
                                   b_title varchar2(200 char) not null,
+                                  b_img varchar2(200 char) not null,
                                   b_text varchar2(4000 char) not null,
                                   b_date date not null,
 FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
@@ -54,7 +63,7 @@ FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
 
 create sequence board_movie_table_seq;
 
-insert into board_movie_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요' ,'코난이 참 좋아요', sysdate);
+insert into board_movie_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요', 'a.jpg' ,'코난이 참 좋아요', sysdate);
 
 select * from board_movie_table;
 
@@ -73,7 +82,7 @@ CREATE TABLE board_movie_comment (
 
 create sequence board_movie_comment_seq;
 
-insert into board_movie_comment (b_no, c_writer, c_content, c_date)values (209, '호잇이계속되면', '좋은글입니다.', systimestamp);
+insert into board_movie_comment (b_no, c_writer, c_content, c_date)values (224, '호잇이계속되면', '좋은글입니다.', systimestamp);
 select * from board_movie_comment;
 
 drop table board_movie_comment;
@@ -82,10 +91,11 @@ drop table board_movie_comment;
 
 create table board_notice_table (
                                    b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char) primary key,
+                                   b_id varchar2(20 char),
                                    b_name varchar2(20 char) not null,
                                    b_begin varchar2(40 char) not null,
                                    b_title varchar2(200 char) not null,
+                                   b_img varchar2(200 char) not null,
                                    b_text varchar2(4000 char) not null,
                                    b_date date not null,
                                    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
@@ -95,7 +105,7 @@ create table board_notice_table (
 
 create sequence board_notice_table_seq;
 
-insert into board_notice_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요' ,'코난이 참 좋아요', sysdate);
+insert into board_notice_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요','b.jpg','코난이 참 좋아요', sysdate);
 
 select * from board_notice_table;
 
@@ -114,7 +124,7 @@ CREATE TABLE board_notice_comment (
 
 create sequence board_notice_comment_seq;
 
-insert into board_notice_comment (b_no, c_writer, c_content, c_date)values (204, '호잇이계속되면', '좋은글입니다.', systimestamp);
+insert into board_notice_comment (b_no, c_writer, c_content, c_date)values (225, '호잇이계속되면', '좋은글입니다.', systimestamp);
 select * from board_notice_comment;
 
 drop table board_notice_comment;
@@ -122,10 +132,11 @@ drop table board_notice_comment;
 
 create table board_anime_table (
                                    b_no varchar2(20 char) unique,
-                                   b_id varchar2(20 char) primary key,
+                                   b_id varchar2(20 char),
                                    b_name varchar2(20 char) not null,
                                    b_begin varchar2(40 char) not null,
                                    b_title varchar2(200 char) not null,
+                                   b_img varchar2(200 char) not null,
                                    b_text varchar2(4000 char) not null,
                                    b_date date not null,
                                    FOREIGN KEY (b_id) REFERENCES account_table_hdh(id) ON DELETE CASCADE,
@@ -135,7 +146,7 @@ create table board_anime_table (
 
 create sequence board_anime_table_seq;
 
-insert into board_anime_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요' ,'코난이 참 좋아요', sysdate);
+insert into board_anime_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요','c.jpg','코난이 참 좋아요', sysdate);
 
 select * from board_anime_table;
 
@@ -154,7 +165,7 @@ CREATE TABLE board_anime_comment (
 
 create sequence board_anime_comment_seq;
 
-insert into board_anime_comment (b_no, c_writer, c_content, c_date)values (206,'호잇이계속되면', '좋은글입니다.', systimestamp);
+insert into board_anime_comment (b_no, c_writer, c_content, c_date)values (226,'호잇이계속되면', '좋은글입니다.', systimestamp);
 select * from board_anime_comment;
 
 drop table board_anime_comment;

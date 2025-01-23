@@ -33,9 +33,7 @@ create table account_table_hdh (
     pw_check varchar2(20 char) not null,
     nickname varchar2(20 char) not null,
 
-
     -- no(pk) 외에 유니크 제약 조건 추가
-
     constraint unique_nickname unique (nickname),
     constraint unique_e_mail unique (e_mail),
     constraint unique_id unique (id)
@@ -46,6 +44,8 @@ insert into account_table_hdh values(account_table_hdh_seq.nextval,'홍길동', 
 insert into account_table_hdh values(account_table_hdh_seq.nextval,'성기훈', '1980', '04', '04','남', 'sgh456@gmail.com', 'sgh456', 'sgh456', 'sgh456', '456번');
 
 select * from account_table_hdh;
+
+-- drop table account_table_hdh;
 
 update account_table_hdh
 set e_mail = 'aaatest'

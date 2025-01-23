@@ -18,10 +18,12 @@ public class BoardFreeDTO {
     private String b_name;
     private String b_begin;
     private String b_title;
+    private String b_img;
     private String b_text;
     private Date b_date;
 
-    public String getFormattedDate() {
+
+	public String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return sdf.format(b_date);
     }

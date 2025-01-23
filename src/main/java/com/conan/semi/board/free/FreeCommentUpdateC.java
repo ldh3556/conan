@@ -1,4 +1,4 @@
-import com.conan.semi.board.free.FreeCommentDAO;
+package com.conan.semi.board.free;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

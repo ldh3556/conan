@@ -12,12 +12,12 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardFreeRegC" method="post" onsubmit="regBoard(e)">
+<form action="BoardFreeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
     <div>
-        id <input name="id">
+        <input name="id" value="${sessionScope.user.id }" type="hidden">
     </div>
     <div>
-        name <input name="name">
+        name <input name="name" value="${sessionScope.user.nickname }" readonly>
     </div>
     <div>
         말머리 선택 : <select name="begin">
@@ -28,6 +28,7 @@
     <div>
         title <input name="title">
     </div>
+    <div><input type="file" name="img"></div>
     <div>
         text
         <textarea name="text" maxlength="4000"></textarea>

@@ -19,7 +19,9 @@
         <div>
             <div>작성인 : ${board.b_name }</div>
             <div>${board.b_begin }</div>
+            <div><img style="width: 60px; height: 60px" src="jsp/board/board_free/board_free_img/${board.b_img }"></div>
             <div class="board-reg-col">Title</div>
+
             <div class="board-reg-col2">
                 <input name="title" value="${board.b_title }" disabled="disabled">
                 <%-- 					${review.r_title } --%>
@@ -64,7 +66,7 @@
         <input type="hidden" name="no" value="${board.b_no}">
         <div>
             <label for="c_writer">이름:</label>
-            <input type="text" id="c_writer" name="c_writer" required>
+            <input type="text" id="c_writer" value="${sessionScope.user.nickname }" name="c_writer" readonly required>
         </div>
         <div>
             <label for="c_content">댓글:</label>

@@ -14,14 +14,14 @@
 </head>
 <body>
 <div class="board-container">
-  <div class="board-title"><a href="BoardHC"><h1>게시판</h1></a></div>
+  <div class="board-title"><a href="BoardHC"><h1>Community</h1></a></div>
+  <div><a href="HC">home</a></div>
   <hr>
-  <div><a href="BoardFreeRegC">글쓰기</a></div>
   <div class="board-menu">
-    <div> <a href="BoardNoticeC">공지</a></div>
-    <div> <a href="BoardFreeC">자유 게시판</a></div>
-    <div> <a href="BoardAnimeC">애니&만화 후기 게시판</a></div>
-    <div> <a href="BoardMovieC">영화 후기 게시판</a></div>
+    <div> <a href="BoardNoticeC">[공지사항]</a></div>
+    <div> <a href="BoardFreeC">[자유게시판]</a></div>
+    <div> <a href="BoardAnimeC">[애니&만화 후기게시판]</a></div>
+    <div> <a href="BoardMovieC">[영화 후기게시판]</a></div>
 </div>
   <hr>
 <div class="content">

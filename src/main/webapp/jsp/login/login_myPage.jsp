@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             color: white;
-            background-color: #333; /* 배경색 추가 */
+            background-color: white; /* 배경색 추가 */
         }
 
         h1 {
@@ -29,8 +29,35 @@
         }
 
         .top-group {
-            border: 3pt solid blue;
-            padding: 20px; /* 내부에 패딩 추가 */
+            /*padding: 20px;*/
+            height: 180px
+        }
+
+        /* 명탐정 코난 로고 */
+        .top-group img {
+            position: absolute;
+            top: 10px; /* 이미지의 위쪽 조정 */
+            left: 30px; /* 이미지의 왼쪽을 조정 */
+            z-index: 2; /* 이미지가 다른 요소들 위에 오도록 설정 */
+            width: 100px
+        }
+
+        /* 메인으로 버튼 */
+        .back-btn {
+            background: #001a6d;
+            color: white;
+            position: absolute;
+            left: 150px;
+        }
+
+        input-group {
+            width: 100%;
+            height: 120px;
+            background: black;
+            border-radius: 50px;
+            z-index: 0;
+            position: absolute;
+            top: 230px;
         }
 
         .input-group input[type="text"] {
@@ -41,24 +68,72 @@
             width: 300px;
         }
 
-        /* 동그란 코난 사진 위치 */
+        /* 동그란 코난 프로필 사진 */
         .input-group img {
             position: absolute;
-            top: -20px; /* 이미지의 위쪽 조정 */
-            left: 30px; /* 이미지의 왼쪽을 조정 */
-            z-index: 2; /* 이미지가 다른 요소들 위에 오도록 설정 */
+            top: 253px;
+            left: 200px;
+            z-index: 2;
+            width: 100px
+        }
+
+        /* 닉네임 "~님" */
+        .input-group span {
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 305px;
+            left: 295px;
+            z-index: 5;
+            width: 200px;
+            margin-left: 10px;
+            font-weight: bold;
         }
 
         .include-group {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             height: 400px;
-            padding: 20px; /* 내부에 패딩 추가 */
+            padding: 50px 20px;
+            background: #001a6d;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            top: 300px;
         }
 
+        .include-group-1 {
+            margin-top: 50px;
+            width: 600px;
+            height: 300px;
+            background: white;
+            border-radius: 10px;;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
 
         .include-group button {
             margin-left: 10px;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* MY PROFILE */
+        .include-group span {
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 60px;
+            left: 200px;
+            z-index: 2;
+            width: 200px;
+            font-weight: bold;
         }
 
         /* 프로필 섹션 */
@@ -90,24 +165,24 @@
 <body>
 
 <!-- 첫 번째 필드 -->
-<div class="top-group" style="border: 3pt solid green; height: 180px">
-    <img src="/img/index/logoimg.png">
-    <button type="button" class="back-btn" onclick="location.href='index.jsp'" style="background: #001a6d; color: white"> 메인으로</button>
+<div class="top-group">
+    <img src="img/index/logoimg.png">
+    <button type="button" class="back-btn" onclick="location.href='index.jsp'"> 메인으로</button>
 </div>
 
 <!-- 두 번째 필드 -->
-<div class="input-group" style="width: 100%; height: 120px; background: #001a6d; border-radius: 50px; z-index: 0; position: absolute; top: 230px;">
-    <img src="/img/index/aaaa.png" style="width: 100px">
-    <span style="margin-left: 150px;">${sessionScope.user.nickname} 님 </span> <br>
+<div class="input-group">
+    <img src="img/index/aaaa.png">
+    <span>${sessionScope.user.nickname} 님 </span> <br>
 </div>
 
-<!-- 세 번째 필드 -->
-<div class="include-group" style="background: #001a6d; width: 100%; z-index: 1; position: absolute; top: 300px;" >
-    <div style="margin-top: 20px; width: 600px; height: 300px; background: white; border-radius: 10px; padding: 10px; display: flex; flex-direction: column">
-        <span style="color: black; padding: 10px;">MY PROFILE</span>
-        <textarea style="border:none; resize: none; width: 100%; height: 100%;"></textarea>
+<!-- 세 번째 필드 (jsp include 사용할 예상) -->
+<div class="include-group">
+    <div class="include-group-1">
+        <span>MY PROFILE</span>
+        <textarea></textarea>
     </div>
-    <div>
+    <div class="include-group-2">
         <button class="edit-account-btn" onclick="location.href='MyPage_Edit_AccountC'"> 회원정보 수정</button>
         <button class="edit-icon-btn" onclick="location.href='아이콘 변경 페이지'"> 프로필 아이콘 변경</button>
         <button class="edit-bg-btn" onclick="location.href='배경 변경 페이지'"> 배경이미지 변경</button>

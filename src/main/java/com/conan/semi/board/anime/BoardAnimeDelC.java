@@ -15,7 +15,7 @@ public class BoardAnimeDelC extends HttpServlet {
         BoardAnimeDAO.showAllBoardFree(request);
 
         BoardAnimeDAO.delBoardFree(request);
-        response.sendRedirect("/BoardHC");
+        response.sendRedirect("/BoardAnimeC");
 
     }
 

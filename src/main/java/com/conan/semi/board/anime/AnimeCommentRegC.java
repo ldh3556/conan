@@ -23,7 +23,7 @@ public class AnimeCommentRegC extends HttpServlet {
       request.setCharacterEncoding("utf-8");
       AnimeCommentDAO.addComment(request);
         AnimeCommentDAO.showAllComment(request);
-        request.setAttribute("content", "board_free/board_anime_detail.jsp");
+        request.setAttribute("content", "board_anime/board_anime_detail.jsp");
         request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
 
     }

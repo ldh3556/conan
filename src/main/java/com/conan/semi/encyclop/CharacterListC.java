@@ -1,4 +1,5 @@
 package com.conan.semi.encyclop;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -66,6 +67,8 @@ public class CharacterListC extends HttpServlet {
         request.getRequestDispatcher("/jsp/encyclop/character.jsp").forward(request, response);
     }
 
+
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,4 +76,3 @@ public class CharacterListC extends HttpServlet {
         doGet(request, response);
     }
 }
-

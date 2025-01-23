@@ -21,7 +21,7 @@ request.getRequestDispatcher("jsp/board/board.jsp").forward(request, response);
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         BoardNoticeDAO.updatBoardFree(request);
-        response.sendRedirect("BoardAnimeC");
+        response.sendRedirect("BoardNoticeC");
 
     }
 

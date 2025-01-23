@@ -15,6 +15,7 @@
 <body>
 <div class="board-container">
   <div class="board-title"><a href="BoardHC"><h1>Community</h1></a></div>
+  <div><a href="HC">home</a></div>
   <hr>
   <div class="board-menu">
     <div> <a href="BoardNoticeC">[공지사항]</a></div>

@@ -15,7 +15,7 @@ public class BoardNoticeDelC extends HttpServlet {
         BoardNoticeDAO.showAllBoardFree(request);
 
         BoardNoticeDAO.delBoardFree(request);
-        response.sendRedirect("/BoardHC");
+        response.sendRedirect("/BoardNoticeC");
 
     }
 

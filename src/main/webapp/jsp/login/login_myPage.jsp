@@ -71,21 +71,30 @@
         /* 동그란 코난 프로필 사진 */
         .input-group img {
             position: absolute;
-            top: 253px; /* 이미지의 위쪽 조정 */
-            left: 200px; /* 이미지의 왼쪽을 조정 */
-            z-index: 2; /* 이미지가 다른 요소들 위에 오도록 설정 */
+            top: 253px;
+            left: 200px;
+            z-index: 2;
             width: 100px
         }
 
-        span {
+        /* 닉네임 "~님" */
+        .input-group span {
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 305px;
+            left: 295px;
+            z-index: 5;
+            width: 200px;
             margin-left: 10px;
+            font-weight: bold;
         }
 
         .include-group {
             display: flex;
-            justify-content:space-evenly;
+            justify-content: space-evenly;
             height: 400px;
-            padding: 50px 20px; /* 내부에 패딩 추가 */
+            padding: 50px 20px;
             background: #001a6d;
             width: 100%;
             z-index: 1;
@@ -109,22 +118,22 @@
         }
 
         textarea {
-            border:none;
+            border: none;
             resize: none;
             width: 100%;
             height: 100%;
         }
 
-        /* 닉네임 */
-        span {
+        /* MY PROFILE */
+        .include-group span {
             color: white;
             padding: 10px;
             position: absolute;
-            top: 300px;
-            left: 400px;
+            top: 60px;
+            left: 200px;
             z-index: 2;
-            width: 200px
-
+            width: 200px;
+            font-weight: bold;
         }
 
         /* 프로필 섹션 */
@@ -167,7 +176,7 @@
     <span>${sessionScope.user.nickname} 님 </span> <br>
 </div>
 
-<!-- 세 번째 필드 -->
+<!-- 세 번째 필드 (jsp include 사용할 예상) -->
 <div class="include-group">
     <div class="include-group-1">
         <span>MY PROFILE</span>

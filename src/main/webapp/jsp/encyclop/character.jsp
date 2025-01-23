@@ -60,15 +60,19 @@
                         <option value="6" <c:if test="${currentCategory == '6'}">selected</c:if>>검은조직</option>
                         <option value="7" <c:if test="${currentCategory == '7'}">selected</c:if>>지방청</option>
                     </select>
-
                 </form>
             </div>
         </div>
         <!-- 선택된 그룹이나 세력 표시용 라벨 (예시) -->
         <div class="chara_union_label">
-            <c:if test="${currentCategory != 'all'}">
-                ${currentCategory}
-            </c:if>
+            <c:choose>
+                <c:when test="${currentCategory != 'all'}">
+                    선택된 카테고리: ${currentCategoryName}
+                </c:when>
+                <c:otherwise>
+                    모든 캐릭터
+                </c:otherwise>
+            </c:choose>
         </div>
 
         <!-- 캐릭터 목록 전체 wrapper -->

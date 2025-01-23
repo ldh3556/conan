@@ -12,7 +12,6 @@ public class AnimeCommentDelC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 request.setCharacterEncoding("utf-8");
 String b_no = request.getParameter("b_no");
-System.out.println(b_no);
          AnimeCommentDAO.deleteComment(request);
 response.sendRedirect("/BoardAnimeDetailC?no="+b_no);
     }

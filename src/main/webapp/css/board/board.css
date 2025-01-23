@@ -1,0 +1,155 @@
+.board_wrapper{
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background: url("/img/index/sec_bg_2.jpg");
+    background-size: cover;
+    text-decoration: none;
+    color: black;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.board_wrap{
+    margin-top: 120px;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.board_title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.5);
+    background: white;
+}
+
+.board_menu {
+    display: flex;
+    gap: 20px;
+}
+
+.board_menu div {
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 30px;
+    width: fit-content;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+}
+
+.board_menu div:hover{
+    background-color: #001A6D;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.board_menu div a{
+    color: black;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.board_menu div a:visited{
+    color: black;
+}
+
+.board_menu div:hover a{
+    color: #FFFFFF;
+}
+
+.content {
+    padding: 30px;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+    background: #ffffff;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#result {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+#result a {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.search_box{
+    text-align: right;
+}
+
+input#search-input {
+    border: none;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+button#search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    color: #001a6d;
+}
+
+
+
+.board_con{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.board_box{
+    padding: 30px;
+    display:flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+
+}
+
+.pagination {
+    width: 100%;
+    display: flex
+;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagination a {
+    color: black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.pagination a:active{
+    color: #eda127;
+    font-weight: 600;
+}
+
+.pagination a:hover{
+    color: #eda127;
+    font-weight: 600;
+}

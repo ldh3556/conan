@@ -15,7 +15,7 @@ public class BoardMovieDelC extends HttpServlet {
         BoardMovieDAO.showAllBoardFree(request);
 
         BoardMovieDAO.delBoardFree(request);
-        response.sendRedirect("/BoardHC");
+        response.sendRedirect("/BoardMovieC");
 
     }
 

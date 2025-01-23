@@ -661,10 +661,13 @@ INSERT INTO character_category_map (char_id, category_id) VALUES (49, 6);
 INSERT INTO character_category_map (char_id, category_id) VALUES (50, 6);
 INSERT INTO character_category_map (char_id, category_id) VALUES (50, 4);
 
-SELECT c.id, c.name
+SELECT c.id, c.name, c.age, c.quote, c.description, c.button_image, c.main_image
 FROM characters_test_nr c
-         JOIN character_category_map m
-              ON c.id = m.char_id
-         JOIN categories cat
-              ON m.category_id = cat.category_id
-WHERE cat.category_name = '모리 탐정사무소';
+        JOIN character_category_map m ON c.id = m.char_id
+WHERE m.category_id = 1; -- 1번 카테고리(예: 모리 탐정 사무소)
+
+SELECT c.id, c.name, c.age, c.quote, c.description, c.button_image, c.main_image
+FROM characters_test_nr c
+        JOIN character_category_map m ON c.id = m.char_id
+WHERE m.category_id = 1
+ORDER BY c.name ASC;

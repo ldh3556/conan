@@ -112,7 +112,7 @@ create sequence board_notice_table_seq;
 
 insert into board_notice_table values (board_table_test_seq.nextval,'dul', '호잇이계속되면', '가입인사','안녕하세요','b.jpg','코난이 참 좋아요', sysdate);
 
-select * from board_notice_table;
+select * from board_notice_table order by b_date desc ;
 
 drop table board_notice_table;
 

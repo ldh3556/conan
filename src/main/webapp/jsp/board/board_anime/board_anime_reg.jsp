@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="BoardFreeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
+<form action="BoardAnimeRegC" method="post" enctype="multipart/form-data" onsubmit="regBoard(e)">
     <div>
         <input name="id" value="${sessionScope.user.id }" type="hidden">
     </div>

@@ -1,7 +1,11 @@
 package com.conan.semi.encyclop;
+
 import com.conan.semi.DBManager;
+
 import javax.servlet.http.HttpServletRequest;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -92,29 +96,29 @@ public class CharacterDAO {
     }
 
     public String getCategoryNameById(int categoryId) {
-            String categoryName = null;
-            Connection con = null;
-            PreparedStatement pstmt = null;
-            ResultSet rs = null;
+        String categoryName = null;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
 
-            try {
-                con = DBManager.connect(); // 데이터베이스 연결
-                String sql = "SELECT category_name FROM categories WHERE category_id = ?"; // SQL 쿼리
-                pstmt = con.prepareStatement(sql);
-                pstmt.setInt(1, categoryId); // 파라미터 바인딩
-                rs = pstmt.executeQuery();
+        try {
+            con = DBManager.connect(); // 데이터베이스 연결
+            String sql = "SELECT category_name FROM categories WHERE category_id = ?"; // SQL 쿼리
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, categoryId); // 파라미터 바인딩
+            rs = pstmt.executeQuery();
 
-                if (rs.next()) {
-                    categoryName = rs.getString("category_name"); // 카테고리 이름 가져오기
-                }
-            } catch (Exception e) {
-                e.printStackTrace(); // 예외 출력
-            } finally {
-                DBManager.close(con, pstmt, rs); // 리소스 닫기
+            if (rs.next()) {
+                categoryName = rs.getString("category_name"); // 카테고리 이름 가져오기
             }
-
-            return categoryName;
+        } catch (Exception e) {
+            e.printStackTrace(); // 예외 출력
+        } finally {
+            DBManager.close(con, pstmt, rs); // 리소스 닫기
         }
+
+        return categoryName;
+    }
 
     /**
      * 특정 카테고리 ID와 정렬 옵션에 따라 캐릭터 목록을 조회하는 메서드

@@ -18,7 +18,7 @@
 <body>
 <div class="board_wrapper">
     <div class="header">
-        <button class="menu_button">
+
         </button>
         <a class="conan_logo" href="/index.jsp">
             <img src="/img/index/logoimg.png">

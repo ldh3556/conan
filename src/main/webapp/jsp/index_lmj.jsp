@@ -17,7 +17,7 @@
 <div class="wrapper">
 
     <div class="header">
-        <button class="menu_button">
+
         </button>
         <div class="conan_logo">
             <img src="/img/index/logoimg.png">
@@ -232,7 +232,7 @@
         </div>
 
     </div>
-    <div class="footer">
+    <div class="footer" style="color: white">
         <a>이용약관</a>
         <a>개인정보 처리방침</a>
         <a>About us</a>

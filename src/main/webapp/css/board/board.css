@@ -257,10 +257,7 @@ textarea{
     transition: all 0.2s;
 }
 
-button a:active, button:active{
-    background: #001A6D;
-    color: white;
-}
+
 
 .buttons:hover a{
     color: #FFFFFF;

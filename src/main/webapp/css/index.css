@@ -53,7 +53,10 @@ button.menu_button {
     position: absolute;
     right: 0;
     text-align: right;
-
+    color: black;
+    background: white;
+    border-radius: 5rem;
+    padding-left: 40px;
 }
 
 .account_wrapper > span{
@@ -69,7 +72,7 @@ button.menu_button {
 
 .login_text > a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .login_text > a:hover{

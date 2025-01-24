@@ -51,7 +51,7 @@
 <body>
 
 <div class="header">
-    <button class="menu_button">
+
         <%-- 야 안누리 메뉴버튼에 넣을거 만들어야 된다--%>
     </button>
     <a class="conan_logo" href="/index.jsp">

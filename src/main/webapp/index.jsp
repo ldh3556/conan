@@ -17,30 +17,26 @@
 <link rel="stylesheet" href="/css/menu_bar.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <body>
-<div class="menu_bar">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide menu">Menu slide</div>
-        <div class="swiper-slide content">
-            <div class="menu-button">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+<div class="wrapper">
+    <div class="menu_bar" style="visibility: hidden">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide content">
+
             </div>
         </div>
     </div>
-</div>
-<div class="wrapper">
-
     <div class="header">
-        <button class="menu_button">
+        <div class="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         </button>
         <div class="conan_logo">
             <img src="/img/index/logoimg.png">
         </div>
         <jsp:include page="${loginPage}"></jsp:include>
     </div>
-
-
     <div class="index_Sec01">
         <div class="index_Sec01_L">
             <a class="playlogo_wrapper" href="/jsp/game/loading/loading.jsp">
@@ -243,7 +239,7 @@
         </div>
 
     </div>
-    <div class="footer">
+    <div class="footer" style="color: white">
         <a>이용약관</a>
         <a>개인정보 처리방침</a>
         <a>About us</a>

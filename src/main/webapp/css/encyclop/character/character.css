@@ -44,10 +44,12 @@
     left: 0px;
     top: 0px;
     z-index: 100;
+    color: white;
 }
 
 .menu_button {
     /* menu button 이미지 첨부 클릭시 메뉴 오픈*/
+    visibility: hidden;
     width: 60px;
     height: 60px;
     position: absolute;
@@ -93,7 +95,7 @@ bottom: 16.67%;
     line-height: 33px;
     /* identical to box height */
 
-    color: #000000;
+    color: #FFFFFF;
 }
 .header_login_inner{
     /*아이콘 옆 로그인, 회원가입 열 / 로그인 상태 열*/

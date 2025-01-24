@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/ost_contentC")
-public class Ost_contentC extends HttpServlet {
+public class
+Ost_contentC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        OstDAO.loginJudge(request);
 //        OstDAO.getBracket(request);

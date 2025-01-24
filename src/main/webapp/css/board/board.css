@@ -136,6 +136,7 @@ button#search-btn {
     display: flex;
     flex-direction: row;
     gap: 20px   ;
+    align-items: center;
 }
 
 select{
@@ -145,7 +146,21 @@ select{
     border: none;
 }
 
+.comment{
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
+    border: none;
+}
+
+
+hr{
+    margin: 20px 0;
+}
+
 button{
+    width: fit-content;
     padding: 10px 20px;
     border-radius: 10px;
     border:none;
@@ -162,6 +177,7 @@ button{
     gap: 30px;
     padding: 10px;
     text-decoration: none;
+    align-items: center;
 }
 
 .board_box div:last-child{
@@ -184,7 +200,8 @@ input{
     box-shadow: 0 0 10px 4px rgba(0,0,0,0.15);
 }
 
-textarea {
+textarea{
+    width: 50%;
     border-radius: 10px;
     border: none;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.15);
@@ -244,9 +261,11 @@ button a:active, button:active{
     background: #001A6D;
     color: white;
 }
-.buttons{
-    background: #001A6D;
-}
+
 .buttons:hover a{
     color: #FFFFFF;
+}
+
+.buttons:hover{
+    background: #001A6D;
 }

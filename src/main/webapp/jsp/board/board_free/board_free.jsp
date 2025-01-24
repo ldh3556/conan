@@ -48,7 +48,7 @@
     </div>
     <div class="under_buttons">
         <div class="buttons">
-            <a href="BoardNoticeRegC">글쓰기</a>
+            <a href="BoardFreeRegC">글쓰기</a>
         </div>
     </div>
 </div>

@@ -26,9 +26,11 @@
                 <p id="content-${comment.c_no}" style="display: block;">${comment.c_content}</p>
                 <textarea id="textarea-${comment.c_no}" style="display: none;" rows="4">${comment.c_content}</textarea>
                 <!-- 수정 및 삭제 버튼 -->
-                <button id="edit-btn-${comment.c_no}" onclick="editCommentNotice(${comment.c_no})">수정</button>
-                <button id="save-btn-${comment.c_no}" onclick="saveCommentNotice(${comment.c_no})" style="display: none;">저장</button>
-                <button onclick="deleteCommentNotice(${comment.c_no}, ${comment.b_no})">삭제</button>
+                <div class="div_flex">
+                    <button id="edit-btn-${comment.c_no}" onclick="editCommentNotice(${comment.c_no})">수정</button>
+                    <button id="save-btn-${comment.c_no}" onclick="saveCommentNotice(${comment.c_no})" style="display: none;">저장</button>
+                    <button onclick="deleteCommentNotice(${comment.c_no}, ${comment.b_no})">삭제</button>
+                </div>
             </div>
             <hr>
         </c:forEach>

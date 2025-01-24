@@ -4,134 +4,137 @@
 /* 새로운 wrapper 추가 */
 
 .ost_wrapper {
-
-body{
-  background-image: url("/img/index/sec_bg_2.jpg");
 }
-.round-wrapper {
+  body {
+    background-image: url("/img/index/sec_bg_2.jpg");
+  }
 
-  display: flex;
-  flex-direction: row; /* round 요소들을 가로로 정렬 */
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px; /* 각 round 사이에 간격 추가 */
-  width: 100%; /* 부모 영역에 꽉 차도록 설정 */
-  flex-wrap: wrap; /* 공간에 맞춰 자동으로 줄 바꿈 */
-  /*border: 1px solid black;*/
-  /*background-color: rgba(191, 191, 191, 0.8);*/
-  background-image: url("/img/index/sec_bg_1.jpg");
-  border-radius: 1rem;
-  margin-top: 120px;
-}
+  .round-wrapper {
 
-.round {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 500px; /* 전체 높이 고정 */
-  margin: 40px;
-  position: relative;
-  width: 120px; /* 각 라운드가 일정한 너비를 가지도록 설정 */
-}
+    display: flex;
+    flex-direction: row; /* round 요소들을 가로로 정렬 */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* 각 round 사이에 간격 추가 */
+    width: 100%; /* 부모 영역에 꽉 차도록 설정 */
+    flex-wrap: wrap; /* 공간에 맞춰 자동으로 줄 바꿈 */
+    /*border: 1px solid black;*/
+    /*background-color: rgba(191, 191, 191, 0.8);*/
+    background-image: url("/img/index/sec_bg_1.jpg");
+    border-radius: 1rem;
+    margin-top: 120px;
+  }
 
-.match {
-  width: 130px;
-  height: 55px;
-  border: 2px solid darkblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
-}
+  .round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px; /* 전체 높이 고정 */
+    margin: 40px;
+    position: relative;
+    width: 120px; /* 각 라운드가 일정한 너비를 가지도록 설정 */
+  }
 
-.defeated {
-  opacity: 0.5;
-  background-color: #ddd !important; /* 패배한 div의 스타일 */
-}
+  .match {
+    width: 130px;
+    height: 55px;
+    border: 2px solid darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
 
-.noneclick {
-  pointer-events: none;   /* 클릭 불가 */
-}
+  .defeated {
+    opacity: 0.5;
+    background-color: #ddd !important; /* 패배한 div의 스타일 */
+  }
 
-.win{
-  background-color: aquamarine;
-}
+  .noneclick {
+    pointer-events: none; /* 클릭 불가 */
+  }
 
-/* 중앙 위치 조정 */
-.s1 {
-  margin-top: 75px;
-}
+  .win {
+    background-color: aquamarine;
+  }
 
-.s2 {
-  margin-bottom: 75px;
-}
+  /* 중앙 위치 조정 */
 
-.s3 {
-  margin-top: 75px;
-}
+  .s1 {
+    margin-top: 75px;
+  }
 
-.s4 {
-  margin-bottom: 75px;
-}
+  .s2 {
+    margin-bottom: 75px;
+  }
 
-.f1 {
-  margin-top: 225px;
-}
+  .s3 {
+    margin-top: 75px;
+  }
 
-.f2 {
-  margin-top: 225px;
-}
+  .s4 {
+    margin-bottom: 75px;
+  }
 
-.modal {
-  display: none; /* 처음에는 숨김 */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+  .f1 {
+    margin-top: 225px;
+  }
 
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  text-align: center;
-  max-height: 80vh; /* 모달이 너무 커지지 않도록 제한 */
-  overflow-y: auto; /* 모달 내용이 많으면 스크롤 */
-  box-shadow: 0 0 10px 4px rgba(0,0,0,0.25);
-}
+  .f2 {
+    margin-top: 225px;
+  }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 18px;
-  cursor: pointer;
-}
+  .modal {
+    display: none; /* 처음에는 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
-.modal-buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    max-height: 80vh; /* 모달이 너무 커지지 않도록 제한 */
+    overflow-y: auto; /* 모달 내용이 많으면 스크롤 */
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
+  }
 
-/* 오디오와 가사 보기 버튼을 한 블록으로 묶고, 아래로 배치 */
-#show {
-  display: block;
-  margin-top: 10px; /* 오디오와 간격을 두기 위해 여백 추가 */
-}
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
 
-#hide {
-  margin-top: 10px; /* 가사 내용이 오디오와 버튼 사이에 여백을 두기 위한 간격 */
-}
+  .modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  /* 오디오와 가사 보기 버튼을 한 블록으로 묶고, 아래로 배치 */
+
+  #show {
+    display: block;
+    margin-top: 10px; /* 오디오와 간격을 두기 위해 여백 추가 */
+  }
+
+  #hide {
+    margin-top: 10px; /* 가사 내용이 오디오와 버튼 사이에 여백을 두기 위한 간격 */
+  }

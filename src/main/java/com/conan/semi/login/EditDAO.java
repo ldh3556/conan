@@ -14,7 +14,10 @@ public class EditDAO {
         String pw = request.getParameter("pw");
         String pw_check = request.getParameter("pw_check");
         String nickname = request.getParameter("nickname");
-
+        String text = request.getParameter("text");
+        if(text.isEmpty()){
+            text = "자기소개가 없습니다";
+        }
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -23,7 +26,7 @@ public class EditDAO {
         String id = user.getId();
         String oldNickname = user.getNickname();  // 기존 닉네임
 
-        String updateSQL = "update account_table_hdh set name=?, e_mail=?, pw=?, pw_check=?, nickname=? where id=?";
+        String updateSQL = "UPDATE account_table_hdh SET name=?, e_mail=?, pw=?, pw_check=?, nickname=?, text=? WHERE id=?";
 
         try {
             // DB 연결
@@ -39,44 +42,15 @@ public class EditDAO {
             if (!pw.equals(pw_check)) {
                 throw new SQLException("비밀번호가 일치하지 않습니다.");
             }
-
-            // 1. 자식 테이블에서 nickname 수정
-            String updateNicknameSQL = "update board_free_table set b_name = ? where b_name = ?";
-            pstmt = con.prepareStatement(updateNicknameSQL);
-            pstmt.setString(1, nickname);  // 새로운 닉네임
-            pstmt.setString(2, oldNickname);  // 기존 닉네임
-            pstmt.executeUpdate();
-
-            // board_movie_table 수정
-            pstmt.clearParameters();
-            pstmt = con.prepareStatement("update board_movie_table set b_name = ? where b_name = ?");
-            pstmt.setString(1, nickname);
-            pstmt.setString(2, oldNickname);
-            pstmt.executeUpdate();
-
-            // board_notice_table 수정
-            pstmt.clearParameters();
-            pstmt = con.prepareStatement("update board_notice_table set b_name = ? where b_name = ?");
-            pstmt.setString(1, nickname);
-            pstmt.setString(2, oldNickname);
-            pstmt.executeUpdate();
-
-            // board_anime_table 수정
-            pstmt.clearParameters();
-            pstmt = con.prepareStatement("update board_anime_table set b_name = ? where b_name = ?");
-            pstmt.setString(1, nickname);
-            pstmt.setString(2, oldNickname);
-            pstmt.executeUpdate();
-
             // 2. 부모 테이블 수정
-            pstmt.clearParameters();
             pstmt = con.prepareStatement(updateSQL);
             pstmt.setString(1, name);
             pstmt.setString(2, e_mail);
             pstmt.setString(3, pw);
             pstmt.setString(4, pw_check);
             pstmt.setString(5, nickname);
-            pstmt.setString(6, id);
+            pstmt.setString(6, text);
+            pstmt.setString(7, id);
 
             if (pstmt.executeUpdate() == 1) {
                 System.out.println("회원정보 수정 성공!");
@@ -84,6 +58,16 @@ public class EditDAO {
 
             // 트랜잭션 커밋
             con.commit();
+
+            // 3. 세션에 수정된 정보 반영
+            user.setName(name);
+            user.setE_mail(e_mail);
+            user.setPw(pw);
+            user.setNickname(nickname);
+            user.setText(text);
+
+            // 세션에 수정된 사용자 정보 저장
+            request.getSession().setAttribute("user", user);
 
         } catch (Exception e) {
             try {

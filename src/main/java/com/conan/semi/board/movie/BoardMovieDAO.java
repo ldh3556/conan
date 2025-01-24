@@ -19,7 +19,7 @@ public class BoardMovieDAO {
     public static void showAllBoardFree(HttpServletRequest request) {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "select * from board_movie_table ORDER BY b_date desc";
+        String sql = "select * from board_movie_table ORDER BY b_date ";
 
         try {
             System.out.println("connect --");
@@ -89,7 +89,7 @@ public class BoardMovieDAO {
 
 
     public static void addBoardFree(HttpServletRequest request) {
-        String path = request.getServletContext().getRealPath("jsp/board/board_movie/board_movie_img");
+        String path = request.getServletContext().getRealPath("/jsp/board/board_movie/board_movie_img");
         con = null;
         PreparedStatement pstmt = null;
         try {
@@ -192,7 +192,7 @@ public class BoardMovieDAO {
     System.out.println(pageNum);
         int total = boards.size();
         System.out.println(total);
-    int count = 5;
+    int count = 7;
         System.out.println(count);
     int pageCount = (int) Math.ceil((double)total / count);
     try {

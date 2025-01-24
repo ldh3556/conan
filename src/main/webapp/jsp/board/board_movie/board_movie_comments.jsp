@@ -15,11 +15,13 @@
 </head>
 <body>
 <c:choose>
-    <c:when test="${not empty freeComments}">
-        <c:forEach var="comment" items="${freeComments}">
+    <c:when test="${not empty movieComments}">
+        <c:forEach var="comment" items="${movieComments}">
             <div class="comment" id="comment-${comment.c_no}">
-                <strong>${comment.c_writer}</strong>
-                <p>${comment.formattedDate}</p>
+                <div class="board_box">
+                    <strong>${comment.c_writer}</strong>
+                    <p>${comment.formattedDate}</p>
+                </div>
                 <!-- 댓글 내용 -->
                 <p id="content-${comment.c_no}" style="display: block;">${comment.c_content}</p>
                 <textarea id="textarea-${comment.c_no}" style="display: none;" rows="4">${comment.c_content}</textarea>

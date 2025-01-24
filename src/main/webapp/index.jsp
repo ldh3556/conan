@@ -25,8 +25,7 @@
         <div class="conan_logo">
             <img src="/img/index/logoimg.png">
         </div>
-
-                <jsp:include page="${loginPage}"></jsp:include>
+        <jsp:include page="${loginPage}"></jsp:include>
     </div>
 
 
@@ -109,7 +108,7 @@
                         <div class="text" data-swiper-parallax="-100">
                             <p>
                                 미란이의 아버지이자, 탐정으로 활동중이다.<br>
-                                유능한 형사이더 그는 경찰을 은퇴하고 탐정사무소를 차렸다. 코난과 함께<br>
+                                유능한 형사이던 그는 경찰을 은퇴하고 탐정사무소를 차렸다. 코난과 함께<br>
                                 항상 온갖 사건 사고에 휘말리며, 코난은 그의 목소리를 빌려 사건을 해결한다.
                             </p>
                         </div>
@@ -127,7 +126,7 @@
                     </swiper-slide>
                     <swiper-slide class="charabox c05">
                         <div class="title" data-swiper-parallax="-300">유미란</div>
-                        <div class="subtitle" data-swiper-parallax="-200">남도일의 소쑵친구</div>
+                        <div class="subtitle" data-swiper-parallax="-200">남도일의 소꿉친구</div>
                         <div class="text" data-swiper-parallax="-100">
                             <p>
                                 아버지인 유명한 탐정을 따라다니며, 항상 사건에 휘말린다.<br>
@@ -149,12 +148,14 @@
             <div class="movie_box_wrapper">
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="">
+                        <img src="/img/index/sec03_banner_250122(1).jpg">
                     </div>
                     <div class="moviebox_text">
-                        <span>명탐정코난 X 선데이</span>
-                        <span>콜라보 확정!</span>
-                        <span>굿즈 출시</span>
+                        <p>25.01.22</p>
+                        <div class="span_wrap">
+                            <span>신규 굿즈</span>
+                            <span>[천문학자] 시리즈 출시!</span>
+                        </div>
                         <span class="to_go_movie_event">
                             자세히 보기
                             <span class="arrow"></span>
@@ -163,12 +164,15 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img>
+                        <img src="/img/index/sec03_banner_250122(2).jpg">
                     </div>
                     <div class="moviebox_text">
-                        <span>명탐정코난 :</span>
-                        <span>100만 달러의 펜타그램</span>
-                        <span>개봉!</span>
+                        <p>25.01.22</p>
+                        <div class="span_wrap">
+                            <span>주간 소년 선데이 8호</span>
+                            <span>오늘 발매!</span>
+                        </div>
+                        <span></span>
                         <span class="to_go_movie_event">
                             자세히 보기
                             <span class="arrow"></span>
@@ -177,11 +181,14 @@
                 </a>
                 <a class="moviebox_01">
                     <div class="movie_img">
-                        <img src="/img/index/sec03_img.jpg">
+                        <img src="/img/index/sec03_banner_241226(1).jpg">
                     </div>
                     <div class="moviebox_text">
-                        <span>소년 선데이 S 2월호</span>
-                        <span>절찬 발매 중</span>
+                        <p>24.12.26</p>
+                        <div class="span_wrap">
+                            <span>소년 선데이 S 2월호</span>
+                            <span>절찬 발매 중</span>
+                        </div>
                         <span></span>
                         <span class="to_go_movie_event">
                             자세히 보기

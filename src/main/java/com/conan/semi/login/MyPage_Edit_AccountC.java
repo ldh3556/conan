@@ -12,8 +12,7 @@ import java.sql.SQLException;
 public class MyPage_Edit_AccountC extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-//        // (X)어디로? -> 회원정보 수정 버튼 창
-//        request.setAttribute("myPage","login_myPage_1.jsp");
+//        // 어디로? -> 회원정보 수정할 [정보 입력 페이지]로 이동
         request.getRequestDispatcher("jsp/login/login_edit_account_input.jsp").forward(request, response);
     }
 

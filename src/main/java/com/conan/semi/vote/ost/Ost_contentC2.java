@@ -14,11 +14,8 @@ public class Ost_contentC2 extends HttpServlet {
         OstDAO.getBracket(req, resp);
         // 다음 페이지로 이동
         req.getRequestDispatcher("jsp/vote/ost/ost_content.jsp").forward(req, resp);
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
-
 }

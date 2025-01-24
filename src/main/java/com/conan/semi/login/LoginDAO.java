@@ -84,6 +84,7 @@ public class LoginDAO {
                     user.setPw(rs.getString(9));
                     user.setPw_check(rs.getString(10));
                     user.setNickname(rs.getString(11));
+                    user.setText(rs.getString(12));
                     // user.setPw(dbPw);
 
                     // 세션 생성(1명의 회원 정보 요소 11개 전부 담기)
@@ -113,12 +114,5 @@ public class LoginDAO {
 //      hs.invalidate(); 모든 어트리뷰트 없애기
 
         loginCheck(request);
-
-
-
-
-
-
-
     }
 }

@@ -594,6 +594,26 @@ UPDATE characters_test_nr
 SET button_image = REPLACE(button_image, 'jin.png', 'gin.png')
 WHERE button_image LIKE '%jin.png';
 
+/*메인 이미지 경로 수정문*/
+UPDATE characters_test_nr
+SET main_image = REPLACE(main_image, 'img/Characters/', 'img/Encyclop/Characters/')
+WHERE main_image LIKE 'img/Characters/%';
+
+/*특수문자 이스케이프*/
+UPDATE characters_test_nr
+SET description = REPLACE(description, '''', '\\''') -- 작은따옴표 이스케이프
+WHERE description LIKE '%''%';
+
+UPDATE characters_test_nr
+SET description = REPLACE(description, '"', '\\"') -- 큰따옴표 이스케이프
+WHERE description LIKE '%"%';
+
+UPDATE characters_test_nr
+SET description = REPLACE(description, CHR(10), '\\n') -- 줄바꿈 이스케이프
+WHERE description LIKE '%' || CHR(10) || '%';
+
+select *
+from characters_test_nr;
 
 CREATE TABLE categories (
 category_id   NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

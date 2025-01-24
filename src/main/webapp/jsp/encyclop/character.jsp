@@ -7,28 +7,58 @@
 <head>
     <meta charset="UTF-8">
     <title>캐릭터 도감</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/encyclop/character/character.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/encyclop/character/character.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css"/>
+    <style>
+        /* 모달 배경 */
+        .chara_detail_wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* 뷰포트의 전체 너비 */
+            height: 100vh; /* 뷰포트의 전체 높이 */
+            background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+            display: none; /* 초기에는 숨김 */
+            justify-content: center; /* 수평 가운데 정렬 */
+            align-items: center; /* 수직 가운데 정렬 */
+            z-index: 1000; /* 상위 레이어 */
+            visibility: hidden; /* 초기에는 보이지 않음 */
+            opacity: 0; /* 투명 */
+            transition: opacity 0.3s ease-in-out; /* 점진적 표시 */
+
+        }
+
+        /* 모달 내용 */
+        .modal-content {
+            width: 80%;
+            height: 70%;
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: flex;
+            background-image: url("/img/Encyclop/chara_detail_bg.png");
+            background-size: cover;
+        }
+
+        #modalCharacterDescription {
+            white-space: pre-line;
+        }
+
+    </style>
 </head>
 <body>
 
 <div class="header">
     <button class="menu_button">
-    <%-- 야 안누리 메뉴버튼에 넣을거 만들어야 된다--%>
+        <%-- 야 안누리 메뉴버튼에 넣을거 만들어야 된다--%>
     </button>
     <a class="conan_logo" href="/index.jsp">
         <img src="${pageContext.request.contextPath}/img/index/logoimg.png">
     </a>
     <jsp:include page="${loginPage}"></jsp:include>
 </div>
-
-<%-- 상단 코난 이미지 있는거..
-<div class="conandex_wrapper">CONAN'DEX
-    <div class="conandex_inner">코난 도감</div>
-    <div class="conandex_logo"><img style="width: 100%;" src="${pageContext.request.contextPath}/img/index/conandex_customicon_big.png" alt="conandex_img"></div>
-</div>--%>
-
-<%--이거 왜 안되냐 미칀--%>
 
 <!-- 상단 Category 바 -->
 <div class="chara_wrapper">
@@ -81,37 +111,50 @@
             <div class="chara_list_01">
                 <c:choose>
                 <c:when test="${not empty characterList}">
-                <c:set var="count" value="0" />
+                <c:set var="count" value="0"/>
                 <c:forEach var="c" items="${characterList}">
                 <div class="chara_list_box_set">
                     <!-- 캐릭터 아이콘 영역 -->
 
                     <div class="chara_list_box_icon">
                         <!-- DB에서 가져온 button_image 경로를 보정 -->
-                        <c:set var="fixedImagePath" value="${c.buttonImage}" />
+                        <c:set var="fixedImagePath" value="${c.buttonImage}"/>
                         <c:choose>
                             <%-- 경로에 Encyclop 폴더가 누락된 경우 처리 --%>
                             <c:when test="${not fixedImagePath.contains('Encyclop/')}">
-                                <c:set var="fixedImagePath" value="${fn:replace(fixedImagePath, 'Characters/', 'Encyclop/Characters/')}" />
+                                <c:set var="fixedImagePath"
+                                       value="${fn:replace(fixedImagePath, 'Characters/', 'Encyclop/Characters/')}"/>
                             </c:when>
                         </c:choose>
+
+                        <!-- 메인 이미지 경로 설정 -->
+                        <c:set var="fixedMainImagePath" value="${c.mainImage}"/>
+                            <%--이미지 경로 맞는지 확인--%>
+                        <c:choose>
+                            <c:when test="${not fixedMainImagePath.contains('Encyclop/')}">
+                                <c:set var="fixedMainImagePath"
+                                       value="${fn:replace(fixedMainImagePath, 'Characters/', 'Encyclop/Characters/')}"/>
+                            </c:when>
+                        </c:choose>
+
+                        <!-- 버튼 이미지 출력 -->
                         <img class="chara_list_box_icon_img"
                              src="${fixedImagePath}"
-                             alt="${c.name} 버튼이미지" />
+                             alt="${fn:escapeXml(c.name)} 버튼이미지"
+                             onclick="openCharacterModal('${fn:escapeXml(c.id)}',
+                                     '${fn:escapeXml(c.name)}',
+                                     '${fn:escapeXml(c.age)}',
+                                     '${fn:escapeXml(c.quote)}',
+                                     '${fn:escapeXml(c.description)}',
+                                     '${fixedMainImagePath}')">
                     </div>
 
                     <!-- 이름 or 간단 텍스트 -->
                     <span class="text_chara">
-                            ${c.name}
+                            ${fn:escapeXml(c.name)}
                     </span>
-                    <!-- 캐릭터가 속한 카테고리 목록 -->
-                    <div style="text-align:center; font-size:0.9em; color:#555;">
-                        <c:forEach var="cat" items="${c.categories}" varStatus="status">
-                            ${cat}<c:if test="${!status.last}">, </c:if>
-                        </c:forEach>
-                    </div>
                 </div>
-                <c:set var="count" value="${count + 1}" />
+                <c:set var="count" value="${count + 1}"/>
                 <!-- 6개 단위로 줄바꿈 -->
                 <c:if test="${count % 6 == 0}">
             </div>
@@ -126,13 +169,66 @@
             </div>
         </div>
     </div>
-
-    <!-- footer 영역 (원하는 경우) -->
     <div class="footer">
-
+        <a>이용약관</a>
+        <a>개인정보 처리방침</a>
+        <a>About us</a>
     </div>
 </div>
 
+
+<%--모달--%>
+<div id="charaDetailModal" class="chara_detail_wrapper">
+    <div class="modal-content">
+        <button class="close_button" onclick="closeCharacterModal()"><img src="/img/Encyclop/x.svg" alt="닫는 버튼">
+        </button>
+        <img id="modalCharacterImage" src="" alt="캐릭터 메인 이미지">
+        <div class="modal-character">
+            <div class="sec01_head_text">CHARACTER</div>
+            <div id="modalCharacterName"></div>
+            <div id="modalCharacterQuote">명언</div>
+            <div id="modalCharacterAge" style="font-size: 23px; margin-top: 6px; font-weight: 600;">나이</div>
+            <div id="modalCharacterDescription" style="margin-top: 20px; line-height: 150%; font-size: 20px;">설명</div>
+            <div><img src="/img/Encyclop/detective_boys.png" alt="" style="width: 120%; margin-top: 20px;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openCharacterModal(id, name, age, quote, description, imagePath) {
+        // SQL에서 이스케이프된 데이터를 복구
+        const processedDescription = description
+            .replace(/\\n/g, '\n') // 줄바꿈 복구
+            .replace(/\\'/g, "'") // 작은따옴표 복구
+            .replace(/\\"/g, '"'); // 큰따옴표 복구
+
+        console.log("Processed Description:", processedDescription);
+
+        // 모달 데이터 설정
+        document.getElementById('modalCharacterName').textContent = name;
+        document.getElementById('modalCharacterAge').textContent = age;
+        document.getElementById('modalCharacterQuote').textContent = quote;
+        document.getElementById('modalCharacterDescription').textContent = processedDescription;
+        document.getElementById('modalCharacterImage').src = imagePath;
+
+        // 모달 표시
+        const modal = document.getElementById('charaDetailModal');
+        modal.style.display = 'flex';
+        modal.style.visibility = 'visible';
+        modal.style.opacity = '1';
+    }
+
+    function closeCharacterModal() {
+        const modal = document.getElementById('charaDetailModal');
+
+        // 모달 숨기기
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            modal.style.visibility = 'hidden';
+        }, 300); // transition 시간과 맞춤
+    }
+</script>
 
 </body>
 </html>

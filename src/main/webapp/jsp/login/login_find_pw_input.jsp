@@ -56,7 +56,7 @@
 
 <div class="wrapper">
     <div class="sec01_L">
-        <a href="/jsp/index_lmj.jsp"><img src="/img/login/logoimg.png"></a>
+        <a href="/index.jsp"><img src="/img/login/logoimg.png"></a>
     </div>
     <div class="sec01_R">
         <div class="deco_line"></div>

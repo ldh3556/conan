@@ -122,13 +122,13 @@
     </div>
 
     <div class="vote_wrapper" style="text-align: center;">
-        <div class="vote_inner" style="border: 3pt solid green">
+        <div class="vote_inner" >
             <h1><span>남성 캐릭터 16강</span></h1>
             <p id="round"></p>
             <p id="cal"></p>
 
 
-            <figure class="hover01" id="hover01" style="border: 3pt solid blue">
+            <figure class="hover01" id="hover01"    >
                 <div class="image-container">
                     <img id="image1" onclick="change(0);"/>
                     <p id="name1"></p>
@@ -140,7 +140,7 @@
             </figure>
 
             <!-- 버튼들을 위치시키기 위한 div -->
-            <div class="button-container" style="border: 3pt solid black">
+            <div class="button-container">
                 <button id="restartBtn" onclick="restartGame()">다시하기</button>
                 <button class="back-btn" onclick="window.history.back();">뒤로가기</button>
             </div>
@@ -164,6 +164,10 @@
         position: relative;
     }
 
+    h1{
+        padding: 0;
+        margin: 0;
+    }
     .title-container {
         position: relative;
         text-align: center;
@@ -178,12 +182,19 @@
 
     .image-container {
         display: inline-block;
-        margin-right: 20px;
+    }
+
+    figure#hover01 {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
     }
 
     img {
-        width: 490px;
-        height: 490px;
+        width: 300px;
+        height: 300px;
         cursor: pointer;
         margin-top: 10px;
     }
@@ -211,21 +222,18 @@
     p {
         font-size: 18px;
         font-weight: bold;
-        margin-top: 5px;
+        margin: 0;
     }
 
     .button-container {
-        position: absolute;
         bottom: 100px; /* 화면 하단에서 100px 떨어지도록 수정 */
         left: 50%;
-        transform: translateX(-50%);
-        display: flex;
         gap: 20px;
         z-index: 10;
     }
 
     .button-container button {
-        padding: 15px 30px;
+        padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
     }
@@ -253,3 +261,4 @@
 
 </body>
 </html>
+
